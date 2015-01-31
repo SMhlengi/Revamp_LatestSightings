@@ -3558,3 +3558,59 @@ div .notes {
 .panel-signup {
     width: 600px;
 }
+
+.dotnetuploader {
+    background-color: #286090 !important;
+}
+
+.havingTroubleUploading {
+    color: #337ab7;
+    font-size: 14px;
+}
+
+.launchNativeEmailClient, .launchDotNetUploader {
+    font-weight: bold;
+    color: black;
+    text-decoration:underline;
+}
+
+.dontnetuploaderpanel {
+    display: none;
+}
+
+.marginLeftTen {
+    margin-left: 10px;
+}
+
+.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError {
+    display: none;
+}
+
+.seperation {
+    margin-top: 10px !important;
+}
+
+.tncRow {
+    margin-bottom:15px;
+}
+
+.tncText {
+    margin-bottom: 25px;
+}
+
+.checkbox {
+    margin-top: 0px !important;
+}
+
+.viewterms {
+    margin-top:10px;
+}
+
+.viewterms p {
+    cursor:pointer;
+}
+
+.emailFile {
+    color: #3c763d;
+    font-size: 14px;
+}

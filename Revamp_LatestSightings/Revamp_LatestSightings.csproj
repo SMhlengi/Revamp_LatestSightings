@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CuteWebUI.AjaxUploader, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bc00d4b0e43ec38d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CuteWebUI.AjaxUploader.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -58,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutus.aspx" />
+    <Content Include="addVideo.ascx" />
     <Content Include="completeProfile.ascx" />
     <Content Include="contactus.aspx" />
     <Content Include="css\animate.css" />
@@ -167,6 +172,13 @@
     </Compile>
     <Compile Include="aboutus.aspx.designer.cs">
       <DependentUpon>aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addVideo.ascx.cs">
+      <DependentUpon>addVideo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addVideo.ascx.designer.cs">
+      <DependentUpon>addVideo.ascx</DependentUpon>
     </Compile>
     <Compile Include="completeProfile.ascx.cs">
       <DependentUpon>completeProfile.ascx</DependentUpon>

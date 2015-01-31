@@ -11,8 +11,16 @@ namespace Revamp_LatestSightings
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            completeProfile uc_completeProfile = (completeProfile)LoadControl("~/completeProfile.ascx");
-            completeprofile.Controls.Add(uc_completeProfile);
+            //completeProfile uc_completeProfile = (completeProfile)LoadControl("~/completeProfile.ascx");
+            //completeprofile.Controls.Add(uc_completeProfile);
+
+            addVideo uc_videoPage = (addVideo)LoadControl("~/addVideo.ascx");
+            addVideoContent.Controls.Add(uc_videoPage);
+        }
+
+        protected void downloadTandC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

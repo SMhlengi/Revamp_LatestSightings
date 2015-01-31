@@ -10,33 +10,33 @@
 namespace Revamp_LatestSightings {
     
     
-    public partial class dashboard {
+    public partial class addVideo {
         
         /// <summary>
-        /// completeprofile control.
+        /// Uploader1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder completeprofile;
+        protected global::CuteWebUI.Uploader Uploader1;
         
         /// <summary>
-        /// downloadTandC control.
+        /// justIncaseSecondaryFileupload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button downloadTandC;
+        protected global::System.Web.UI.WebControls.FileUpload justIncaseSecondaryFileupload;
         
         /// <summary>
-        /// addVideoContent control.
+        /// justIncaseSecondaryFileuploadButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder addVideoContent;
+        protected global::System.Web.UI.WebControls.Button justIncaseSecondaryFileuploadButton;
     }
 }

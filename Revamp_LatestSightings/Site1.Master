@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    <form id="form" runat="server">
     <!-- Site Header -->
     <site:header id="siteHeaderSection" runat="server"></site:header>
 
@@ -38,5 +39,6 @@
 
     <!-- Javascripts -->
     <java:scripts runat="server" id="javascriptstag"></java:scripts>
+        </form>
 </body>
 </html>
