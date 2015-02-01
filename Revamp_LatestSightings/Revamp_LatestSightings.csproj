@@ -76,6 +76,7 @@
     <Content Include="css\gallerymodal.css" />
     <Content Include="css\GoogleApisFonts.css" />
     <Content Include="css\hover-min.css" />
+    <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\jquery.multilevelpushmenu.css" />
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\normalize.css" />
@@ -87,6 +88,7 @@
     <Content Include="css\style-orange.css" />
     <Content Include="css\style-red.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\style.datatables.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -138,6 +140,7 @@
     <Content Include="js\isotope.pkgd.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\jquery.fitvids.js" />
     <Content Include="js\jquery.isotope.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
@@ -163,6 +166,7 @@
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
+    <Content Include="videoList.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +307,14 @@
     <Compile Include="uc_StyleSheets.ascx.designer.cs">
       <DependentUpon>uc_StyleSheets.ascx</DependentUpon>
     </Compile>
+    <Compile Include="videoList.ascx.cs">
+      <DependentUpon>videoList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videoList.ascx.designer.cs">
+      <DependentUpon>videoList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoSetting.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site1.Master" />

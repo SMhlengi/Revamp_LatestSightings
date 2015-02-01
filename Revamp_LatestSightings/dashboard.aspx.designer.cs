@@ -22,15 +22,6 @@ namespace Revamp_LatestSightings {
         protected global::System.Web.UI.WebControls.PlaceHolder completeprofile;
         
         /// <summary>
-        /// downloadTandC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button downloadTandC;
-        
-        /// <summary>
         /// addVideoContent control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,14 @@ namespace Revamp_LatestSightings {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder addVideoContent;
+        
+        /// <summary>
+        /// videoListcontent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder videoListcontent;
     }
 }

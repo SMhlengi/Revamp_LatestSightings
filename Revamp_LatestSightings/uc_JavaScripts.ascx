@@ -10,4 +10,5 @@
 <script src="<%= ResolveUrl("~/js/jquery.magnific-popup.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/classie.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/mlpushmenu.js") %>"></script>
+<script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>

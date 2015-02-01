@@ -20,7 +20,7 @@
             <div id="content-inner">
                 <asp:PlaceHolder id="completeprofile" runat="server"></asp:PlaceHolder>
                                         <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
-                                        <%if (IsPostBack == false){ %>
+<%--                                        <%if (IsPostBack == false){ %>
                                             <div class="row tncRow">
                                                 <div class="col-md-9">
                                                     <div class="alert alert-danger">
@@ -47,8 +47,9 @@
                                                     <p class="text-primary emailFile"><strong>Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
                                                 </div>
                                             </div>
-                                        <%} %>
+                                        <%} %>--%>
                                         <asp:PlaceHolder ID="addVideoContent" runat="server" />
+                                        <asp:PlaceHolder ID="videoListcontent" runat="server" />
             </div>
         </div>
     </div>

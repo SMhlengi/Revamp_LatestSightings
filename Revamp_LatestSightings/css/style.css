@@ -3619,3 +3619,20 @@ div .notes {
 .ajaxUploaderClass {
     color: black;
 }
+
+.noVideos {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.dataTables_length , .dataTables_filter , .dataTables_info {
+    color: white !important;
+}
+
+.table.dataTable tbody th, table.dataTable tbody td {
+    color:black;
+}
+
+input , select {
+    color:black !important;
+}
