@@ -30,7 +30,7 @@
                                                 </div>
                                             </div>
                                             <div class="row tncText">
-                                                <div class="col-md-2">
+                                                <div class="col-md-3">
                                                       <div class="checkbox">
                                                         <label>
                                                           <input type="checkbox" id="chk_terms">I Accept Terms and Conditions

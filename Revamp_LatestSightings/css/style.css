@@ -3566,11 +3566,12 @@ div .notes {
 .havingTroubleUploading {
     color: #337ab7;
     font-size: 14px;
+    margin-top:39px;
 }
 
 .launchNativeEmailClient, .launchDotNetUploader {
     font-weight: bold;
-    color: black;
+    color: white;
     text-decoration:underline;
 }
 
@@ -3613,4 +3614,8 @@ div .notes {
 .emailFile {
     color: #3c763d;
     font-size: 14px;
+}
+
+.ajaxUploaderClass {
+    color: black;
 }
