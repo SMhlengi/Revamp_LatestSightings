@@ -39,7 +39,7 @@
 <%if (addVideoDetails == true){ %>
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-default">
+        <div class="panel transparentBackground">
             <div class="panel-heading">
                 <div class="panel-btns" style="display: none;">
                     <a href="" class="panel-minimize tooltips" data-toggle="tooltip" title="" data-original-title="Minimize Panel"><i class="fa fa-minus"></i></a>
@@ -84,7 +84,7 @@
                     </div>
                 </div>           
             </div><!-- panel-body -->
-            <div class="panel-footer">
+            <div>
                 <div class="pull-left">
                     <a href="javascript:void(0)" class="btn btn-success updateVideoDetails" role="button">Save</a>
                     <!--<button class="btn btn-success updateVideoDetails">Save</button>-->
@@ -104,3 +104,5 @@
                                 
     </div>
 <%} %>
+
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=3") %>"></script>

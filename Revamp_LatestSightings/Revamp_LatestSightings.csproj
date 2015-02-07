@@ -63,6 +63,7 @@
   <ItemGroup>
     <Content Include="aboutus.aspx" />
     <Content Include="addVideo.ascx" />
+    <Content Include="AjaxOperation.aspx" />
     <Content Include="completeProfile.ascx" />
     <Content Include="contactus.aspx" />
     <Content Include="css\animate.css" />
@@ -136,12 +137,14 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\classie.js" />
+    <Content Include="js\completeProfile.js" />
     <Content Include="js\galleryviewmodal.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\isotope.pkgd.min.js" />
     <Content Include="js\Jplayer.swf" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.cookies.js" />
     <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\jquery.fitvids.js" />
     <Content Include="js\jquery.isotope.min.js" />
@@ -159,19 +162,23 @@
     <Content Include="js\randomOrange.js" />
     <Content Include="js\randomRed.js" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\validateVideoDetails.js" />
+    <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="login.aspx" />
     <Content Include="register.aspx" />
     <Content Include="sightings.aspx" />
+    <Content Include="termsAndConditions.ascx" />
     <Content Include="uc_Footer.ascx" />
-    <Content Include="uc_HomePage_Main_Container_Section.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
     <Content Include="videoList.ascx" />
     <Content Include="videopreview.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aboutus.aspx.cs">
@@ -187,6 +194,13 @@
     </Compile>
     <Compile Include="addVideo.ascx.designer.cs">
       <DependentUpon>addVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxOperation.aspx.cs">
+      <DependentUpon>AjaxOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxOperation.aspx.designer.cs">
+      <DependentUpon>AjaxOperation.aspx</DependentUpon>
     </Compile>
     <Compile Include="completeProfile.ascx.cs">
       <DependentUpon>completeProfile.ascx</DependentUpon>
@@ -209,6 +223,7 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer.cs" />
     <Compile Include="DeclineVideoStatus.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -271,19 +286,19 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="termsAndConditions.ascx.cs">
+      <DependentUpon>termsAndConditions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="termsAndConditions.ascx.designer.cs">
+      <DependentUpon>termsAndConditions.ascx</DependentUpon>
+    </Compile>
     <Compile Include="uc_Footer.ascx.cs">
       <DependentUpon>uc_Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="uc_Footer.ascx.designer.cs">
       <DependentUpon>uc_Footer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="uc_HomePage_Main_Container_Section.ascx.cs">
-      <DependentUpon>uc_HomePage_Main_Container_Section.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uc_HomePage_Main_Container_Section.ascx.designer.cs">
-      <DependentUpon>uc_HomePage_Main_Container_Section.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_JavaScripts.ascx.cs">
       <DependentUpon>uc_JavaScripts.ascx</DependentUpon>
@@ -350,7 +365,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Videos\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

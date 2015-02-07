@@ -32,18 +32,10 @@
       </script>
 
 
-    <!-- Main Container Section -->			
-    <div class="container">
-        <div id="page-content">
-
-            <!-- Page Content Area -->
-            <div id="content-inner">
-
-
          <div class="row">
 <%--             <div class="col-xs-1 col-sm-1 co-md-1 col-lg-1">
              </div>--%>
-            <div class="col-md-7 filedetailstab">
+            <div class="col-md-11 filedetailstab">
                 <h5 class="lg-title">Information</h5>
                 <p class="mb20">Some context about this Video and the User can be found below.</p>
 
@@ -121,162 +113,144 @@
                                 <div class="col-sm-8">
                                     <textarea class="form-control" rows="5" disabled><%=videoRecord.Notes %></textarea>
                                 </div>
-                            </div><!-- form-group -->
-                                            
-                            <div class="form-group">
-                                <label class="col-sm-3">Status</label>
-                                <div class="col-sm-8">
-                                    <label class="radio-inline">
-                                      <input type="radio" name="videoStatus" id="pending" value="pending" checked> <strong>Pending</strong>
-                                    </label>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="videoStatus" id="accepted" value="accepted"><strong>Accepted</strong>
-                                    </label>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="videoStatus" id="declined" value="declined"><strong>Declined</strong>
-                                    </label>
-                                </div>
-                            </div><!-- form-group -->
-                            <!-- decline video control -->
-                            <div class="form-group declineVideoTab">
-                                <label class="col-sm-3">Decline Statuses</label>
-                                    <div class="col-sm-8">
-                                        <div class="form-group">
-                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                                    <div class="panel panel-danger">
-                                                    <div class="panel-heading" role="tab" id="headingOne">
-                                                        <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                            Please choose the reason/s for declining this video 
-                                                        </a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseOne" class="panel-collapse collapse">
-                                                        <div class="panel-body">
-                                                        <!-- get all the rounds -->
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-condensed declineTable">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Decline Reason</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody class="declineTableBody">
-<%--                                                                            <%
-                                                                                if (declineStatuses != null && declineStatuses.Count > 0) 
-                                                                                {
-                                                                                    foreach (var item in declineStatuses) 
-                                                                                    {%>
-                                                                                            <tr>
-                                                                                                <td width="40%"><%=item.reason%></td>
-                                                                                                <td width="15%">
-                                                                                                    <div class="checkbox">
-                                                                                                        <label>
-                                                                                                        <input type="checkbox" name="round" value='<%=item.reason.ToString()%>' class="availablerounds">
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        <%}
-                                                                                }
-                                                                                %>--%>
-                                                                        </tbody>
-
-                                                                        </table>
-                                                                    </div>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    <div class="panel panel-danger">
-                                                        <div class="panel-heading" role="tab" id="headingTwo">
-                                                          <h4 class="panel-title">
-                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                              Suggestions / Advice to give to <strong> <strong><%=contributor["firstname"] %></strong> <%=contributor["lastname"] %></strong> on the video
-                                                            </a>
-                                                          </h4>
-                                                        </div>
-                                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                          <div class="panel-body">
-                                                            <div class="form-group">
-                                                                <textarea class="form-control" rows="9" placeholder="Suggestions / Advice" id="adviceSuggestions"></textarea>
-                                                            </div>
-                            
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                                <div class="addnewreason">
-                                                    <span class="addnewtext"> [ add new ] </span>
-                                                    <span class="cancelAddnewText"> [ cancel ] </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-7 addnewreasonTextbox">
-                                                <div class="addnewreason">
-                                                    <input type="text" class="form-control" placeholder="Add New Reason" id="newReason" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-1 saveNewReason">
-                                                <div class="addnewreason">
-                                                    <a href="javascript:void(0)" class="btn btn-danger btn-md saveNewStatus" role="button">Save</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-1 marginLeftTwenty registerSpinner">
-                                                <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
                             </div>
-                            <!-- end of decline video control -->
-                            <div class="form-group">
-                                <label class="col-sm-3"></label>
-                                <div class="col-sm-8">
-                                    <a href="javascript:void(0)" class="btn btn-primary btn-md updateVideoStatus" role="button">Update Status</a>
-                                </div>
-                            </div><!-- form-group -->
-                            <div class="form-group updatingVideoStatusMessaging">
-                                <label class="col-sm-3"></label>
-                                <div class="col-sm-8">
-                                    <div class="alert alert-info">                                    
-                                    <strong>Updating Status</strong> .....
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-3">Status</label>
+                                        <div class="col-sm-8">                                    
+                                            <label class="radio-inline">
+                                            <input type="radio" name="videoStatus" id="pending" value="pending" checked="checked" /> <strong>Pending</strong>
+                                            </label>
+                                            <label class="radio-inline">
+                                            <input type="radio" name="videoStatus" id="accepted" value="accepted" /><strong>Accepted</strong>
+                                            </label>
+                                            <label class="radio-inline">
+                                            <input type="radio" name="videoStatus" id="declined" value="declined" /><strong>Declined</strong>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div><!-- form-group -->
-                            <div class="form-group emailSentForAcceptedVideo">
-                                <label class="col-sm-3"></label>
-                                <div class="col-sm-8">
-                                    <div class="alert alert-info">                                    
-                                    <strong>Video Status Successfully Updated</strong><br />
-                                        An email has been sent to the user informing them that their video has been accepted.
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!-- decline video control -->
+                                    <div class="form-group declineVideoTab">
+                                        <label class="col-sm-3">Decline Statuses</label>
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-danger transparentBackground">
+                                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                                <h4 class="panel-title">
+                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                                    Please choose the reason/s for declining this video 
+                                                                </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapseOne" class="panel-collapse collapse">
+                                                                <div class="panel-body">
+                                                                <!-- get all the rounds -->
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-condensed declineTable">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Decline Reason</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody class="declineTableBody">
+                                                                                    <%
+                                                                                        if (declineStatuses != null && declineStatuses.Count > 0) 
+                                                                                        {
+                                                                                            foreach (var item in declineStatuses) 
+                                                                                            {%>
+                                                                                                    <tr>
+                                                                                                        <td width="40%"><%=item.reason%></td>
+                                                                                                        <td width="15%">
+                                                                                                            <div class="checkbox">
+                                                                                                                <label>
+                                                                                                                <input type="checkbox" name="round" value='<%=item.reason.ToString()%>' class="availablerounds">
+                                                                                                                </label>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                <%}
+                                                                                        }
+                                                                                        %>
+                                                                                </tbody>
+
+                                                                                </table>
+                                                                            </div>
+                                                                            </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            <div class="panel panel-danger transparentBackgroundWithBorder">
+                                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                                  <h4 class="panel-title">
+                                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                      Suggestions / Advice to give to <strong> <strong><%=contributor["firstname"] %></strong> <%=contributor["lastname"] %></strong> on the video
+                                                                    </a>
+                                                                  </h4>
+                                                                </div>
+                                                                <div id="collapseTwo" class="panel-collapse collapse de" role="tabpanel" aria-labelledby="headingTwo">
+                                                                  <div class="panel-body">
+                                                                    <div class="form-group">
+                                                                        <textarea class="form-control" rows="9" placeholder="Suggestions / Advice" id="adviceSuggestions"></textarea>
+                                                                    </div>
+                            
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div class="addnewreason">
+                                                            <span class="addnewtext"> [ add new ] </span>
+                                                            <span class="cancelAddnewText"> [ cancel ] </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-7 addnewreasonTextbox">
+                                                        <div class="addnewreason">
+                                                            <input type="text" class="form-control" placeholder="Add New Reason" id="newReason" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1 saveNewReason">
+                                                        <div class="addnewreason">
+                                                            <a href="javascript:void(0)" class="btn btn-danger btn-md saveNewStatus" role="button">Save</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1 marginLeftTwenty registerSpinner">
+                                                        <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                                    </div>
+                                                </div>
+                                        
+                                            </div>
                                     </div>
+                                    <!-- end of decline status -->
                                 </div>
-                            </div><!-- form-group -->
-                            <div class="form-group messageForDeclindedVideo">
-                                <label class="col-sm-3"></label>
-                                <div class="col-sm-8">
-                                    <div class="alert alert-info">                                    
-                                    <strong>Video Status Successfully Updated</strong><br />
-                                        An email has been sent to the user informing them that their video has been declined.                                        
+                            </div>
+
+
+                            <div class="row" style="margin-top:30px; margin-bottom:30px;">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-3">&nbsp;</label>
+                                        <div class="col-sm-8">
+                                            <a href="javascript:void(0)" class="btn btn-primary btn-md updateVideoStatus" role="button">Update Status</a>
+                                        </div>
                                     </div>
+
                                 </div>
-                            </div><!-- form-group -->
-                            <div class="form-group updateVideoStatusError">
-                                <label class="col-sm-3"></label>
-                                <div class="col-sm-8">
-                                    <div class="alert alert-danger">                                    
-                                    <strong>Error in updating video Status</strong><br />
-                                        An Error has occured in updating video status.  <br />
-                                        Please try again at a later stage.
-                                    </div>
-                                </div>
-                            </div><!-- form-group -->
+                            </div>
+                                            
+
                         </div><!-- tab-pane -->
 
                         <div class="tab-pane" id="tab3">
@@ -318,7 +292,7 @@
           { %>
                 <div class="col-md-10 downloadVideoSection">
                     <div class="row tncRow">
-                        <div class="col-md-7">
+                        <div class="col-md-12">
                             <div class="alert alert-danger">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                 <strong>Some video formats are not supported by your browser.<br />
@@ -329,20 +303,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Button CssClass="btn btn-info" ID="downloadVideo" runat="server" Text="Download Video" OnClick="downloadVideo_Click" />
-                            <asp:HiddenField ID="Hiddenfilename" runat="server" />
+                            <form id="VideoDownload" runat="server">
+                                <asp:Button CssClass="btn btn-info" ID="downloadVideo2" OnClick="downloadVideo_Click" runat="server" Text="Download Video" />
+                                <asp:HiddenField ID="Hiddenfilename" runat="server" />
+                            </form>
                         </div>
                     </div>
                 </div>
             <%} %>
         </div>
-
-
-
-
-            </div>
-        </div>
-    </div>
 
 
 
@@ -404,6 +373,7 @@
         });
 
         $("#declined").click(function () {
+            $(".footer").hide();
             $(".declineVideoTab").show("slow");
         });
 

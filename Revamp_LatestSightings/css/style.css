@@ -271,7 +271,7 @@ header.active nav#main-menu {
 .collapse.in, 
 .collapsing {
 	display: inline-block;
-	position: absolute;
+	/*position: absolute;*/
 	top: 0;
 	right: 70px;
 }
@@ -3527,6 +3527,10 @@ div .notes {
     margin-top: 10px !important;
 }
 
+.transparentBackgroundWithBorder {
+    background-color: transparent !important;
+}
+
 .transparentBackground {
     background-color: transparent !important;
     border-color: transparent !important;
@@ -3784,12 +3788,21 @@ input , select {
     margin-left: 20px;
 }
 
+.col-md-9 .alert-danger {
+    margin-top: 18px;
+    margin-bottom: 25px;
+}
 
-@media screen and (max-width: 1024px) {
+.form-control {
+    color: black !important;
+}
+/*
     
-    /* wizard */
+@media screen and (max-width: 1024px) {
     .contentpanel-wizard .row .col-md-6 {
         float: none;
         width: auto;
     }
-}
+}    
+    
+    */

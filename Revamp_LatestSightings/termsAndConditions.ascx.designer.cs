@@ -11,7 +11,7 @@ namespace Revamp_LatestSightings
 {
 
 
-    public partial class uc_HomePage_Main_Container_Section
+    public partial class termsAndConditions
     {
     }
 }

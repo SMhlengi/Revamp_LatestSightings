@@ -13,13 +13,31 @@ namespace Revamp_LatestSightings {
     public partial class dashboard {
         
         /// <summary>
-        /// completeprofile control.
+        /// mainform control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder completeprofile;
+        protected global::System.Web.UI.HtmlControls.HtmlForm mainform;
+        
+        /// <summary>
+        /// content control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder content;
+        
+        /// <summary>
+        /// downloadTandC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button downloadTandC;
         
         /// <summary>
         /// addVideoContent control.
@@ -38,5 +56,14 @@ namespace Revamp_LatestSightings {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder videoListcontent;
+        
+        /// <summary>
+        /// termsandCs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder termsandCs;
     }
 }

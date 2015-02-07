@@ -10,6 +10,6 @@
 namespace Revamp_LatestSightings {
     
     
-    public partial class _default {
+    public partial class AjaxOperation {
     }
 }

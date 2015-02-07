@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Revamp_LatestSightings
 {
@@ -15,20 +16,10 @@ namespace Revamp_LatestSightings
         protected void Page_Load(object sender, EventArgs e)
         {
             userVideos = new List<VideoSetting>();
-            VideoSetting test = new VideoSetting();
-            VideoSetting test2 = new VideoSetting();
-            test2.Name = "John";
-            test2.Alias = "Doe";
-            test2.RevSplit = "";
-            test2.Uploaded = "N";
-            test2.Accepted = "No";
-            test.Name = "Sibongumusa";
-            test.Alias = "Musa";
-            test.RevSplit = "";
-            test.Uploaded = "Y";
-            test.Accepted = "Yes";
-            userVideos.Add(test);
-            userVideos.Add(test2);
+            SqlConnection conn = new SqlConnection();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader data = null;
+            userVideos = DataLayer.GetUserVideos(conn, query, data, userVideos, userId);
         }
     }
 }

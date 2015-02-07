@@ -143,3 +143,5 @@
                 </div>
             </div><!-- panel-footer -->
         </div>
+
+<script src="<%= ResolveUrl("~/js/completeProfile.js?v=12") %>"></script>

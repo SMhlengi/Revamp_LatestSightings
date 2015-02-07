@@ -23,22 +23,30 @@
 </head>
 
 <body>
-    <form id="form" runat="server">
     <!-- Site Header -->
     <site:header id="siteHeaderSection" runat="server"></site:header>
-
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		<!-- Main Container Section -->			
+		<div class="container">
+			<div id="page-content">
+			
+				<!-- Page Content Area -->
+				<div id="content-inner">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-    </asp:ContentPlaceHolder>
+                    </asp:ContentPlaceHolder>
+				</div>
+				<!-- End Content Area -->
+				
+			</div>
+		</div>
+		<!-- End Main Container Section -->
 
     <!-- SiteMap -->
     <footer:sitemap id="sitemap" runat="server"></footer:sitemap>
 
     <!-- Footer -->
     <page:footer id="sitefooter" runat="server"></page:footer>
-
     <!-- Javascripts -->
     <java:scripts runat="server" id="javascriptstag"></java:scripts>
-        </form>
 </body>
 </html>
