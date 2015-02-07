@@ -3796,6 +3796,11 @@ input , select {
 .form-control {
     color: black !important;
 }
+
+.declineSuggestions {
+    width: 100%;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {

@@ -198,7 +198,7 @@
                                                                     </a>
                                                                   </h4>
                                                                 </div>
-                                                                <div id="collapseTwo" class="panel-collapse collapse de" role="tabpanel" aria-labelledby="headingTwo">
+                                                                <div id="collapseTwo" class="panel-collapse collapse declineSuggestions" role="tabpanel" aria-labelledby="headingTwo">
                                                                   <div class="panel-body">
                                                                     <div class="form-group">
                                                                         <textarea class="form-control" rows="9" placeholder="Suggestions / Advice" id="adviceSuggestions"></textarea>
@@ -246,6 +246,48 @@
                                             <a href="javascript:void(0)" class="btn btn-primary btn-md updateVideoStatus" role="button">Update Status</a>
                                         </div>
                                     </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top:30px; margin-bottom:30px;">
+                                <div class="col-sm-12">
+                            <div class="form-group updatingVideoStatusMessaging">
+                                <label class="col-sm-3"></label>
+                                <div class="col-sm-8">
+                                    <div class="alert alert-info">                                    
+                                    <strong>Updating Status</strong> .....
+                                    </div>
+                                </div>
+                            </div><!-- form-group -->
+                            <div class="form-group emailSentForAcceptedVideo">
+                                <label class="col-sm-3"></label>
+                                <div class="col-sm-8">
+                                    <div class="alert alert-info">                                    
+                                    <strong>Video Status Successfully Updated</strong><br />
+                                        An email has been sent to the user informing them that their video has been accepted.
+                                    </div>
+                                </div>
+                            </div><!-- form-group -->
+                            <div class="form-group messageForDeclindedVideo">
+                                <label class="col-sm-3"></label>
+                                <div class="col-sm-8">
+                                    <div class="alert alert-info">                                    
+                                    <strong>Video Status Successfully Updated</strong><br />
+                                        An email has been sent to the user informing them that their video has been declined.                                        
+                                    </div>
+                                </div>
+                            </div><!-- form-group -->
+                            <div class="form-group updateVideoStatusError">
+                                <label class="col-sm-3"></label>
+                                <div class="col-sm-8">
+                                    <div class="alert alert-danger">                                    
+                                    <strong>Error in updating video Status</strong><br />
+                                        An Error has occured in updating video status.  <br />
+                                        Please try again at a later stage.
+                                    </div>
+                                </div>
+                            </div>
 
                                 </div>
                             </div>
@@ -318,6 +360,7 @@
 <script>
     $(document).ready(function () {
         $(".updateVideoStatus").click(function () {
+            console.log("i was clicked");
             var postUrl = "/AjaxOperation.aspx/updateVideoStatus";
             var vidid = "<%=videoRecord.Id %>";
             var userEmail = "<%=contributor["email"] %>";
