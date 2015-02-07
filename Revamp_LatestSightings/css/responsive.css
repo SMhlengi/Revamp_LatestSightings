@@ -74,6 +74,10 @@
 	.leftcol {
 	width:100% !important;
 	}
+	
+	.mp-container {
+	margin-top:30px;
+	}
 }
 
 @media (max-width: 768px) { 
@@ -135,8 +139,12 @@
 	
 	.navbar-right {
 		position: absolute;
-		top: 0;
+		top: 55px;
 		right: 15px;
+	}
+	
+	.mp-container {
+	margin-top:0px;
 	}
 
 	.flip-menu > .col-md-3.col-sm-6 {
@@ -258,6 +266,16 @@
 	
 	.leftcol {
 	width:100% !important;
+	}
+	
+	.mp-container {
+	margin-top:0px;
+	}
+	
+	.navbar-right {
+		position: absolute;
+		top: 65px;
+		right: 15px;
 	}
 }
 
@@ -405,12 +423,12 @@
 	}
 	
 	.navbar-brand {
-		width: 100%;
+		/*width: 100%;*/
 		text-align: center;
 	}
 	
 	#trigger {
-		position: absolute;
+		/*position: absolute;*/
 	}
 	
 	.team-member {
@@ -460,4 +478,28 @@
 	.leftcol {
 	width:100% !important;
 	}
+	
+	.mp-container {
+	margin-top:10px;
+	}
+	
+	.navbar-right {
+		position: absolute;
+		top: 65px;
+		right: 15px;
+	}
+}
+
+@media (max-width: 360px) {
+	
+	.navbar-right {
+		position: absolute;
+		top: 81px;
+		right: 15px;
+	}
+	
+	.mp-container {
+	margin-top:25px;
+	}
+	
 }

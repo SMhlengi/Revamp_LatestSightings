@@ -10,7 +10,7 @@
  2. Body
  3. Header
  4. Navigation
- 5. Page Banner
+ 5. Page Banner Profile Bar
  6. Breadcrumb
  7. Page Content
  8. Typography
@@ -49,6 +49,9 @@
  40. Ad Banner 300 x 250
  41. Tabs
  42. Filter / Galleries Page
+ 43. Gallery Lightbox
+ 44. Profile Bar
+ 45. Holiday
 
 -------------------------------------------------*/
 
@@ -186,7 +189,7 @@ body > .container {
 /*-------------------------------------------------------*/
 
 header .navbar-inverse {
-	margin-top: 35px;
+	margin-top: 0px; /* was 35px*/
 	-webkit-transition: all 0.28s ease;
 	-moz-transition: all 0.28s ease;
 	-o-transition: all 0.28s ease;
@@ -271,7 +274,7 @@ header.active nav#main-menu {
 .collapse.in, 
 .collapsing {
 	display: inline-block;
-	/*position: absolute;*/
+	position: absolute;
 	top: 0;
 	right: 70px;
 }
@@ -290,7 +293,7 @@ header.active nav#main-menu {
 
 .navbar-brand {
 	padding-top: 0;
-	margin-right: 50px;
+	margin-right: 0px; /*50px*/
 }
 
 .navbar-right li {
@@ -322,9 +325,8 @@ header.active nav#main-menu {
 
 
 /*-------------------------------------------------------*/
-/* 5. Page Banner
+/* 5. Page Banner Profile Bar
 /*-------------------------------------------------------*/
-
 #page-banner {
 	height: 50px;
 	background: #000000;
@@ -341,6 +343,35 @@ header.active nav#main-menu {
 	font-weight: normal;
 	line-height: 50px;
 	color: #f1f1f1;
+}
+
+.profilebar {
+	min-height: 40px;
+	background: #000000;
+	background: rgba(0,0,0,0.2);
+	padding:10px 20px;
+	margin-bottom:10px;
+	float:left;
+	width:100%;
+}
+
+.profile-username {
+	font-size:12px;
+	font-weight:bold;
+	color:#fff;
+	float:left;
+	margin-right:20px;
+}
+
+.profilelinks {
+	font-size:12px;
+	color:#fff;	
+}
+
+.livedrive {
+	color:#ff9900 !important;
+	font-size:12px;
+	float:right;
 }
 
 	
@@ -1351,7 +1382,7 @@ ol.comments {
 }
 
 .blog-list-content {
-	padding: 0 120px;
+	padding: 10px 20px;
 }
 
 .blog-list-content > h2 {
@@ -2568,9 +2599,9 @@ nav#main-menu > .menu-container > ul > li{
 nav#main-menu > .menu-container > ul > li > a {
 	display: inline-block;
 	height: 50px;
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 16px;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 14px;
 	line-height: 50px;
 	text-align: center;
 	color: #f1f1f1;
@@ -2585,7 +2616,7 @@ nav#main-menu > .menu-container > ul > li > a {
 	border-style: solid;
 	border-width: 0;
 	color: #eeeeee;
-	font-size:16px;
+	font-size:14px;
 }
 
 
@@ -3425,6 +3456,22 @@ table.gsc-table-result,
 .lightboxcontainer{	
 	width:100%; 
 	padding:20px 10px;
+}
+
+/*-------------------------------------------------------*/
+/* 44. Holiday
+/*-------------------------------------------------------*/
+
+.holiday-list-content {
+	padding:10px 20px;
+	height:150px;
+}
+
+.holidaybottom {
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	
 }
 
 
