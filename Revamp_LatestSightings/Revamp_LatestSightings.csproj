@@ -95,6 +95,7 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="forgottenPassword.aspx" />
     <Content Include="galleries.aspx" />
     <Content Include="galleryfilter.aspx" />
     <Content Include="galleryview.aspx" />
@@ -167,6 +168,7 @@
     <Content Include="js\waypoints.min.js" />
     <Content Include="login.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="resetpassword.aspx" />
     <Content Include="sightings.aspx" />
     <Content Include="termsAndConditions.ascx" />
     <Content Include="uc_Footer.ascx" />
@@ -232,6 +234,13 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forgottenPassword.aspx.cs">
+      <DependentUpon>forgottenPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgottenPassword.aspx.designer.cs">
+      <DependentUpon>forgottenPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="galleries.aspx.cs">
       <DependentUpon>galleries.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,6 +280,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="resetpassword.aspx.cs">
+      <DependentUpon>resetpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resetpassword.aspx.designer.cs">
+      <DependentUpon>resetpassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sightings.aspx.cs">
       <DependentUpon>sightings.aspx</DependentUpon>

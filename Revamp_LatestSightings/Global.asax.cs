@@ -44,6 +44,23 @@ namespace Revamp_LatestSightings
                 "~/register.aspx", true,
             new RouteValueDictionary { });
 
+            routes.MapPageRoute("reset-password",
+               "resetpassword",
+               "~/resetpassword.aspx", true,
+                new RouteValueDictionary { });
+
+            routes.MapPageRoute("view-profile",
+                "dashboard",
+               "~/dashbard.aspx", true,
+                new RouteValueDictionary { });
+
+            routes.MapPageRoute("add-new-video",
+            "addvideo",
+            "~/dashboard.aspx", true,
+            new RouteValueDictionary { 
+                { "addvideo", "true"}
+            });
+
             routes.Ignore("Language/assets/{*pathInfo}");
         }
 
