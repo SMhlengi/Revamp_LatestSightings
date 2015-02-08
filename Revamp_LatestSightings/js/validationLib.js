@@ -359,8 +359,8 @@
         $.cookie('lspassword', $("#password").val(), { expires: 100, path: '/' });
     }
 
-    function LoginIfOnLandingPageAndRememberMeIsSet() {
-        if (location.pathname == "/default.aspx" || location.pathname == "/") {
+    function LoginIfOnLoginPageAndRememberMeIsSet() {
+        if (location.pathname.toLowerCase() == "/login" || location.pathname.toLowerCase() == "/login.aspx") {
             if ($.cookie('lsrm', { path: '/' }) == "true") {
                 $("#email").val($.cookie('lsusername', { path: '/' }));
                 $("#password").val($.cookie('lspassword', { path: '/' }));
@@ -377,5 +377,10 @@
         location.href = "/";
     });
 
-    LoginIfOnLandingPageAndRememberMeIsSet();
+
+    $(".Login").click(function () {
+        location.href = "/login";
+    });
+
+    LoginIfOnLoginPageAndRememberMeIsSet();
 });

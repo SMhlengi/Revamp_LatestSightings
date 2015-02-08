@@ -147,6 +147,9 @@
         $(".viewfinancials").click(function () {
             location.href = "http://lscms.socialengine.co.za/login";
         });
+
+        $(".Login").hide();
+        $(".Logout").show();
     </script>
 
 

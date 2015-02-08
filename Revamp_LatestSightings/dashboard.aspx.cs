@@ -72,7 +72,7 @@ namespace Revamp_LatestSightings
 
         private void LoadUserControls()
         {
-            //Master.username = profile["firstname"] + " " + profile["lastname"];
+            Session["username"] = "Howzit " + profile["firstname"]; //+ " " + profile["lastname"];
             addVideo uc_videoPage = (addVideo)LoadControl("~/addVideo.ascx");
             uc_videoPage.name = profile["firstname"] + " " + profile["lastname"];
             addVideoContent.Controls.Add(uc_videoPage);

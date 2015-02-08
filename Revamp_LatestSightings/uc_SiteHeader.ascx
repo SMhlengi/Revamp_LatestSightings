@@ -10,13 +10,17 @@
                 	<div class="profilebar">
                     	<div class="left">
                     				
-                            <div class="profile-username"><i class="fa fa-user" style="padding-right:10px;"></i>Howzit Len</div>
+                            <div class="profile-username"><i class="fa fa-user pro-username" style="padding-right:10px;"></i>
+                               <%=username %>
+
+                            </div>
                             
                             <div class="profilelinks">
-                                <a href="#" class="tmq_closeserv">View Financials</a> |
-                                <a href="#" class="tmq_closeserv">Upload Video</a>  |
-                                <a href="#" class="tmq_closeserv">My Account</a> |
-                                <a href="#" class="tmq_closeserv">Logout</a>
+                                <a href="#" class="tmq_closeserv viewFinancials">View Financials</a> <!--| -->
+                                <a href="#" class="tmq_closeserv uploadVideo">Upload Video</a>  <!--|-->
+                                <a href="#" class="tmq_closeserv myAccount">My Account</a> <!--|-->
+                                <a href="#" class="tmq_closeserv Login">Login</a>
+                                <a href="#" class="tmq_closeserv Logout">Logout</a>
                                 <a href="#"><div class="livedrive"><i class="fa fa-video-camera" style="padding-right:10px;"></i>Live drive in 01:54:36</div></a>
                             </div>
                         

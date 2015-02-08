@@ -2,9 +2,9 @@
 
 <div class="row">
         <div class="panel transparentBackground">
-            <div class="panel-heading">
-                <h4 class="panel-title">Howzit <strong><%= username %></strong></h4>
+            <div class="panel-heading">                
                 <%if (IsVisible){ %>
+                    <br />
                     <p class="text-success">Please complete your profile below</p>
                 <%} %>
             </div><!-- panel-heading -->

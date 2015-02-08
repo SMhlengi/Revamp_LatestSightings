@@ -3,7 +3,6 @@
 <%@ Register Src="~/uc_StyleSheets.ascx" TagName="sheets" TagPrefix="style" %>
 <%@ Register Src="~/uc_JavaScripts.ascx" TagName="scripts" TagPrefix="java" %>
 
-<%@ Register Src="~/uc_SiteHeader.ascx" TagName="header" TagPrefix="site" %>
 <%@ Register Src="~/uc_SiteMap.ascx" TagName="sitemap" TagPrefix="footer" %>
 <%@ Register Src="~/uc_Footer.ascx" TagName="footer" TagPrefix="page" %>
 
@@ -24,7 +23,7 @@
 
 <body>
     <!-- Site Header -->
-    <site:header id="siteHeaderSection" runat="server"></site:header>
+    <asp:PlaceHolder ID="headerPlaceHonder" runat="server"></asp:PlaceHolder>
 		<!-- Main Container Section -->			
 		<div class="container">
 			<div id="page-content">

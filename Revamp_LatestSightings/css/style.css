@@ -3848,6 +3848,10 @@ input , select {
     width: 100%;
 }
 
+.viewFinancials, .uploadVideo, .myAccount, .Logout{
+    display: none;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {
