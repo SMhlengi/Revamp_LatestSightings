@@ -23,6 +23,7 @@
 
 <body>
     <!-- Site Header -->
+    <form id="lsform" runat="server">
     <asp:PlaceHolder ID="headerPlaceHonder" runat="server"></asp:PlaceHolder>
 		<!-- Main Container Section -->			
 		<div class="container">
@@ -30,16 +31,18 @@
 			
 				<!-- Page Content Area -->
 				<div id="content-inner">
+                    
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
                     </asp:ContentPlaceHolder>
+                    
 				</div>
 				<!-- End Content Area -->
 				
 			</div>
 		</div>
 		<!-- End Main Container Section -->
-
+        
     <!-- SiteMap -->
     <footer:sitemap id="sitemap" runat="server"></footer:sitemap>
 
@@ -47,5 +50,6 @@
     <page:footer id="sitefooter" runat="server"></page:footer>
     <!-- Javascripts -->
     <java:scripts runat="server" id="javascriptstag"></java:scripts>
+    </form>
 </body>
 </html>

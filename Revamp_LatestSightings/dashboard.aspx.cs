@@ -72,7 +72,7 @@ namespace Revamp_LatestSightings
 
         private void LoadUserControls()
         {
-            Session["username"] = "Howzit " + profile["firstname"]; //+ " " + profile["lastname"];
+            Session["username"] = "Howzit " + profile["firstname"];
             addVideo uc_videoPage = (addVideo)LoadControl("~/addVideo.ascx");
             uc_videoPage.name = profile["firstname"] + " " + profile["lastname"];
             addVideoContent.Controls.Add(uc_videoPage);
@@ -87,6 +87,7 @@ namespace Revamp_LatestSightings
 
             LoadProfileControl(profile);
             CanUserViewFinancials = SetViewFinancials(profile["active"]);
+
         }
 
 

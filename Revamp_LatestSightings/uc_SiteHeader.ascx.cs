@@ -15,5 +15,12 @@ namespace Revamp_LatestSightings
         {
 
         }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Session["userid"] = null;
+            Response.Redirect("/");
+        }
     }
 }

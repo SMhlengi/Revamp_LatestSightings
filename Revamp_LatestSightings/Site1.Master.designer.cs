@@ -22,6 +22,15 @@ namespace Revamp_LatestSightings {
         protected global::Revamp_LatestSightings.uc_StyleSheets allstyleSheets;
         
         /// <summary>
+        /// lsform control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm lsform;
+        
+        /// <summary>
         /// headerPlaceHonder control.
         /// </summary>
         /// <remarks>

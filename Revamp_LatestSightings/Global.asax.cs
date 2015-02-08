@@ -61,6 +61,11 @@ namespace Revamp_LatestSightings
                 { "addvideo", "true"}
             });
 
+            routes.MapPageRoute("myaccount",
+            "myaccount",
+            "~/dashboard.aspx", true,
+            new RouteValueDictionary { });
+
             routes.Ignore("Language/assets/{*pathInfo}");
         }
 

@@ -1,5 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_SiteHeader.ascx.cs" Inherits="Revamp_LatestSightings.uc_SiteHeader" %>
 
+    <script>
+        function LogoutFromLatestSightings() {
+            $.cookie('lsrm', null, { path: '/' });
+            $.cookie('lsusername', null, { path: '/' });
+            $.cookie('lspassword', null, { path: '/' });
+            console.log("AM DONE LOGGING OUT");
+        }
+    </script>
 	<!-- Header Section -->
 		<!-- Header Section -->
 		<header>
@@ -16,11 +24,11 @@
                             </div>
                             
                             <div class="profilelinks">
-                                <a href="#" class="tmq_closeserv viewFinancials">View Financials</a> <!--| -->
-                                <a href="#" class="tmq_closeserv uploadVideo">Upload Video</a>  <!--|-->
-                                <a href="#" class="tmq_closeserv myAccount">My Account</a> <!--|-->
+                                <a href="javascript:void(0);" class="tmq_closeserv viewFinancials">View Financials | </a> <!--| -->
+                                <a href="#" class="tmq_closeserv uploadVideo">Upload Video |</a>  <!--|-->
+                                <a href="#" class="tmq_closeserv myAccount">My Account |</a> <!--|-->
                                 <a href="#" class="tmq_closeserv Login">Login</a>
-                                <a href="#" class="tmq_closeserv Logout">Logout</a>
+                                <asp:LinkButton ID="logout" runat="server" class="tmq_closeserv Logout" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton>
                                 <a href="#"><div class="livedrive"><i class="fa fa-video-camera" style="padding-right:10px;"></i>Live drive in 01:54:36</div></a>
                             </div>
                         
@@ -66,3 +74,17 @@
 		</header>
 		<!-- End Header -->
     <!-- END Header Section -->
+    <script>
+
+        var hasUserNameBeenSet = "<%=username %>";
+        if (hasUserNameBeenSet != "") {
+            $(".viewFinancials").show();
+            $(".viewFinancials").attr("href", "http://lscms.socialengine.co.za/login");
+            $(".Login").hide();
+            $(".Logout").show();
+            $(".uploadVideo").show();
+            $(".uploadVideo").attr("href", "addvideo");
+            $(".myAccount").show();
+            $(".myAccount").attr("href", "myaccount");
+        }
+    </script>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Revamp_LatestSightings.dashboard" %>
+<%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="dashboard" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,7 +18,7 @@
             $(".registerSpinner").show();
         }
     </script>
-    <form id="mainform" runat="server">
+<%--    <form id="mainform" runat="server">--%>
                 <div class="mainpanel">
                     <div class="pageheader">
                         <div class="media">
@@ -29,11 +30,11 @@
                                     <li><a href=""><i class=""></i></a></li>
                                 </ul>
                                  <h4>Dashboard 
-                                    <% if (CanUserViewFinancials == true){ %>
+<%--                                    <% if (CanUserViewFinancials == true){ %>
                                     <span class="label label-warning viewfinancials" style="font-size: 12px; cursor:pointer">
                                         View Financials
                                     </span>
-                                    <%} %>
+                                    <%} %>--%>
                                 </h4> 
                             </div>
                         </div><!-- media -->
@@ -134,7 +135,7 @@
                     <!-- end of terms and conditions modal -->
                     
                 </div>
-    </form>
+<%--    </form>--%>
     <script>
         var profileComplete = "<%= profileComplete %>";
         if (profileComplete == "False") {
@@ -144,12 +145,18 @@
             $("#videoListTab").parent().attr("class", "disabled");
         }
 
-        $(".viewfinancials").click(function () {
-            location.href = "http://lscms.socialengine.co.za/login";
-        });
+        var viewFinance = "<%=CanUserViewFinancials %>";
+        if (viewFinance == "True") {
+            $(".viewFinancials").show();
+            $(".viewFinancials").attr("href","http://lscms.socialengine.co.za/login");
+        }
 
         $(".Login").hide();
         $(".Logout").show();
+        $(".uploadVideo").show(); 
+        $(".uploadVideo").attr("href", "addvideo");
+        $(".myAccount").show();
+        $(".myAccount").attr("href", "myaccount");
     </script>
 
 

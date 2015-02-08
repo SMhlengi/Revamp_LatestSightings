@@ -274,7 +274,7 @@ header.active nav#main-menu {
 .collapse.in, 
 .collapsing {
 	display: inline-block;
-	position: absolute;
+	/*position: absolute;*/
 	top: 0;
 	right: 70px;
 }

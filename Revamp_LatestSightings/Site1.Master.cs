@@ -9,8 +9,6 @@ namespace Revamp_LatestSightings
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        public string username { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             uc_SiteHeader siteHeader = (uc_SiteHeader)LoadControl("~/uc_SiteHeader.ascx");

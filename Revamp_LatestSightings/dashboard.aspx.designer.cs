@@ -13,15 +13,6 @@ namespace Revamp_LatestSightings {
     public partial class dashboard {
         
         /// <summary>
-        /// mainform control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm mainform;
-        
-        /// <summary>
         /// content control.
         /// </summary>
         /// <remarks>
@@ -65,5 +56,17 @@ namespace Revamp_LatestSightings {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder termsandCs;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Revamp_LatestSightings.Site1 Master {
+            get {
+                return ((Revamp_LatestSightings.Site1)(base.Master));
+            }
+        }
     }
 }

@@ -345,10 +345,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <form id="VideoDownload" runat="server">
+                            <%--<form id="VideoDownload" runat="server">--%>
                                 <asp:Button CssClass="btn btn-info" ID="downloadVideo2" OnClick="downloadVideo_Click" runat="server" Text="Download Video" />
                                 <asp:HiddenField ID="Hiddenfilename" runat="server" />
-                            </form>
+                            <%--</form>--%>
                         </div>
                     </div>
                 </div>
