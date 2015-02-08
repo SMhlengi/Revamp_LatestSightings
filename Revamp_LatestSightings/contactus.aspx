@@ -2,13 +2,6 @@
 
 <asp:Content ID="contactus" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    		<!-- Main Container Section -->		
-		<div class="container">
-			<div id="page-content">
-
-				<!-- Page Content Area -->
-				<div id="content-inner">
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="main-title triggerAnimation animated" data-animate="fadeIn">contact us</h1>
@@ -54,12 +47,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- End Content Area -->
-				
-			</div>
-		</div>
-		<!-- End Container -->
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
 

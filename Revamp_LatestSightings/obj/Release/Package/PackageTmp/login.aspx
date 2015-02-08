@@ -89,7 +89,7 @@
                     
                         </div><!-- panel-body -->
                         <div class="panel-footer">
-                            <a href="/register.aspx" class="btn btn-primary btn-block">Not yet a Member? Create Account Now</a>
+                            <a href="/register" class="btn btn-primary btn-block">Not yet a Member? Create Account Now</a>
                         </div><!-- panel-footer -->
                     </div>
                 </div>

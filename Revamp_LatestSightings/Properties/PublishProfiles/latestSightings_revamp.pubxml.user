@@ -12,8 +12,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="aboutus.aspx">
       <publishTime>01/27/2015 20:04:17</publishTime>
     </File>
+    <File Include="addVideo.ascx">
+      <publishTime>02/07/2015 07:59:02</publishTime>
+    </File>
+    <File Include="AjaxOperation.aspx">
+      <publishTime>02/05/2015 21:21:19</publishTime>
+    </File>
+    <File Include="bin/CuteWebUI.AjaxUploader.dll">
+      <publishTime>10/09/2014 03:45:02</publishTime>
+    </File>
     <File Include="bin/Revamp_LatestSightings.dll">
-      <publishTime>01/29/2015 20:03:02</publishTime>
+      <publishTime>02/08/2015 14:51:17</publishTime>
+    </File>
+    <File Include="completeProfile.ascx">
+      <publishTime>02/08/2015 09:54:19</publishTime>
     </File>
     <File Include="contactus.aspx">
       <publishTime>01/25/2015 19:41:08</publishTime>
@@ -57,6 +69,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="css/hover-min.css">
       <publishTime>01/25/2015 19:53:21</publishTime>
     </File>
+    <File Include="css/jplayer.blue.monday.css">
+      <publishTime>02/03/2015 21:07:09</publishTime>
+    </File>
+    <File Include="css/jquery.dataTables.min.css">
+      <publishTime>02/01/2015 16:20:42</publishTime>
+    </File>
     <File Include="css/jquery.multilevelpushmenu.css">
       <publishTime>01/25/2015 19:53:21</publishTime>
     </File>
@@ -73,7 +91,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2015 19:53:21</publishTime>
     </File>
     <File Include="css/responsive.css">
-      <publishTime>01/25/2015 19:53:21</publishTime>
+      <publishTime>02/07/2015 16:43:17</publishTime>
     </File>
     <File Include="css/style-blue.css">
       <publishTime>01/25/2015 19:53:21</publishTime>
@@ -88,10 +106,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2015 19:53:21</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>01/29/2015 19:58:11</publishTime>
+      <publishTime>02/08/2015 13:27:17</publishTime>
+    </File>
+    <File Include="css/style.datatables.css">
+      <publishTime>02/01/2015 16:20:42</publishTime>
+    </File>
+    <File Include="dashboard.aspx">
+      <publishTime>02/08/2015 11:32:09</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>01/25/2015 19:09:13</publishTime>
+      <publishTime>02/07/2015 16:30:42</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.eot">
       <publishTime>01/25/2015 14:24:46</publishTime>
@@ -120,6 +144,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="fonts/glyphicons-halflings-regular.woff">
       <publishTime>01/27/2015 19:57:33</publishTime>
     </File>
+    <File Include="forgottenPassword.aspx">
+      <publishTime>02/07/2015 15:42:46</publishTime>
+    </File>
     <File Include="galleries.aspx">
       <publishTime>01/25/2015 20:14:30</publishTime>
     </File>
@@ -131,6 +158,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Global.asax">
       <publishTime>01/27/2015 02:29:00</publishTime>
+    </File>
+    <File Include="holidays.aspx">
+      <publishTime>02/08/2015 13:51:27</publishTime>
     </File>
     <File Include="images/about-650x650.gif">
       <publishTime>01/25/2015 19:55:44</publishTime>
@@ -207,6 +237,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="images/masonry-600x600 - Copy.gif">
       <publishTime>01/25/2015 19:55:44</publishTime>
     </File>
+    <File Include="images/placestostay.jpg">
+      <publishTime>02/08/2015 13:52:55</publishTime>
+    </File>
     <File Include="images/postslider-879x487.gif">
       <publishTime>01/25/2015 19:55:44</publishTime>
     </File>
@@ -246,6 +279,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/classie.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
+    <File Include="js/completeProfile.js">
+      <publishTime>02/05/2015 20:26:46</publishTime>
+    </File>
     <File Include="js/galleryviewmodal.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
@@ -255,17 +291,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/isotope.pkgd.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
+    <File Include="js/Jplayer.swf">
+      <publishTime>02/03/2015 21:10:21</publishTime>
+    </File>
     <File Include="js/jquery-1.11.1.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
     <File Include="js/jquery-ui.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
+    <File Include="js/jquery.cookies.js">
+      <publishTime>02/05/2015 20:26:46</publishTime>
+    </File>
+    <File Include="js/jquery.dataTables.min.js">
+      <publishTime>02/01/2015 16:14:06</publishTime>
+    </File>
     <File Include="js/jquery.fitvids.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
     <File Include="js/jquery.isotope.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
+    </File>
+    <File Include="js/jquery.jplayer.min.js">
+      <publishTime>02/03/2015 21:09:54</publishTime>
     </File>
     <File Include="js/jquery.magnific-popup.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
@@ -274,7 +322,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
     <File Include="js/mlpushmenu.js">
-      <publishTime>01/25/2015 19:54:13</publishTime>
+      <publishTime>02/05/2015 20:48:23</publishTime>
     </File>
     <File Include="js/modernizr.custom.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
@@ -306,20 +354,35 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/scripts.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
+    <File Include="js/validateVideoDetails.js">
+      <publishTime>02/05/2015 20:26:46</publishTime>
+    </File>
+    <File Include="js/validationLib.js">
+      <publishTime>02/08/2015 13:31:34</publishTime>
+    </File>
     <File Include="js/waypoints.min.js">
       <publishTime>01/25/2015 19:54:13</publishTime>
     </File>
     <File Include="login.aspx">
-      <publishTime>01/27/2015 22:04:39</publishTime>
+      <publishTime>02/05/2015 21:08:44</publishTime>
+    </File>
+    <File Include="partnership.aspx">
+      <publishTime>02/08/2015 14:00:13</publishTime>
     </File>
     <File Include="register.aspx">
-      <publishTime>01/29/2015 19:59:23</publishTime>
+      <publishTime>02/07/2015 15:38:54</publishTime>
+    </File>
+    <File Include="resetpassword.aspx">
+      <publishTime>02/07/2015 15:48:00</publishTime>
     </File>
     <File Include="sightings.aspx">
       <publishTime>01/25/2015 19:47:04</publishTime>
     </File>
     <File Include="Site1.Master">
-      <publishTime>01/25/2015 19:08:13</publishTime>
+      <publishTime>02/08/2015 11:34:43</publishTime>
+    </File>
+    <File Include="termsAndConditions.ascx">
+      <publishTime>02/06/2015 20:06:23</publishTime>
     </File>
     <File Include="uc_Footer.ascx">
       <publishTime>01/25/2015 16:31:12</publishTime>
@@ -328,19 +391,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2015 16:18:13</publishTime>
     </File>
     <File Include="uc_JavaScripts.ascx">
-      <publishTime>01/25/2015 18:20:54</publishTime>
+      <publishTime>02/05/2015 20:56:59</publishTime>
     </File>
     <File Include="uc_SiteHeader.ascx">
-      <publishTime>01/27/2015 02:56:07</publishTime>
+      <publishTime>02/08/2015 14:01:35</publishTime>
     </File>
     <File Include="uc_SiteMap.ascx">
       <publishTime>01/25/2015 16:23:43</publishTime>
     </File>
     <File Include="uc_StyleSheets.ascx">
-      <publishTime>01/29/2015 20:03:35</publishTime>
+      <publishTime>02/01/2015 16:17:09</publishTime>
+    </File>
+    <File Include="videoList.ascx">
+      <publishTime>02/01/2015 16:35:15</publishTime>
+    </File>
+    <File Include="videopreview.aspx">
+      <publishTime>02/08/2015 11:32:09</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/27/2015 03:00:14</publishTime>
+      <publishTime>02/08/2015 14:51:17</publishTime>
     </File>
   </ItemGroup>
 </Project>
