@@ -100,6 +100,7 @@
     <Content Include="galleryfilter.aspx" />
     <Content Include="galleryview.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="holidays.aspx" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\app.gif" />
@@ -125,6 +126,7 @@
     <Content Include="images\masonry-600x1200.gif" />
     <Content Include="images\masonry-600x300.gif" />
     <Content Include="images\masonry-600x600 - Copy.gif" />
+    <Content Include="images\placestostay.jpg" />
     <Content Include="images\postslider-879x487.gif" />
     <Content Include="images\postslidert-80x80.gif" />
     <Content Include="images\recent-60x60.gif" />
@@ -167,6 +169,7 @@
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="login.aspx" />
+    <Content Include="partnership.aspx" />
     <Content Include="register.aspx" />
     <Content Include="resetpassword.aspx" />
     <Content Include="sightings.aspx" />
@@ -265,12 +268,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="holidays.aspx.cs">
+      <DependentUpon>holidays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="holidays.aspx.designer.cs">
+      <DependentUpon>holidays.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="partnership.aspx.cs">
+      <DependentUpon>partnership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="partnership.aspx.designer.cs">
+      <DependentUpon>partnership.aspx</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

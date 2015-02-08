@@ -66,6 +66,16 @@ namespace Revamp_LatestSightings
             "~/dashboard.aspx", true,
             new RouteValueDictionary { });
 
+            routes.MapPageRoute("holidays",
+            "holidays",
+            "~/holidays.aspx", true,
+            new RouteValueDictionary { });
+
+            routes.MapPageRoute("partnership",
+            "partnership",
+            "~/partnership.aspx", true,
+            new RouteValueDictionary { });
+
             routes.Ignore("Language/assets/{*pathInfo}");
         }
 

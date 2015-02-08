@@ -56,13 +56,13 @@
 					<nav id="main-menu">
 						<div class="menu-container">
 							<ul>
-								<li class="menu-item"><a href="#">Home</a></li>
-                                <li class="menu-item"><a href="#">About Us</a></li>
-                                <li class="menu-item"><a href="#">Sightings</a></li>
-                                <li class="menu-item"><a href="#">Galleries</a></li>
-                                <li class="menu-item"><a href="#">Holidays</a></li>
-                                <li class="menu-item"><a href="#">Partnership</a></li>
-                                <li class="menu-item"><a href="#">Contact Us</a></li>
+								<li class="menu-item"><a href="/">Home</a></li>
+                                <li class="menu-item"><a href="/about-us">About Us</a></li>
+                                <li class="menu-item"><a href="/sightings">Sightings</a></li>
+                                <li class="menu-item"><a href="/gallery">Galleries</a></li>
+                                <li class="menu-item"><a href="/holidays">Holidays</a></li>
+                                <li class="menu-item"><a href="/partnership">Partnership</a></li>
+                                <li class="menu-item"><a href="/contact-us">Contact Us</a></li>
 							</ul>
 						</div>
 					</nav>
