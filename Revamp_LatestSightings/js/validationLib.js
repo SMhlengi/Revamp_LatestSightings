@@ -326,7 +326,7 @@
                 if (data.d == true) {
                     $(".registerSpinner").hide();
                     $(".succesfullyUpdateEmail").show();
-                    setTimeout(function () { location.href = "/"; }, 5500);
+                    setTimeout(function () { location.href = "/login"; }, 5500);
                 } else {
                     $(".registerSpinner").hide();
                     $(".errorWithEmailUpdate").show();

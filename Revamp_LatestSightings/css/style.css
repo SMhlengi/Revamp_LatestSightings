@@ -3852,6 +3852,14 @@ input , select {
     display: none;
 }
 
+.nav-tabs.nav-justified>li>a:hover {
+    background-color:transparent !important;
+}
+
+.nav-tabs > li > a:hover {
+    background-color:transparent !important;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {
