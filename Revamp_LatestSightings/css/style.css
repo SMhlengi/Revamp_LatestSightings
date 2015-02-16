@@ -3537,6 +3537,36 @@ div .othercontant {
     display:none;
 }
 
+div .comments {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .tags {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .area {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .activity {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .animal {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
 div .videoTitle {
     margin-top: -11px;
     margin-bottom: 10px;
@@ -3562,7 +3592,7 @@ div .notes {
 }
 
 
-.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError {
+.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
     display: none;
 }
 
@@ -3634,7 +3664,7 @@ div .notes {
     margin-left: 10px;
 }
 
-.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError {
+.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
     display: none;
 }
 

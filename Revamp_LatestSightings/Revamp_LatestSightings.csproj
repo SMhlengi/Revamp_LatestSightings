@@ -42,6 +42,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\CuteWebUI.AjaxUploader.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetHelpers.UltimateImageResizer">
+      <HintPath>..\..\..\..\Downloads\DotNetHelpers.UltimateImageResizer\DotNetHelpers.UltimateImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutus.aspx" />
+    <Content Include="AddImage.aspx" />
     <Content Include="addVideo.ascx" />
     <Content Include="AjaxOperation.aspx" />
     <Content Include="completeProfile.ascx" />
@@ -172,8 +176,10 @@
     <Content Include="partnership.aspx" />
     <Content Include="register.aspx" />
     <Content Include="resetpassword.aspx" />
+    <Content Include="ResizeImageTest.aspx" />
     <Content Include="sightings.aspx" />
     <Content Include="termsAndConditions.ascx" />
+    <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_Footer.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
     <Content Include="uc_SiteHeader.ascx" />
@@ -192,6 +198,13 @@
     </Compile>
     <Compile Include="aboutus.aspx.designer.cs">
       <DependentUpon>aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddImage.aspx.cs">
+      <DependentUpon>AddImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddImage.aspx.designer.cs">
+      <DependentUpon>AddImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="addVideo.ascx.cs">
       <DependentUpon>addVideo.ascx</DependentUpon>
@@ -275,6 +288,7 @@
     <Compile Include="holidays.aspx.designer.cs">
       <DependentUpon>holidays.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +319,13 @@
     <Compile Include="resetpassword.aspx.designer.cs">
       <DependentUpon>resetpassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ResizeImageTest.aspx.cs">
+      <DependentUpon>ResizeImageTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResizeImageTest.aspx.designer.cs">
+      <DependentUpon>ResizeImageTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sightings.aspx.cs">
       <DependentUpon>sightings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +346,13 @@
     </Compile>
     <Compile Include="termsAndConditions.ascx.designer.cs">
       <DependentUpon>termsAndConditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_AddImage.ascx.cs">
+      <DependentUpon>uc_AddImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_AddImage.ascx.designer.cs">
+      <DependentUpon>uc_AddImage.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_Footer.ascx.cs">
       <DependentUpon>uc_Footer.ascx</DependentUpon>
@@ -399,6 +427,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="UploadedImages\650x650\" />
+    <Folder Include="UploadedImages\80x80\" />
     <Folder Include="Videos\" />
   </ItemGroup>
   <PropertyGroup>

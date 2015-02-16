@@ -49,58 +49,53 @@
                                 
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
-                                    <% if (IsPostBack || ViewAddVideo)
-                                       { %>
-                                        <li id="profilelist" class=""><a href="#profile" id="profileTab" data-toggle="tab"><strong>Profile</strong></a></li>
-                                        <li id="addvideolist" class="active"><a href="#addvideo" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
-                                        <li id="videolistlist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
-                                    <%}else{ %>
-                                        <li id="Li1" class="active"><a href="#profile" id="A1" data-toggle="tab"><strong>Profile</strong></a></li>
-                                        <li id="Li2" class=""><a href="#addvideo" id="a2" data-toggle="tab"><strong>Add Video</strong></a></li>
-                                        <li id="Li3" class=""><a href="#videolist" id="A3" data-toggle="tab"><strong>Video List</strong></a></li>
-                                    <%} %>
+                                        <li id="Profilelist" class=""><a href="#profile" id="profileTab" data-toggle="tab"><strong>Profile</strong></a></li>
+                                        <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
+                                        <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li>
+                                        <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
                                 </ul>
         
                                 <!-- Tab panes -->
                                 <div class="tab-content mb30">
-                                    <div class="tab-pane <%if (IsPostBack == false && ViewAddVideo == false)
-                                                           { %>active <%} %> disabled" id="profile">
+                                    <div class="tab-pane disabled" id="profile">
                                         <asp:PlaceHolder ID="content" runat="server" />  
                                     </div><!-- tab-pane -->
                                   
-                                    <div class="tab-pane  <%if (IsPostBack == true || ViewAddVideo == true)
-                                                            { %>active <%} %> disabled" id="addvideo">
+                                    <div class="tab-pane disabled" id="video">
                                         <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
-                                        <%if (IsPostBack == false){ %>
-                                            <div class="row tncRow">
-                                                <div class="col-md-9">
-                                                    <div class="alert alert-danger">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                                        <strong>Please agree to Terms and Conditions before uploading video</strong> 
+                                          <div class="uploadvideo">
+                                                <div class="row tncRow">
+                                                    <div class="col-md-9">
+                                                        <div class="alert alert-danger">
+                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                            <strong>Please agree to Terms and Conditions before uploading video</strong> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row tncText">
+                                                    <div class="col-md-3">
+                                                          <div class="checkbox">
+                                                            <label>
+                                                              <input type="checkbox" id="chk_terms">I Accept Terms and Conditions
+                                                            </label>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-4 viewterms">
+                                                        <asp:Button CssClass="btn btn-info" ID="downloadTandC" runat="server" Text="Download Terms and Conditions" OnClick="downloadTandC_Click" />
+                                                        <!--<p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->
+                                                    </div>
+                                                </div>
+                                                <div class="row tncRow" style="margin-bottom:1px;">
+                                                    <div class="col-md-9">
+                                                        <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row tncText">
-                                                <div class="col-md-3">
-                                                      <div class="checkbox">
-                                                        <label>
-                                                          <input type="checkbox" id="chk_terms">I Accept Terms and Conditions
-                                                        </label>
-                                                      </div>
-                                                </div>
-                                                <div class="col-md-4 viewterms">
-                                                    <asp:Button CssClass="btn btn-info" ID="downloadTandC" runat="server" Text="Download Terms and Conditions" OnClick="downloadTandC_Click" />
-                                                    <!--<p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->
-                                                </div>
-                                            </div>
-                                            <div class="row tncRow" style="margin-bottom:1px;">
-                                                <div class="col-md-9">
-                                                    <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
-                                                </div>
-                                            </div>
-                                        <%} %>
                                         <asp:PlaceHolder ID="addVideoContent" runat="server" />
                                     </div><!-- tab-pane -->
+                                    <div class="tab-pane disabled" id="image">
+                                        <asp:PlaceHolder ID="plc_addImage" runat="server"></asp:PlaceHolder>
+                                    </div>
                                   
                                     <div class="tab-pane disabled" id="videolist">
                                         <h4 class="nomargin">Video List</h4>
@@ -137,6 +132,27 @@
                 </div>
 <%--    </form>--%>
     <script>
+        if (VideoUpload == true) {
+            $("#Addvideo").addClass("active");
+            $("#video").addClass("active");
+            if (CaptureVideoDetails == true) {
+                $(".uploadvideo").hide();
+                resetGlobalVariables();
+            }
+
+        } else if (ImageUpload == true) {
+            $("#AddImage").addClass("active");
+            $("#image").addClass("active");
+            if (CaptureImageDetails == true) {
+                $(".uploadImage").hide();
+                resetGlobalVariables();
+            }
+        } else {
+            $("#Profilelist").addClass("active");
+            $("#profile").addClass("active");
+        }
+
+
         var profileComplete = "<%= profileComplete %>";
         if (profileComplete == "False") {
             $("#addvideoTab").attr("href", "javascript:void(0);");

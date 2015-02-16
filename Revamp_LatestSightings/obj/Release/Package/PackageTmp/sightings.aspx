@@ -2,12 +2,6 @@
 
 <asp:Content ID="sightings" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-		<!-- Main Container Section -->			
-		<div class="container">
-			<div id="page-content">
-			
-				<!-- Page Content Area -->
-				<div id="content-inner">
                     
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
@@ -467,11 +461,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- End Content Area -->
-				
-			</div>
-		</div>
-		<!-- End Container -->
+
 
 </asp:Content>

@@ -61,6 +61,13 @@ namespace Revamp_LatestSightings
                 { "addvideo", "true"}
             });
 
+            routes.MapPageRoute("add-new-image",
+            "addimage",
+            "~/dashboard.aspx", true,
+            new RouteValueDictionary { 
+                { "addimage", "true"}
+            });
+
             routes.MapPageRoute("myaccount",
             "myaccount",
             "~/dashboard.aspx", true,

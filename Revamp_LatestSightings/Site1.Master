@@ -18,6 +18,31 @@
 
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>""></script>
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
+    <script>
+        var VideoUpload = false;
+        var ImageUpload = false;
+        var CaptureVideoDetails = false;
+        var CaptureImageDetails = false;
+
+        function setVideoUpload(value, AddVideoDetails) {
+            VideoUpload = value;
+            CaptureVideoDetails = AddVideoDetails;
+        }
+
+        function setImageUpload(value, AddImageDetails) {
+            ImageUpload = value;
+            CaptureImageDetails = AddImageDetails;
+        }
+
+        function resetGlobalVariables() {
+            VideoUpload = false;
+            ImageUpload = false;
+            CaptureVideoDetails = false;
+            CaptureImageDetails = false;
+        }
+
+
+    </script>
 
 </head>
 

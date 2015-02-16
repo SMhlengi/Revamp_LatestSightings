@@ -13,25 +13,26 @@ namespace Revamp_LatestSightings
     {
         public bool addVideoDetails = false;
         public string name;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                addVideoDetails = true;
-            }
         }
 
         protected void Uploader1_FileUploaded(object sender, CuteWebUI.UploaderEventArgs args)
         {
-            //string newname = "myfile." + args.FileGuid + args.FileName;
+            SetAddVideoDetails();
             string newname = args.FileName;
             args.CopyTo(ConfigurationManager.AppSettings["savePath"] + newname);
             Session["videofilename"] = null;
             Session["videofilename"] = newname;
+
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "fileUpload", "setVideoUpload(true, true)", true);
         }
 
         protected void justIncaseSecondaryFileuploadButton_Click(object sender, EventArgs e)
         {
+            SetAddVideoDetails();
+
             if (justIncaseSecondaryFileupload.HasFile)
             {
                 try
@@ -48,6 +49,13 @@ namespace Revamp_LatestSightings
                     // log exception
                 }
             }
+
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "fileUpload", "setVideoUpload(true, true)", true);
+        }
+
+        private void SetAddVideoDetails()
+        {
+            addVideoDetails = true;
         }
     }
 }

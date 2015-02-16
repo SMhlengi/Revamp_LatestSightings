@@ -33,13 +33,16 @@ namespace Revamp_LatestSightings
             }
         }
 
-        public bool ViewAddVideo = false;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Page.RouteData.Values["addvideo"] != null && Session["AddVideo"] == null)
                 Session["AddVideo"] = true;
+
+            if (Page.RouteData.Values["addimage"] != null && Session["AddImage"] == null)
+                Session["AddImage"] = true;
+
             if (Session["videoPreviewForUserId"] != null && Session["videoPreviewVideoId"] != null)
             {
                 Response.Redirect("/videopreview.aspx?user=" + Session["videoPreviewForUserId"] + "&video=" + Session["videoPreviewVideoId"]);
@@ -54,8 +57,15 @@ namespace Revamp_LatestSightings
             {
                 if (Convert.ToBoolean(Session["AddVideo"]) == true)
                 {
-                    ViewAddVideo = true;
-                    Session["AddVideo"] = null;
+                    Master.ViewAddVideo = true;
+                    if (IsPostBack)
+                        Session["AddVideo"] = null;
+                }
+                else if (Convert.ToBoolean(Session["AddImage"]) == true)
+                {
+                    Master.ViewAddImage = true;
+                    if (IsPostBack)
+                        Session["AddImage"] = null;
                 }
                 profile = GetUserProfile();
                 if (isProfileComplete(profile))
@@ -83,6 +93,9 @@ namespace Revamp_LatestSightings
             videoList uc_videoList = (videoList)LoadControl("~/videoList.ascx");
             uc_videoList.userId = userId;
             videoListcontent.Controls.Add(uc_videoList);
+
+            uc_AddImage uc_addImage = (uc_AddImage)LoadControl("~/uc_AddImage.ascx");
+            plc_addImage.Controls.Add(uc_addImage);
 
 
             LoadProfileControl(profile);

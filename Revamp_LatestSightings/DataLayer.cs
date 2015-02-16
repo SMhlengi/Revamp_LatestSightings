@@ -17,6 +17,9 @@ namespace Revamp_LatestSightings
         private const string SQL_SELECT_ALL_PERSON_RECORD = "Select * from latestsightings.dbo.people where (id = @id);";
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
+
+        private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment);";
+       
         private const string SQL_SELECT_PERSON_VIDEOS = "Select * from latestsightings.dbo.videos where (contributor = @contributor);";
         private const string SQL_SELECT_PERSON_BASED_ON_ID = "SELECT firstname, lastname FROM latestsightings.dbo.people WHERE (id = @userid);";
         private const string SQL_SELECT_USER_LASTEST_VIDEO = "SELECT TOP (1) * from latestsightings.dbo.videos WHERE (contributor = @contributor) AND (videoStatus = 'Pending') ORDER BY created DESC";
@@ -308,6 +311,43 @@ namespace Revamp_LatestSightings
                 conn.Dispose();
             }
             return recordId;
+        }
+
+        internal static Boolean SaveImageDetails(Image image, SqlConnection conn, SqlCommand query)
+        {
+            ConfigureConnection(conn, query);
+            bool insertStatus = false;
+            try
+            {
+                conn.Open();
+                query.CommandText = SQL_INSERT_IMAGE;
+                query.Parameters.Add("contributor", System.Data.SqlDbType.VarChar).Value = image.contributor;
+                query.Parameters.Add("original", System.Data.SqlDbType.VarChar).Value = image.original;
+                query.Parameters.Add("eightyBYeighty", System.Data.SqlDbType.VarChar).Value = image.eightyBYeighty;
+                query.Parameters.Add("dateAdded", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                query.Parameters.Add("dateModified", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                query.Parameters.Add("sixFiftyBYsixFifty", System.Data.SqlDbType.VarChar).Value = image.sixFiftyBYsixFifty;
+                query.Parameters.Add("animal", System.Data.SqlDbType.VarChar).Value = image.animal;
+                query.Parameters.Add("activity", System.Data.SqlDbType.VarChar).Value = image.activity;
+                query.Parameters.Add("area", System.Data.SqlDbType.VarChar).Value = image.area;
+                query.Parameters.Add("tags", System.Data.SqlDbType.VarChar).Value = image.tags;
+                query.Parameters.Add("display", System.Data.SqlDbType.Bit).Value = 0;
+                query.Parameters.Add("generalComment", System.Data.SqlDbType.VarChar).Value = image.generalComment;
+                query.ExecuteNonQuery();
+                conn.Close();
+                insertStatus = true;
+            }
+            catch (Exception ex)
+            {
+                // ExHandler.RecordError(ex);
+                // must log errro
+                conn.Close();
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return insertStatus;
         }
 
         internal static List<VideoSetting> GetUserVideos(SqlConnection conn, SqlCommand query, SqlDataReader data, List<VideoSetting> userVideos, string userId)

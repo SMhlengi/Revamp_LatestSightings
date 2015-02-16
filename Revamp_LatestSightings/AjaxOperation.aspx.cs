@@ -114,6 +114,21 @@ namespace Revamp_LatestSightings
             return savedStatus;
         }
 
+        [WebMethod]
+        public static bool SaveImageDetails(string animal, string activity, string area, string tags, string comments)
+        {
+            Boolean savedStatus = false;
+            if (HttpContext.Current.Session["userid"] != null && HttpContext.Current.Session["Imagefilename"] != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                SqlCommand query = new SqlCommand();
+                Image imageObj = new Image();
+                imageObj = SetImageObject(animal, activity, area, tags, comments, HttpContext.Current.Session["userid"].ToString(), imageObj, HttpContext.Current.Session["Imagefilename"].ToString());
+                savedStatus = DataLayer.SaveImageDetails(imageObj, conn, query);
+            }
+            return savedStatus;
+        }
+
         private static Video SetVideoObject(string videoTitle, string alias, string keywords, string notes, string userId, Video video)
         {
             video.Id = Guid.NewGuid().ToString();
@@ -130,6 +145,23 @@ namespace Revamp_LatestSightings
             //video.DateUploaded = DateTime.Now;
 
             return video;
+        }
+
+        private static Image SetImageObject(string animal, string activity, string area, string tags, string comments, string userId, Image image, string filename)
+        {
+            //video.Id = Guid.NewGuid().ToString();
+            image.contributor = userId;
+            image.animal = animal;
+            image.activity = activity;
+            image.area = area;
+            image.tags = tags;
+            image.generalComment = comments;
+            image.original = filename;
+            image.eightyBYeighty = filename;
+            image.sixFiftyBYsixFifty = filename;
+            image.dateAdded = DateTime.Now;
+            image.dateModified = DateTime.Now;
+            return image ;
         }
 
 
