@@ -26,6 +26,7 @@
                             <div class="profilelinks">
                                 <a href="javascript:void(0);" class="tmq_closeserv viewFinancials">View Financials | </a> <!--| -->
                                 <a href="#" class="tmq_closeserv uploadVideo">Upload Video |</a>  <!--|-->
+                                <a href="#" class="tmq_closeserv uploadGalleryImage">Upload Image |</a> <!--|-->
                                 <a href="#" class="tmq_closeserv myAccount">My Account |</a> <!--|-->
                                 <a href="#" class="tmq_closeserv Login">Login</a>
                                 <asp:LinkButton ID="logout" runat="server" class="tmq_closeserv Logout" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton>

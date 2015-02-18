@@ -57,16 +57,12 @@ namespace Revamp_LatestSightings
             routes.MapPageRoute("add-new-video",
             "addvideo",
             "~/dashboard.aspx", true,
-            new RouteValueDictionary { 
-                { "addvideo", "true"}
-            });
+            new RouteValueDictionary { });
 
             routes.MapPageRoute("add-new-image",
-            "addimage",
+            "addImage",
             "~/dashboard.aspx", true,
-            new RouteValueDictionary { 
-                { "addimage", "true"}
-            });
+            new RouteValueDictionary { });
 
             routes.MapPageRoute("myaccount",
             "myaccount",

@@ -36,13 +36,6 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Page.RouteData.Values["addvideo"] != null && Session["AddVideo"] == null)
-                Session["AddVideo"] = true;
-
-            if (Page.RouteData.Values["addimage"] != null && Session["AddImage"] == null)
-                Session["AddImage"] = true;
-
             if (Session["videoPreviewForUserId"] != null && Session["videoPreviewVideoId"] != null)
             {
                 Response.Redirect("/videopreview.aspx?user=" + Session["videoPreviewForUserId"] + "&video=" + Session["videoPreviewVideoId"]);
@@ -55,18 +48,6 @@ namespace Revamp_LatestSightings
 
             if (userId != null)
             {
-                if (Convert.ToBoolean(Session["AddVideo"]) == true)
-                {
-                    Master.ViewAddVideo = true;
-                    if (IsPostBack)
-                        Session["AddVideo"] = null;
-                }
-                else if (Convert.ToBoolean(Session["AddImage"]) == true)
-                {
-                    Master.ViewAddImage = true;
-                    if (IsPostBack)
-                        Session["AddImage"] = null;
-                }
                 profile = GetUserProfile();
                 if (isProfileComplete(profile))
                     profileComplete = true;

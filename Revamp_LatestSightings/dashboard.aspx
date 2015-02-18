@@ -132,7 +132,7 @@
                 </div>
 <%--    </form>--%>
     <script>
-        if (VideoUpload == true) {
+        if (VideoUpload == true || location.href.toLowerCase().indexOf("addvideo") > 0) {
             $("#Addvideo").addClass("active");
             $("#video").addClass("active");
             if (CaptureVideoDetails == true) {
@@ -140,7 +140,7 @@
                 resetGlobalVariables();
             }
 
-        } else if (ImageUpload == true) {
+        } else if (ImageUpload == true || location.href.toLowerCase().indexOf("addimage") > 0) {
             $("#AddImage").addClass("active");
             $("#image").addClass("active");
             if (CaptureImageDetails == true) {
@@ -171,8 +171,10 @@
         $(".Logout").show();
         $(".uploadVideo").show(); 
         $(".uploadVideo").attr("href", "addvideo");
-        $(".myAccount").show();
+        $(".myAccount").show();        
         $(".myAccount").attr("href", "myaccount");
+        $(".uploadGalleryImage").show();
+        $(".uploadGalleryImage").attr("href", "addImage");
     </script>
 
 

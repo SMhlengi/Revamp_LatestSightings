@@ -3878,7 +3878,7 @@ input , select {
     width: 100%;
 }
 
-.viewFinancials, .uploadVideo, .myAccount, .Logout{
+.viewFinancials, .uploadVideo, .myAccount, .uploadGalleryImage, .Logout{
     display: none;
 }
 
