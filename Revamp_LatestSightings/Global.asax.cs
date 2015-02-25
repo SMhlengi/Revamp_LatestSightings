@@ -79,6 +79,11 @@ namespace Revamp_LatestSightings
             "~/partnership.aspx", true,
             new RouteValueDictionary { });
 
+            routes.MapPageRoute("financials",
+               "financials",
+               "~/userfinancials.aspx", true,
+                new RouteValueDictionary { });
+
             routes.Ignore("Language/assets/{*pathInfo}");
         }
 

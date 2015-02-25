@@ -45,6 +45,9 @@
     <Reference Include="DotNetHelpers.UltimateImageResizer">
       <HintPath>..\..\..\..\Downloads\DotNetHelpers.UltimateImageResizer\DotNetHelpers.UltimateImageResizer.dll</HintPath>
     </Reference>
+    <Reference Include="LatestSightingsLibrary">
+      <HintPath>lib\LatestSightingsLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -185,8 +188,12 @@
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
+    <Content Include="UserFinancials.aspx" />
+    <Content Include="UserGraphs.aspx" />
+    <Content Include="VideoItemData.aspx" />
     <Content Include="videoList.ascx" />
     <Content Include="videopreview.aspx" />
+    <Content Include="VideosData.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -389,8 +396,29 @@
     <Compile Include="uc_StyleSheets.ascx.designer.cs">
       <DependentUpon>uc_StyleSheets.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserFinancials.aspx.cs">
+      <DependentUpon>UserFinancials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFinancials.aspx.designer.cs">
+      <DependentUpon>UserFinancials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserGraphs.aspx.cs">
+      <DependentUpon>UserGraphs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserGraphs.aspx.designer.cs">
+      <DependentUpon>UserGraphs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="utils.cs" />
     <Compile Include="Video.cs" />
+    <Compile Include="VideoItemData.aspx.cs">
+      <DependentUpon>VideoItemData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoItemData.aspx.designer.cs">
+      <DependentUpon>VideoItemData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="videoList.ascx.cs">
       <DependentUpon>videoList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -404,6 +432,13 @@
     </Compile>
     <Compile Include="videopreview.aspx.designer.cs">
       <DependentUpon>videopreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideosData.aspx.cs">
+      <DependentUpon>VideosData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideosData.aspx.designer.cs">
+      <DependentUpon>VideosData.aspx</DependentUpon>
     </Compile>
     <Compile Include="VideoSetting.cs" />
   </ItemGroup>
