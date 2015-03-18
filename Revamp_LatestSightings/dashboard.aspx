@@ -164,7 +164,7 @@
         var viewFinance = "<%=CanUserViewFinancials %>";
         if (viewFinance == "True") {
             $(".viewFinancials").show();
-            $(".viewFinancials").attr("href","http://lscms.socialengine.co.za/login");
+            $(".viewFinancials").attr("href","/financials");
         }
 
         $(".Login").hide();

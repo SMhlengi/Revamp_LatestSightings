@@ -81,7 +81,7 @@
         var hasUserNameBeenSet = "<%=username %>";
         if (hasUserNameBeenSet != "") {
             $(".viewFinancials").show();
-            $(".viewFinancials").attr("href", "http://lscms.socialengine.co.za/login");
+            $(".viewFinancials").attr("href", "/financials");
             $(".Login").hide();
             $(".Logout").show();
             $(".uploadVideo").show();
