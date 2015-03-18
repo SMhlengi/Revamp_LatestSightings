@@ -46,7 +46,7 @@ namespace Revamp_LatestSightings
                         resizer.RotateIfNeeded();
 
                         // Save it to disk as a large JPG, in its own special directory
-                        resizer.Mode = ResizeMode.KeepOriginalRatio;
+                        resizer.Mode = ResizeMode.KeepOriginalRatioByCropping;
                         resizer.Resize(650, 650);
                         resizer.SaveToDisk(OutputImageFormat.Jpeg, ConfigurationManager.AppSettings["650by650"] + filename);
 

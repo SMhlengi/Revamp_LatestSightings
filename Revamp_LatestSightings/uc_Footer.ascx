@@ -8,7 +8,7 @@
 				<div class="footer-copyright">
                 	<p class="text-muted" style="text-align:center">
 					© 2015 Latest Sightings |
-                    <a href="#"> Terms & Conditions </a> | <a href="#"> Privacy Policy </a>
+                    <a href="/terms"> Terms & Conditions </a> | <a href="/privacypolicy"> Privacy Policy </a>
                     </p>
                 </div>
                 <div class="socialengine">

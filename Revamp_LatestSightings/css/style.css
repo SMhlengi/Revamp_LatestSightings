@@ -1553,8 +1553,8 @@ ul.iconned-list li i {
 }
 
 .portfolio-featured-image img {
-	width: 100%;
-	height: auto;
+	/*width: 100%;
+	height: auto; */
 }
 
 
@@ -3567,6 +3567,12 @@ div .animal {
     display:none;
 }
 
+div .title {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
 div .videoTitle {
     margin-top: -11px;
     margin-bottom: 10px;
@@ -3592,7 +3598,7 @@ div .notes {
 }
 
 
-.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
+.registerSpinner, .panelWithWhiteBackgroundBorder, .newslettersubscribing, .successfullySubscribeToNewsletter, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
     display: none;
 }
 
@@ -3611,6 +3617,12 @@ div .notes {
 .transparentBackground {
     background-color: transparent !important;
     border-color: transparent !important;
+}
+
+.panelWithWhiteBackgroundBorder {
+    background-color: transparent !important;
+    border-color: white;
+    margin-top:18px;
 }
 
 .successfullyRegistered, .invalidCredentials, .successfullyLoggedIn , .successfullySentMail, .successfullyNotSentMail, .ConfirmPassword, .passwordsDoNotMatch, .confirmPassword, .succesfullyUpdateEmail, .errorWithEmailUpdate {
@@ -3890,6 +3902,91 @@ input , select {
     background-color:transparent !important;
 }
 
+.gallerySearchResults, .VideoGallerySearchResults {
+    display: none;
+}
+
+.gallerySearchResults1, .gallerySearchResults2, .gallerySearchResults3, .gallerySearchResults4, .gallerySearchResults5, .gallerySearchResults6, .gallerySearchResults7, .gallerySearchResults8, .gallerySearchResults9, .gallerySearchResults10,
+.gallerySearchResults11, .gallerySearchResults12, .gallerySearchResults13, .gallerySearchResults14, .gallerySearchResults15, .gallerySearchResults16, .gallerySearchResults17, .gallerySearchResults18, .gallerySearchResults19, .gallerySearchResults20,
+.gallerySearchResults21, .gallerySearchResults22, .gallerySearchResults23, .gallerySearchResults24, #over_lay, .popup_ex {
+    display:none;
+}
+
+
+.VideoGallerySearchResults1, .VideoGallerySearchResults2, .VideoGallerySearchResults3, .VideoGallerySearchResults4, .VideoGallerySearchResults5, .VideoGallerySearchResults6, .VideoGallerySearchResults7, .VideoGallerySearchResults8, .VideoGallerySearchResults9, .VideoGallerySearchResults10,
+.VideoGallerySearchResults11, .VideoGallerySearchResults12, .VideoGallerySearchResults13, .VideoGallerySearchResults14, .VideoGallerySearchResults15, .VideoGallerySearchResults16, .VideoGallerySearchResults17, .VideoGallerySearchResults18, .VideoGallerySearchResults19, .VideoGallerySearchResults20,
+.VideoGallerySearchResults21, .VideoGallerySearchResults22, .VideoGallerySearchResults23, .VideoGallerySearchResults24 {
+    display:none;
+}
+
+.imageDialog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-header {
+    color: black !important;
+}
+
+.media-selection {
+    background-color: #f90 !important;
+    margin-bottom:14px;
+}
+
+#videoSearch {
+    display: none;
+}
+
+.sixtyBySixty {
+    width: 60px;
+    height: 60px;
+}
+
+.EightFiftyFiveBy474 {
+    width: 855px;
+    height:474px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.spotLightImage {
+    width: 777px;
+    height: 437px;
+}
+
+.latestGalleriesJustPics, .latestGalleriesJustVideos, .emailfooter {
+    display: none;
+}
+
+.emailfooter {
+    margin-bottom: -10px;
+}
+
+.clearLeft {
+    clear:left;
+}
+
+.newsletterForm {
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+}
+
+.newsletterFormSingup {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backgroundColorWhite {
+    background-color: white !important;
+}
+
+.newslettersubscribing, .successfullySubscribeToNewsletter {
+    margin-top:5px;
+}
 /*
     
 @media screen and (max-width: 1024px) {

@@ -13,7 +13,11 @@ namespace Revamp_LatestSightings
 
         protected void RegisterRoutes(RouteCollection routes)
         {
-            // 
+            routes.MapPageRoute("bloglist-category",
+                "categorybloglist/",
+                "~/categoryBlogList.aspx", true,
+            new RouteValueDictionary { });
+
             routes.MapPageRoute("AboutUs",
                "about-us",
                "~/aboutus.aspx", true,
@@ -77,6 +81,26 @@ namespace Revamp_LatestSightings
             routes.MapPageRoute("partnership",
             "partnership",
             "~/partnership.aspx", true,
+            new RouteValueDictionary { });
+
+            routes.MapPageRoute("bloglist",
+            "bloglist",
+            "~/bloglist.aspx", true,
+            new RouteValueDictionary { });
+
+            routes.MapPageRoute("terms-and-conditions",
+            "terms",
+            "~/terms.aspx", true,
+            new RouteValueDictionary { });
+
+            routes.MapPageRoute("privacy-policy",
+            "privacypolicy",
+            "~/privacypolicy.aspx", true,
+            new RouteValueDictionary { });
+
+            routes.MapPageRoute("financials",
+            "financials",
+            "~/userfinancials.aspx", true,
             new RouteValueDictionary { });
 
             routes.Ignore("Language/assets/{*pathInfo}");

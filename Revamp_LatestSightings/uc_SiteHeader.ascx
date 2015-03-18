@@ -43,7 +43,7 @@
 						<a id="trigger" href="#" title="Menu"><i class="fa fa-bars"></i></a>
 						
 						<!-- Website Logo -->
-						<a class="navbar-brand" href="#"><img alt="" src="images/logo-horizontal-new.png"></a>
+						<a class="navbar-brand" href="/"><img alt="" src="images/logo-horizontal-new.png"></a>
                         
 					</div>
                     
@@ -59,8 +59,9 @@
 							<ul>
 								<li class="menu-item"><a href="/">Home</a></li>
                                 <li class="menu-item"><a href="/about-us">About Us</a></li>
-                                <li class="menu-item"><a href="/sightings">Sightings</a></li>
+                                <!--<li class="menu-item"><a href="/sightings">Sightings</a></li>-->
                                 <li class="menu-item"><a href="/gallery">Galleries</a></li>
+                                 <li class="menu-item"><a href="/bloglist">Blogs</a></li>
                                 <li class="menu-item"><a href="/holidays">Holidays</a></li>
                                 <li class="menu-item"><a href="/partnership">Partnership</a></li>
                                 <li class="menu-item"><a href="/contact-us">Contact Us</a></li>

@@ -7,56 +7,33 @@
                     
 						<div class="col-md-9">
 							<div id="slider" class="slides Xowl-carousel">
-								
-                                <div class="item">
-									<div class="overlay">
-										<a href="blog-single.html">
-											<h3>Latin America's growing middle classes are restless</h3>
-											<p>"Juan Middle Class" may be a cartoon, but the problems he faces -- expensive schools, crummy healthcare, ballooning grocery bills -- are all too real for millions of newly middle-class Latin Americans. [...]</p>
-										</a>
-									</div>
-										<img alt="" src="images/postslider-879x487.gif" />
-								</div>
-                                
-								<div class="item">
-									<div class="overlay">
-										<a href="blog-sidebar.html">
-											<h3>Expert Tips for Winter Hair Care by Bharti Taneja</h3>
-											<p>A wedding in winters is always more cherished as it gives an opportunity to a would-be- bride to adorn herself in her own way. She does not have to worry about the heat and sweat, be it in the choice of clothes, footwear, makeup, or [...]</p>
-										</a>
-									</div>
-									<img alt="" src="images/postslider-879x487.gif" />
-								</div>
-                                
-								<div class="item">
-									<div class="overlay">
-										<a href="blog-sidebar.html">
-											<h3>Serena leads ailing women to Singapore for WTA Finals</h3>
-											<p>By Patrick Johnston SINGAPORE (Reuters) - The top eight women in world tennis have limped to the season-ending WTA Finals in Singapore this week, with creaking knees and form fears casting a shadow over the WTA's latest [...]</p>
-										</a>
-									</div>
-									<img alt="" src="images/postslider-879x487.gif" />
-								</div>
-                                
-								<div class="item">
-									<div class="overlay">
-										<a href="blog-single.html">
-											<h3>Egg freezing: controversial new benefit in the US workplace</h3>
-											<p>Free meals, four months of maternity leave and now egg-freezing: Facebook's latest gift to its employees has rekindled debate on the role of women in the [...]</p>
-										</a>
-									</div>
-									<img alt="" src="images/postslider-879x487.gif" />
-								</div>
-                                
+							
+                            <% if (topFeaturedArticles != null && topFeaturedArticles.Count > 0){ %>
+                                <%foreach (var featuredArticle in  topFeaturedArticles){%>
+								    <div class="item">
+									    <div class="overlay">
+										    <a href="/blog.aspx?id=<%=featuredArticle.Id %>&cat=<%=featuredArticle.CateogryId  %>">
+											    <h3><%=featuredArticle.Title %></h3>
+											    <p><%= featuredArticle.ArticleBody %></p>
+										    </a>
+									    </div>
+									    <img alt="" class="EightFiftyFiveBy474" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=featuredArticle.Url %>" />
+								    </div>
+                                <%} %>
+                            <%} %>
 							</div>
 						</div>
                         
 						<div class="col-md-3">
 							<div id="thumbnails" class="thumbs Xowl-carousel">
-								<div class="item active"><img alt="" src="images/postslidert-80x80.gif" /><span>Latin America's growing middle classes are restless</span></div>
-								<div class="item"><img alt="" src="images/postslidert-80x80.gif" /><span>Expert Tips for Winter Hair Care by Bharti Taneja</span></div>
-								<div class="item"><img alt="" src="images/postslidert-80x80.gif" /><span>Serena leads ailing women to Singapore for WTA Finals</span></div>
-								<div class="item"><img alt="" src="images/postslidert-80x80.gif" /><span>Egg freezing: controversial new benefit in the US workplace</span></div>
+                                <% if (topFeaturedArticles != null && topFeaturedArticles.Count > 0)
+                                   {
+                                       var counter = 0; %>
+                                    <%foreach (var featuredArticle in topFeaturedArticles){ %>
+								            <div class="item <% if (counter == 0){ %> active<%} %>"><img alt="" class="sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=featuredArticle.Url %>" /><span><%=featuredArticle.Title %></span></div>
+                                            <% counter += 1; %>
+                                    <%} %>
+                                <%} %>
 							</div>
 						</div>
                         						
@@ -66,7 +43,7 @@
                     <!-- Billboard END -->
                     
                     <!-- Latest Sightings BEGIN -->
-					<div class="portfolio-related-posts triggerAnimation animated" data-animate="fadeInUp">
+					<div class="portfolio-related-posts triggerAnimation animated displayNone" data-animate="fadeInUp">
 						<h4 class="page-titles">Latest Sightings</h4>
                             
                         <!--<div class="row" style="text-align:center; font-size:12px; font-family:Arial, Helvetica, sans-serif; padding-bottom:20px;">
@@ -150,94 +127,105 @@
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">
-                        
-                            <!-- Spotlight Video BEGIN -->
-                            <h4 class="page-titles">Spotlight Video</h4>
+                           <% if (featuredVideos != null && featuredVideos.Count > 0){ %>
+                                <!-- Spotlight Video BEGIN -->
+                                <h4 class="page-titles">Spotlight Video</h4>
                                 
-                            <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
-                                <div class="blog-list-featured-image">
-                                    <a href="#"><img alt="" src="images/video-16x9.gif"></a>
-                                    <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
-                                </div>
+                                <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
+                                    <div class="blog-list-featured-image">
+                                        <a href="javascript:void(0);"><img class="spotLightImage youtube" src="<%=featuredVideos[0].Url2 %>" rel="<%=featuredVideos[0].YouTubeId %>"></a>
+                                        <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
+                                    </div>
                                             
-                                <div class="blog-list-content">
-                                    <h2 class="blog-list-title"><a href="#">Revenge is a dish best served wet and wild</a></h2>
-                                    <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
-                                    <div class="views">230 views</div>
-                                    <div class="clearfix"></div>
+                                    <div class="blog-list-content">
+                                        <h2 class="blog-list-title"><a href="#"><%= featuredVideos[0].Title %></a></h2>
+                                        <p><%=featuredVideos[0].Description %></p>
+                                        <div class="views">230 views</div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Spotlight Video END -->
+                                <!-- Spotlight Video END -->
+                           <%} %>
                         
                         	<div class="spacer"></div>
                             
-                            <!-- Hot right Now BEGIN -->
-                            <h4 class="page-titles">Hot Right Now</h4>
-                                <div class="blog-grid">
-                                    <div class="row">
-                                        <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                    <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                        <a class="img-link" href="3"><img alt="" src="images/video-16x9.gif"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
-                                                        <div class="blog-grid-controls">
-                                                            <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
-                                                            <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                            <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
-                                                        </div>
-                                                        <div class="blog-grid-content">
-                                                            <h3><a href="blog-sidebar.html">Elpehant vs Hippo</a></h3>
-                                                            <p>948621 views</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                    <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                        <a class="img-link" href="3"><img alt="" src="images/video-16x9.gif"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
-                                                        <div class="blog-grid-controls">
-                                                            <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
-                                                            <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                            <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
-                                                        </div>
-                                                        <div class="blog-grid-content">
-                                                            <h3><a href="blog-sidebar.html">Boomslang vs Crocodile</a></h3>
-                                                            <p>923 views</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                    </div>
-                                        
-                                    <div class="row">
-                                        <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                        <a class="img-link" href="3"><img alt="" src="images/video-16x9.gif"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
-                                                        <div class="blog-grid-controls">
-                                                            <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
-                                                            <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                            <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
-                                                        </div>
-                                                        <div class="blog-grid-content">
-                                                            <h3><a href="blog-sidebar.html">Elpehant vs Hippo</a></h3>
-                                                            <p>948621 views</p>
-                                                        </div>
-                                                    </div>
-                                            </div>
+                            <%if (featuredVideos != null && featuredVideos.Count > 0){ %>
+                                <!-- Hot right Now BEGIN -->
+                                <h4 class="page-titles">Hot Right Now</h4>
+                                    <div class="blog-grid">
+                                        <div class="row">
+                                            <% if (featuredVideos.Count > 1){ %>
                                             <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                        <a class="img-link" href="3"><img alt="" src="images/video-16x9.gif"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
-                                                        <div class="blog-grid-controls">
-                                                            <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
-                                                            <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                            <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                        <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
+                                                            <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[1].Url2 %>" rel="<%=featuredVideos[1].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                            <div class="blog-grid-controls">
+                                                                <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                            </div>
+                                                            <div class="blog-grid-content">
+                                                                <h3><a href="blog-sidebar.html"><%=featuredVideos[1].Title %></a></h3>
+                                                                <p>948621 views</p>
+                                                            </div>
                                                         </div>
-                                                        <div class="blog-grid-content">
-                                                            <h3><a href="blog-sidebar.html">Elpehant vs Hippo</a></h3>
-                                                            <p>948621 views</p>
-                                                        </div>
-                                                    </div>
                                             </div>
-                                    </div>
+                                            <%} %>
+                                            <% if (featuredVideos.Count > 2){ %>
+                                                <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                            <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
+                                                                <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[2].Url2 %>" rel="<%=featuredVideos[2].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                                <div class="blog-grid-controls">
+                                                                    <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                    <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                    <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                                </div>
+                                                                <div class="blog-grid-content">
+                                                                    <h3><a href="blog-sidebar.html"><%=featuredVideos[2].Title %></a></h3>
+                                                                    <p>923 views</p>
+                                                                </div>
+                                                            </div>
+                                                </div>
+                                            <%} %>
+                                        </div>
                                         
-                                </div>
-                            <!-- Hot right Now END -->
+                                        <div class="row">
+                                            <% if (featuredVideos.Count > 3){ %>
+                                                <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                        <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
+                                                                <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[3].Url2 %>" rel="<%=featuredVideos[3].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                                <div class="blog-grid-controls">
+                                                                    <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                    <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                    <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                                </div>
+                                                                <div class="blog-grid-content">
+                                                                    <h3><a href="blog-sidebar.html"><%=featuredVideos[3].Title %></a></h3>
+                                                                    <p>948621 views</p>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            <%} %>
+                                             <% if (featuredVideos.Count > 4){ %>
+                                                <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                    <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
+                                                            <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[4].Url2 %>" rel="<%=featuredVideos[4].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                            <div class="blog-grid-controls">
+                                                                <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                            </div>
+                                                            <div class="blog-grid-content">
+                                                                <h3><a href="blog-sidebar.html"><%=featuredVideos[4].Title %></a></h3>
+                                                                <p>948621 views</p>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            <%} %>
+                                        </div>
+                                        
+                                    </div>
+                                <!-- Hot right Now END -->
+                            <%} %>
                         
                         	<div class="clearfix"></div>
                         	<div class="spacer"></div>
@@ -252,127 +240,7 @@
                         	<div class="spacer"></div>
                             
                             <!-- Latest Galleries BEGIN -->
-                            <h4 class="page-titles">Latest Galleries</h4>
-                            <div class="blog-grid">
-								<ul class="filter triggerAnimation animated" data-animate="fadeInUp">
-                                    <li><a href="#" class="active" data-filter="*"><i class="fa fa-th"></i>Show All</a></li>
-                                    <li><a href="#" data-filter=".pics" ><i class="fa fa-camera"></i>Pics</a></li>
-                                    <li><a href="#" data-filter=".videos" ><i class="fa fa-play"></i>Videos</a></li>
-                                </ul>
-                                
-                                <!-- Gallery -->
-                                <div class="team-members">
-                                    <div class="row">
-                                    
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                       <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="#">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-								</div>
-                                <!-- Gallery -->
-                                
-                            </div>
+                            <asp:PlaceHolder ID="latestGalleries" runat="server"></asp:PlaceHolder>
                             <!-- Latest Galleries END -->  
                             
                        
@@ -384,72 +252,7 @@
 							<div id="sidebar-area">
                             
                             <!-- Top 10 BEGIN -->
-                            <h4 class="page-titles">January Top 10</h4>
-                          	
-                            <ul class="nav nav-pills">
-                              <li role="presentation" class="active"><a href="#">Contributors</a></li>
-                              <li role="presentation"><a href="#">Tingers</a></li>
-                            </ul>
-                            
-                            <div class="table-responsive">
-                              <table class="table table-striped">
-                              	
-							    <tr>
-							      <td>Username</td>
-							      <td>Total Views</td>
-						        </tr>
-							    <tr>
-							      <td>de Koker - de Rocker</td>
-							      <td>315 442</td>
-						        </tr>
-							    <tr>
-							      <td>Ian Twee Drie</td>
-							      <td>306 234</td>
-						        </tr>
-							    <tr>
-							      <td>Allan Smith</td>
-							      <td>301 100</td>
-						        </tr>
-							    <tr>
-							      <td>Jock</td>
-							      <td>290 506</td>
-						        </tr>
-							    <tr>
-							      <td>Lion Whisperer</td>
-							      <td>287 356</td>
-						        </tr>
-							    <tr>
-							      <td>EveOfDaLion</td>
-							      <td>276 987</td>
-						        </tr>
-							    <tr>
-							      <td>DanceWithHyenas</td>
-							      <td>273 003</td>
-						        </tr>
-							    <tr>
-							      <td>iBite</td>
-							      <td>256 145</td>
-						        </tr>
-							    <tr>
-							      <td>Piesana</td>
-							      <td>232 467</td>
-						        </tr>
-							    <tr>
-							      <td>VidsThatPay</td>
-							      <td>182 783</td>
-						        </tr>
-							    <tr>
-							      <td>TMuller</td>
-							      <td>156 287</td>
-						        </tr>
-						        
-                              </table>
-                              
-                              <a href="#" >
-                              	<div class="button" style="text-align:center;">Become a Contributor</div>
-                              </a>
-                              	
-                            </div>
+                                <asp:PlaceHolder ID="monthlyTopContributors" runat="server"></asp:PlaceHolder>
                             <!-- Top 10 END -->
                             
                             <div class="clearfix"></div>
@@ -474,46 +277,7 @@
                         	<div class="spacer"></div>
 
                             <!-- Latest Blogs BEGIN -->
-                            <h4 class="page-titles">Latest Blogs</h4>
-                            
-							<div class="widget widget_recentposts">
-								<div class="media recent-posts">
-									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
-									<div class="media-body">
-										<h4 class="media-heading"><a href="#">The wild and all it has to offer</a></h4>
-									</div>
-								</div>
-                                
-								<div class="media recent-posts">
-									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
-									<div class="media-body">
-										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
-										<!--<aside>Aug 10, 2013</aside>-->
-									</div>
-								</div>
-                                
-								<div class="media recent-posts">
-									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
-									<div class="media-body">
-										<h4 class="media-heading"><a href="#">This is a Beautiful Post in Blog</a></h4>
-										<!--<aside>Aug 10, 2013</aside>-->
-									</div>
-								</div>
-                                
-                                <div class="media recent-posts">
-									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
-									<div class="media-body">
-										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
-										<!--<aside>Aug 10, 2013</aside>-->
-									</div>
-								</div>
-                                
-                                <div class="clearfix"></div>
-                                <div class="spacer small"></div>
-                                 
-                                <div class="button" style="text-align:center;">Read more</div>
-                                <div class="button" style="text-align:center;">Subscribe to Newsletter</div>
-							</div>
+                                <asp:PlaceHolder ID="plc_latestBlogs" runat="server" />                            
                             <!-- Latest Blogs END -->
                             
 								
@@ -522,7 +286,94 @@
 												
 							</div>
 						</div>
+
+                        <!-- Modal Pop-Up BEGIN -->
+                        <div id="popup_container">
+                	        <div id="over_lay"></div>
+                	        <div class="popup_ex">
+                  		
+                                <div id="close_button"><a href="#"><i class="fa fa-times-circle "></i></a></div>
+                        
+                                <!-- Container -->
+                                <div class="lightboxcontainer">
+                        	
+                                    <!-- Photo -->
+                                    <div class="col-md-9 col-sm-12">
+                            
+        <%--                            	<div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
+								        <div class="image-slider">
+									        <div class="image-gallery-item item">
+										        <img alt="" src="images/slideshow-1140x390.gif">
+									        </div>
+									        <div class="image-gallery-item item">
+										        <img alt="" src="images/slideshow-1140x390.gif">
+									        </div>
+									        <div class="image-gallery-item item">
+										        <img alt="" src="images/slideshow-1140x390.gif">
+									        </div>
+									        <div class="image-gallery-item item">
+										        <img alt="" src="images/slideshow-1140x390.gif">
+									        </div>
+								        </div>
+								        </div>--%>
+							            <div class="portfolio-featured-image triggerAnimation animated" style="margin:0 !important">
+								            <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog">
+							            </div>
+                            
+                                    </div>
+                            
+                                    <!-- Photo Details & Social Sharing -->
+                                    <div class="col-md-3 col-sm-12">
+                            
+                            	        <div class="spacer small"></div>
+                                
+                            	        <div class="left"><img src="images/FBandTwitter.jpg" width="202" height="20"></div>
+                                
+                                        <div class="clearfix"></div>
+                                        <div class="spacer"></div>
+                                
+                                        <h4> Battle of the Kruger </h4>
+                                
+                                        <div class="clearfix"></div>
+                                        <div class="spacer small"></div>
+                                
+                                        <p>
+                                        Location: Kruger National Park <br>
+                                        Submitted by: LionWhisperer
+                                        </p>
+                                
+                                        <div class="clearfix"></div>
+                                        <div class="spacer small"></div>
+                                
+                                        <div class="left">
+                                	        <a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                                            <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
+                                            <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                                        </div>
+                                
+                                        <div class="clearfix"></div>
+                                        <div class="spacer small"></div>
+                                
+                                        <!-- Facebook Comments BEGIN -->
+                                        <h4 class="page-titles">Comments</h4>
+                                        <div class="blog-grid">
+                                            <img src="images/FBComments_sml.jpg" width="587" height="682"> 
+                                        </div>
+                                        <!-- Facebook Comments END -->
+                                
+                                  </div>
+                        
+                                </div> 
+                  		        <!-- Container -->
+                  		
+                	        </div>
+              	        </div>
+                        <!-- Modal Pop-Up END3 -->
+
 					</div>
 				<!-- End Content Area -->
+    <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/homePage.js?v=5") %>"></script>
+    <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 
 </asp:Content>

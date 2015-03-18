@@ -18,16 +18,22 @@ namespace Revamp_LatestSightings
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
 
-        private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment);";
+        private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment, title) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment, @title);";
        
         private const string SQL_SELECT_PERSON_VIDEOS = "Select * from latestsightings.dbo.videos where (contributor = @contributor);";
         private const string SQL_SELECT_PERSON_BASED_ON_ID = "SELECT firstname, lastname FROM latestsightings.dbo.people WHERE (id = @userid);";
         private const string SQL_SELECT_USER_LASTEST_VIDEO = "SELECT TOP (1) * from latestsightings.dbo.videos WHERE (contributor = @contributor) AND (videoStatus = 'Pending') ORDER BY created DESC";
-        // new 
+
         private const string SQL_SELECT_USER_VIDEO = "SELECT * from latestsightings.dbo.videos WHERE (contributor = @contributor) AND (id = @videoId);";
         private const string SQL_UPDATE_VIDEO_STATUS = "Update latestsightings.dbo.videos SET videoStatus = @videostatus where (id = @recordid);";
         private const string SQL_SELECT_DECLINE_STATUSES = "Select * from latestsightings.dbo.declineVideoStatuses";
         private const string SQL_INSERT_NEW_DECLINE_VIDEO_REASON = "Insert into latestsightings.dbo.declineVideoStatuses (reason) VALUES (@reason);";
+        private const string SQL_SELECT_GALLERY_FILTERS = "SELECT area, animal, activity from latestsightings.dbo.images";
+        private const string SQL_SELECT_VIDEO_GALLERY_FILTERS = "SELECT a.Title, a.keywords FROM latestsightings.dbo.videos a INNER JOIN latestsightings.dbo.youTubeVideo b ON b.Id = a.YoutubeId WHERE (a.Status = 'Published' AND a.youtubeId <> '')";        
+        private const string SQL_SEARCH = "SELECT sixFiftyBYsixFifty, title from latestsightings.dbo.images WHERE (contributor = @contributor) AND (animal LIKE '%'" +  "@animal" + "'%') AND (activity LIKE '%'" + "@activity" + "'%') AND (area LIKE '%'" + "@area" + "'%') AND (display = 0)";
+        private const string SQL_DOES_EMAIL_EXIST = "SELECT TOP 1 email from latestsightings.dbo.newsletterSubscriptions WHERE (email = @email)";
+        private const string SQL_NEWSLETTER_SUBSCRIPTION = "INSERT INTO latestsightings.dbo.[newsletterSubscriptions] (email) VALUES (@emailaddress);";
+
 
         public static bool SaveRegistration(Person person, SqlConnection conn, SqlCommand query)
         {
@@ -333,6 +339,7 @@ namespace Revamp_LatestSightings
                 query.Parameters.Add("tags", System.Data.SqlDbType.VarChar).Value = image.tags;
                 query.Parameters.Add("display", System.Data.SqlDbType.Bit).Value = 0;
                 query.Parameters.Add("generalComment", System.Data.SqlDbType.VarChar).Value = image.generalComment;
+                query.Parameters.Add("title", System.Data.SqlDbType.VarChar).Value = image.title;
                 query.ExecuteNonQuery();
                 conn.Close();
                 insertStatus = true;
@@ -391,8 +398,6 @@ namespace Revamp_LatestSightings
             return userVideos;
 
         }
-
-
 
         internal static string GetFullName(SqlConnection conn, SqlCommand query, string userID, SqlDataReader data)
         {
@@ -488,8 +493,6 @@ namespace Revamp_LatestSightings
             return updatedStatus;
         }
 
-
-
         internal static List<DeclineVideoStatus> GetDeclineStatuses(SqlConnection conn, SqlCommand query, SqlDataReader data, List<DeclineVideoStatus> declineStatuses)
         {
             ConfigureConnection(conn, query);
@@ -521,6 +524,76 @@ namespace Revamp_LatestSightings
             return declineStatuses;
         }
 
+        internal static Dictionary<string, List<string>> GetGallerySeachFilters(SqlConnection conn, SqlCommand query, SqlDataReader data, Dictionary<string, List<string>> seachFilters)
+        {
+            ConfigureConnection(conn, query);
+            query.CommandText = SQL_SELECT_GALLERY_FILTERS;
+            seachFilters = new Dictionary<string, List<string>>();
+            List<string> animalsList = new List<string>();
+            List<string> areasList = new List<string>();
+            List<string> activityList = new List<string>();
+
+            try
+            {
+                conn.Open();
+                data = query.ExecuteReader();
+                if (data.HasRows)
+                {
+                    while (data.Read())
+                    {
+                        animalsList.Add(data["animal"].ToString());
+                        areasList.Add(data["area"].ToString());
+                        activityList.Add(data["activity"].ToString());
+                    }
+                    data.Close();
+                    conn.Close();
+                    seachFilters.Add("animals", animalsList);
+                    seachFilters.Add("areas", areasList);
+                    seachFilters.Add("activity", activityList);
+                }
+            }
+            catch
+            {
+                // log exception
+            }
+            conn.Close();
+            return seachFilters;
+        }
+
+
+        internal static Dictionary<string, List<string>> GetVideoGallerySeachFilters(SqlConnection conn, SqlCommand query, SqlDataReader data, Dictionary<string, List<string>> seachFilters)
+        {
+            ConfigureConnection(conn, query);
+            query.CommandText = SQL_SELECT_VIDEO_GALLERY_FILTERS;
+            seachFilters = new Dictionary<string, List<string>>();
+            List<string> title = new List<string>();
+            List<string> keywords = new List<string>();
+
+            try
+            {
+                conn.Open();
+                data = query.ExecuteReader();
+                if (data.HasRows)
+                {
+                    while (data.Read())
+                    {
+                        title.Add(data["title"].ToString());
+                        keywords.Add(data["keywords"].ToString());
+                    }
+                    data.Close();
+                    conn.Close();
+                    seachFilters.Add("title", title);
+                    seachFilters.Add("keywords", keywords);
+                }
+            }
+            catch
+            {
+                // log exception
+            }
+            conn.Close();
+            return seachFilters;
+        }
+
         private static string RemoveSingleAndDoubleQuotes(string p)
         {
             p = p.Replace("'", "");
@@ -546,6 +619,103 @@ namespace Revamp_LatestSightings
             }
             conn.Close();
             return status;
+        }
+
+
+        internal static List<Dictionary<string, string>> GallerySearch(SqlConnection conn, SqlCommand query, SqlDataReader data, List<Dictionary<string, string>> searchResults, string areas, string animal, string activity)
+        {
+            ConfigureConnection(conn, query);
+            searchResults = new List<Dictionary<string, string>>();
+            Dictionary<string, string> results = new Dictionary<string, string>();
+            string string_query = ReturnSearch(areas, animal, activity);
+     
+            query.CommandText = string_query;
+            //query.Parameters.Add("contributor", System.Data.SqlDbType.VarChar).Value = userid;
+            //query.Parameters.Add("animal", System.Data.SqlDbType.VarChar).Value = animal;
+            //query.Parameters.Add("activity", System.Data.SqlDbType.VarChar).Value = activity;
+            //query.Parameters.Add("area", System.Data.SqlDbType.VarChar).Value = areas;
+            try
+            {
+                conn.Open();
+                data = query.ExecuteReader();
+                if (data.HasRows)
+                {
+                    while (data.Read())
+                    {
+                        results = new Dictionary<string, string>();
+                        results.Add("type", "image");
+                        results.Add("title", data["title"].ToString());
+                        results.Add("filename", data["sixFiftyBYsixFifty"].ToString());
+                        searchResults.Add(results);
+                    }
+                }
+            }
+            catch
+            {
+                // log exception
+            }
+            conn.Close();
+            return searchResults;
+        }
+
+        private static string ReturnSearch(string areas, string animal, string activity)
+        {
+            areas = areas.Trim();
+            animal = animal.Trim();
+            activity = activity.Trim();
+            string query = "SELECT sixFiftyBYsixFifty, title from latestsightings.dbo.images ";
+            if (!String.IsNullOrEmpty(areas))
+                    query += " Where (area like '%" + areas + "%') AND";
+
+            if (!String.IsNullOrEmpty(animal))
+                if (query.EndsWith("AND"))
+                    query += " (animal LIKE '%" + animal + "%') AND";
+                else
+                    query += " AND (animal LIKE '%" + animal + "%') AND ";
+
+
+            if (!String.IsNullOrEmpty(activity))
+                if (query.EndsWith("AND"))
+                    query += " (activity like '%" + activity + "%') AND ";
+                else
+                    query += " AND (activity like '%" + activity + "%') AND";
+
+            
+            
+            query += " (display = 1)";
+
+            return query;
+        }
+
+        public static bool subscribeToNewsletter(string email, SqlConnection conn, SqlCommand query, SqlDataReader data)
+        {
+            ConfigureConnection(conn, query);
+            query.CommandText = SQL_DOES_EMAIL_EXIST;
+            query.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = email;
+            bool emailExists = false;
+            try
+            {
+                conn.Open();
+                data = query.ExecuteReader();
+                if (data.HasRows)
+                    emailExists = true;
+                conn.Close();
+                data.Close();
+
+                if (emailExists == false)
+                {
+                    query.CommandText = SQL_NEWSLETTER_SUBSCRIPTION;
+                    query.Parameters.Add("emailaddress", System.Data.SqlDbType.VarChar).Value = email;
+                    conn.Open();
+                    query.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

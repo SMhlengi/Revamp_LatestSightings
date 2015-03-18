@@ -19,5 +19,6 @@ namespace Revamp_LatestSightings
 	    public string area {get;set;}
 	    public string tags {get;set;}
         public string generalComment { get; set; }
+        public string title { get; set; }
     }
 }

@@ -11,5 +11,32 @@ namespace Revamp_LatestSightings {
     
     
     public partial class _default {
+        
+        /// <summary>
+        /// latestGalleries control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder latestGalleries;
+        
+        /// <summary>
+        /// monthlyTopContributors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder monthlyTopContributors;
+        
+        /// <summary>
+        /// plc_latestBlogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plc_latestBlogs;
     }
 }

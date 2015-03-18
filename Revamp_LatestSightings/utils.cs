@@ -378,5 +378,57 @@ namespace Revamp_LatestSightings
         {
             return "<br /><br /> Warm regards <br />The Latest Sightings Team";
         }
+
+        public static string FullyQualifiedMonthName(int intMonth)
+        {
+            switch (intMonth)
+            {
+                case 1: 
+                    return "January";
+                case 2:
+                    return "February";
+                case 3:
+                    return "March";
+                case 4:
+                    return "April";
+                case 5:
+                    return "May";
+                case 6:
+                    return "June";
+                case 7:
+                    return "July";
+                case 8:
+                    return "August";
+                case 9:
+                    return "September";
+                case 10:
+                    return "October";
+                case 11:
+                    return "November";
+                case 12:
+                    return "December";
+                default:
+                    return "January";
+            }
+        }
+
+        public static Dictionary<string, string> CleanUpArticleForBloglist(Dictionary<string, string> CateogryArticle)
+        {
+            CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
+            int startIndex = CateogryArticle["body"].IndexOf('>');
+            if (startIndex == 0)
+            {
+                CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
+                startIndex = CateogryArticle["body"].IndexOf('>');
+            }
+            int endIndex = CateogryArticle["body"].IndexOf('<');
+            int substract = endIndex - startIndex;
+            CateogryArticle["body"] = CateogryArticle["body"].Substring(startIndex + 1, substract - 1);
+            if (CateogryArticle["body"].Length > 84)
+                CateogryArticle["body"] = CateogryArticle["body"].Substring(0, 80) + " [...]";
+            else
+                CateogryArticle["body"] += " [...]";
+            return CateogryArticle;
+        }
     }
 }

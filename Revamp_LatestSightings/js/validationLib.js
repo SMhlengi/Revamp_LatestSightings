@@ -78,6 +78,69 @@
         }
     });
 
+    $(".readmoreblogs").click(function () {
+        location.href = "/bloglist";
+    });
+
+    $(".newsletter").click(function () {
+        $(".panelWithWhiteBackgroundBorder").show();
+    });
+
+    $(".subScribeToNewsletter").click(function () {
+        $(".email").hide();
+        ClearErrorStateOfTextBox(".email");
+        valid = true;
+
+        if (isEmpty("#email")) {
+            $("div .email").prev().addClass("has-error");
+            $("div .email").html("<p class='text-danger'>Email is required</p>");
+            $("div .email").show();
+            valid = false;
+        } else {
+            if (!isValidEmailAddress($("#email").val())) {
+                $("div .email").prev().addClass("has-error");
+                $("div .email").html("<p class='text-danger'>Invalid Email address</p>");
+                $("div .email").show();
+                valid = false;
+            }
+        }
+
+        if (valid) {
+            $(".email").hide();
+            ClearErrorStateOfTextBox(".email");
+            $(".newslettersubscribing").show();
+            SubscribeToNewsLetter($("#email").val(), false);
+        }
+    });
+
+    $(".footerSubscribeToNewsLetter").click(function () {
+        $(".emailfooter").hide();
+        ClearErrorStateOfTextBox(".emailfooter");
+        valid = true;
+
+        if (isEmpty("#emailfooter")) {
+            $("div .emailfooter").prev().addClass("has-error");
+            $("div .emailfooter").html("<p>Email is required</p>");
+            $("div .emailfooter").show();
+            valid = false;
+        } else {
+            if (!isValidEmailAddress($("#emailfooter").val())) {
+                $("div .emailfooter").prev().addClass("has-error");
+                $("div .emailfooter").html("<p>Invalid Email address</p>");
+                $("div .emailfooter").show();
+                valid = false;
+            }
+        }
+
+        if (valid) {
+            $(".emailfooter").hide();
+            ClearErrorStateOfTextBox(".emailfooter");
+            $(".footerSubscribeToNewsLetter").next().html("<strong>Subscribing</strong>&nbsp;&nbsp;Please wait .....")
+
+            SubscribeToNewsLetter($("#emailfooter").val(), true);
+        }
+    });
+
     function isEmpty(control) {
         if ($(control).val() == "") {
             return true;
@@ -152,7 +215,41 @@
             $("div .password").show();
             valid = false;
         }
+
         return valid;
+    }
+
+    function SubscribeToNewsLetter(emailAddress, footer) {
+        var postUrl = "/AjaxOperation.aspx/SubscribeToNewsLetter";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'email' : '" + emailAddress + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    if (footer) {
+                        $(".footerSubscribeToNewsLetter").next().html("<strong>Successfully Subscribed !!!</strong>")
+                    } else {
+                        $(".newslettersubscribing").hide();
+                        $(".successfullySubscribeToNewsletter").show();
+                        setTimeout(function () {
+                            $(".successfullySubscribeToNewsletter").hide();
+                            $(".panelWithWhiteBackgroundBorder").hide();
+                            $(".newsletter").hide();
+
+                        }, 3500);
+                    }
+                } else {
+                    console.log("in else part");
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
     }
 
     function ValidateResetPasswordPage() {
@@ -212,6 +309,7 @@
         ClearErrorStateOfTextBox(".lastname");
         ClearErrorStateOfTextBox(".email");
         ClearErrorStateOfTextBox(".password");
+        ClearErrorStateOfTextBox(".confirmPassword");
         ClearErrorStateOfTextBox(".confirmPassword");
     }
 

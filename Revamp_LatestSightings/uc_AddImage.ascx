@@ -47,6 +47,13 @@
                     <p class="text-success seperation">Please provide us with the below information of the uploaded image</p>
             </div><!-- panel-heading -->
             <div class="panel-body">
+                <!-- new textbox for image title -->
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <input type="text" id="title" name="imageTitle" placeholder="Title" class="form-control" >
+                    </div>
+                </div>
+                <!-- end of new textbox for image title -->
                 <div class="row">
                     <div class="form-group col-md-8">
                         <input type="text" id="animal" name="videoTitle" placeholder="Animal" class="form-control" >
@@ -64,9 +71,9 @@
                     <div class="form-group col-md-4">
                         <input type="text" id="tags" name="tags" placeholder="Tags" class="form-control"">
                     </div>
-                    <div class="form-group col-md-4">
+<%--                    <div class="form-group col-md-4">
                         <input type="text" id="extraField" name="extraField" placeholder="Extra Field" class="form-control">
-                    </div>
+                    </div>--%>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-8">
@@ -75,6 +82,9 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4">
+                        <div class="form-group title">
+                            <p class="text-danger">Title is required</p>
+                        </div>
                         <div class="form-group animal">
                             <p class="text-danger">Animal Type is required</p>
                         </div>

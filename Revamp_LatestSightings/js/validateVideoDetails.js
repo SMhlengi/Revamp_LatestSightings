@@ -20,17 +20,19 @@
         var status = ValidateImageDetails();
         if (status) {
             $(".registerSpinner").show();
+            $("#title").attr("disabled", "disabled");
             $("#animal").attr("disabled", "disabled");
             $("#activity").attr("disabled", "disabled");
             $("#area").attr("disabled", "disabled");
             $("#tags").attr("disabled", "disabled");
             $("#comments").attr("disabled", "disabled");
-            UpdateImageDetails($("#animal").val(), $("#activity").val(), $("#area").val(), $("#tags").val(), $("#comments").val());
+            UpdateImageDetails($("#animal").val(), $("#activity").val(), $("#area").val(), $("#tags").val(), $("#comments").val(), $("#title").val());
         }
     });
 
 
     function ClearErrorWarningOnImageDetailsTextBoxes() {
+        ClearErrorStateOfVideoDetailsTextBoxes("#title");
         ClearErrorStateOfVideoDetailsTextBoxes("#animal");
         ClearErrorStateOfVideoDetailsTextBoxes("#activity");
         ClearErrorStateOfVideoDetailsTextBoxes("#area");
@@ -57,6 +59,7 @@
     }
 
     function HideMessageErrorsOnImageDetails() {
+        HideErrorMessageOnVideoDetails(".title");
         HideErrorMessageOnVideoDetails(".animal");
         HideErrorMessageOnVideoDetails(".activity");
         HideErrorMessageOnVideoDetails(".area");
@@ -98,6 +101,12 @@
 
     function ValidateImageDetails() {
         var valid = true;
+        if (isEmpty("#title")) {
+            $("#title").parent().addClass("has-error");
+            $("div .title").show();
+            valid = false;
+        }
+
         if (isEmpty("#animal")) {
             $("#animal").parent().addClass("has-error");
             $("div .animal").show();
@@ -171,12 +180,12 @@
         );
     }
 
-    function UpdateImageDetails(animal, activity, area, tags, comments) {
+    function UpdateImageDetails(animal, activity, area, tags, comments, title) {
         var postUrl = "/AjaxOperation.aspx/SaveImageDetails";
         $.ajax({
             type: "POST",
             url: postUrl,
-            data: "{'animal' : '" + animal + "', 'activity' : '" + activity + "', 'area' : '" + area + "', 'tags' : '" + tags + "', 'comments' : '" + comments + "'}",
+            data: "{'animal' : '" + animal + "', 'activity' : '" + activity + "', 'area' : '" + area + "', 'tags' : '" + tags + "', 'comments' : '" + comments + "', 'title' : '" + title + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).done(
