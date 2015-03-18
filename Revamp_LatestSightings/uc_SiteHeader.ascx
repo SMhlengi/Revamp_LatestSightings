@@ -86,6 +86,8 @@
             $(".Logout").show();
             $(".uploadVideo").show();
             $(".uploadVideo").attr("href", "addvideo");
+            $(".uploadGalleryImage").show();
+            $(".uploadGalleryImage").attr("href", "addImage");
             $(".myAccount").show();
             $(".myAccount").attr("href", "myaccount");
         }

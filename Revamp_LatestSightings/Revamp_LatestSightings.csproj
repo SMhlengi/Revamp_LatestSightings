@@ -498,6 +498,8 @@
     </Compile>
     <Compile Include="uc_TopMonthlyContributors.ascx.designer.cs">
       <DependentUpon>uc_TopMonthlyContributors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="UserFinancials.aspx.cs">
       <DependentUpon>UserFinancials.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
