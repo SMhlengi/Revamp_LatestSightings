@@ -3,12 +3,13 @@
 <asp:Content ID="galleries" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <link href="<%= ResolveUrl("~/css/jquery-ui.css?v=4") %>" rel="stylesheet" />
 
+                <%foreach(var latestGalleryImage in imageGallery){ %>
                 <!-- Modal Pop-Up BEGIN -->
-                <div id="popup_container">
+                <div id="popup_container" class="latestGalleryImage<%=latestGalleryImage.Id %>">
                 	<div id="over_lay"></div>
                 	<div class="popup_ex">
                   		
-                        <div id="close_button"><a href="#"><i class="fa fa-times-circle "></i></a></div>
+                        <div id="close_button"><a href="javascript:void(0);"><i class="fa fa-times-circle"></i></a></div>
                         
                         <!-- Container -->
                         <div class="lightboxcontainer">
@@ -72,9 +73,7 @@
                                 
                                 <!-- Facebook Comments BEGIN -->
                                 <h4 class="page-titles">Comments</h4>
-                                <div class="blog-grid">
-                                    <img src="images/FBComments_sml.jpg" width="587" height="682"> 
-                                </div>
+                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="light" data-width="380"></div>
                                 <!-- Facebook Comments END -->
                                 
                           </div>
@@ -85,8 +84,8 @@
                 	</div>
               	</div>
                 <!-- Modal Pop-Up END3 -->
-
-                    
+                <%} %>
+                 
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">
@@ -163,7 +162,8 @@
                                         <%foreach (var imageItem in imageGallery)
                                           {
                                               imageCounter += 1;%>
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 filterImage">
+                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 filterImage <%if(imageCounter == 5){ %> clearLeft<%} %>">
+                                            <input type="hidden" id="hiddenImageId" value="<%=imageItem.Id %>" />
                                             <div class="team-member triggerAnimation animated" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
@@ -1168,7 +1168,7 @@
 					</div>
     <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/gallery.js?v=13") %>"></script>
+    <script src="<%= ResolveUrl("~/js/gallery.js?v=26") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 
 </asp:Content>

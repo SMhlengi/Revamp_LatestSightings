@@ -114,6 +114,7 @@
     <Content Include="galleryview.aspx" />
     <Content Include="Global.asax" />
     <Content Include="holidays.aspx" />
+    <Content Include="imageModal.aspx" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\app.gif" />
@@ -350,6 +351,13 @@
       <DependentUpon>holidays.aspx</DependentUpon>
     </Compile>
     <Compile Include="Image.cs" />
+    <Compile Include="imageModal.aspx.cs">
+      <DependentUpon>imageModal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imageModal.aspx.designer.cs">
+      <DependentUpon>imageModal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

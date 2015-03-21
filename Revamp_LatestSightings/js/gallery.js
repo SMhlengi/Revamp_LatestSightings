@@ -240,10 +240,13 @@
     });
 
     $(".filterImage").click(function () {
+        var imageId = $(this).find("#hiddenImageId").val();
         var imgSrc = $(this).find("img").attr("src");
-        $(".popup_ex").find(".portfolio-featured-image").find("img").attr("src", imgSrc);
-        $("#over_lay").show();
-        $(".popup_ex").show();
+        $(".latestGalleryImage" + imageId).find(".portfolio-featured-image").find("img").attr("src", imgSrc);
+        $(".latestGalleryImage" + imageId).find("#over_lay").show();
+        $(".latestGalleryImage" + imageId).find(".popup_ex").show();
+
+        closeImageDialog(imageId);
     });
 
     $(".media-selection").change(function () {
@@ -257,4 +260,11 @@
         }
     });
 
+
+    function closeImageDialog(id) {
+        $(".latestGalleryImage" + id).find(".fa-times-circle").click(function () {
+            $(".latestGalleryImage" + id).find("#over_lay").hide();
+            $(".latestGalleryImage" + id).find(".popup_ex").hide();
+        });
+    }
 });
