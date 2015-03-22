@@ -10,17 +10,21 @@
                     
         <!-- Blog List BEGIN -->
         <h1 class="main-title" style="margin-top:0px !important;">Read Our Blog</h1>
-        <% if (featuredCateogryArticles != null && featuredCateogryArticles.Count > 0){ %>
+        <% if (featuredCateogryArticles != null && featuredCateogryArticles.Count > 0)
+           {
+               int articleCount = 0; %>
         <div class="col-md-12">
             <div class="blog-grid">
                 <div class="row">
-                    <% foreach(var categoryArticle in featuredCateogryArticles){ %>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                    <% foreach (var categoryArticle in featuredCateogryArticles)
+                       {
+                           articleCount += 1; %>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 <% if (articleCount == 4 || articleCount == 7){ %>clearLeft <%} %>">
 							<div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
 								<a class="img-link" href="#"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
 								<div class="blog-grid-controls">
 									<a href="#" title="Sep. 19 2014"><i class="fa fa-clock-o"></i></a>
-									<a href="#" title="5 Comments"><i class="fa fa-comments"></i></a>
+<%--									<a href="#" title="comment count"><fb:comments-count href='<%=ConfigurationManager.AppSettings["siteUrl"] %>blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>'></fb:comments-count></a>--%>
 									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
 								</div>
 								<div class="blog-grid-content">
