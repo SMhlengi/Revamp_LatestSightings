@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="blog.aspx.cs" Inherits="Revamp_LatestSightings.blog" %>
-
+<%@ MasterType VirtualPath="~/Site1.Master" %>
 <asp:Content ID="blog" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
@@ -36,11 +36,11 @@
                     <div class="spacer sml"></div>
 
 					<div class="left">
-                        <img src="images/FBandTwitter.jpg" width="202" height="20"> 
+                        <!--<img src="images/FBandTwitter.jpg" width="202" height="20"> -->
                         <div class="right">
-                            <a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                            <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
-                            <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                            <a href="javascript:void(0);" title="Share to Facebook" class="blogFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                            <!--<a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>-->
+                            <a href="javascript:void(0);" title="Share to Twitter" class="blogTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
                         </div>
                     </div>
                                     
@@ -68,9 +68,7 @@
                             
             <!-- Facebook Comments BEGIN -->
             <h4 class="page-titles">Join the Conversation</h4>
-            <div class="blog-grid">
-                <img src="images/FBComments.jpg" width="587" height="682"> 
-            </div>
+            <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/blog.aspx?id=<%=categoryId %>&cat=<%=categoryId %>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
             <!-- Facebook Comments END -->
                             
         <!-- LEFT Content END -->

@@ -22,7 +22,16 @@ namespace Revamp_LatestSightings
             LoadLatestMonthlyContributors();
             loadOtherRelatedArticles();
             LoadFeaturedCategories();
+            SetPageMetaData();
 
+        }
+
+        private void SetPageMetaData()
+        {
+            this.Master.overRideMeta = true;
+            this.Master.desc = article["header"];
+            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "blog.aspx?id=" + articleId + "&cat=" + categoryId;
+            this.Master.imgUrl = ConfigurationManager.AppSettings["articleImagePath"] + article["picture"];     
         }
 
         private void loadOtherRelatedArticles()

@@ -78,7 +78,7 @@
                                 
                                 <!-- Facebook Comments BEGIN -->
                                 <h4 class="page-titles">Comments</h4>
-                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="light" data-width="380"></div>
+                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="dark" data-width="380"></div>
                                 <!-- Facebook Comments END -->
                                 
                           </div>

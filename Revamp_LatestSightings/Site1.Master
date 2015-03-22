@@ -12,12 +12,21 @@
 
 <head runat="server">
     <title> Latest Sightings YouTube Application</title>
-    <meta property="og:title" content="Latest Sightings" />
-    <meta property="og:description" content="A discreption must be addes here. A discreption must be addes here.A discreption must be addes here.A discreption must be addes here." /> 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://latestsightings.socialengine.co.za/" />
-    <meta property="og:image" content="http://latestsightings.socialengine.co.za/images/logo-horizontal-new.png" />
-    <meta property="og:site_name" content="Latest Sightings" />
+    <%if (overRideMeta){ %>
+        <meta property="og:title" content="Latest Sightings" />
+        <meta property="og:description" id="description" name="description" /> 
+        <meta property="og:type" content="website" />
+        <meta property="og:url" id="articleUrl" name="articleUrl" />
+        <meta property="og:image" id="image" name="image" />
+        <meta property="og:site_name" content="Latest Sightings" />
+    <%}else{ %>
+        <meta property="og:title" content="Latest Sightings" />
+        <meta property="og:description" content="A discreption must be addes here. A discreption must be addes here.A discreption must be addes here.A discreption must be addes here." /> 
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://latestsightings.socialengine.co.za/" />
+        <meta property="og:image" content="http://latestsightings.socialengine.co.za/images/logo-horizontal-new.png" />
+        <meta property="og:site_name" content="Latest Sightings" />
+    <%} %>
 
     <!-- Loading Styles -->    
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>

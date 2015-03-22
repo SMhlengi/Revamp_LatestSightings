@@ -11,6 +11,10 @@ namespace Revamp_LatestSightings
     {
         public bool ViewAddVideo = false;
         public bool ViewAddImage = false;
+        public bool overRideMeta = false;
+        public string desc { get; set; }
+        public string artUrl { get; set; }
+        public string imgUrl { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +25,13 @@ namespace Revamp_LatestSightings
                 siteHeader.username = "";
 
             headerPlaceHonder.Controls.Add(siteHeader);
+
+            if (overRideMeta)
+            {
+                description.Attributes.Add("content", desc);
+                articleUrl.Attributes.Add("content", artUrl);
+                image.Attributes.Add("content", imgUrl);
+            }
         }
     }
 }
