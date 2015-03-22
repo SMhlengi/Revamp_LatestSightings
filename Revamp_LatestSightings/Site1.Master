@@ -12,6 +12,13 @@
 
 <head runat="server">
     <title> Latest Sightings YouTube Application</title>
+    <meta property="og:title" content="Latest Sightings" />
+    <meta property="og:description" content="A discreption must be addes here. A discreption must be addes here.A discreption must be addes here.A discreption must be addes here." /> 
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://latestsightings.socialengine.co.za/" />
+    <meta property="og:image" content="http://latestsightings.socialengine.co.za/images/logo-horizontal-new.png" />
+    <meta property="og:site_name" content="Latest Sightings" />
+
     <!-- Loading Styles -->    
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
@@ -49,13 +56,23 @@
 
 <body>
 <div id="fb-root"></div>
-    <script>(function (d, s, id) {
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '966338283390865',
+            xfbml: true,
+            version: 'v2.2'
+        });
+    };
+
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
+        if (d.getElementById(id)) { return; }
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=230938180264216&version=v2.0";
+        js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
     <!-- Facebook javascript SDK initialization -->
 

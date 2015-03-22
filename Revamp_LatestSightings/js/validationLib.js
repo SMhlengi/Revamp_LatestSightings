@@ -480,5 +480,16 @@
         location.href = "/login";
     });
 
+    $(".shareOnFacebook").click(function () {
+        var videoId = $(this).parent().parent().find(".youtube").attr("rel");
+        var youtubeVideoUrl = "https://www.youtube.com/watch?v=";
+        youtubeVideoUrl += videoId;
+
+        FB.ui({
+            method: 'share',
+            href: youtubeVideoUrl,
+        }, function (response) { });
+    });
+
     LoginIfOnLoginPageAndRememberMeIsSet();
 });

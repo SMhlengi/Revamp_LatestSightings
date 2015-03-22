@@ -159,9 +159,9 @@
                                                         <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
                                                             <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[1].Url2 %>" rel="<%=featuredVideos[1].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                             <div class="blog-grid-controls">
-                                                                <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
                                                                 <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                                <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                                <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
                                                             <div class="blog-grid-content">
                                                                 <h3><a href="blog-sidebar.html"><%=featuredVideos[1].Title %></a></h3>
@@ -175,9 +175,9 @@
                                                             <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
                                                                 <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[2].Url2 %>" rel="<%=featuredVideos[2].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                                 <div class="blog-grid-controls">
-                                                                    <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                    <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
                                                                     <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
-                                                                    <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
+                                                                    <a href="javascript:void(0);" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
                                                                 <div class="blog-grid-content">
                                                                     <h3><a href="blog-sidebar.html"><%=featuredVideos[2].Title %></a></h3>
@@ -194,7 +194,7 @@
                                                         <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
                                                                 <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[3].Url2 %>" rel="<%=featuredVideos[3].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                                 <div class="blog-grid-controls">
-                                                                    <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                    <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
                                                                     <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
                                                                     <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
@@ -210,7 +210,7 @@
                                                     <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
                                                             <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[4].Url2 %>" rel="<%=featuredVideos[4].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                             <div class="blog-grid-controls">
-                                                                <a href="#" title="Share to Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                                <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
                                                                 <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
                                                                 <a href="#" title="Share to Twitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
