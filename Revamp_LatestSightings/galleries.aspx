@@ -44,29 +44,34 @@
                             
                             	<div class="spacer small"></div>
                                 
-                            	<div class="left"><img src="images/FBandTwitter.jpg" width="202" height="20"></div>
+                            	<div class="left">
+                                    <div class="row">
+                                        <%--<div class="col-md-4"><div class="fb-like" data-href="http://latestsightings.socialengine.co.za/gallery" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="false"></div></div>--%>
+                                        <div class="col-md-4"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
+                                    </div>
+                            	</div>
                                 
                                 <div class="clearfix"></div>
                                 <div class="spacer"></div>
                                 
-                                <h4> Battle of the Kruger </h4>
+                                <h4 class="imageTitle"><%=latestGalleryImage.Title %> </h4>
                                 
                                 <div class="clearfix"></div>
                                 <div class="spacer small"></div>
                                 
-                                <p>
-                                Location: Kruger National Park <br>
-                                Submitted by: LionWhisperer
+                                <p class="LocationAndSubmitter">
+                                Location: <%=latestGalleryImage.Location %> <br>
+                                Submitted by: <%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
                                 </p>
                                 
                                 <div class="clearfix"></div>
                                 <div class="spacer small"></div>
                                 
-                                <div class="left">
+<%--                                <div class="left">
                                 	<a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
                                     <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
                                     <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
-                                </div>
+                                </div>--%>
                                 
                                 <div class="clearfix"></div>
                                 <div class="spacer small"></div>
