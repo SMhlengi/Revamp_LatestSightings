@@ -3987,6 +3987,11 @@ input , select {
 .newslettersubscribing, .successfullySubscribeToNewsletter {
     margin-top:5px;
 }
+
+.imageTitle {
+    color: black;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {

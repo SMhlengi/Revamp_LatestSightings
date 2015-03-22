@@ -15,7 +15,7 @@
                         <div class="lightboxcontainer">
                         	
                             <!-- Photo -->
-                            <div class="col-md-9 col-sm-12">
+                            <div class="col-md-8 col-sm-9">
                             
 <%--                            	<div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
 								<div class="image-slider">
@@ -40,7 +40,7 @@
                             </div>
                             
                             <!-- Photo Details & Social Sharing -->
-                            <div class="col-md-3 col-sm-12">
+                            <div class="col-md-3 col-sm-12" style="float: left;">
                             
                             	<div class="spacer small"></div>
                                 
@@ -60,8 +60,8 @@
                                 <div class="spacer small"></div>
                                 
                                 <p class="LocationAndSubmitter">
-                                Location: <%=latestGalleryImage.Location %> <br>
-                                Submitted by: <%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
+                                <p style="display:inline; color:black">Location: </p><%=latestGalleryImage.Location %> <br>
+                                <p style="display:inline; color:black">Submitted by: </p><%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
                                 </p>
                                 
                                 <div class="clearfix"></div>
