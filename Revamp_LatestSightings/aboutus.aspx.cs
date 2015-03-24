@@ -20,7 +20,7 @@ namespace Revamp_LatestSightings
             this.Master.overRideMeta = true;
             this.Master.desc = "About Latest Sightings";
             this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "about-us";
-            this.Master.imgUrl = ConfigurationManager.AppSettings["articleImagePath"] + "images/logo-horizontal-new.png";
+            this.Master.imgUrl = ConfigurationManager.AppSettings["siteUrl"] + "images/logo-horizontal-new.png";
 
         }
     }
