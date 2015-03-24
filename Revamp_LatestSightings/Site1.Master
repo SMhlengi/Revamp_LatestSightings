@@ -21,7 +21,7 @@
         <meta property="og:site_name" content="Latest Sightings" />
     <%}else{ %>
         <meta property="og:title" content="Latest Sightings" />
-        <meta property="og:description" content="A discreption must be addes here. A discreption must be addes here.A discreption must be addes here.A discreption must be addes here." /> 
+        <meta property="og:description" content="About Latest Sightings" /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://latestsightings.socialengine.co.za/" />
         <meta property="og:image" content="http://latestsightings.socialengine.co.za/images/logo-horizontal-new.png" />
