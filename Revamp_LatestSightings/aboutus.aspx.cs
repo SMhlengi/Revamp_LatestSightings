@@ -5,14 +5,43 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using LatestSightingsLibrary;
 
 namespace Revamp_LatestSightings
 {
     public partial class aboutus : System.Web.UI.Page
     {
+        protected List<GalleryItem> topFeaturedArticles = null;
+        protected List<Dictionary<string, string>> latestBlogs = null;
+        protected string stringMonth = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
+            latestBlogs = library.GetLatestCompletedArticles(4);
             SetPageMetaData();
+            GetMonthlyContributors();
+            LoadLasteBLogs();
+            loadLatestGalleries();
+        }
+
+        private void GetMonthlyContributors()
+        {
+            stringMonth = utils.FullyQualifiedMonthName(DateTime.Now.Month);
+            uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
+            topTenContributors.Controls.Add(Contributors);
+        }
+
+        private void LoadLasteBLogs()
+        {
+            uc_LatestBlogs latestBlogs = (uc_LatestBlogs)LoadControl("~/uc_LatestBlogs.ascx");
+            plc_latestBlogs.Controls.Add(latestBlogs);
+        }
+
+        private void loadLatestGalleries()
+        {
+            uc_latestGalleris l_galleries = (uc_latestGalleris)LoadControl("~/uc_latestGalleris.ascx");
+            latestGalleries.Controls.Add(l_galleries);
         }
 
         private void SetPageMetaData()

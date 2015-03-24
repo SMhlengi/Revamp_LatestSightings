@@ -549,5 +549,21 @@
         window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
     });
 
+    $(".aboutNadavTab").click(function () {
+        $(".aboutUs").hide();
+        $(".AboutNadavOssendryver").show();
+        $(".aboutUsTab").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".aboutUsTab").click(function () {
+        $(".AboutNadavOssendryver").hide();
+        $(".aboutUs").show();
+        $(".aboutNadavTab").removeClass("active");
+        $(this).addClass("active");
+    });
+
+
+
     LoginIfOnLoginPageAndRememberMeIsSet();
 });

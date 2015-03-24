@@ -3992,6 +3992,10 @@ input , select {
     color: black;
 }
 
+.AboutNadavOssendryver {
+    display: none;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {
