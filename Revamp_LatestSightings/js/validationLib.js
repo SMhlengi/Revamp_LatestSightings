@@ -500,6 +500,15 @@
         }, function (response) { });
     });
 
+    $(".aboutUsFacebookShare").click(function () {
+        var shareUrl = location.href;
+
+        FB.ui({
+            method: 'share',
+            href: shareUrl,
+        }, function (response) { });
+    });
+
 
     $(".shareOnTwitter").click(function () {
         var videoId = $(this).parent().parent().find(".youtube").attr("rel");
@@ -523,6 +532,18 @@
 
         //We get the title of the link
         var title = encodeURIComponent($(".main-title").html() + " via @LatestKruger");
+
+        //We trigger a new window with the Twitter dialog, in the middle of the page
+        window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
+
+    $(".aboutUsTwitterShare").click(function () {
+
+        //We get the URL of the link
+        var loc = location.href;
+
+        //We get the title of the link
+        var title = encodeURIComponent("About Latest Sightings via @LatestKruger");
 
         //We trigger a new window with the Twitter dialog, in the middle of the page
         window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');

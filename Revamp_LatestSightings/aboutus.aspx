@@ -1,6 +1,17 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="aboutus.aspx.cs" Inherits="Revamp_LatestSightings.aboutus" %>
+<%@ MasterType VirtualPath="~/Site1.Master" %>
+
 
 <asp:Content ID="aboutuspage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .blog-list-content {
+            padding-bottom: 58px;
+        }
+
+        .left {
+            padding-top: 20px;
+        }
+    </style>
 
                     
 					<div class="row">
@@ -37,6 +48,14 @@ When Nadav is in the Kruger Park, a new holiday favourite is getting the communi
 Latest Sightings is a great way to meet like minded people and to explore your passion for wildlife.<br>
 Like our Facebook page or download the app to become part of the fastest growing wildlife group in SA.
 </p>
+                    <div class="left">
+                        <!--<img src="images/FBandTwitter.jpg" width="202" height="20"> -->
+                        <div class="right">
+                            <a href="javascript:void(0);" title="Share to Facebook" class="aboutUsFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                            <!--<a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>-->
+                            <a href="javascript:void(0);" title="Share to Twitter" class="aboutUsTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
                                 </div>
                             </div>
                             <!-- About LS END -->
@@ -46,9 +65,7 @@ Like our Facebook page or download the app to become part of the fastest growing
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="blog-grid">
-                       	    	<img src="images/FBComments.jpg" width="587" height="682"> 
-                            </div>
+                            <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/about-us" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>

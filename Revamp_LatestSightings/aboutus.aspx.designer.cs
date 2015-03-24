@@ -11,5 +11,17 @@ namespace Revamp_LatestSightings {
     
     
     public partial class aboutus {
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Revamp_LatestSightings.Site1 Master {
+            get {
+                return ((Revamp_LatestSightings.Site1)(base.Master));
+            }
+        }
     }
 }
