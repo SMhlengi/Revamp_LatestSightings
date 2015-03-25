@@ -270,6 +270,13 @@ namespace Revamp_LatestSightings
             status = DataLayer.subscribeToNewsletter(email, conn, query, data);
             return status;
         }
+
+        [WebMethod]
+        public static bool SendContactUsEmail(string name, string email, string message)
+        {
+            bool status = utils.SendContactUsMail(name, email, message);
+            return status;
+        }
         
     }
 }

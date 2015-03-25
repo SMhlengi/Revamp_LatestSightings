@@ -1,6 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="contactus.aspx.cs" Inherits="Revamp_LatestSightings.contactus" %>
 
 <asp:Content ID="contactus" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .userfirstname, .useremail, .useraddress {
+            display:none;
+        }
+    </style>
 
 					<div class="row">
 						<div class="col-md-12">
@@ -16,9 +21,9 @@
 								<div class="col-md-4 col-md-offset-1 triggerAnimation animated" data-animate="fadeInUp">
 									<h4 class="underlined">Contact Info</h4>
 									<ul class="iconned-list">
-										<li class="address"><i class="fa fa-map-marker"></i><strong>Address:</strong> the address</li>
-										<li class="phone"><i class="fa fa-phone"></i><strong>Phone:</strong> the contact number</li>
-										<li class="email"><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:contact@latestsightings.com">contact@latestsightings.com</a></li>
+										<li class="latestSightingsAddress"><i class="fa fa-map-marker"></i><strong>Address:</strong> the address</li>
+										<li class="latestSightingsPhone"><i class="fa fa-phone"></i><strong>Phone:</strong> the contact number</li>
+										<li class="latestSightingsEmail"><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:contact@latestsightings.com">contact@latestsightings.com</a></li>
 									</ul>
                                     
                                     <div class="spacer"></div>
@@ -36,12 +41,45 @@
                                 
 								<div class="col-md-6 triggerAnimation animated" data-animate="fadeInUp">
 									<div class="wpcf7">
-										<form method="post" action="contact.php">
-											<input name ="name" type="text" placeholder="Your Name">
-											<input name="mail" type="email" placeholder="Your Email">
-											<textarea name="comment" placeholder="Your Message"></textarea>
-											<input type="submit" value="Send Message" class="wpcf7-form-control wpcf7-submit">
-										</form>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <input type="text" id="firstname" name="firstname" placeholder="Name" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" id="email" name="email" placeholder="Email" class="form-control" >
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="address" rows="5" placeholder="Address"></textarea>
+                                             </div>
+                                            <div class="pull-left">
+                                                <a href="javascript:void(0)" class="btn btn-success submitContactUs" role="button">Send Message</a>
+                                                <!--<button class="btn btn-success updateProfile">Save</button> -->
+                                            </div>
+                                            <div class="pull-left marginLeftTen registerSpinner">
+                                                <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="alert alert-success pull-left marginLeftTen profileUpdated" style="margin-top: 30px; margin-left: 4px;">
+                                                <strong>Email successfully sent</strong><br />
+                                            </div>
+                                            <div class="alert alert-danger pull-left marginLeftTen profileUpdatedError" style="margin-top: 30px; margin-left: 4px;">
+                                                <strong>Error in sending email</strong><br />Please try again later as we are experiencing technical issues.
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:30px;">
+                                            <div class="form-group">
+                                                <div class="form-group userfirstname">
+                                                    <p class="text-danger">Your Name is required</p>
+                                                </div>
+                                                <div class="form-group useremail">
+                                                    <p class="text-danger">Email is required</p>
+                                                </div>
+                                                <div class="form-group useraddress">
+                                                    <p class="text-danger">Your Message is required</p>
+                                                </div>
+                                            </div>
+                                        </div> 
 									</div>
 								</div>
 							</div>
@@ -49,5 +87,5 @@
 					</div>
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
-
+        <script src="<%= ResolveUrl("~/js/completeProfile.js?v=16") %>"></script>
 </asp:Content>

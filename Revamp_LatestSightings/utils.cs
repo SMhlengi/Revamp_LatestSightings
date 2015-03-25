@@ -34,6 +34,55 @@ namespace Revamp_LatestSightings
             }
         }
 
+        public static bool SendContactUsMail(string name, string emailAddress, string messageDetails)
+        {
+            try
+            {
+                MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", ConfigurationManager.AppSettings["contactUsEmailAddress"]);
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Port = 25;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Host = "freeza.aserv.co.za";
+                NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                message.Subject = "Contact Us Message";
+                message.IsBodyHtml = true;
+                string emailMessage = ReturnContactUsMessage(name, emailAddress, messageDetails);
+
+                message.Body = emailMessage;
+                smtpClient.Send(message);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        private static string ReturnContactUsMessage(string firstname, string emailaddress, string message)
+        {
+            string EmailMessage = "";
+
+            EmailMessage += "<html>" + Environment.NewLine;
+            EmailMessage += "<head>" + Environment.NewLine;
+            EmailMessage += "<style>" + Environment.NewLine;
+            EmailMessage += "body { margin: 10px; }" + Environment.NewLine;
+            EmailMessage += "body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}" + Environment.NewLine;
+            EmailMessage += "</style>" + Environment.NewLine;
+            EmailMessage += "</head>" + Environment.NewLine;
+            EmailMessage += "<body style\"margin: 5px 0 0 0;\">" + Environment.NewLine;
+
+            // new code 
+            EmailMessage += "Howzit, My Name is " + firstname + " <br /><br />";
+            EmailMessage +=  message + "<br /><br />";
+            // end of new code 
+            EmailMessage += "</body>" + Environment.NewLine;
+            EmailMessage += "</html>";
+
+            return EmailMessage;
+        }
+
         private static string ReturnRegistrationMail(string firstname, string lastname, string emailaddress)
         {
             string EmailMessage = "";

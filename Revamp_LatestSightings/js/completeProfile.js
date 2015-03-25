@@ -94,6 +94,39 @@
         return valid;
     }
 
+    // validate contact us 
+    function ValidateContactUs() {
+        var valid = true;
+        if (isEmpty("#firstname")) {
+            $("#firstname").parent().addClass("has-error");
+            $("div .userfirstname").show();
+            valid = false;
+        }
+
+        if (isEmpty("#email")) {
+            $("#email").parent().addClass("has-error");
+            $("div .useremail").html("<p class='text-danger'>Email is required</p>");
+            $("div .useremail").show();
+            valid = false;
+        } else {
+            if (!isValidEmailAddress($("#email").val())) {
+                $("#email").parent().addClass("has-error");
+                $("div .useremail").html("<p class='text-danger'>Invalid Email address</p>");
+                $("div .useremail").show();
+                valid = false;
+            }
+        }
+
+        if (isEmpty("#address")) {
+            $("#address").parent().addClass("has-error");
+            $("div .useraddress").show();
+            valid = false;
+        }
+
+        return valid;
+    }
+    // end of validate contact us
+
     $(".updateProfile").click(function () {
         ClearErrorWarningOnTextBoxes();
         HideMessageErrors();
@@ -105,6 +138,20 @@
         }
 
     });
+
+    // contact us
+    $(".submitContactUs").click(function () {
+        ClearErrorWarningOnTextBoxes();
+        HideMessageErrors();
+        var status = ValidateContactUs();
+        if (status) {
+            $(".registerSpinner").show();
+            //DisableControls();
+            SendContactUsEmail($("#firstname").val(), $("#email").val(), $("#address").val());
+        }
+
+    });
+    // end of contact us 
 
     $(".launchNativeEmailClient").click(function () {
         window.location.href = "mailto:videos@latestsightings.com";
@@ -185,6 +232,9 @@
         HideErrorMessage(".address");
         //HideErrorMessage(".bank");
         HideErrorMessage(".othercontant");
+        HideErrorMessage(".userfirstname");
+        HideErrorMessage(".useremail");
+        HideErrorMessage(".useraddress");
     }
 
     function HideErrorMessage(control) {
@@ -236,6 +286,35 @@
                     EnableTabs();
                 } else {
                     EnableControls();
+                    $(".registerSpinner").hide();
+                    $(".profileUpdatedError").show();
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+    }
+
+    function SendContactUsEmail(firstname, email, message) {
+        var postUrl = "/AjaxOperation.aspx/SendContactUsEmail";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'name' : '" + firstname + "', 'email' : '" + email + "', 'message' : '" + message + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    $(".registerSpinner").hide();
+                    $(".profileUpdated").show();
+                    //EnableControls();
+                    //$(".text-success").hide();
+                    //setTimeout(function () { $(".profileUpdated").hide(); }, 10000);
+                    //EnableTabs();
+                } else {
+                    //EnableControls();
                     $(".registerSpinner").hide();
                     $(".profileUpdatedError").show();
                 }
