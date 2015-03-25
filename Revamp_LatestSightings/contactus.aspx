@@ -19,22 +19,22 @@
 							</div>
 							<div class="row">
 								<div class="col-md-4 col-md-offset-1 triggerAnimation animated" data-animate="fadeInUp">
-									<h4 class="underlined">Contact Info</h4>
+<%--									<h4 class="underlined">Contact Info</h4>
 									<ul class="iconned-list">
 										<li class="latestSightingsAddress"><i class="fa fa-map-marker"></i><strong>Address:</strong> the address</li>
 										<li class="latestSightingsPhone"><i class="fa fa-phone"></i><strong>Phone:</strong> the contact number</li>
 										<li class="latestSightingsEmail"><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:contact@latestsightings.com">contact@latestsightings.com</a></li>
-									</ul>
+									</ul>--%>
                                     
                                     <div class="spacer"></div>
                                     
                                     <h4 class="underlined">Connect with us</h4>
                                     <div class="clearfix"></div>
-                                    <a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                                    <a href="https://www.facebook.com/latestsightingskruger" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
                                     <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
-                                    <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
-                                    <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-youtube"></i></a>
-                                    <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-pinterest"></i></a>
+                                    <a href="https://twitter.com/LatestKruger" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                                    <a href=" https://www.youtube.com/user/Animatedcams" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-youtube"></i></a>
+                                    <%--<a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-pinterest"></i></a>--%>
                                     
                                     
 								</div>
