@@ -41,7 +41,7 @@ body{
 .popup_ex{
   	width:65%;
   	height:680px;
- 	background: BURLYWOOD;
+ 	/*background: BURLYWOOD;*/
 	position:fixed;
   	margin:auto;
   	border-radius:0px;

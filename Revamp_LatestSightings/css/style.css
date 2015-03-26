@@ -469,7 +469,7 @@ h2.main-title {
 h4.page-titles {
 	clear: both;
 	margin-top: 0;
-	margin-bottom: 50px;
+	/*margin-bottom: 50px;*/
 	text-align: center;
 	color: #ffffff;
 	font-size: 22px;
@@ -3989,7 +3989,7 @@ input , select {
 }
 
 .imageTitle {
-    color: black;
+    color: #ff9900;
 }
 
 .AboutNadavOssendryver {

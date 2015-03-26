@@ -13,4 +13,4 @@
 <script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/validationLib.js?v=30") %>"></script>
+<script src="<%= ResolveUrl("~/js/validationLib.js?v=32") %>"></script>

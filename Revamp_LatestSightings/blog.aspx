@@ -23,7 +23,7 @@
                 </div>
                                 
                 <div class="blog-details">
-							<span class="blog-date">October 09, 2014</span>
+							<span class="blog-date"><%= article["dateCreated"] %></span>
 						</div>
                                             
                 <div class="blog-list-content">

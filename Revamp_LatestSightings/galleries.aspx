@@ -40,9 +40,7 @@
                             </div>
                             
                             <!-- Photo Details & Social Sharing -->
-                            <div class="col-md-3 col-sm-12" style="float: left;">
-                            
-                            	<div class="spacer small"></div>
+                            <div class="col-md-3 col-sm-12" style="float: left;">                            
                                 
                             	<div class="left">
                                     <div class="row">
@@ -50,9 +48,6 @@
                                         <div class="col-md-4"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
                                     </div>
                             	</div>
-                                
-                                <div class="clearfix"></div>
-                                <div class="spacer"></div>
                                 
                                 <h4 class="imageTitle"><%=latestGalleryImage.Title %> </h4>
                                 
@@ -63,9 +58,6 @@
                                 <p style="display:inline; color:black">Location: </p><%=latestGalleryImage.Location %> <br>
                                 <p style="display:inline; color:black">Submitted by: </p><%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
                                 </p>
-                                
-                                <div class="clearfix"></div>
-                                <div class="spacer small"></div>
                                 
 <%--                                <div class="left">
                                 	<a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
@@ -78,7 +70,7 @@
                                 
                                 <!-- Facebook Comments BEGIN -->
                                 <h4 class="page-titles">Comments</h4>
-                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="dark" data-width="380"></div>
+                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="light" data-width="380"></div>
                                 <!-- Facebook Comments END -->
                                 
                           </div>
@@ -1107,9 +1099,9 @@
                                
                                         <% foreach(var article in topFeaturedArticles){ %>
                                              <div class="media recent-posts">
-									            <a href="#" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
+									            <a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
 									            <div class="media-body">
-										            <h4 class="media-heading"><a href="#"><%=article.Title %></a></h4>
+										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
 									            </div>
 								            </div>
                                         <%} %>

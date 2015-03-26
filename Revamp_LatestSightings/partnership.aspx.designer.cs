@@ -11,5 +11,35 @@ namespace Revamp_LatestSightings {
     
     
     public partial class partnership {
+        
+        /// <summary>
+        /// topTenContributors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder topTenContributors;
+        
+        /// <summary>
+        /// plc_latestBlogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plc_latestBlogs;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Revamp_LatestSightings.Site1 Master {
+            get {
+                return ((Revamp_LatestSightings.Site1)(base.Master));
+            }
+        }
     }
 }

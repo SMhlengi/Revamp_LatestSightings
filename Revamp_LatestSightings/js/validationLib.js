@@ -563,6 +563,14 @@
         $(this).addClass("active");
     });
 
+    $(".singup").click(function () {
+        location.href = "/register";
+    });
+
+    $(".contactus").click(function () {
+        location.href = "contact-us";
+    });
+
 
 
     LoginIfOnLoginPageAndRememberMeIsSet();
