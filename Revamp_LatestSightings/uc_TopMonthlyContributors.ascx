@@ -15,10 +15,11 @@
 			<td>Username</td>
 			<td>Total Views</td>
 		</tr>
-	    <% foreach(var contributor in contributorsViews){%>
+	    <% foreach(var contributor in contributorsViews){
+            var views = String.Format("{0:N1}", Convert.ToInt32(contributor.Stat4)) ;%>
             <tr>
                 <td><%= contributor.Stat2 %> <%= contributor.con_firstCharacterOfSurname %>.</td>
-                <td><%= String.Format("{0:N0}", Convert.ToInt32(contributor.Stat4)) %></td>
+                <td><%= views.Substring(0, views.Length - 2)%></td>
             </tr>
         <%} %>
         </table>
@@ -30,3 +31,4 @@
     </div>
     <!-- Top 10 END -->
 <%} %>
+<!-- test -->
