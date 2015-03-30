@@ -17,7 +17,7 @@
 		</tr>
 	    <% foreach(var contributor in contributorsViews){%>
             <tr>
-                <td><%= contributor.Stat2 %> <%= contributor.Stat3 %></td>
+                <td><%= contributor.Stat2 %> <%= contributor.con_firstCharacterOfSurname %>.</td>
                 <td><%= contributor.Stat4 %></td>
             </tr>
         <%} %>
