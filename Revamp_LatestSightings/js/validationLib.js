@@ -362,7 +362,7 @@
             function (data, textStatus, jqXHR) {
                 console.log(data);
                 if (data.d.credentialsValid == "true") {
-                    $("#userFullname").html(data.d.firstname + " ");
+                    $("#userFullname").html(data.d.firstname + " " + data.d.lastname);
                     $(".successfullyLoggedIn").show();
                     if ($("#rememberMe").prop("checked")) {
                         SetRememberCookie();
