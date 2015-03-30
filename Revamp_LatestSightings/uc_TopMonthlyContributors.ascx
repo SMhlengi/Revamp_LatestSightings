@@ -18,7 +18,7 @@
 	    <% foreach(var contributor in contributorsViews){%>
             <tr>
                 <td><%= contributor.Stat2 %> <%= contributor.con_firstCharacterOfSurname %>.</td>
-                <td><%= contributor.Stat4 %></td>
+                <td><%= String.Format("{0:N0}", Convert.ToInt32(contributor.Stat4)) %></td>
             </tr>
         <%} %>
         </table>
