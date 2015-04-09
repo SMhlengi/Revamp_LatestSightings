@@ -138,9 +138,9 @@
                                     </div>
                                             
                                     <div class="blog-list-content">
-                                        <h2 class="blog-list-title"><a href="#"><%= featuredVideos[0].Title %></a></h2>
+                                        <h2 class="blog-list-title"><a href="javascript:void(0);" class="cursorPointer"><%= featuredVideos[0].Title %></a></h2>
                                         <p><%=featuredVideos[0].Description %></p>
-                                        <div class="views">230 views</div>
+                                        <div class="viewsForVideoOne"></div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -164,8 +164,8 @@
                                                                 <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
                                                             <div class="blog-grid-content">
-                                                                <h3><a href="blog-sidebar.html"><%=featuredVideos[1].Title %></a></h3>
-                                                                <p>948621 views</p>
+                                                                <h3><a href="javascript:void(0);" class="cursorPointer"><%=featuredVideos[1].Title %></a></h3>
+                                                                <p class="viewsForVideoTwo"></p>
                                                             </div>
                                                         </div>
                                             </div>
@@ -180,8 +180,8 @@
                                                                     <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
                                                                 <div class="blog-grid-content">
-                                                                    <h3><a href="blog-sidebar.html"><%=featuredVideos[2].Title %></a></h3>
-                                                                    <p>923 views</p>
+                                                                    <h3><a href="javascript:void(0);" class="cursorPointer"><%=featuredVideos[2].Title %></a></h3>
+                                                                    <p class="viewsForVideoThree"></p>
                                                                 </div>
                                                             </div>
                                                 </div>
@@ -199,8 +199,8 @@
                                                                     <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
                                                                 <div class="blog-grid-content">
-                                                                    <h3><a href="blog-sidebar.html"><%=featuredVideos[3].Title %></a></h3>
-                                                                    <p>948621 views</p>
+                                                                    <h3><a href="javascript:void(0);" class="cursorPointer"><%=featuredVideos[3].Title %></a></h3>
+                                                                    <p class="viewsForVideoFour"></p>
                                                                 </div>
                                                             </div>
                                                     </div>
@@ -215,8 +215,8 @@
                                                                 <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
                                                             <div class="blog-grid-content">
-                                                                <h3><a href="blog-sidebar.html"><%=featuredVideos[4].Title %></a></h3>
-                                                                <p>948621 views</p>
+                                                                <h3><a href="javascript:void(0);" class="cursorPointer"><%=featuredVideos[4].Title %></a></h3>
+                                                                <p class="viewsForVideoFive"></p>
                                                             </div>
                                                         </div>
                                                 </div>
@@ -289,6 +289,58 @@
 
 					</div>
 				<!-- End Content Area -->
+    <script>
+        $(document).ready(function () {
+            var youtubeIdArrayCounter = 0;
+            if (youtubeArray) {
+                GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
+            }
+
+            function GetFeaturedVideosViews(videoId) {
+                var postUrl = "https://gdata.youtube.com/feeds/api/videos/" + videoId + "?v=2&alt=json";
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(
+                    function (data, textStatus, jqXHR) {
+                        switch(youtubeIdArrayCounter) {
+                            case 0:
+                                $(".viewsForVideoOne").html(data.entry.yt$statistics.viewCount + " views");
+                                youtubeIdArrayCounter += 1;
+                                GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
+                                break;
+                            case 1:
+                                $(".viewsForVideoTwo").html(data.entry.yt$statistics.viewCount + " views");
+                                youtubeIdArrayCounter += 1;
+                                GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
+                                break;
+                            case 2:
+                                $(".viewsForVideoThree").html(data.entry.yt$statistics.viewCount + " views");
+                                youtubeIdArrayCounter += 1;
+                                GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
+                                break;
+                            case 3:
+                                $(".viewsForVideoFour").html(data.entry.yt$statistics.viewCount + " views");
+                                youtubeIdArrayCounter += 1;
+                                GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
+                                break;
+                            case 4:
+                                $(".viewsForVideoFive").html(data.entry.yt$statistics.viewCount + " views");
+                                break;
+                            default:
+                            //default code block
+                        }
+                    }
+                ).fail(
+                    function (data, textStatus, jqXHR) {
+                    }
+                );
+            }
+        });
+    </script>
+
     <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/homePage.js?v=6") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>

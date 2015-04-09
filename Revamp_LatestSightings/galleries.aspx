@@ -122,6 +122,7 @@
                                     <button type="button" class="btn btn-default FilterSearch">Filter</button>
                                     <!--<button type="submit" class="btn btn-default">Reset</button>-->
                                     <button type="button" class="btn btn-default ResetSearchFilters">Reset</button>
+                                    <button type="button" class="btn btn-default Uploadyourown">Upload your own</button>
                             	</div>
 
                                 <!-- video search -->
@@ -138,6 +139,7 @@
                                     <button type="button" class="btn btn-default FilterSearch">Filter</button>
                                     <!--<button type="submit" class="btn btn-default">Reset</button>-->
                                     <button type="button" class="btn btn-default ResetSearchFilters">Reset</button>
+                                    <button type="button" class="btn btn-default Uploadyourown">Upload your own</button>
                                 </div>
                                 <!-- end of video search -->
                                                             
@@ -1165,7 +1167,7 @@
 					</div>
     <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/gallery.js?v=27") %>"></script>
+    <script src="<%= ResolveUrl("~/js/gallery.js?v=30") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 
 </asp:Content>

@@ -30,7 +30,7 @@
                                 <a href="#" class="tmq_closeserv myAccount">My Account |</a> <!--|-->
                                 <a href="#" class="tmq_closeserv Login">Login</a>
                                 <asp:LinkButton ID="logout" runat="server" class="tmq_closeserv Logout" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton>
-                                <a href="#"><div class="livedrive"><i class="fa fa-video-camera" style="padding-right:10px;"></i>Live drive in 01:54:36</div></a>
+                                <!--<a href="#"><div class="livedrive"><i class="fa fa-video-camera" style="padding-right:10px;"></i>Live drive in 01:54:36</div></a>-->
                             </div>
                         
                     	</div>
@@ -48,9 +48,9 @@
 					</div>
                     
                    		<!-- Search Button -->
-                        <ul class="navbar-right">
+                        <!--<ul class="navbar-right">
                             <li id="search" data-toggle="popover"><a href="javascript:void(0);" class="top-search" title="Search"><i class="fa fa-search"></i></a></li>
-                        </ul>
+                        </ul>-->
                         <!-- End Search Button -->
 					
 					<!-- Main Menu -->

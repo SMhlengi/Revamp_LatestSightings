@@ -260,6 +260,10 @@
         }
     });
 
+    $(".Uploadyourown").click(function () {
+        location.href = "/login";
+    });
+
 
     function closeImageDialog(id) {
         $(".latestGalleryImage" + id).find(".fa-times-circle").click(function () {

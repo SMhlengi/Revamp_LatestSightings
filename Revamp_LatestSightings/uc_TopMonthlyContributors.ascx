@@ -16,10 +16,11 @@
 			<td>Total Views</td>
 		</tr>
 	    <% foreach(var contributor in contributorsViews){
-            var views = String.Format("{0:N1}", Convert.ToInt32(contributor.Stat4)) ;%>
+			var formatedview = Convert.ToDouble(contributor.Stat4).ToString("N");
+			formatedview = formatedview.Substring(0,formatedview.Length -3);%>
             <tr>
                 <td><%= contributor.Stat2 %> <%= contributor.con_firstCharacterOfSurname %>.</td>
-                <td><%= views.Substring(0, views.Length - 2)%></td>
+                <td><%= formatedview.Replace("&nbsp;", ",") %></td>
             </tr>
         <%} %>
         </table>
@@ -31,4 +32,3 @@
     </div>
     <!-- Top 10 END -->
 <%} %>
-<!-- test -->

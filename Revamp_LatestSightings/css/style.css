@@ -3996,6 +3996,10 @@ input , select {
     display: none;
 }
 
+.cursorPointer {
+    cursor:text;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {

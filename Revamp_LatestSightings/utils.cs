@@ -465,11 +465,11 @@ namespace Revamp_LatestSightings
         {
             CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
             int startIndex = CateogryArticle["body"].IndexOf('>');
-            if (startIndex == 0)
-            {
-                CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
-                startIndex = CateogryArticle["body"].IndexOf('>');
-            }
+            //if (startIndex == 0)
+            //{
+            //    CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
+            //    startIndex = CateogryArticle["body"].IndexOf('>');
+            //}
             int endIndex = CateogryArticle["body"].IndexOf('<');
             int substract = endIndex - startIndex;
             CateogryArticle["body"] = CateogryArticle["body"].Substring(startIndex + 1, substract - 1);

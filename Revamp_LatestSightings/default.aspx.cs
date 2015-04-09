@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using System.Text;
 
 namespace Revamp_LatestSightings
 {
@@ -22,6 +23,28 @@ namespace Revamp_LatestSightings
             LoadLatestMonthlyContributors();
             LoadLasteBLogs();
             loadLatestGalleries();
+            buildYouTubeVideosArray(featuredVideos);
+        }
+
+        private void buildYouTubeVideosArray(List<GalleryItem> featuredVideos)
+        {
+            if (featuredVideos != null && featuredVideos.Count > 0)
+            {
+                List<string> youtubeArray = new List<string>();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<script>");
+                sb.Append("var youtubeArray = new Array;");
+                int counter = 0;
+                foreach (GalleryItem item in featuredVideos)
+                {
+                    counter += 1;
+                    if (counter <= 5)
+                        sb.Append("youtubeArray.push('" + item.YouTubeId + "');");
+                }
+                sb.Append("</script>");
+
+                ClientScript.RegisterStartupScript(this.GetType(), "buildingYouTubeArray", sb.ToString());
+            }
         }
 
         private void loadLatestGalleries()
