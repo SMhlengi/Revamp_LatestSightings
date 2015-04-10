@@ -26,7 +26,12 @@
 									<div class="left" style="padding-top:10px;">
                                         <h4 style="width:auto; float:left;" >Choose the package that is right for you</h4>
                                         <div class="right">
-                                        	<a href="#"><div class="button">Enquire Now</div></a>
+                                        	<a href="javascript:void(0);">
+                                                <!--<div class="button">Enquire Now</div>-->
+                                                <button type="button" class="btn btn-primary btn-md button" data-toggle="modal" data-target="#myModal">
+                                                    Enquire Now
+                                                </button>
+                                        	</a>
                                         </div>
                                     </div>
                                     
@@ -282,7 +287,7 @@
                         <!-- RIGHT Content END -->
                         
                         
-                        
+                        <asp:PlaceHolder ID="enquire" runat="server"></asp:PlaceHolder>
 					</div>
 				<!-- End Content Area -->
 

@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Revamp_LatestSightings
 {
-    public partial class holidays : System.Web.UI.Page
+    public partial class uc_enquireForm : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadEnquireForm();
-        }
 
-        private void LoadEnquireForm()
-        {
-            uc_enquireForm en_q = (uc_enquireForm)LoadControl("~/uc_enquireForm.ascx");
-            enquire.Controls.Add(en_q);
         }
     }
 }

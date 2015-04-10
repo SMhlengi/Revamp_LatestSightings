@@ -19,7 +19,7 @@
                     <% foreach (var categoryArticle in featuredCateogryArticles)
                        {
                            articleCount += 1; %>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 <% if (articleCount == 4 || articleCount == 7){ %>clearLeft <%} %>">
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 <% if (articleCount == 4 || articleCount == 7 || articleCount == 10 || articleCount == 13 || articleCount == 16 || articleCount == 19 || articleCount == 22 ){ %>clearLeft <%} %>">
 							<div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
 								<a class="img-link" href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
 								<div class="blog-grid-controls">
