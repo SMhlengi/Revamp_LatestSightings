@@ -479,5 +479,81 @@ namespace Revamp_LatestSightings
                 CateogryArticle["body"] += " [...]";
             return CateogryArticle;
         }
+
+        internal static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        {
+            try
+            {
+                MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", ConfigurationManager.AppSettings["contactUsEmailAddress"]);
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Port = 25;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Host = "freeza.aserv.co.za";
+                NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                message.Subject = "Enquire Form";
+                message.IsBodyHtml = true;
+                string emailMessage = ReturnEnquireFormMessage(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest);
+
+                message.Body = emailMessage;
+                smtpClient.Send(message);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        private static string ReturnEnquireFormMessage(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        {
+            string EmailMessage = "";
+
+            EmailMessage += "<html>" + Environment.NewLine;
+            EmailMessage += "<head>" + Environment.NewLine;
+            EmailMessage += "<style>" + Environment.NewLine;
+            EmailMessage += "body { margin: 10px; }" + Environment.NewLine;
+            EmailMessage += "body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}" + Environment.NewLine;
+            EmailMessage += "</style>" + Environment.NewLine;
+            EmailMessage += "</head>" + Environment.NewLine;
+            EmailMessage += "<body style\"margin: 5px 0 0 0;\">" + Environment.NewLine;
+
+            // new code 
+            EmailMessage += "Howzit, My Name is " + name + " <br /><br />";
+            EmailMessage += "<strong>Email: </strong> " + email + " <br />";
+            EmailMessage += "<strong>Country: </strong> " + country + " <br />";
+            if (String.IsNullOrEmpty(tel))
+                EmailMessage += "<strong>Telephone: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Telephone: </strong> " + tel + " <br />";
+            
+            if (String.IsNullOrEmpty(dateOfTravel))
+                EmailMessage += "<strong>Date of travel: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Date of travel: </strong> " + dateOfTravel + " <br />";
+
+            if (String.IsNullOrEmpty(numberOfAdults))
+                EmailMessage += "<strong>Number of adults: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Number of adults: </strong> " + numberOfAdults + " <br />";
+
+            if (String.IsNullOrEmpty(numberOfChildren))
+                EmailMessage += "<strong>Number of children: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Number of children: </strong> " + numberOfChildren + " <br />";
+
+            if (String.IsNullOrEmpty(specialRequest))
+                EmailMessage += "<strong>Special requests: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Special requests: </strong> " + specialRequest + " <br />";
+
+            EmailMessage += "<br />Thank you";
+            // end of new code 
+            EmailMessage += "</body>" + Environment.NewLine;
+            EmailMessage += "</html>";
+
+            return EmailMessage;
+        }
     }
 }

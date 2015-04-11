@@ -26,6 +26,25 @@
     .ui-datepicker-title{
         color: black;
     }
+
+    .modal-footer > .enquireMailSending {
+        color: #337ab7 !important;
+        display: none;
+    }
+
+    .modal-footer > .enquireMailSent {
+        color: #3c763d !important;
+        display: none;
+    }
+
+    .firstname, .emailrequired, .countryrequired, .telephonenumberrequired, .numberofadultsrequired,
+    .numberofchildrenrequired {
+        display: none;
+    }
+
+    .errorMessages > .text-danger {
+        color: #f90 !important
+    }
         
 </style>
 <!-- Modal -->
@@ -40,7 +59,7 @@
                 <div class="row">
                     
                     <div class="form-group col-md-10">
-                        <p class="text-primary">First Name ( required )</p>
+                        <p class="text-primary">Name ( required )</p>
                         <input type="text" id="firstname" name="firstname" placeholder="" class="form-control" value="" >
                     </div>
                      <div class="form-group col-md-10">
@@ -49,7 +68,7 @@
                     </div>
                     <div class="form-group col-md-10">
                         <p class="text-primary">Country ( required )</p>
-                        <input type="text" id="lastname" name="lastname" placeholder="" class="form-control" value="">
+                        <input type="text" id="country" name="lastname" placeholder="" class="form-control" value="">
                     </div>
                     <div class="form-group col-md-10">
                         <p class="text-primary">Telephone</p>
@@ -63,32 +82,36 @@
 
                     <div class="form-group col-md-10">
                         <p class="text-primary">Number of adults (12 + years old)</p>
-                        <input type="text" id="othercontant" name="othercontant" placeholder="" class="form-control" value="">
+                        <input type="text" id="numberofadults" name="othercontant" placeholder="" class="form-control" value="">
                     </div>
                     <!-- social network -->
                     <div class="form-group col-md-10">
                         <p class="text-primary">Number of children</p>
-                        <input type="text" id="facebook" name="facebook" placeholder="" class="form-control" value="">
+                        <input type="text" id="numberofchildren" name="facebook" placeholder="" class="form-control" value="">
                     </div>
                     <div class="form-group col-md-10">
                         <p class="text-primary">Special requests</p>
-                        <textarea class="form-control" id="address" rows="5" placeholder=""></textarea>
+                        <textarea class="form-control" id="specialrequests" rows="5" placeholder=""></textarea>
+                    </div>
+                    <div class="form-group col-md-10 errorMessages">
+                        <p class="text-danger firstname">* Name is required</p>
+                        <p class="text-danger emailrequired"></p>
+                        <p class="text-danger telephonenumberrequired">Telephone number invalid. Example: Option (+) 021 323 4567</p>
+                        <p class="text-danger countryrequired">* Country is required</p>                        
+                        <p class="text-danger numberofadultsrequired"></p>
+                        <p class="text-danger numberofchildrenrequired"></p>
                     </div>
                 </div><!-- row -->
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+          <p class="text-primary enquireMailSending">Sending mail ... </p>
+          <p class="text-success enquireMailSent">Mail sent successfully </p>
+          <button type="button" class="btn btn-primary sendEnquireEmail">Send Mail</button>
+          <button type="button" class="btn btn-default closeEnquireDialog" data-dismiss="modal">Close</button>        
       </div>
     </div>
   </div>
 </div>
 
 <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-<script>
-    $(document).ready(function () {
-        $(function() {
-            $( "#datepicker" ).datepicker();
-        });
-    });
-</script>
+<script src="<%= ResolveUrl("~/js/enqureForm.js?v=3") %>"></script>

@@ -47,7 +47,7 @@
     </Reference>
     <Reference Include="LatestSightingsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LatestSightings\LatestSightingsLibrary\bin\Release\LatestSightingsLibrary.dll</HintPath>
+      <HintPath>..\..\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -170,6 +170,7 @@
     <Content Include="js\bootstrap.youtubepopup.min.js" />
     <Content Include="js\classie.js" />
     <Content Include="js\completeProfile.js" />
+    <Content Include="js\enqureForm.js" />
     <Content Include="js\gallery.js" />
     <Content Include="js\galleryviewmodal.js" />
     <Content Include="js\homePage.js" />
@@ -212,6 +213,7 @@
     <Content Include="termsAndConditions.ascx" />
     <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
+    <Content Include="uc_enquireForm.ascx" />
     <Content Include="uc_FeaturedCategories.ascx" />
     <Content Include="uc_Footer.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
@@ -443,6 +445,13 @@
     </Compile>
     <Compile Include="uc_categoryOtherRelatedStories.ascx.designer.cs">
       <DependentUpon>uc_categoryOtherRelatedStories.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_enquireForm.ascx.cs">
+      <DependentUpon>uc_enquireForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_enquireForm.ascx.designer.cs">
+      <DependentUpon>uc_enquireForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_FeaturedCategories.ascx.cs">
       <DependentUpon>uc_FeaturedCategories.ascx</DependentUpon>

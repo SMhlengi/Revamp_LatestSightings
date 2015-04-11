@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 namespace Revamp_LatestSightings
 {
@@ -25,5 +26,6 @@ namespace Revamp_LatestSightings
         public DateTime DateUploaded { get; set; }
         public DateTime DateRemoved { get; set; }
         public string filename { get; set; }
+
     }
 }

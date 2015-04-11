@@ -277,6 +277,13 @@ namespace Revamp_LatestSightings
             bool status = utils.SendContactUsMail(name, email, message);
             return status;
         }
+
+        [WebMethod]
+        public static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        {
+            bool status = utils.SendEnquireMail(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest);
+            return status;
+        }
         
     }
 }
