@@ -38,7 +38,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= videosAndPhotos[1].Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= videosAndPhotos[1].Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[1].Title %>">
@@ -77,7 +77,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= videosAndPhotos[3].Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= videosAndPhotos[3].Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[3].Title %>">
@@ -116,7 +116,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= videosAndPhotos[5].Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= videosAndPhotos[5].Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[5].Title %>">
@@ -155,7 +155,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= videosAndPhotos[7].Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= videosAndPhotos[7].Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[7].Title %>">
@@ -187,7 +187,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= photo.Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= photo.Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= photo.Title %>">
@@ -273,7 +273,7 @@
 				    </div>
 				    </div>--%>
 				    <div class="portfolio-featured-image triggerAnimation animated" style="margin:0 !important">
-					    <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog" style="margin:0px;">
+					    <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog galleryImage" style="margin:0px;">
 				    </div>
                             
                 </div>

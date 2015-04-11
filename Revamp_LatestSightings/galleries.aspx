@@ -34,7 +34,7 @@
 								</div>
 								</div>--%>
 							    <div class="portfolio-featured-image triggerAnimation animated" style="margin:0 !important">
-								    <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog">
+								    <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog galleryImage">
 							    </div>
                             
                             </div>
@@ -166,7 +166,7 @@
                                             <div class="team-member triggerAnimation animated" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/UploadedImages/650x650/<%= imageItem.Url %>">
+                                                    <img alt="" src="/UploadedImages/original/<%= imageItem.Url %>" class="galleryImage">
                                                     
                                                 </div>
                                                 <div class="team-title">

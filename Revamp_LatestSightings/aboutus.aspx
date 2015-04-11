@@ -203,7 +203,7 @@ Like our Facebook page or download the app to become part of the fastest growing
 								        </div>
 								        </div>--%>
 							            <div class="portfolio-featured-image triggerAnimation animated" style="margin:0 !important">
-								            <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog">
+								            <img alt="" src="images/slideshow-1140x390.gif" class="imageDialog galleryImage">
 							            </div>
                             
                                     </div>
