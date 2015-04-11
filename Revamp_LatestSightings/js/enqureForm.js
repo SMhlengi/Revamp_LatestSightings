@@ -10,7 +10,7 @@
         if (ValidateEnquireForm()) {
             $(".enquireMailSending").show();
             $(".enquireMailSending").css("display", "inline");
-            SendEnquireEmail($("#firstname").val(), $("#email").val(), $("#country").val(), $("#telephonenumber").val(), $("#datepicker").val(), $("#numberofadults").val(), $("#numberofchildren").val(), $("#specialrequests").val());
+            SendEnquireEmail($("#firstname").val(), $("#useremail").val(), $("#country").val(), $("#telephonenumber").val(), $("#datepicker").val(), $("#numberofadults").val(), $("#numberofchildren").val(), $("#specialrequests").val());
         }
     });
 
@@ -42,7 +42,7 @@
 
     function ClearErrorWarningOnTextBoxes() {
         ClearErrorStateOfTextBox("#firstname");
-        ClearErrorStateOfTextBox("#email");
+        ClearErrorStateOfTextBox("#useremail");
         ClearErrorStateOfTextBox("#country");
         ClearErrorStateOfTextBox("#telephonenumber");
         ClearErrorStateOfTextBox("#numberofadults");
@@ -97,14 +97,14 @@
             valid = false;
         }
 
-        if (isEmpty("#email")) {
-            $("#email").parent().addClass("has-error");
+        if (isEmpty("#useremail")) {
+            $("#useremail").parent().addClass("has-error");
             $(".emailrequired").html("* Email is required");
             $(".emailrequired").show();
             valid = false;
         } else {
-            if (!isValidEmailAddress($("#email").val())) {
-                $("#email").parent().addClass("has-error");
+            if (!isValidEmailAddress($("#useremail").val())) {
+                $("#useremail").parent().addClass("has-error");
                 $(".emailrequired").html("* Invalid Email address");
                 $(".emailrequired").show();
                 valid = false;

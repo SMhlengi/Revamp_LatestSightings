@@ -64,7 +64,7 @@
                     </div>
                      <div class="form-group col-md-10">
                         <p class="text-primary">Email ( required )</p>
-                        <input type="email" id="email" name="email" placeholder="" class="form-control" value="">
+                        <input type="email" id="useremail" name="email" placeholder="" class="form-control" value="">
                     </div>
                     <div class="form-group col-md-10">
                         <p class="text-primary">Country ( required )</p>
@@ -114,4 +114,4 @@
 </div>
 
 <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/enqureForm.js?v=3") %>"></script>
+<script src="<%= ResolveUrl("~/js/enqureForm.js?v=5") %>"></script>

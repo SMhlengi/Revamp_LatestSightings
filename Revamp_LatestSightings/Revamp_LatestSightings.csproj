@@ -192,6 +192,7 @@
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\modernizr.js" />
     <Content Include="js\navigate.js" />
+    <Content Include="js\numeral.min.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\plugins-scroll.js" />
     <Content Include="js\randomBlue.js" />

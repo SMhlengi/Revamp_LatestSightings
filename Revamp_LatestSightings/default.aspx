@@ -307,27 +307,28 @@
                     function (data, textStatus, jqXHR) {
                         switch(youtubeIdArrayCounter) {
                             case 0:
-                                $(".viewsForVideoOne").html(data.entry.yt$statistics.viewCount + " views");
+
+                                $(".viewsForVideoOne").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 1:
-                                $(".viewsForVideoTwo").html(data.entry.yt$statistics.viewCount + " views");
+                                $(".viewsForVideoTwo").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 2:
-                                $(".viewsForVideoThree").html(data.entry.yt$statistics.viewCount + " views");
+                                $(".viewsForVideoThree").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 3:
-                                $(".viewsForVideoFour").html(data.entry.yt$statistics.viewCount + " views");
+                                $(".viewsForVideoFour").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 4:
-                                $(".viewsForVideoFive").html(data.entry.yt$statistics.viewCount + " views");
+                                $(".viewsForVideoFive").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
                                 break;
                             default:
                             //default code block
@@ -344,5 +345,6 @@
     <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/homePage.js?v=6") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
+    <script src="<%= ResolveUrl("~/js/numeral.min.js") %>"></script>
 
 </asp:Content>
