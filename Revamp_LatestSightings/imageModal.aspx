@@ -45,7 +45,7 @@
                             </div>
                             
                             <!-- Photo Details & Social Sharing -->
-                            <div class="col-md-3 col-sm-12">
+                            <div class="col-md-4 col-sm-12">
                             
                             	<div class="spacer small"></div>
                                 
