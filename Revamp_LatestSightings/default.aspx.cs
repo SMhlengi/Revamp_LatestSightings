@@ -24,6 +24,13 @@ namespace Revamp_LatestSightings
             LoadLasteBLogs();
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
+            loadAds();
+        }
+
+        private void loadAds()
+        {
+            ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
+            ad300by50.Controls.Add(ad300);
         }
 
         private void buildYouTubeVideosArray(List<GalleryItem> featuredVideos)

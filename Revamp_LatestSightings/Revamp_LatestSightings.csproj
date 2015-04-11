@@ -71,6 +71,7 @@
     <Content Include="aboutus.aspx" />
     <Content Include="AddImage.aspx" />
     <Content Include="addVideo.ascx" />
+    <Content Include="ad_300by50.ascx" />
     <Content Include="AjaxOperation.aspx" />
     <Content Include="blog.aspx" />
     <Content Include="bloglist.aspx" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="addVideo.ascx.designer.cs">
       <DependentUpon>addVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ad_300by50.ascx.cs">
+      <DependentUpon>ad_300by50.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ad_300by50.ascx.designer.cs">
+      <DependentUpon>ad_300by50.ascx</DependentUpon>
     </Compile>
     <Compile Include="AjaxOperation.aspx.cs">
       <DependentUpon>AjaxOperation.aspx</DependentUpon>

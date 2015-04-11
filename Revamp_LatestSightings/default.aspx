@@ -231,9 +231,14 @@
                         	<div class="spacer"></div>
                         
                             <!-- Space for web ads BEGIN -->
-                            <div class="comment-box">
-                            	<p style="text-align:center">Space for web ads</p>
-							</div>
+                            <!-- New site - 777x90 -->
+                            <ins class="adsbygoogle"
+                            style="display:inline-block;width:777px;height:90px"
+                            data-ad-client="ca-pub-2507393417436053"
+                            data-ad-slot="3232563002"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
                             <!-- Space for web ads END --> 
                             
                             <div class="clearfix"></div>
@@ -259,9 +264,7 @@
                         	<div class="spacer"></div>
                             
                             <!-- 300x250 AD -->
-                            <div class="ad300">
-                            	<img src="images/ads-300x250.gif" width="300" height="250">
-							</div>
+                            <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
                             <!-- 300x250 AD -->
                             
                             <div class="clearfix"></div>
@@ -346,5 +349,4 @@
     <script src="<%= ResolveUrl("~/js/homePage.js?v=6") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
     <script src="<%= ResolveUrl("~/js/numeral.min.js") %>"></script>
-
 </asp:Content>

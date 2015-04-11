@@ -24,6 +24,7 @@ namespace Revamp_LatestSightings
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
             LoadLasteBLogs();
+            loadAds();
         }
 
         private void LoadEnquireForm()
@@ -36,6 +37,12 @@ namespace Revamp_LatestSightings
         {
             uc_LatestBlogs latestBlogs = (uc_LatestBlogs)LoadControl("~/uc_LatestBlogs.ascx");
             plc_latestBlogs.Controls.Add(latestBlogs);
+        }
+
+        private void loadAds()
+        {
+            ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
+            ad300by50.Controls.Add(ad300);
         }
     }
 }

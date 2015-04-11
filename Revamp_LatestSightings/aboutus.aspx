@@ -147,9 +147,7 @@ Like our Facebook page or download the app to become part of the fastest growing
                         	<div class="spacer"></div>
                             
                             <!-- 300x250 AD -->
-                            <div class="ad300">
-                            	<img src="images/ads-300x250.gif" width="300" height="250">
-							</div>
+                            <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
                             <!-- 300x250 AD -->
                                                         
                             <div class="clearfix"></div>

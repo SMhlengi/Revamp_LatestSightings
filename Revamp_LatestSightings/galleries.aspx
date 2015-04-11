@@ -55,8 +55,8 @@
                                 <div class="spacer small"></div>
                                 
                                 <p class="LocationAndSubmitter">
-                                <p style="display:inline; color:black">Location: </p><%=latestGalleryImage.Location %> <br>
-                                <p style="display:inline; color:black">Submitted by: </p><%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
+                                <p style="display:inline;">Location: </p><%=latestGalleryImage.Location %> <br>
+                                <p style="display:inline;">Image by: </p><%=latestGalleryImage.Firstname %>&nbsp;<%=latestGalleryImage.Lastname %>
                                 </p>
                                 
 <%--                                <div class="left">
@@ -70,7 +70,7 @@
                                 
                                 <!-- Facebook Comments BEGIN -->
                                 <h4 class="page-titles">Comments</h4>
-                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="light" data-width="380"></div>
+                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=latestGalleryImage.Id %>" data-numposts="5" data-colorscheme="dark" data-width="380"></div>
                                 <!-- Facebook Comments END -->
                                 
                           </div>
@@ -1121,7 +1121,7 @@
                             
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="images/ads-300x250.gif" width="300" height="250">
+                            <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
 							</div>
                             <!-- 300x250 AD -->
                                                         

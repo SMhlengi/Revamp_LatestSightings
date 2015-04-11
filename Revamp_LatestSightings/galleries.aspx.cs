@@ -26,6 +26,13 @@ namespace Revamp_LatestSightings
             stringMonth = utils.FullyQualifiedMonthName(DateTime.Now.Month);
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
+            loadAds();
+        }
+
+        private void loadAds()
+        {
+            ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
+            ad300by50.Controls.Add(ad300);
         }
     }
 }

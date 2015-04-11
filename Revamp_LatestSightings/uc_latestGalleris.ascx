@@ -297,7 +297,7 @@
                                 
                                 <p class="LocationAndSubmitter">
                                 <p style="display:inline;">Location: </p><%=image.Location %> <br>
-                                <p style="display:inline;">Submitted by: </p><%=image.Firstname %>&nbsp;<%=image.Lastname %>
+                                <p style="display:inline;">Image by: </p><%=image.Firstname %>&nbsp;<%=image.Lastname %>
                                 </p>
                                 
                                 <div class="clearfix"></div>
