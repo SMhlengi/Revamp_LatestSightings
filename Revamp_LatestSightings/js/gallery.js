@@ -175,7 +175,7 @@
         for (var i = 0; i < images.length; i++) {
             imageCounter += 1;
             img = $(".gallerySearchResults" + imageCounter).find("img")
-            img.attr("src", "/UploadedImages/650x650/" + images[i].filename);
+            img.attr("src", "/UploadedImages/original/" + images[i].filename);
             anchor = $(".gallerySearchResults" + imageCounter).find("a");
             anchor.html(images[i].title);
             $(".gallerySearchResults" + imageCounter).show();
@@ -237,7 +237,17 @@
         $(".popup_ex").find(".portfolio-featured-image").find("img").attr("src", imgSrc);
         $("#over_lay").show();
         $(".popup_ex").show();
+
+        $(".popup_ex").find(".fa-times-circle").click(function () {
+            $("#over_lay").hide();
+            $(".popup_ex").hide();
+        });
     });
+
+    //$(".fa-times-circle").click(function () {
+    //    $(this).find("#over_lay").hide();
+    //    $(this).find(".popup_ex").hide();
+    //});
 
     $(".filterImage").click(function () {
         var imageId = $(this).find("#hiddenImageId").val();

@@ -8,10 +8,6 @@
             display: none;
         }
 
-        .footer {
-            position: absolute;
-        }
-
     </style>
     <script>
         function ShowSpinner() {

@@ -671,14 +671,14 @@ namespace Revamp_LatestSightings
                 if (query.EndsWith("AND"))
                     query += " (animal LIKE '%" + animal + "%') AND";
                 else
-                    query += " AND (animal LIKE '%" + animal + "%') AND ";
+                    query += " WHERE (animal LIKE '%" + animal + "%') AND";
 
 
             if (!String.IsNullOrEmpty(activity))
                 if (query.EndsWith("AND"))
-                    query += " (activity like '%" + activity + "%') AND ";
+                    query += " (activity like '%" + activity + "%') AND";
                 else
-                    query += " AND (activity like '%" + activity + "%') AND";
+                    query += " Where (activity like '%" + activity + "%') AND";
 
             
             

@@ -1167,7 +1167,7 @@
 					</div>
     <script src="<%= ResolveUrl("~/js/galleryviewmodal.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/gallery.js?v=30") %>"></script>
+    <script src="<%= ResolveUrl("~/js/gallery.js?v=33") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 
 </asp:Content>
