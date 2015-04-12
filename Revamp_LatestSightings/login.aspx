@@ -14,6 +14,13 @@
         a:hover {
             color: white !important;
         }
+
+	    @media (max-width: 480px) { 
+	
+		    #content-inner {
+			    padding: 0px !important;
+		    }
+	    }
     </style>
     <!-- Main Container Section -->			
     <div class="container  panel-signin">
