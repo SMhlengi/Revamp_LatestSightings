@@ -36,9 +36,10 @@
     <!-- Loading Styles -->    
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
-
-    <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>""></script>
+    <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
+
     <script>
         var VideoUpload = false;
         var ImageUpload = false;
@@ -92,7 +93,11 @@
 
     <!-- Site Header -->
     <form id="lsform" runat="server">
+        
     <asp:PlaceHolder ID="headerPlaceHonder" runat="server"></asp:PlaceHolder>
+        <div class="mp-pusher" id="mp-pusher">
+        				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
 		<!-- Main Container Section -->			
 		<div class="container">
 			<div id="page-content">
@@ -110,6 +115,9 @@
 			</div>
 		</div>
 		<!-- End Main Container Section -->
+                        </div>
+                        </div>
+            </div>
         
     <!-- SiteMap -->
     <footer:sitemap id="sitemap" runat="server"></footer:sitemap>

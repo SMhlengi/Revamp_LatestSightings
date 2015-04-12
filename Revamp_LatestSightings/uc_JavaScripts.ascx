@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_JavaScripts.ascx.cs" Inherits="Revamp_LatestSightings.uc_JavaScripts" %>
-<script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
+
 <script src="<%= ResolveUrl("~/js/bootstrap.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/plugins-scroll.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.fitvids.js") %>"></script>
@@ -9,9 +9,14 @@
 <script src="<%= ResolveUrl("~/js/waypoints.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.magnific-popup.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/classie.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/mlpushmenu.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
+<script src="<%= ResolveUrl("~/js/mlpushmenu.js?v=3") %>"></script>
 <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
+
+
+
+
+
+<%--<script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>--%>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/validationLib.js?v=33") %>"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

@@ -59,7 +59,6 @@
 							<ul>
 								<li class="menu-item"><a href="/">Home</a></li>
                                 <li class="menu-item"><a href="/about-us">About Us</a></li>
-                                <!--<li class="menu-item"><a href="/sightings">Sightings</a></li>-->
                                 <li class="menu-item"><a href="/gallery">Galleries</a></li>
                                  <li class="menu-item"><a href="/bloglist">Blogs</a></li>
                                 <li class="menu-item"><a href="/holidays">Holidays</a></li>
@@ -74,6 +73,22 @@
 				</div>
 			</div>
 		</header>
+
+<%--			<div class="mp-pusher" id="mp-pusher">
+
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu">
+					<div class="mp-level">
+						<h2 class="icon icon-world">All Categories</h2>
+						<ul>
+                            <li><a href="#">Super Smart Phone</a></li>
+                            <li><a href="#">Thin Magic Mobile</a></li>
+                            <li><a href="#">Performance Crusher</a></li>
+                            <li><a href="#">Futuristic Experience</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>--%>
 		<!-- End Header -->
     <!-- END Header Section -->
     <script>
