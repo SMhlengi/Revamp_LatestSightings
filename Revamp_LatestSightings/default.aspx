@@ -133,7 +133,7 @@
                                 
                                 <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                                     <div class="blog-list-featured-image">
-                                        <a href="javascript:void(0);"><img class="spotLightImage youtube" src="<%=featuredVideos[0].Url2 %>" rel="<%=featuredVideos[0].YouTubeId %>"></a>
+                                        <a href="javascript:void(0);"><img class="spotLightImage youtube img-responsive" src="<%=featuredVideos[0].Url2 %>" rel="<%=featuredVideos[0].YouTubeId %>"></a>
                                         <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
                                     </div>
                                             

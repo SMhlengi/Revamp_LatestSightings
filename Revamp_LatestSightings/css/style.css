@@ -3954,7 +3954,7 @@ input , select {
 
 .spotLightImage {
     width: 777px;
-    height: 437px;
+    /*height: 437px;*/
 }
 
 .latestGalleriesJustPics, .latestGalleriesJustVideos, .emailfooter {
