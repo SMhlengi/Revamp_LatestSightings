@@ -117,9 +117,9 @@
                                
                                         <% foreach(var article in topFeaturedArticles){ %>
                                              <div class="media recent-posts">
-									            <a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
+									            <a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
 									            <div class="media-body">
-										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
+										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
 									            </div>
 								            </div>
                                         <%} %>
