@@ -5,7 +5,7 @@
     <h4 class="page-titles"><%= stringMonth %> Top 10</h4>
                           	
     <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Contributors</a></li>
+        <li role="presentation" class="active"><a href="#">Top Filmakers</a></li>
         <!--<li role="presentation"><a href="#">Tingers</a></li>-->
     </ul>
                             

@@ -52,7 +52,7 @@
                                     
                                         <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                             <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                <a class="img-link" href="3"><img alt="" src="images/Website.png"></a>
+                                                <a class="img-link" href="3"><img alt="" src="images/On-game-drive.png"></a>
                                                 <div class="holiday-list-content">
                                                     <div class="left">
                                                         <h4>Wild Wings Safaris</h4>
@@ -68,7 +68,7 @@
                                        
                                        <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                             <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                <a class="img-link" href="3"><img alt="" src="images/family-together.png"></a>
+                                                <a class="img-link" href="3"><img alt="" src="images/Website.png"></a>
                                                 <div class="holiday-list-content">
                                                     <div class="left">
                                                         <h4>Outlook Safaris</h4>
