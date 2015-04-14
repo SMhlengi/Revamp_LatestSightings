@@ -67,6 +67,8 @@ namespace Revamp_LatestSightings
                 article.ArticleBody = article.ArticleBody.Remove(0, 2);
                 int startIndex = article.ArticleBody.IndexOf('>');
                 int endIndex = article.ArticleBody.IndexOf('<');
+                if (endIndex > 101)
+                    endIndex = 101;
                 int substract = endIndex - startIndex;
                 article.ArticleBody = article.ArticleBody.Substring(startIndex + 1, substract - 1);
                 article.ArticleBody += " [...]";
