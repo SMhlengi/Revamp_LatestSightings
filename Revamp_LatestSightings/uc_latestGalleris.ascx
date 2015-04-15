@@ -22,11 +22,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[0].Title %>">
-                                                    <% if (videosAndPhotos[0].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[0].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[0].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -42,11 +38,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[1].Title %>">
-                                                    <% if (videosAndPhotos[1].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[1].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[1].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -61,11 +53,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[2].Title %>">
-                                                    <% if (videosAndPhotos[2].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[2].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[2].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -81,11 +69,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[3].Title %>">
-                                                    <% if (videosAndPhotos[3].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[3].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[3].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -100,11 +84,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[4].Title %>">
-                                                    <% if (videosAndPhotos[4].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[4].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[4].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -120,11 +100,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[5].Title %>">
-                                                    <% if (videosAndPhotos[5].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[5].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[5].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -139,11 +115,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[6].Title %>">
-                                                    <% if (videosAndPhotos[6].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[6].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[6].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -159,11 +131,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= videosAndPhotos[7].Title %>">
-                                                    <% if (videosAndPhotos[7].Title.Length > 35 ){ %>
-                                                        <h5><a href="#"><%= videosAndPhotos[7].Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= videosAndPhotos[7].Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -191,12 +159,7 @@
                                                     
                                                 </div>
                                                 <div class="team-title" title="<%= photo.Title %>">
-                                                    <% if (photo.Title.Length > 35)
-                                                       { %>
-                                                        <h5><a href="#"><%= photo.Title.Substring(0,32) %></a></h5>
-                                                    <%}else{ %>
                                                         <h5><a href="#"><%= photo.Title %></a></h5>
-                                                    <%} %> 
                                                 </div>
                                             </div>
                                         </div>
@@ -224,11 +187,7 @@
                                                     
                                                     </div>
                                                     <div class="team-title" title="<%= video.Title %>">
-                                                        <% if (video.Title.Length > 35 ){ %>
-                                                            <h5><a href="#"><%= video.Title.Substring(0,32) %></a></h5>
-                                                        <%}else{ %>
-                                                            <h5><a href="#"><%= video.Title %></a></h5>
-                                                        <%} %> 
+                                                         <h5><a href="#"><%= video.Title %></a></h5>
                                                     </div>
                                                 </div>
                                             </div>
