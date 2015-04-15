@@ -26,7 +26,7 @@
         </table>
                               
         <a href="/partnership" >
-        <div class="button becomeAContributor" style="text-align:center;">Become a Contributor</div>
+        <div class="button becomeAContributor" style="text-align:center;">Submit a video and earn</div>
         </a>
                               	
     </div>
