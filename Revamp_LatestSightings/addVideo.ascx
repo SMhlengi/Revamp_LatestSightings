@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="pull-left marginLeftTen registerSpinner">
-                                <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <!--<button class="btn btn-success updateVideoDetails">Save</button>-->
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
-                    <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
                 <div class="alert alert-success pull-left marginLeftTen videoDetailsSaved">
                     <strong>Video details have been Successfully Saved</strong><br />An administrator has been informed and will review your video and be in contact with you shortly

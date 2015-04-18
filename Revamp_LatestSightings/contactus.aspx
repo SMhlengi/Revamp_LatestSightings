@@ -55,7 +55,7 @@
                                                 <!--<button class="btn btn-success updateProfile">Save</button> -->
                                             </div>
                                             <div class="pull-left marginLeftTen registerSpinner">
-                                                <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                                <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                             </div>
                                         </div>
                                         </div>

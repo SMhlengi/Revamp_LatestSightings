@@ -9,7 +9,7 @@
 <link href="<%= ResolveUrl("~/css/hover-min.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/magnific-popup.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/component.css") %>" rel="stylesheet">
-<link href="<%= ResolveUrl("~/css/style.css?v=39") %>" rel="stylesheet">
+<link href="<%= ResolveUrl("~/css/style.css?v=41") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/responsive.css?v=4") %>" rel="stylesheet">    
 <link href="<%= ResolveUrl("~/css/gallerymodal.css?v=3") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/jquery.dataTables.min.css") %>" rel="stylesheet" />

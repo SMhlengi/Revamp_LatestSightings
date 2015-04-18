@@ -227,7 +227,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-1 marginLeftTwenty registerSpinner">
-                                                        <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                                        <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                                     </div>
                                                 </div>
                                         

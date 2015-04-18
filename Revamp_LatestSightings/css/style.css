@@ -4004,6 +4004,12 @@ input , select {
     width: 100%;
 }
 
+.registerSpinner > img {
+    width:28px;
+    height:28px;
+    margin-top:9px;
+}
+
 /*
     
 @media screen and (max-width: 1024px) {

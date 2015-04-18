@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="pull-left marginLeftTen registerSpinner">
-                                    <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                     <a href="javascript:void(0)" class="btn btn-success updateImageDetails" role="button">Save</a>                    
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
-                    <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
                 <div class="alert alert-success pull-left marginLeftTen imageDetailsSaved">
                     <strong>Image details have been Successfully Saved</strong>

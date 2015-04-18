@@ -137,6 +137,7 @@
     <Content Include="images\jplayer.blue.monday.video.play.png" />
     <Content Include="images\latestsightings.png" />
     <Content Include="images\loader9.gif" />
+    <Content Include="images\loading.gif" />
     <Content Include="images\logo-horizontal-new.png" />
     <Content Include="images\masonry-600x1200.gif" />
     <Content Include="images\masonry-600x300.gif" />

@@ -75,7 +75,7 @@
                                         <button type="button" class="btn btn-success submitRegistration">Register <i class="fa fa-angle-right ml5"></i></button>
                                     </div>
                                     <div class="pull-right marginRightTen registerSpinner">
-                                        <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                        <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                     </div>
                                 </div>
                             </div>
