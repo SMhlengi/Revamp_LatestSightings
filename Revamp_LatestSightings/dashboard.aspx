@@ -8,7 +8,13 @@
             display: none;
         }
 
+        .footer {
+            position: absolute;
+        }
+
     </style>
+
+    <link href="<%= ResolveUrl("~/css/responsive.css?v=6") %>" rel="stylesheet">  
     <script>
         function ShowSpinner() {
             $(".registerSpinner").show();

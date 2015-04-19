@@ -56,7 +56,7 @@ namespace Revamp_LatestSightings
             }
             else
             {
-                HttpContext.Current.Response.Redirect("/");
+                HttpContext.Current.Response.Redirect("/login");
             }
 
         }

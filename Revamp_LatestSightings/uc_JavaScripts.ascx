@@ -11,12 +11,7 @@
 <script src="<%= ResolveUrl("~/js/classie.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/mlpushmenu.js?v=3") %>"></script>
 <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
-
-
-
-
-
-<%--<script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>--%>
+<script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/validationLib.js?v=33") %>"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

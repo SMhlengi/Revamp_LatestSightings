@@ -272,7 +272,7 @@
                         
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="images/app.gif" width="300" height="250">
+                            	<asp:PlaceHolder ID="downloadapp" runat="server"></asp:PlaceHolder>
 							</div>
                             <!-- 300x250 AD -->
                             

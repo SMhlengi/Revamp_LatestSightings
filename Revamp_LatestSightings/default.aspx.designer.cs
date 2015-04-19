@@ -40,6 +40,15 @@ namespace Revamp_LatestSightings {
         protected global::System.Web.UI.WebControls.PlaceHolder ad300by50;
         
         /// <summary>
+        /// downloadapp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder downloadapp;
+        
+        /// <summary>
         /// plc_latestBlogs control.
         /// </summary>
         /// <remarks>

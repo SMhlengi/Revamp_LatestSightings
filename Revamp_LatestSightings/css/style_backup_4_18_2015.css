@@ -180,7 +180,7 @@ body > .container {
 .navbar-brand img {
 	padding-top: 5px;
 	padding-bottom: 5px;
-	width: 160px;
+	width: 130px;
 	margin-top: -5px;
 }
 
@@ -189,7 +189,7 @@ body > .container {
 /*-------------------------------------------------------*/
 
 header .navbar-inverse {
-	margin-top: 0;
+	margin-top: 0px; /* was 35px*/
 	-webkit-transition: all 0.28s ease;
 	-moz-transition: all 0.28s ease;
 	-o-transition: all 0.28s ease;
@@ -201,7 +201,7 @@ header.active .navbar-inverse {
 	margin-top: 0;
 	min-height: 70px;
 	background-color: #000;
-	background-color: #000;		
+	background-color: rgba(0,0,0,0.5);		
 }
 
 header.active .navbar-right li {
@@ -957,7 +957,6 @@ ol.comments {
 	width: 100%;	
 	z-index: 10;
 	background-color:#783f04;
-    position:relative;
 }
 
 .footer .footer-logo {
@@ -3658,7 +3657,7 @@ div .notes {
 }
 
 .havingTroubleUploading {
-    color: #FF9900;
+    color: #337ab7;
     font-size: 14px;
     margin-top:39px;
 }
@@ -3706,7 +3705,7 @@ div .notes {
 }
 
 .emailFile {
-    color: #FF9900;
+    color: #3c763d;
     font-size: 14px;
 }
 
@@ -3924,10 +3923,7 @@ input , select {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    margin-bottom:20px;
 }
-
 
 .modal-header {
     color: black !important;
@@ -4004,11 +4000,6 @@ input , select {
     cursor:text;
 }
 
-.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {   
-min-width: 100% !important;   
-width: 100% !important; 
-}
-
 .galleryImage {
     width: 100%;
 }
@@ -4020,68 +4011,6 @@ width: 100% !important;
 }
 
 .orange { color:#ff9900;}
-
-.adbox { 	
-background-color:#895218; 	
-width:100%; 	
-margin-bottom:20px; 
-float:left; 	
-padding:0 10px 10px 10px; 
-}  
-
-.adbox h1 { 	
-font-size:16px; 	
-text-align:center; 	
-font-weight:bold; 	
-line-height:1.5;	 
-}  
-
-.adbox .left { 	
-width:50%; 	
-float:left; 	
-padding-left:10px; 	
-padding-right:10px ;
-}  
-
-.adbox .right { 	
-width:50%; 	
-float:left; 	
-padding-left:10px; 	
-padding-right:10px;
- }  
-
-.adbox .adimage img { 	
-float:left; 	
-width:100%; 
-}  
-
-.adbox .appimage img { 	
-width:100%; 	
-margin-bottom:10px; 	
-margin-left:auto !important; 	
-margin-right:auto !important; 	
-display:block; 	
-max-width:160px; 
-}  
-
-@media (max-width: 768px) { 
-.adbox .left { 	width:70%; }  
-.adbox .right { 	width:30%; 	padding-top:20px; } 
-.adbox .appimage img { 	margin-bottom:20px; }   }  
-
-@media (max-width: 581px) { 
- .adbox .left { 	width:60%; }  
-.adbox .right { 	width:40%; 	padding-top:20px; }  
-.adbox .appimage img { 	margin-bottom:20px; }  }  
-
-@media (max-width: 480px) {  
-.adbox .left { 	width:60%; }  
-.adbox .right { 	width:40%; }  }  
-
-@media (max-width: 360px) { 
-.adbox .left { 	width:60%; } 
-.adbox .right { 	width:40%; }  }
-
 
 /*
     

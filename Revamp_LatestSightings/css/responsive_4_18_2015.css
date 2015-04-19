@@ -139,7 +139,7 @@
 	
 	.navbar-right {
 		position: absolute;
-		top: 0;
+		top: 55px;
 		right: 15px;
 	}
 	
@@ -274,7 +274,7 @@
 	
 	.navbar-right {
 		position: absolute;
-		top: 0;
+		top: 65px;
 		right: 15px;
 	}
 }
@@ -334,11 +334,9 @@
 		text-align: center;
 	}
 	
-#content-inner {
-    padding: 15px;
-    margin-top: 20px;
-}
-
+	#content-inner {
+		padding: 15px;
+	}
 	
 	.featured-image {
 		margin-left: -15px;
@@ -487,7 +485,7 @@
 	
 	.navbar-right {
 		position: absolute;
-		top: 0;
+		top: 65px;
 		right: 15px;
 	}
 }
@@ -496,7 +494,7 @@
 	
 	.navbar-right {
 		position: absolute;
-		top: 0;
+		top: 81px;
 		right: 15px;
 	}
 	

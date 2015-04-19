@@ -13,26 +13,18 @@
 		<header>
 			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 				<div class="container">
-                
-                	<!-- Profile bar BEGIN -->
+
+                    <!-- Profile bar BEGIN -->
                 	<div class="profilebar">
                     	<div class="left">
                     				
                             <div class="profile-username"><i class="fa fa-user pro-username" style="padding-right:10px;"></i>
                                <%=username %>
 
-                            </div>
-                            
+                            </div> 
                             <div class="profilelinks">
-                                <a href="javascript:void(0);" class="tmq_closeserv viewFinancials">View Financials | </a> <!--| -->
-                                <a href="#" class="tmq_closeserv uploadVideo">Upload Video |</a>  <!--|-->
-                                <a href="#" class="tmq_closeserv uploadGalleryImage">Upload Image |</a> <!--|-->
-                                <a href="#" class="tmq_closeserv myAccount">My Account |</a> <!--|-->
                                 <a href="#" class="tmq_closeserv Login">Login</a>
-                                <asp:LinkButton ID="logout" runat="server" class="tmq_closeserv Logout" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton>
-                                <!--<a href="#"><div class="livedrive"><i class="fa fa-video-camera" style="padding-right:10px;"></i>Live drive in 01:54:36</div></a>-->
-                            </div>
-                        
+                            </div>                       
                     	</div>
                     </div>
                     <!-- Profile bar END -->
@@ -58,12 +50,29 @@
 						<div class="menu-container">
 							<ul>
 								<li class="menu-item"><a href="/">Home</a></li>
-                                <li class="menu-item"><a href="/about-us">About Us</a></li>
                                 <li class="menu-item"><a href="/gallery">Galleries</a></li>
-                                 <li class="menu-item"><a href="/bloglist">Blogs</a></li>
+                                <li class="menu-item"><a href="/bloglist">Blogs</a></li>
+								<li class="menu-item"><a href="http://latestsightings.socialengine.co.za/blog.aspx?id=1086&cat=1003">Live Drive</a></li>
                                 <li class="menu-item"><a href="/holidays">Holidays</a></li>
-                                <li class="menu-item"><a href="/partnership">Partnership</a></li>
+                                <li class="menu-item"><a href="/partnership">Film & Earn</a></li>
+								<li class="menu-item"><a href="http://latestsightings.eshop.co.za/">Shop</a></li>
+								<li class="menu-item"><a href="/about-us">About Us</a></li>
                                 <li class="menu-item"><a href="/contact-us">Contact Us</a></li>
+                                <li class="menu-item orange" ><a href="#">Profile</a>                                
+                                    <div class="menu-container"> 							
+                                        <a class="mp-back" href="#">back</a> 					
+                                        <ul> 											
+                                            <li class="menu-item"><a href="/financials" class="viewFinancials">View Financials</a></li> 			
+                                            <li class="menu-item"><a href="/addvideo" class="uploadVideo">Upload Video</a></li>                                             
+                                            <li class="menu-item"><a href="/addImage" class="uploadGalleryImage">Upload Image</a></li>                                             
+                                            <li class="menu-item"><a href="/myaccount" class="myAccount">My Account</a></li>        
+                                            <%--<li class="menu-item"><a href="#" class="Login">Login</a></li>         --%>                                                                          
+                                            <li class="menu-item Logout"><asp:LinkButton ID="logout" runat="server" class="" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton></li>
+                                        </ul> 									
+                                    </div>                                 
+                                </li>
+
+
 							</ul>
 						</div>
 					</nav>
@@ -92,7 +101,7 @@
 		<!-- End Header -->
     <!-- END Header Section -->
     <script>
-
+        
         var hasUserNameBeenSet = "<%=username %>";
         if (hasUserNameBeenSet != "") {
             $(".viewFinancials").show();
@@ -105,5 +114,7 @@
             $(".uploadGalleryImage").attr("href", "addImage");
             $(".myAccount").show();
             $(".myAccount").attr("href", "myaccount");
+        } else {
+            $(".orange").hide();
         }
     </script>

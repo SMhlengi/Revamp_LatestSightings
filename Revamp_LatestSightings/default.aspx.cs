@@ -31,6 +31,9 @@ namespace Revamp_LatestSightings
         {
             ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
             ad300by50.Controls.Add(ad300);
+
+            uc_downloadLatestApp downloadApp = (uc_downloadLatestApp)LoadControl("~/uc_downloadLatestApp.ascx");
+            downloadapp.Controls.Add(downloadApp);
         }
 
         private void buildYouTubeVideosArray(List<GalleryItem> featuredVideos)
