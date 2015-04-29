@@ -15,7 +15,7 @@
                         <div class="lightboxcontainer">
                         	
                             <!-- Photo -->
-                            <div class="col-md-8 col-sm-9">
+                            <div class="col-md-8 col-sm-12">
                             
 <%--                            	<div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
 								<div class="image-slider">

@@ -15,7 +15,7 @@
 							</div>
 							
 							<div class="contact-map clearfix triggerAnimation animated" data-animate="fadeIn">
-								<div id="map_canvas"></div>			
+								<%--<div id="map_canvas"></div>			--%>
 							</div>
 							<div class="row">
 								<div class="col-md-4 col-md-offset-1 triggerAnimation animated" data-animate="fadeInUp">
@@ -31,7 +31,7 @@
                                     <h4 class="underlined">Connect with us</h4>
                                     <div class="clearfix"></div>
                                     <a href="https://www.facebook.com/latestsightingskruger" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                                    <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
+                                    <%--<a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>--%>
                                     <a href="https://twitter.com/LatestKruger" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
                                     <a href=" https://www.youtube.com/user/Animatedcams" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-youtube"></i></a>
                                     <%--<a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-pinterest"></i></a>--%>

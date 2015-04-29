@@ -157,10 +157,10 @@
                                             <% if (featuredVideos.Count > 1){ %>
                                             <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                         <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                            <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[1].Url2 %>" rel="<%=featuredVideos[1].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                            <a class="img-link" href="javascript:void(0);"><img class="youtube" src="<%=featuredVideos[1].Url2 %>" rel="<%=featuredVideos[1].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                             <div class="blog-grid-controls">
                                                                 <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
-                                                                <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                <%--<a href="#" title="Share to Google"><i class="fa fa-google"></i></a>--%>
                                                                 <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
                                                             <div class="blog-grid-content">
@@ -173,10 +173,10 @@
                                             <% if (featuredVideos.Count > 2){ %>
                                                 <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                             <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                                <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[2].Url2 %>" rel="<%=featuredVideos[2].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                                <a class="img-link" href="javascript:void(0);"><img class="youtube" src="<%=featuredVideos[2].Url2 %>" rel="<%=featuredVideos[2].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                                 <div class="blog-grid-controls">
                                                                     <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
-                                                                    <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                    <%--<a href="#" title="Share to Google"><i class="fa fa-google"></i></a>--%>
                                                                     <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
                                                                 <div class="blog-grid-content">
@@ -192,10 +192,10 @@
                                             <% if (featuredVideos.Count > 3){ %>
                                                 <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                         <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                                <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[3].Url2 %>" rel="<%=featuredVideos[3].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                                <a class="img-link" href="javascript:void(0);"><img class="youtube" src="<%=featuredVideos[3].Url2 %>" rel="<%=featuredVideos[3].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                                 <div class="blog-grid-controls">
                                                                     <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
-                                                                    <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                    <%--<a href="#" title="Share to Google"><i class="fa fa-google"></i></a>--%>
                                                                     <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                                 </div>
                                                                 <div class="blog-grid-content">
@@ -208,10 +208,10 @@
                                              <% if (featuredVideos.Count > 4){ %>
                                                 <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                     <div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-                                                            <a class="img-link" href="3"><img class="youtube" src="<%=featuredVideos[4].Url2 %>" rel="<%=featuredVideos[4].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
+                                                            <a class="img-link" href="javascript:void(0);"><img class="youtube" src="<%=featuredVideos[4].Url2 %>" rel="<%=featuredVideos[4].YouTubeId %>"><div class="gridplayicon"><i class="fa fa-play"></i></div></a>
                                                             <div class="blog-grid-controls">
                                                                 <a href="javascript:void(0);" title="Share to Facebook" class="shareOnFacebook"><i class="fa fa-facebook-square"></i></a>
-                                                                <a href="#" title="Share to Google"><i class="fa fa-google"></i></a>
+                                                                <%--<a href="#" title="Share to Google"><i class="fa fa-google"></i></a>--%>
                                                                 <a href="javascript:void(0);" title="Share to Twitter"  class="shareOnTwitter"><i class="fa fa-twitter"></i></a>
                                                             </div>
                                                             <div class="blog-grid-content">
@@ -294,6 +294,13 @@
 				<!-- End Content Area -->
     <script>
         $(document).ready(function () {
+            // code for play video image when clicked
+            $(".img-link").click(function () {
+                $(this).find("img").click();
+            });
+            // end of that code
+
+
             var youtubeIdArrayCounter = 0;
             if (youtubeArray) {
                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);

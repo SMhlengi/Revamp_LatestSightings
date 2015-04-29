@@ -39,7 +39,7 @@ body{
 
 
 .popup_ex {
-    width: 65%;
+    width: 90%;
     position: fixed;
     margin: auto;
     border-radius: 0px;
@@ -62,11 +62,21 @@ body{
     color: #F90;
     font-size: 36px;
     text-align: center;
-    right: 6px;
+    right: 15px;
     top: 0px;
 }
 
 .lightboxcontainer{	
 	width:100%; 
 	padding:20px 10px;
+}
+
+@media (max-width: 581px) { 
+.popup_ex{
+      width:100%;
+}
+
+.lightboxcontainer{    
+    padding:10px 0px;
+}
 }
