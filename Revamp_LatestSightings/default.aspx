@@ -129,7 +129,7 @@
 						<div class="leftcol">
                            <% if (featuredVideos != null && featuredVideos.Count > 0){ %>
                                 <!-- Spotlight Video BEGIN -->
-                                <h4 class="page-titles">Spotlight Video</h4>
+<%--                                <h4 class="page-titles">Spotlight Video</h4>
                                 
                                 <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                                     <div class="blog-list-featured-image">
@@ -143,8 +143,35 @@
                                         <div class="viewsForVideoOne"></div>
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- Spotlight Video END -->
+                                <!-- NEW SPOTLIGHT HTML -->
+                                <!-- Spotlight Video BEGIN -->                            
+                                <h4 class="page-titles">Spotlight Video</h4>                                                                                            
+                                <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn"> 
+                                    <div class="blog-list-featured-image">                                 	
+                                        <div class="playicon img-featured-video-link"><i class="fa fa-play"></i></div>                                     
+                                         <a href="javascript:void(0);"><img class="spotLightImage youtube img-responsive" src="<%=featuredVideos[0].Url2 %>" rel="<%=featuredVideos[0].YouTubeId %>"></a>                                                                 
+                                    </div>                                                                              
+                                    <div class="blog-list-content">                                     
+                                        <h2 class="blog-list-title">
+                                            <a href="javascript:void(0);" class="cursorPointer"><%= featuredVideos[0].Title %></a>
+                                        </h2>                                    
+                                        <p><%=featuredVideos[0].Description %></p>                                     
+                                        <div class="viewsForVideoOne"></div>                               
+                                        <div class="clearfix"></div>                                                                  		
+                                        <div class="spacer sml"></div>  						
+                                        <div class="left">                                                                                 
+                                            <div class="right">                                             
+                                                <a href="javascript:void(0);" title="Share to Facebook" class="featured-video-shareOnFacebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>                                             
+                                                <a href="javascript:void(0);" title="Share to Twitter" class="featured-video-shareOnTwitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>                                         
+                                            </div>                                     
+                                        </div>                                                                          
+                                        <div class="clearfix"></div>                                 
+                                    </div>                            
+                                </div>                            
+                                <!-- Spotlight Video END -->
+                                <!-- END OF NEW SPOTLIGHT HTML -->
                            <%} %>
                         
                         	<div class="spacer"></div>
@@ -297,6 +324,10 @@
             // code for play video image when clicked
             $(".img-link").click(function () {
                 $(this).find("img").click();
+            });
+
+            $(".img-featured-video-link").click(function () {
+                $(".img-featured-video-link").next().find("img").click();
             });
             // end of that code
 

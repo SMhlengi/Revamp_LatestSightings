@@ -1380,6 +1380,7 @@ ol.comments {
 
 .blog-list-featured-image {
 	overflow: hidden;
+    position:relative;
 }
 
 .blog-list-featured-image img {
@@ -4067,6 +4068,20 @@ margin-right:auto !important;
 display:block; 	
 max-width:160px; 
 }  
+
+.playicon { 	
+    font-size:48px; 	
+    cursor:pointer; 	
+    margin-left:auto; 	
+    margin-right:auto; 	
+    width:48px; 	
+    position:absolute; 	
+    left:50%; 	
+    top:43%; 	
+    float:left; 	
+    display:inline; 
+}
+
 
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
