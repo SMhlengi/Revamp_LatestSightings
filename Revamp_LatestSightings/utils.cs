@@ -74,7 +74,8 @@ namespace Revamp_LatestSightings
             EmailMessage += "<body style\"margin: 5px 0 0 0;\">" + Environment.NewLine;
 
             // new code 
-            EmailMessage += "Howzit, My Name is " + firstname + " <br /><br />";
+            EmailMessage += "Howzit, My Name is " + firstname + " <br />";
+            EmailMessage += "Email Address:  " + emailaddress + " <br /><br />";
             EmailMessage +=  message + "<br /><br />";
             // end of new code 
             EmailMessage += "</body>" + Environment.NewLine;

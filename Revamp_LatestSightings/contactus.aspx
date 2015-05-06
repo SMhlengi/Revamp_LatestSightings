@@ -48,7 +48,7 @@
                                             <div class="form-group">
                                                 <input type="email" id="email" name="email" placeholder="Email" class="form-control" >
                                             <div class="form-group">
-                                                <textarea class="form-control" id="address" rows="5" placeholder="Address"></textarea>
+                                                <textarea class="form-control" id="address" rows="5" placeholder="Message"></textarea>
                                              </div>
                                             <div class="pull-left">
                                                 <a href="javascript:void(0)" class="btn btn-success submitContactUs" role="button">Send Message</a>
