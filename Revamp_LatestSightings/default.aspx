@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Revamp_LatestSightings._default" %>
-<%@ OutputCache Duration="180" VaryByParam="None" %>
 
 <asp:Content ID="homepage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 					
@@ -258,7 +257,7 @@
                         	<div class="clearfix"></div>
                         	<div class="spacer"></div>
                         
-                            <!-- Space for web ads BEGIN -->
+<%--                            <!-- Space for web ads BEGIN -->
                             <!-- New site - 777x90 -->
                             <ins class="adsbygoogle"
                             style="display:inline-block;width:777px;height:90px"
@@ -267,7 +266,7 @@
                             <script>
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
-                            <!-- Space for web ads END --> 
+                            <!-- Space for web ads END --> --%>
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
@@ -339,7 +338,7 @@
             }
 
             function GetFeaturedVideosViews(videoId) {
-                var postUrl = "https://gdata.youtube.com/feeds/api/videos/" + videoId + "?v=2&alt=json";
+                var postUrl = "https://www.googleapis.com/youtube/v3/videos?id=" + videoId + "&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI&part=snippet,contentDetails,statistics,status";
                 $.ajax({
                     type: "GET",
                     url: postUrl,
@@ -349,28 +348,27 @@
                     function (data, textStatus, jqXHR) {
                         switch(youtubeIdArrayCounter) {
                             case 0:
-
-                                $(".viewsForVideoOne").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
+                                $(".viewsForVideoOne").html(numeral(data.items[0].statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 1:
-                                $(".viewsForVideoTwo").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
+                                $(".viewsForVideoTwo").html(numeral(data.items[0].statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 2:
-                                $(".viewsForVideoThree").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
+                                $(".viewsForVideoThree").html(numeral(data.items[0].statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 3:
-                                $(".viewsForVideoFour").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
+                                $(".viewsForVideoFour").html(numeral(data.items[0].statistics.viewCount).format('0,0') + " views");
                                 youtubeIdArrayCounter += 1;
                                 GetFeaturedVideosViews(youtubeArray[youtubeIdArrayCounter]);
                                 break;
                             case 4:
-                                $(".viewsForVideoFive").html(numeral(data.entry.yt$statistics.viewCount).format('0,0') + " views");
+                                $(".viewsForVideoFive").html(numeral(data.items[0].statistics.viewCount).format('0,0') + " views");
                                 break;
                             default:
                             //default code block
