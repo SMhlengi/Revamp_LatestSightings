@@ -8,9 +8,15 @@
     <% foreach(var relatedArticle in cateogryArticles){ %>    
 	
 		<div class="media recent-posts">
-			<a href="#" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=relatedArticle["picture"] %>"></a>
+            <%if (!String.IsNullOrEmpty(relatedArticle["picture"])){ %>
+                <a href="#" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=relatedArticle["picture"] %>"></a>
+            <%} %>			
 			<div class="media-body">
+                <%if (categoryId == Convert.ToInt32(ConfigurationManager.AppSettings["contentCategoryId"])){ %>
+                    <h4 class="media-heading"><a href="/<%=relatedArticle["url"]%>"><%=relatedArticle["header"] %></a></h4>
+                <%}else{ %>
 				<h4 class="media-heading"><a href="/blog.aspx?id=<%=relatedArticle["id"] %>&cat=<%=relatedArticle["categoryId"]  %>"><%=relatedArticle["header"] %></a></h4>
+                <%} %>
 			</div>
 		</div>                                
 	

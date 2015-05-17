@@ -593,6 +593,10 @@
         location.href = "contact-us";
     });
 
+    $(".appReadMore").click(function () {
+        location.href = "/content/latest-sightings-app";
+    });
+
 
 
     LoginIfOnLoginPageAndRememberMeIsSet();

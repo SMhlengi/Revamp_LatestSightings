@@ -12,7 +12,7 @@ namespace Revamp_LatestSightings
     public partial class privacypolicy : System.Web.UI.Page
     {
 
-        protected int contentCategoryId = Convert.ToInt32(ConfigurationManager.AppSettings["contenCategoryId"]);
+        protected int contentCategoryId = Convert.ToInt32(ConfigurationManager.AppSettings["contentCategoryId"]);
         protected Dictionary<string, string> privacyPolicy = null;
         List<Dictionary<string, string>> contents = null;
 

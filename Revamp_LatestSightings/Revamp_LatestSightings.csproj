@@ -45,6 +45,10 @@
     <Reference Include="DotNetHelpers.UltimateImageResizer">
       <HintPath>..\..\..\..\Downloads\DotNetHelpers.UltimateImageResizer\DotNetHelpers.UltimateImageResizer.dll</HintPath>
     </Reference>
+    <Reference Include="Intelligencia.UrlRewriter, Version=2.0.0.9, Culture=neutral, PublicKeyToken=0573f3650687980d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
     <Reference Include="LatestSightingsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
@@ -78,6 +82,7 @@
     <Content Include="categoryBlogList.aspx" />
     <Content Include="completeProfile.ascx" />
     <Content Include="contactus.aspx" />
+    <Content Include="content.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -314,6 +319,13 @@
     <Compile Include="contactus.aspx.designer.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
     </Compile>
+    <Compile Include="content.aspx.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content.aspx.designer.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -421,6 +433,7 @@
     <Compile Include="ResizeImageTest.aspx.designer.cs">
       <DependentUpon>ResizeImageTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SetInStone.cs" />
     <Compile Include="sightings.aspx.cs">
       <DependentUpon>sightings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

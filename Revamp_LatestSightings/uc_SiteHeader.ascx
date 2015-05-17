@@ -35,7 +35,7 @@
 						<a id="trigger" href="#" title="Menu"><i class="fa fa-bars"></i></a>
 						
 						<!-- Website Logo -->
-						<a class="navbar-brand" href="/"><img alt="" src="images/logo-horizontal-new.png"></a>
+						<a class="navbar-brand" href="/"><img alt="" src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/logo-horizontal-new.png'></a>
                         
 					</div>
                     
@@ -52,7 +52,7 @@
 								<li class="menu-item"><a href="/">Home</a></li>
                                 <li class="menu-item"><a href="/gallery">Galleries</a></li>
                                 <li class="menu-item"><a href="/bloglist">Blogs</a></li>
-								<li class="menu-item"><a href="http://latestsightings.socialengine.co.za/blog.aspx?id=1086&cat=1003">Live Drive</a></li>
+								<li class="menu-item"><a href="/content/live-drive">Live Drive</a></li>
                                 <li class="menu-item"><a href="/holidays">Holidays</a></li>
                                 <li class="menu-item"><a href="/partnership">Film & Earn</a></li>
 								<li class="menu-item"><a href="http://latestsightings.eshop.co.za/">Shop</a></li>

@@ -4,7 +4,7 @@
         <!-- Footer Section -->
 		<footer class="footer">
 			<div class="container">
-				<div class="footer-logo"><img src="images/logo-horizontal-new.png" width="160" height="50"></div>
+				<div class="footer-logo"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/logo-horizontal-new.png' width="160" height="50"></div>
 				<div class="footer-copyright">
                 	<p class="text-muted" style="text-align:center">
 					© 2015 Latest Sightings |
@@ -13,7 +13,7 @@
                 </div>
                 <div class="socialengine">
                     Powered by
-                    <a href="http://www.socialengine.co.za/"><img src="images/socialenginelogo.png" width="180" height="60"></a>
+                    <a href="http://www.socialengine.co.za/"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/socialenginelogo.png' width="180' height="60"></a>
                 </div>
 			</div>
 		</footer>
