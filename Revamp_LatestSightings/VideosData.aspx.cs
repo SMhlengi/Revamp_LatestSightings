@@ -49,7 +49,9 @@ namespace Revamp_LatestSightings
             {
                 if (_lastMonthsVideos == null)
                 {
-                    _lastMonthsVideos = GetAnalytics(DateTime.Now.AddMonths(-1).Year, DateTime.Now.AddMonths(-1).Month);
+                    Dictionary<int, int> paidDate = LatestSightingsLibrary.Payment.GetLastPaidDate(contributor);
+                    //_lastMonthsVideos = GetAnalytics(DateTime.Now.AddMonths(-1).Year, DateTime.Now.AddMonths(-1).Month);
+                    _lastMonthsVideos = GetAnalytics(paidDate.First().Key, paidDate.First().Value);
                 }
 
                 return _lastMonthsVideos;
