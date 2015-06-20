@@ -147,10 +147,13 @@
     <Content Include="images\latestsightings.png" />
     <Content Include="images\loader9.gif" />
     <Content Include="images\loading.gif" />
+    <Content Include="images\LodgeMap1.jpg" />
+    <Content Include="images\lodges3.jpg" />
     <Content Include="images\logo-horizontal-new.png" />
     <Content Include="images\masonry-600x1200.gif" />
     <Content Include="images\masonry-600x300.gif" />
     <Content Include="images\masonry-600x600 - Copy.gif" />
+    <Content Include="images\NgwenyaLodge.jpg" />
     <Content Include="images\placestostay.jpg" />
     <Content Include="images\postslider-879x487.gif" />
     <Content Include="images\postslidert-80x80.gif" />
@@ -216,6 +219,8 @@
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
+    <Content Include="lodges.aspx" />
+    <Content Include="lodges.html" />
     <Content Include="login.aspx" />
     <Content Include="partnership.aspx" />
     <Content Include="privacypolicy.aspx" />
@@ -388,6 +393,13 @@
     </Compile>
     <Compile Include="imageModal.aspx.designer.cs">
       <DependentUpon>imageModal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lodges.aspx.cs">
+      <DependentUpon>lodges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lodges.aspx.designer.cs">
+      <DependentUpon>lodges.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

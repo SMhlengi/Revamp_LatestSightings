@@ -52,6 +52,7 @@
  43. Gallery Lightbox
  44. Profile Bar
  45. Holiday
+ 46. Lodges
 
 -------------------------------------------------*/
 
@@ -4082,6 +4083,19 @@ max-width:160px;
     display:inline; 
 }
 
+/*-------------------------------------------------------*/
+/* 45. Lodges
+/*-------------------------------------------------------*/
+
+.lodge-container {
+    padding-bottom: 20px;
+    position: absolute;
+    overflow: hidden;
+	top:0 !important;
+	width:100%;
+	
+}
+
 
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
@@ -4100,6 +4114,9 @@ max-width:160px;
 @media (max-width: 360px) { 
 .adbox .left { 	width:60%; } 
 .adbox .right { 	width:40%; }  }
+
+
+
 
 
 /*
