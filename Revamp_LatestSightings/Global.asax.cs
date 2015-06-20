@@ -13,7 +13,6 @@ namespace Revamp_LatestSightings
 
         protected void RegisterRoutes(RouteCollection routes)
         {
-
             routes.MapPageRoute("bloglist-category",
             "categorybloglist/",
             "~/categoryBlogList.aspx", true,
