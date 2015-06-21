@@ -1,8 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="lodges.aspx.cs" Inherits="Revamp_LatestSightings.lodges" %>
 
 <%@ Register Src="~/uc_StyleSheets.ascx" TagName="sheets" TagPrefix="style" %>
-<%@ Register Src="~/uc_JavaScripts.ascx" TagName="scripts" TagPrefix="java" %>
-
 
 <!DOCTYPE html>
 
@@ -12,11 +10,12 @@
     <!-- Loading Styles -->    
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
-    <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/lodge.js?v=6") %>"></script>
+
 </head>
 <body>
+        <form id="form1" runat="server">
 		<!-- Main Container Section -->
         <div class="lodge-container">	
 		<div class="container" style="width:90% !important">
@@ -80,16 +79,16 @@
                                     <%} %>
                                          Lodge Tings</h4>
                                 
-                              	<img src="<%= ResolveUrl("~/images/lodges3.jpg") %>" width="100%">
+                              	<img src="<%= ResolveUrl("~/images/lodges3.jpg") %>"  id="lodgeImage" width="100%">
 
 								<div class="clearfix spacer small"></div>
                                 
-                                <h3><a href="#">Giraffes drinking water</a></h3>
-
-                                <p>
-                                Tinged by: Allan Smith <br>
-                                All other information displayed here   
-                                </p>
+                                <h3><a href="javascript:void(0);" id="lodgeTitle"></a></h3>
+                                <p class="NoBottomMargin" id="desc"></p>
+                                <p class="NoBottomMargin" id="location"></p>
+                                <p class="NoBottomMargin" id="tingedBy"></p>
+                                <p class="NoBottomMargin" id="time"></p>
+                                <p class="NoBottomMargin" id="visibility_traffic"></p><br /><br />
                                 
                           </div>
                             <!-- Column 2 -->
@@ -145,6 +144,6 @@
 		<!-- End Container -->
     
     <!-- Javascripts -->
-    <java:scripts runat="server" id="javascriptstag"></java:scripts>
+        </form>
 </body>
 </html>

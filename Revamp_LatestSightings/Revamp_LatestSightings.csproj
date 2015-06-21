@@ -208,6 +208,7 @@
     <Content Include="js\jquery.jplayer.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\jquery.migrate.js" />
+    <Content Include="js\Lodge.js" />
     <Content Include="js\mlpushmenu.js" />
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\modernizr.js" />

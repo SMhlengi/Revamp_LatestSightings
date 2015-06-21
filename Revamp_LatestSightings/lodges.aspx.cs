@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LatestSightingsLibrary;
+using Newtonsoft.Json;
+using System.Text;
+using System.Configuration;
 
 namespace Revamp_LatestSightings
 {
@@ -14,8 +17,11 @@ namespace Revamp_LatestSightings
         public string lodgeName = null;
         public List<Dictionary<string, string>> topFiveTingers;
         public List<Dictionary<string, string>> lodgeTings;
+        public string json;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            string tingImageUrlFolder = ConfigurationManager.AppSettings["tingImageFolderUrl"];
             Dictionary<string, string> lodge = new Dictionary<string, string>();
             string lodgename = Request.QueryString["p"];
             if (!String.IsNullOrEmpty(lodgename))
@@ -26,6 +32,10 @@ namespace Revamp_LatestSightings
                     processLodgePrizesAndName(lodge);
                     processLodgeTopFiveTingers(lodge);
                     processLodgeTings(lodge);
+                    json = JsonConvert.SerializeObject(lodgeTings);
+                    var script = string.Format("setLodgeTingers({0}, '{1}')", json, tingImageUrlFolder);
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "", script, true);
                 }
             }
         }
@@ -34,7 +44,6 @@ namespace Revamp_LatestSightings
         {
             lodgeTings = new List<Dictionary<string, string>>();
             lodgeTings = library.GetLodgeTings(lodge["id"]);
-
         }
 
         private void processLodgeTopFiveTingers(Dictionary<string, string> lodge)

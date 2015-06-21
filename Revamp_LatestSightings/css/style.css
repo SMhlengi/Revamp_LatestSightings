@@ -4093,7 +4093,18 @@ max-width:160px;
     overflow: hidden;
 	top:0 !important;
 	width:100%;
-	
+}
+
+#lodgeTitle {
+    cursor:default;
+}
+
+#desc {
+    margin-top: 15px;
+}
+
+.NoBottomMargin {
+    margin-bottom: 0 !important;
 }
 
 
