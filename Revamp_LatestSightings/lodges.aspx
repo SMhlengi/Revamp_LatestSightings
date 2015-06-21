@@ -31,7 +31,11 @@
                             <div class="col-md-4">
                                 <% if (topFiveTingers != null && topFiveTingers.Count > 0){ %>
                             	<!-- Top 10 BEGIN -->
-                                <h4 class="page-titles">Top 5 Ngwena Tingers</h4>
+                                <h4 class="page-titles">Top 5 
+                                    <% if (!String.IsNullOrEmpty(lodgeName)){%> 
+                                        <%= lodgeName %>
+                                    <%} %>
+                                    Tingers</h4>
                                 
                                 <div class="table-responsive">
                                   <table class="table table-striped">
@@ -70,7 +74,11 @@
                             
                             <!-- Column 2 -->
                           <div class="col-md-4">
-                           	  	<h4 class="page-titles">Ngwenya Lodge Tings</h4>
+                           	  	<h4 class="page-titles"> 
+                                    <% if (!String.IsNullOrEmpty(lodgeName)){%> 
+                                        <%= lodgeName %>
+                                    <%} %>
+                                         Lodge Tings</h4>
                                 
                               	<img src="<%= ResolveUrl("~/images/lodges3.jpg") %>" width="100%">
 
