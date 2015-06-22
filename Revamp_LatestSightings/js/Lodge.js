@@ -1,22 +1,29 @@
 ﻿var LODGEJson = [];
 var tingImageFolderUrl = "";
 var myVar = "";
+var lodgeName = "";
+var counter = 0;
 
-function setLodgeTingers(json, FolderUrl) {
+function setLodgeTingers(json, FolderUrl, name) {
     LODGEJson = json;
     tingImageFolderUrl = FolderUrl;
+    lodgeName = name;
 }
 
 $(document).ready(function () {
     console.log(LODGEJson);
-    var counter = 0;
-    displayLodge(LODGEJson[counter]);
-    var arrayLength = LODGEJson.length;
-    myVar = setInterval(function () { displayNewLodge() }, 7000);
+    console.log(tingImageFolderUrl);
+    console.log(lodgeName);
+    displayTings();
+
+    function displayTings() {
+        displayLodge(LODGEJson[counter]);
+        myVar = setInterval(function () { displayNewLodge() }, 7000);
+    }
 
     function displayNewLodge() {
         console.log(counter);
-        if (counter != (arrayLength - 1)) {
+        if (counter != (LODGEJson.length - 1)) {
             counter += 1;
             displayLodge(LODGEJson[counter]);
         } else {
@@ -26,7 +33,36 @@ $(document).ready(function () {
 
     function myStopFunction() {
         console.log("---------------STOPPING---------------");
+        counter = 0;
         clearInterval(myVar);
+        RefreshTings();
+    }
+
+
+    function RefreshTings() {
+        console.log("---------------RefreshTings---------------");
+        var postUrl = "/AjaxOperation.aspx/GetLodgeDetails";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'lodgeName' : '" + lodgeName + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                console.log("---------------AJAX LODGE TINGS---------------");
+                console.log(data.d);
+                if (data.d.length > 0) {
+                    LODGEJson = data.d;
+                    displayTings();
+                } else {
+                    console.log("in else part");
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
     }
 
     function displayLodge(lodgeDetails) {

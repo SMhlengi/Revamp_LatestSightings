@@ -284,6 +284,18 @@ namespace Revamp_LatestSightings
             bool status = utils.SendEnquireMail(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest);
             return status;
         }
-        
+
+        [WebMethod]
+        public static List<Dictionary<string, string>> GetLodgeDetails(string lodgeName)
+        {
+            Dictionary<string, string> lodge = new Dictionary<string, string>();
+            lodge = library.GetLodge(lodgeName);
+            return GetLodgeTings(lodge["id"]);
+        }
+
+        private static List<Dictionary<string, string>> GetLodgeTings(string lodgeId)
+        {
+            return library.GetLodgeTings(lodgeId);
+        }
     }
 }

@@ -30,10 +30,10 @@ namespace Revamp_LatestSightings
                 if (lodge["lodgeFound"] == "1")
                 {
                     processLodgePrizesAndName(lodge);
-                    processLodgeTopFiveTingers(lodge);
+                    processLodgeTopFiveTingers(lodge); // not updating this yet
                     processLodgeTings(lodge);
                     json = JsonConvert.SerializeObject(lodgeTings);
-                    var script = string.Format("setLodgeTingers({0}, '{1}')", json, tingImageUrlFolder);
+                    var script = string.Format("setLodgeTingers({0}, '{1}', '{2}')", json, tingImageUrlFolder, lodgename);
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "", script, true);
                 }
