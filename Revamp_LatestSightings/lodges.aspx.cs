@@ -30,10 +30,10 @@ namespace Revamp_LatestSightings
                 if (lodge["lodgeFound"] == "1")
                 {
                     processLodgePrizesAndName(lodge);
-                    processLodgeTopFiveTingers(lodge); // not updating this yet
+                    processLodgeTopFiveTingers(lodge["id"]); // not updating this yet
                     processLodgeTings(lodge);
                     json = JsonConvert.SerializeObject(lodgeTings);
-                    var script = string.Format("setLodgeTingers({0}, '{1}', '{2}')", json, tingImageUrlFolder, lodgename);
+                    var script = string.Format("setLodgeTingers({0}, '{1}', '{2}', '{3}')", json, tingImageUrlFolder, lodgename, lodge["id"]);
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "", script, true);
                 }
@@ -46,10 +46,10 @@ namespace Revamp_LatestSightings
             lodgeTings = library.GetLodgeTings(lodge["id"]);
         }
 
-        private void processLodgeTopFiveTingers(Dictionary<string, string> lodge)
+        private void processLodgeTopFiveTingers(string lodgeid)
         {
             topFiveTingers = new List<Dictionary<string, string>>();
-            topFiveTingers = library.GetTopFiveLodgeTingers(lodge["id"]);
+            topFiveTingers = AjaxOperation.GetLodgeTopFiveTingers(lodgeid);
         }
 
         private void processLodgePrizesAndName(Dictionary<string, string> lodge)

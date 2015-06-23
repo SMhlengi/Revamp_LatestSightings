@@ -297,5 +297,11 @@ namespace Revamp_LatestSightings
         {
             return library.GetLodgeTings(lodgeId);
         }
+
+        [WebMethod]
+        public static List<Dictionary<string, string>> GetLodgeTopFiveTingers(string lodgeId)
+        {
+            return library.GetTopFiveLodgeTingers(lodgeId);
+        }
     }
 }
