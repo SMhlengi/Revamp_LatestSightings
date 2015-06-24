@@ -117,7 +117,9 @@
                         
                         	<div class="col-md-8" style="margin-bottom:20px !important; float:left;">
                             	<img alt="" src="<%= ResolveUrl("~/images/logo-horizontal-new.png") %>" style="float:left; padding-right:30px;">
-                            	<img src="<%= ResolveUrl("~/images/NgwenyaLodge.jpg") %>" style="float:left; padding-right:30px;">
+                                <% if (!String.IsNullOrEmpty(lodoid)){ %>
+                            	    <img src="<%= ConfigurationManager.AppSettings["lodgeImageFolderUrl"] %><%= lodoid%>" style="float:left; padding-right:30px;">
+                                <%} %>
                                 <h3 style="float:left; color:#ff9900;">Sightings Board</h3> 
                             </div>
                             

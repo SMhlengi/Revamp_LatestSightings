@@ -14,6 +14,7 @@ namespace Revamp_LatestSightings
     public partial class lodges : System.Web.UI.Page
     {
         public string prizes = null;
+        public string lodoid = "";
         public string lodgeName = null;
         public List<Dictionary<string, string>> topFiveTingers;
         public List<Dictionary<string, string>> lodgeTings;
@@ -30,6 +31,7 @@ namespace Revamp_LatestSightings
                 if (lodge["lodgeFound"] == "1")
                 {
                     processLodgePrizesAndName(lodge);
+                    processLodgeLogo(lodge["logo"]);
                     processLodgeTopFiveTingers(lodge["id"]); // not updating this yet
                     processLodgeTings(lodge);
                     json = JsonConvert.SerializeObject(lodgeTings);
@@ -40,6 +42,11 @@ namespace Revamp_LatestSightings
             }
         }
 
+        private void processLodgeLogo(string id)
+        {
+            lodoid = id;
+        }
+        
         private void processLodgeTings(Dictionary<string, string> lodge)
         {
             lodgeTings = new List<Dictionary<string, string>>();
