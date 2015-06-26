@@ -25,6 +25,7 @@ namespace Revamp_LatestSightings
             string tingImageUrlFolder = ConfigurationManager.AppSettings["tingImageFolderUrl"];
             Dictionary<string, string> lodge = new Dictionary<string, string>();
             string lodgename = Request.QueryString["p"];
+            lodgename = StripAwayUnderscores(lodgename);
             if (!String.IsNullOrEmpty(lodgename))
             {
                 lodge = library.GetLodge(lodgename);
@@ -40,6 +41,11 @@ namespace Revamp_LatestSightings
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "", script, true);
                 }
             }
+        }
+
+        private string StripAwayUnderscores(string name)
+        {
+            return name.Replace("_", " ");
         }
 
         private void processLodgeLogo(string id)

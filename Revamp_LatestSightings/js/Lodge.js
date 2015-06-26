@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     function displayTings() {
         displayLodge(LODGEJson[counter]);
-        myVar = setInterval(function () { displayNewLodge() }, 3000);
+        myVar = setInterval(function () { displayNewLodge() }, 6000);
     }
 
     function displayNewLodge() {
