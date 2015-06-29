@@ -8,9 +8,19 @@
         }
 
         .footer {
-            position: absolute !important;
+            display:none
         }
 
+        a:hover {
+            color: white !important;
+        }
+
+	    @media (max-width: 480px) { 
+	
+		    #content-inner {
+			    padding: 0px !important;
+		    }
+	    }
     </style>
 
             <input type="hidden" value="<%=status["email"] %>" id="email" />
@@ -22,16 +32,18 @@
             <!-- Page Content Area -->
             <div id="content-inner">
                 <!-- Regsiter -->
-            
-            <div class="panel transparentBackground">
+            <div class="row">
+                <div class="panel transparentBackground col-md-12 col-sm-12 col-xs-9">
                 <div class="panel-body">
                     <br />
-                    <h4 class="text-center mb5">Resetting your Password. </h4>                   
+                    <h4 class="text-center mb5 col-xs-9 visible-xs-block">Resetting your Password</h4>  
+                    <h4 class="text-center mb5 visible-lg-block visible-md-block visible-sm-block">Resetting your Password</h4>                 
                     <div class="mb30"></div>
                     
                     <form action="signin.html" method="post" id="login">
-                        <p class="">Hello <strong class="firstnameLastname"><%=status["firstname"] %> <%=status["lastname"] %></strong><br /> Please enter your new password</p>
-                        <div class="input-group form-group mb15">
+                        <p class="visible-xs-inline-block">Hello <strong class="firstnameLastname"><%=status["firstname"] %> <%=status["lastname"] %></strong><br /> Please enter your new password</p>
+                        <p class="visible-lg-block visible-md-block visible-sm-block">Hello <strong class="firstnameLastname"><%=status["firstname"] %> <%=status["lastname"] %></strong><br /> Please enter your new password</p>
+                        <div class="input-group form-group mb15 col-md-12 col-sm-12 col-xs-8">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" class="form-control" placeholder="Password" id="password">
                         </div>
@@ -39,7 +51,7 @@
                             <p class="text-danger">Password is required</p>
                         </div>
                         <!-- Confirm Password -->
-                        <div class="input-group form-group mb15">
+                        <div class="input-group form-group mb15 col-md-12 col-sm-12 col-xs-8">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword">
                         </div>
@@ -50,22 +62,22 @@
                         
                         <div class="clearfix">
                             <div class="row">
-                                <div class="pull-right">
+                                <div class="pull-left">
                                     <button type="button" class="btn btn-success resetPassword">Reset <i class="fa fa-angle-right ml5"></i></button>
                                 </div>
-                                <div class="pull-right marginRightTen registerSpinner">
+                                <div class="pull-left marginRightTen registerSpinner">
                                     <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                 </div>
                             </div> 
                             <div class="row passwordsDoNotMatch">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-xs-9">
                                     <div class="alert alert-danger welcomeBackMessage">                                    
                                         <strong>Passwords do not match</strong>
                                     </div>
                                 </div>
                             </div>
                             <div class="row succesfullyUpdateEmail">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-xs-9">
                                     <div class="alert alert-success welcomeBackMessage">                                    
                                         <strong>Password Successfully udpated<br /></strong>
                                         Redirecting to login page
@@ -73,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="row errorWithEmailUpdate">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-xs-9">
                                     <div class="alert alert-success welcomeBackMessage">                                    
                                         <strong>Error with update<br /></strong>
                                         Please try again later 
@@ -85,7 +97,7 @@
                     
                 </div>
             </div><!-- panel -->
-           
+            </div>
             </div>
         </div>
     </div>
