@@ -14,6 +14,7 @@ function setLodgeTingers(json, FolderUrl, name, id) {
 
 $(document).ready(function () {
     displayTings();
+    console.log(LODGEJson);
 
     function displayTings() {
         displayLodge(LODGEJson[counter]);
@@ -90,7 +91,7 @@ $(document).ready(function () {
     }
 
     function displayLodge(lodgeDetails) {
-        $("#lodgeImage").attr("src", tingImageFolderUrl + lodgeDetails.id + ".jpg");
+        $("#lodgeImage").attr("src", tingImageFolderUrl + lodgeDetails.id);
         // http://tingsservice.socialengine.co.za/uploads/1577F3D3-B3AB-4FA7-A46A-22D20E65EE03.jpg
         $("#lodgeTitle").html(lodgeDetails.title);
         $("#desc").html(lodgeDetails.description);

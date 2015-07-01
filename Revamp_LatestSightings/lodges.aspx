@@ -11,7 +11,7 @@
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/lodge.js?v=13") %>"></script>
+    <script src="<%= ResolveUrl("~/js/lodge.js?v=14") %>"></script>
 
 </head>
 <body>

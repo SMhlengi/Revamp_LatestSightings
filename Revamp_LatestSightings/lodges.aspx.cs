@@ -22,7 +22,7 @@ namespace Revamp_LatestSightings
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            string tingImageUrlFolder = ConfigurationManager.AppSettings["tingImageFolderUrl"];
+            string tingImageUrlFolder = ConfigurationManager.AppSettings["tingImageServiceCall"];
             Dictionary<string, string> lodge = new Dictionary<string, string>();
             string lodgename = Request.QueryString["p"];
             lodgename = StripAwayUnderscores(lodgename);
