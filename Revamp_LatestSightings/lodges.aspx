@@ -110,33 +110,6 @@
                     </div>
                     
                     <div class="clearfix"></div>
-                    
-                    <!-- FOOTER -->
-                    <div class="row">
-                    	<div class="col-md-12" style="background-color:#783f04; padding:20px 20px 0px 20px ; float:left; height:auto; width:100%;">
-                        
-                        	<div class="col-md-8" style="margin-bottom:20px !important; float:left;">
-                            	<img alt="" src="<%= ResolveUrl("~/images/logo-horizontal-new.png") %>" style="float:left; padding-right:30px;">
-                                <% if (!String.IsNullOrEmpty(lodoid)){ %>
-                            	    <img src="<%= ConfigurationManager.AppSettings["lodgeImageFolderUrl"] %><%= lodoid%>" style="float:left; padding-right:30px;">
-                                <%} %>
-                                <h3 style="float:left; color:#ff9900;">Sightings Board</h3> 
-                            </div>
-                            
-                        	<div class="col-md-4" style="margin-bottom:20px;">
-                            	<div class="appstore">
-                                	<p>Download the Latest Sightings App to your phone. Available for iOS and Android.</p>
-                                    <a href="#"><img src="<%= ResolveUrl("~/images/Download_on_the_App_Store_Badge_US-UK_135x40.png") %>"></a>
-                                    <a href="#"><img src="<%= ResolveUrl("~/images/en_generic_rgb_wo_60.png") %>" ></a>
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </div>
-                    <!-- FOOTER -->
-                    
-                    
-                    
                 </div>
 				<!-- End Content Area -->
                 
@@ -144,7 +117,34 @@
 		</div>
         </div>
 		<!-- End Container -->
-    
+        <!-- FOOTER -->
+        <div class="row" style="
+                         position: absolute;
+                         bottom: 0;
+                         height: 98px;
+                         width: 100%;
+                         margin-left: 0px;">
+            <div class="col-md-12" style="background-color:#783f04; padding:20px 20px 0px 20px ; float:left; height:auto; width:100%;">
+                        
+                <div class="col-md-8" style="margin-bottom:20px !important; float:left;">
+                    <img alt="" src="<%= ResolveUrl("~/images/logo-horizontal-new.png") %>" style="float:left; padding-right:30px;">
+                    <% if (!String.IsNullOrEmpty(lodoid)){ %>
+                        <img src="<%= ConfigurationManager.AppSettings["lodgeImageFolderUrl"] %><%= lodoid%>" style="float:left; padding-right:30px;">
+                    <%} %>
+                    <h3 style="float:left; color:#ff9900;">Sightings Board</h3> 
+                </div>
+                            
+                <div class="col-md-4" style="margin-bottom:20px;">
+                    <div class="appstore">
+                        <p>Download the Latest Sightings App to your phone. Available for iOS and Android.</p>
+                        <a href="#"><img src="<%= ResolveUrl("~/images/Download_on_the_App_Store_Badge_US-UK_135x40.png") %>"></a>
+                        <a href="#"><img src="<%= ResolveUrl("~/images/en_generic_rgb_wo_60.png") %>" style="height: 46px"></a>
+                    </div>
+                </div>
+                        
+            </div>
+        </div>
+        <!-- FOOTER -->
     <!-- Javascripts -->
         </form>
 </body>
