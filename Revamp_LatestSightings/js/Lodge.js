@@ -13,6 +13,7 @@ function setLodgeTingers(json, FolderUrl, name, id) {
     tingImageFolderUrl = FolderUrl;
     lodgeName = name;
     lodgeId = id;
+    var marker;
 }
 
 function initialize() {
@@ -25,7 +26,7 @@ function initialize() {
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: map.getCenter(),
         draggable: false,
         animation: google.maps.Animation.DROP,
@@ -33,28 +34,17 @@ function initialize() {
         title: 'Click to zoom'
     });
 
-    //setTimeout(function () {
-    //    map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
-    //    var marker = new google.maps.Marker({
-    //        position: map.getCenter(),
-    //        map: map,
-    //        title: 'Click to zoom',
-    //        animation: google.maps.Animation.DROP,
-    //    });
-    //    marker.setAnimation(google.maps.Animation.BOUNCE);
-
-    //}, 8000);
-    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 7000);
+    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 6000);
 
     function displayNewMap() {
+        marker.setMap(null);
         map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
-        var marker = new google.maps.Marker({
+        marker = new google.maps.Marker({
             position: map.getCenter(),
             map: map,
             title: 'Click to zoom',
             animation: google.maps.Animation.DROP,
         });
-        marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 }
 

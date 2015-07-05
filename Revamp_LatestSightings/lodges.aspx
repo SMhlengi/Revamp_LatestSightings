@@ -14,7 +14,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/lodge.js?v=15") %>"></script>
+    <script src="<%= ResolveUrl("~/js/lodge.js?v=18") %>"></script>
 
 </head>
 <body>
@@ -99,7 +99,7 @@
                             <!-- Column 3 -->
                             <div class="col-md-4">
                            	  	<h4 class="page-titles">Hot Spots</h4>
-                            	<div id="map-canvas" style="width: 100%; height: 100%"></div>
+                            	<div id="map-canvas" style="width: 100%; height: 330px"></div>
                                 
                                 <div class="clearfix spacer small"></div>
 
