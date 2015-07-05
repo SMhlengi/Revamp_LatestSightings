@@ -13,15 +13,6 @@ namespace Revamp_LatestSightings {
     public partial class addVideo {
         
         /// <summary>
-        /// Uploader1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CuteWebUI.Uploader Uploader1;
-        
-        /// <summary>
         /// justIncaseSecondaryFileupload control.
         /// </summary>
         /// <remarks>
