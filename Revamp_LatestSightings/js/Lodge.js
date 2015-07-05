@@ -1,9 +1,12 @@
 ﻿var LODGEJson = [];
 var tingImageFolderUrl = "";
 var myVar = "";
+var mapsTimeoutVariable = "";
 var lodgeName = "";
 var lodgeId = "";
 var counter = 0;
+var LODGE_lat = "";
+var LODGE_long = "";
 
 function setLodgeTingers(json, FolderUrl, name, id) {
     LODGEJson = json;
@@ -12,8 +15,52 @@ function setLodgeTingers(json, FolderUrl, name, id) {
     lodgeId = id;
 }
 
+function initialize() {
+    var mapOptions = {
+        zoom: 8,
+        center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        draggable: false,
+        animation: google.maps.Animation.DROP,
+        map: map,
+        title: 'Click to zoom'
+    });
+
+    //setTimeout(function () {
+    //    map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
+    //    var marker = new google.maps.Marker({
+    //        position: map.getCenter(),
+    //        map: map,
+    //        title: 'Click to zoom',
+    //        animation: google.maps.Animation.DROP,
+    //    });
+    //    marker.setAnimation(google.maps.Animation.BOUNCE);
+
+    //}, 8000);
+    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 7000);
+
+    function displayNewMap() {
+        map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
+        var marker = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map,
+            title: 'Click to zoom',
+            animation: google.maps.Animation.DROP,
+        });
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+}
+
 $(document).ready(function () {
     displayTings();
+    initialize();
     console.log(LODGEJson);
 
     function displayTings() {
@@ -33,6 +80,7 @@ $(document).ready(function () {
     function myStopFunction() {
         counter = 0;
         clearInterval(myVar);
+        clearInterval(mapsTimeoutVariable);
         RefreshTop5Tingers();
         RefreshTings();
     }
@@ -82,6 +130,7 @@ $(document).ready(function () {
                 if (data.d.length > 0) {
                     LODGEJson = data.d;
                     displayTings();
+                    initialize();
                 }
             }
         ).fail(
@@ -91,6 +140,9 @@ $(document).ready(function () {
     }
 
     function displayLodge(lodgeDetails) {
+        LODGE_lat = lodgeDetails.latitude;
+        LODGE_long = lodgeDetails.longitude;
+
         $("#lodgeImage").attr("src", tingImageFolderUrl + lodgeDetails.id);
         // http://tingsservice.socialengine.co.za/uploads/1577F3D3-B3AB-4FA7-A46A-22D20E65EE03.jpg
         $("#lodgeTitle").html(lodgeDetails.title);

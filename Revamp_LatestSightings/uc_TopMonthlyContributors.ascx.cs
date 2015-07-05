@@ -15,8 +15,16 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            contributorsViews = Stat.GetContributorViews(DateTime.Now.Year, DateTime.Now.Month, 10);
-            stringMonth = utils.FullyQualifiedMonthName(DateTime.Now.Month);
+            var dt = DateTime.Now;
+            contributorsViews = Stat.GetContributorViews(dt.Year, dt.Month, 10);
+            int counter = 0;
+            while (contributorsViews == null)
+            {
+                counter -= 1;                
+                dt = dt.AddMonths(counter);
+                contributorsViews = Stat.GetContributorViews(dt.Year, dt.Month, 10);
+            }
+            stringMonth = utils.FullyQualifiedMonthName(dt.Month);
         }
     }
 }

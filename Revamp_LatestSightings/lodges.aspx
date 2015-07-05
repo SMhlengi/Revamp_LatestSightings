@@ -7,11 +7,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <!-- Loading Styles -->   
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/lodge.js?v=14") %>"></script>
+    <script src="<%= ResolveUrl("~/js/lodge.js?v=15") %>"></script>
 
 </head>
 <body>
@@ -96,7 +99,7 @@
                             <!-- Column 3 -->
                             <div class="col-md-4">
                            	  	<h4 class="page-titles">Hot Spots</h4>
-                            	<img src="<%= ResolveUrl("~/images/LodgeMap1.jpg") %>" width="100%"> 
+                            	<div id="map-canvas" style="width: 100%; height: 100%"></div>
                                 
                                 <div class="clearfix spacer small"></div>
 
