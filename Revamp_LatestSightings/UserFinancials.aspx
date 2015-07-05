@@ -77,7 +77,7 @@
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Id</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Revenue Split</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Prev Payment</th>
-                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">MTD Revenue</th>
+                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Estimated MTD Revenue</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -62,6 +62,24 @@ namespace Revamp_LatestSightings
             }
         }
 
+        private List<LatestSightingsLibrary.Video> _videos;
+        private List<LatestSightingsLibrary.Video> videos
+        {
+            get
+            {
+                if (_videos == null)
+                {
+                    _videos = LatestSightingsLibrary.Video.GetContributorVideos(contributor);
+                }
+
+                return _videos;
+            }
+            set
+            {
+                _videos = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Set the page content type to json
@@ -167,7 +185,17 @@ namespace Revamp_LatestSightings
                 {
                     if (vidAnalytics.EstimatedEarning > 0)
                     {
-                        returnValue = "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
+                        string revenueShare = string.Empty;
+                        decimal payOut = 0;
+                        if (videos != null && videos.Count > 0)
+                        {
+                            LatestSightingsLibrary.Video vid = videos.FirstOrDefault(x => { return x.YoutubeId == vidAnalytics.Id;});
+                            {
+                                payOut = LatestSightingsLibrary.Financial.ApplyRevenueShare(vidAnalytics.EstimatedEarning, vid.RevenueShare);
+                            }
+                        }
+
+                        returnValue = payOut > 0 ? "$" + payOut.ToString().TrimEnd('0') : "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
                     }
                 }
             }
