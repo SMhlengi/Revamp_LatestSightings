@@ -103,9 +103,9 @@
                                 
                                 <div class="clearfix spacer small"></div>
 
-                                <p style="color:#ff9900;">
+<%--                                <p style="color:#ff9900;">
                                 Keys go here
-                                </p>
+                                </p>--%>
                             </div>
                             <!-- Column 3 -->
                                                         
