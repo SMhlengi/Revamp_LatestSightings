@@ -18,7 +18,7 @@ function setLodgeTingers(json, FolderUrl, name, id) {
 
 function initialize() {
     var mapOptions = {
-        zoom: 8,
+        zoom: 9,
         center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };

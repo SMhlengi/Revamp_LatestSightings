@@ -116,6 +116,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\style_backup_4_18_2015.css" />
     <Content Include="css\style.datatables.css" />
+    <Content Include="css\tvLodge.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -235,6 +236,7 @@
     <Content Include="sightings.aspx" />
     <Content Include="terms.aspx" />
     <Content Include="termsAndConditions.ascx" />
+    <Content Include="tvlodge.aspx" />
     <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
     <Content Include="uc_downloadLatestApp.ascx" />
@@ -478,6 +480,13 @@
     </Compile>
     <Compile Include="termsAndConditions.ascx.designer.cs">
       <DependentUpon>termsAndConditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tvlodge.aspx.cs">
+      <DependentUpon>tvlodge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tvlodge.aspx.designer.cs">
+      <DependentUpon>tvlodge.aspx</DependentUpon>
     </Compile>
     <Compile Include="uc_AddImage.ascx.cs">
       <DependentUpon>uc_AddImage.ascx</DependentUpon>
