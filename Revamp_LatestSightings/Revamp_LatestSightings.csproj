@@ -51,7 +51,7 @@
     </Reference>
     <Reference Include="LatestSightingsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\old_desktop\Documents\GitHub\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -146,6 +146,11 @@
     <Content Include="images\flipmenu-600x600.gif" />
     <Content Include="images\gallery-720x550.gif" />
     <Content Include="images\grid-550x310.gif" />
+    <Content Include="images\ic-greencar.svg" />
+    <Content Include="images\ic-orangecar.svg" />
+    <Content Include="images\ic-redcar.svg" />
+    <Content Include="images\ic-starline.svg" />
+    <Content Include="images\ic_star.svg" />
     <Content Include="images\jplayer.blue.monday.jpg" />
     <Content Include="images\jplayer.blue.monday.seeking.gif" />
     <Content Include="images\jplayer.blue.monday.video.play.png" />

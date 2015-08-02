@@ -18,7 +18,7 @@ function setLodgeTingers(json, FolderUrl, name, id) {
 
 function initialize() {
     var mapOptions = {
-        zoom: 10,
+        zoom: 13,
         center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
@@ -140,7 +140,21 @@ $(document).ready(function () {
         $("#location").html(lodgeDetails.location);
         $("#tingedBy").html("Tinged by: " + lodgeDetails.username);
         $("#time").html(lodgeDetails.time);
-        $("#visibility_traffic").html("Visibility: " + lodgeDetails.visibility + " | Traffic: " + lodgeDetails.traffic);
+        //$("#visibility_traffic").html("Visibility: " + lodgeDetails.visibility + " | Traffic: " + lodgeDetails.traffic);
+        $("#visibility_traffic").html("Visibility: " + ReturnVisibilityStar(parseInt(lodgeDetails.visibility)) + " | Traffic: " + ReturnVisibilityStar(parseInt(lodgeDetails.traffic)));
+    }
+
+    function ReturnVisibilityStar(starsCount) {
+        htmlStars = "";
+        for (var i = 0; i < starsCount; i++) {
+            htmlStars += '<img src="/images/ic_star.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
+        }
+
+        for (var i = starsCount; i < 5; i++) {
+            htmlStars += '<img src="/images/ic-starline.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
+        }
+
+        return htmlStars;
     }
 
 
