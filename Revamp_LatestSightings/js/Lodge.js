@@ -18,7 +18,7 @@ function setLodgeTingers(json, FolderUrl, name, id) {
 
 function initialize() {
     var mapOptions = {
-        zoom: 9,
+        zoom: 10,
         center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
@@ -34,7 +34,7 @@ function initialize() {
         title: 'Click to zoom'
     });
 
-    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 6000);
+    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 12000);
 
     function displayNewMap() {
         marker.setMap(null);
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     function displayTings() {
         displayLodge(LODGEJson[counter]);
-        myVar = setInterval(function () { displayNewLodge() }, 6000);
+        myVar = setInterval(function () { displayNewLodge() }, 12000);
     }
 
     function displayNewLodge() {
