@@ -141,7 +141,7 @@ $(document).ready(function () {
         $("#tingedBy").html("Tinged by: " + lodgeDetails.username);
         $("#time").html(lodgeDetails.time);
         //$("#visibility_traffic").html("Visibility: " + lodgeDetails.visibility + " | Traffic: " + lodgeDetails.traffic);
-        $("#visibility_traffic").html("Visibility: " + ReturnVisibilityStar(parseInt(lodgeDetails.visibility)) + " | Traffic: " + ReturnVisibilityStar(parseInt(lodgeDetails.traffic)));
+        $("#visibility_traffic").html("Visibility: " + ReturnVisibilityStar(parseInt(lodgeDetails.visibility)) + " | Traffic: " + ReturnTraffic(parseInt(lodgeDetails.traffic)));
     }
 
     function ReturnVisibilityStar(starsCount) {
@@ -155,6 +155,22 @@ $(document).ready(function () {
         }
 
         return htmlStars;
+    }
+
+    function ReturnTraffic(starsCount) {
+
+        switch (starsCount)
+        {
+            case 1:
+                return '<img src="/images/ic-greencar.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
+                break;
+            case 2:
+                return '<img src="/images/ic-orangecar.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
+            case 3:
+                return '<img src="/images/ic-redcar.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
+        }
+
+        return "";
     }
 
 
