@@ -198,7 +198,8 @@
 				this.open = true;
 			}
 			// add class mp-level-open to the opening level element
-			classie.add( subLevel || this.levels[0], 'mp-level-open' );
+			classie.add(subLevel || this.levels[0], 'mp-level-open');
+			window.scrollTo(0, 0);
 		},
 		// close the menu
 		_resetMenu : function() {

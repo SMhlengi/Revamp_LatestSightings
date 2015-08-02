@@ -597,11 +597,5 @@
         location.href = "/content/latest-sightings-app";
     });
 
-    $("#trigger").click(function () {
-        window.scrollTo(0, 0);
-    });
-
-
-
     LoginIfOnLoginPageAndRememberMeIsSet();
 });
