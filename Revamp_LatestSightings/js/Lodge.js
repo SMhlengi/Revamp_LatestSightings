@@ -7,6 +7,8 @@ var lodgeId = "";
 var counter = 0;
 var LODGE_lat = "";
 var LODGE_long = "";
+var markers = [];
+var map;
 
 function setLodgeTingers(json, FolderUrl, name, id) {
     LODGEJson = json;
@@ -16,6 +18,31 @@ function setLodgeTingers(json, FolderUrl, name, id) {
     var marker;
 }
 
+// Sets the map on all markers in the array.
+function setAllMap(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
+
+function showMarkers() {
+    setAllMap(map);
+}
+
+function setNewMapOfSouthAfrica() {
+    LODGE_lat = -28.4792811;
+    LODGE_long = 24.6722268, 6;
+
+    var mapOptions = {
+        zoom: 6,
+        center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+
+     map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+}
+
 function initialize() {
     var mapOptions = {
         zoom: 13,
@@ -23,16 +50,16 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
 
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
+    map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
     marker = new google.maps.Marker({
         position: map.getCenter(),
-        draggable: false,
         animation: google.maps.Animation.DROP,
-        map: map,
-        title: 'Click to zoom'
+        map: map
     });
+    markers.push(marker);
+
 
     mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 12000);
 
@@ -42,10 +69,11 @@ function initialize() {
         marker = new google.maps.Marker({
             position: map.getCenter(),
             map: map,
-            title: 'Click to zoom',
             animation: google.maps.Animation.DROP,
         });
+        markers.push(marker);
     }
+
 }
 
 $(document).ready(function () {
@@ -71,6 +99,13 @@ $(document).ready(function () {
         counter = 0;
         clearInterval(myVar);
         clearInterval(mapsTimeoutVariable);
+        setUpDisplayAllMarkersInOneMap();
+
+        t = setTimeout(function () { refreshTop5TingersAndRegreshTings() }, 15000);
+    }
+
+    function refreshTop5TingersAndRegreshTings() {
+        console.log("must be called after 15 secs");
         RefreshTop5Tingers();
         RefreshTings();
     }
@@ -173,34 +208,9 @@ $(document).ready(function () {
         return "";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function setUpDisplayAllMarkersInOneMap() {
+        setNewMapOfSouthAfrica();
+        tout = setTimeout(function () { showMarkers() }, 3000);
+    }
 
 });
