@@ -14,7 +14,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/lodge.js?v=22") %>"></script>
+    <script src="<%= ResolveUrl("~/js/lodge.js?v=23") %>"></script>
 
 </head>
 <body>

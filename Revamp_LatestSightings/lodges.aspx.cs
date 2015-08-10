@@ -55,8 +55,19 @@ namespace Revamp_LatestSightings
         
         private void processLodgeTings(Dictionary<string, string> lodge)
         {
+            var dt = DateTime.Now;
+            int counter = 0;
+            string stringDate = "";
+            stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
             lodgeTings = new List<Dictionary<string, string>>();
-            lodgeTings = library.GetLodgeTings(lodge["id"]);
+            lodgeTings = library.GetLodgeTingsByDate(lodge["id"], stringDate);
+            while (lodgeTings.Count == 0)
+            {
+                counter -= 1;
+                dt = dt.AddDays(counter);
+                stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
+                lodgeTings = library.GetLodgeTingsByDate(lodge["id"], stringDate);
+            }
         }
 
         private void processLodgeTopFiveTingers(string lodgeid)

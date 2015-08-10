@@ -289,8 +289,23 @@ namespace Revamp_LatestSightings
         public static List<Dictionary<string, string>> GetLodgeDetails(string lodgeName)
         {
             Dictionary<string, string> lodge = new Dictionary<string, string>();
+            var dt = DateTime.Now;
+            string stringDate = "";
+            int counter = 0;
+
             lodge = library.GetLodge(lodgeName);
-            return GetLodgeTings(lodge["id"]);
+            stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
+            List<Dictionary<string, string>> lodgeTings = new List<Dictionary<string, string>>();
+            lodgeTings = library.GetLodgeTingsByDate(lodge["id"], stringDate);
+
+            while (lodgeTings.Count == 0)
+            {
+                counter -= 1;
+                dt = dt.AddDays(counter);
+                stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
+                lodgeTings = library.GetLodgeTingsByDate(lodge["id"], stringDate);
+            }
+            return lodgeTings;
         }
 
         private static List<Dictionary<string, string>> GetLodgeTings(string lodgeId)

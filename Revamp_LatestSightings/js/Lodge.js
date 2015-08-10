@@ -34,7 +34,7 @@ function setNewMapOfSouthAfrica() {
     LODGE_long = 24.6722268, 6;
 
     var mapOptions = {
-        zoom: 6,
+        zoom: 4,
         center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
