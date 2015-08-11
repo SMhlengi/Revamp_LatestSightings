@@ -29,18 +29,27 @@ function showMarkers() {
     setAllMap(map);
 }
 
+function clearMarkers() {
+    setAllMap(null);
+}
+
+function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+}
+
 function setNewMapOfSouthAfrica() {
     LODGE_lat = -28.4792811;
     LODGE_long = 24.6722268, 6;
 
     var mapOptions = {
-        zoom: 4,
+        zoom: 5,
         center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
 
-     map = new google.maps.Map(document.getElementById('map-canvas'),
-        mapOptions);
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+       mapOptions);
 }
 
 function initialize() {
@@ -101,7 +110,10 @@ $(document).ready(function () {
         clearInterval(mapsTimeoutVariable);
         setUpDisplayAllMarkersInOneMap();
 
-        t = setTimeout(function () { refreshTop5TingersAndRegreshTings() }, 15000);
+        t = setTimeout(function () {
+            deleteMarkers();
+            refreshTop5TingersAndRegreshTings()
+        }, 15000);
     }
 
     function refreshTop5TingersAndRegreshTings() {
@@ -165,6 +177,7 @@ $(document).ready(function () {
     }
 
     function displayLodge(lodgeDetails) {
+        showTingInformation();
         LODGE_lat = lodgeDetails.latitude;
         LODGE_long = lodgeDetails.longitude;
 
@@ -194,8 +207,7 @@ $(document).ready(function () {
 
     function ReturnTraffic(starsCount) {
 
-        switch (starsCount)
-        {
+        switch (starsCount) {
             case 1:
                 return '<img src="/images/ic-greencar.svg" id="lodgeImage" width="100%" style="height: 16px; display: inline; width: 19px;">';
                 break;
@@ -210,7 +222,25 @@ $(document).ready(function () {
 
     function setUpDisplayAllMarkersInOneMap() {
         setNewMapOfSouthAfrica();
-        tout = setTimeout(function () { showMarkers() }, 3000);
+        displayAllTingsPicture();
+        hideTingInformation();
+        tout = setTimeout(function () { showMarkers() }, 1500);
     }
+
+
+    function displayAllTingsPicture() {
+        $("#lodgeImage").attr("src", "http://latestsightings.socialengine.co.za/images/alltings.jpg");
+    }
+
+    function hideTingInformation() {
+        $("#lodgeTitle").hide();
+        $(".NoBottomMargin").hide();
+    }
+
+    function showTingInformation() {
+        $("#lodgeTitle").show();
+        $(".NoBottomMargin").show();
+    }
+
 
 });

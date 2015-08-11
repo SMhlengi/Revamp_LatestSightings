@@ -130,6 +130,7 @@
     <Content Include="imageModal.aspx" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
+    <Content Include="images\AllTings.jpg" />
     <Content Include="images\app.gif" />
     <Content Include="images\author-100x100.gif" />
     <Content Include="images\bg-hd.jpg" />
@@ -214,7 +215,8 @@
     <Content Include="js\jquery.jplayer.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\jquery.migrate.js" />
-    <Content Include="js\Lodge.js" />
+    <Content Include="js\LodgeTV.js" />
+    <Content Include="js\LodgeWeb.js" />
     <Content Include="js\mlpushmenu.js" />
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\modernizr.js" />
