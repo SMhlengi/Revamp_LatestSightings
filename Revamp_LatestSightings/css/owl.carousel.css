@@ -113,11 +113,14 @@
   -ms-user-select: none;
   user-select: none;
 }
-.owl-carousel .owl-item img {
+/*.owl-carousel .owl-item img {
   display: block;
   width: 100%;
   -webkit-transform-style: preserve-3d;
-}
+}*/
+
+.owl-carousel .owl-item img {   width: 100%; height: auto;}
+
 .owl-carousel.owl-text-select-on .owl-item {
   -webkit-user-select: auto;
   -moz-user-select: auto;

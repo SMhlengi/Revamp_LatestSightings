@@ -3,7 +3,7 @@
 <link href="<%= ResolveUrl("~/css/GoogleApisFonts.css") %>" rel="stylesheet" type="text/css">
 <link href="<%= ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/font-awesome.min.css") %>" rel="stylesheet">
-<link href="<%= ResolveUrl("~/css/owl.carousel.css") %>" rel="stylesheet">
+<link href="<%= ResolveUrl("~/css/owl.carousel.css?v=2") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/owl.theme.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/animate.min.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/hover-min.css") %>" rel="stylesheet">
