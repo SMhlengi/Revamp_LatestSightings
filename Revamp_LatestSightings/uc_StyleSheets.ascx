@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_StyleSheets.ascx.cs" Inherits="Revamp_LatestSightings.uc_StyleSheets" %>
 
+
 <link href="<%= ResolveUrl("~/css/GoogleApisFonts.css") %>" rel="stylesheet" type="text/css">
 <link href="<%= ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/font-awesome.min.css") %>" rel="stylesheet">
@@ -15,3 +16,4 @@
 <link href="<%= ResolveUrl("~/css/jquery.dataTables.min.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/style.datatables.css") %>" rel="stylesheet" />
 <link href="//cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/css/swiper.css") %>" rel="stylesheet" />

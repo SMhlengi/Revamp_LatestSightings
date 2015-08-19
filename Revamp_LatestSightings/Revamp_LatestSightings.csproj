@@ -116,6 +116,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\style_backup_4_18_2015.css" />
     <Content Include="css\style.datatables.css" />
+    <Content Include="css\swiper.css" />
     <Content Include="css\tvLodge.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="default.aspx" />
@@ -127,6 +128,7 @@
     <Content Include="galleryview.aspx" />
     <Content Include="Global.asax" />
     <Content Include="holidays.aspx" />
+    <Content Include="htings.aspx" />
     <Content Include="imageModal.aspx" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
@@ -201,6 +203,7 @@
     <Content Include="js\gallery.js" />
     <Content Include="js\galleryviewmodal.js" />
     <Content Include="js\homePage.js" />
+    <Content Include="js\homePageTings.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\isotope.pkgd.min.js" />
     <Content Include="js\Jplayer.swf" />
@@ -229,6 +232,7 @@
     <Content Include="js\randomOrange.js" />
     <Content Include="js\randomRed.js" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\swiper.js" />
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
@@ -399,6 +403,13 @@
     </Compile>
     <Compile Include="holidays.aspx.designer.cs">
       <DependentUpon>holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htings.aspx.cs">
+      <DependentUpon>htings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="htings.aspx.designer.cs">
+      <DependentUpon>htings.aspx</DependentUpon>
     </Compile>
     <Compile Include="Image.cs" />
     <Compile Include="imageModal.aspx.cs">
