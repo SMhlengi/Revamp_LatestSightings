@@ -22,6 +22,7 @@ namespace Revamp_LatestSightings
             CleanUpArticleForBillboard();
             LoadLatestMonthlyContributors();
             LoadLasteBLogs();
+            LoadTopEarningVideos();
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             loadAds();
@@ -88,6 +89,13 @@ namespace Revamp_LatestSightings
         {
             uc_LatestBlogs latestBlogs = (uc_LatestBlogs)LoadControl("~/uc_LatestBlogs.ascx");
             plc_latestBlogs.Controls.Add(latestBlogs);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
     }
 }

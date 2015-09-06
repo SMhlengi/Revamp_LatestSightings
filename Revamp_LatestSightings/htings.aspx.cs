@@ -14,7 +14,7 @@ namespace Revamp_LatestSightings
         protected void Page_Load(object sender, EventArgs e)
         {
             List<string> tings = new List<string>();
-            tings = library.GetTopTings(20);
+            tings = library.GetTopTings(40);
             var tingsJson = JsonConvert.SerializeObject(tings);
             var javascript = String.Format("setHomePageTings({0});", tingsJson);
             ScriptManager.RegisterClientScriptBlock(this,this.GetType(),"",javascript,true);

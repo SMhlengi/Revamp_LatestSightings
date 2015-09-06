@@ -39,7 +39,7 @@
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/homePageTings.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/homePageTings.js?v=8") %>"></script>
 
     <script>
         var VideoUpload = false;

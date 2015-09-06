@@ -8,7 +8,7 @@ function buildTingsSlider() {
     var imageDiv = '';
     for (var i = 0; i < HOMEPAGE_tings.length; i++) {
         var imageUrl = "http://tingsservice.socialengine.co.za/tings/image/" + HOMEPAGE_tings[i];
-        imageDiv += '<div class="swiper-slide"><img src="' + imageUrl +'"  id="lodgeImage" width="100%" height="100%"></div>'
+        imageDiv += '<div class="swiper-slide" style="width: 340px; margin-right: 30px;"><img src="' + imageUrl + '"  id="lodgeImage"></div>'
     }
 
     $(".swiper-wrapper").html(imageDiv);

@@ -6,9 +6,14 @@
 <style>
 
 .swiper-container {
-    width: 600px;
+    width: 100%;
     height: 300px;
 }  
+
+#lodgeImage{
+    width:300px;
+    height:100%;
+}
 </style>
 
     <!-- Slider main container -->
@@ -16,9 +21,19 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide" >Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
             <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide" >Slide 1</div>
+            <div class="swiper-slide" >Slide 1</div>
+            <div class="swiper-slide" >Slide 1</div>
+            <!-- -->
+            <div class="swiper-slide" >Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide" >Slide 1</div>
+            <div class="swiper-slide" >Slide 1</div>
+            <div class="swiper-slide" >Slide 1</div>
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
@@ -31,25 +46,6 @@
         <div class="swiper-scrollbar"></div>
     </div>
 
-
-<%--  <script>        
-      var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
-        direction: 'vertical',
-        loop: true,
-    
-        // If we need pagination
-        pagination: '.swiper-pagination',
-    
-        // Navigation arrows
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-    
-        // And if we need scrollbar
-        scrollbar: '.swiper-scrollbar',
-      })        
-  </script>--%>
-
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper('.swiper-container', {
@@ -59,8 +55,8 @@
             prevButton: '.swiper-button-prev',
             paginationClickable: true,
             spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: 2500,
+            //centeredSlides: true,
+            autoplay: 3500,
             autoplayDisableOnInteraction: false
         });
     </script>

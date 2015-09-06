@@ -261,6 +261,7 @@
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
+    <Content Include="uc_top_earning_videos.ascx" />
     <Content Include="UserFinancials.aspx" />
     <Content Include="UserGraphs.aspx" />
     <Content Include="VideoItemData.aspx" />
@@ -597,6 +598,13 @@
     <Compile Include="uc_TopMonthlyContributors.ascx.designer.cs">
       <DependentUpon>uc_TopMonthlyContributors.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_top_earning_videos.ascx.cs">
+      <DependentUpon>uc_top_earning_videos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_top_earning_videos.ascx.designer.cs">
+      <DependentUpon>uc_top_earning_videos.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserFinancials.aspx.cs">
       <DependentUpon>UserFinancials.aspx</DependentUpon>
