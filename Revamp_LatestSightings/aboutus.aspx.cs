@@ -21,6 +21,7 @@ namespace Revamp_LatestSightings
             latestBlogs = library.GetLatestCompletedArticles(4);
             SetPageMetaData();
             GetMonthlyContributors();
+            LoadTopEarningVideos();
             LoadLasteBLogs();
             loadLatestGalleries();
             loadAds();
@@ -60,6 +61,13 @@ namespace Revamp_LatestSightings
             this.Master.desc = "About Latest Sightings";
             this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "about-us";
             this.Master.imgUrl = ConfigurationManager.AppSettings["siteUrl"] + "images/logo-horizontal-new.png";
+
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
 
         }
     }

@@ -20,6 +20,7 @@ namespace Revamp_LatestSightings
             GetArticle();
             LoadLatestBlogs();
             LoadLatestMonthlyContributors();
+            LoadTopEarningVideos();
             loadOtherRelatedArticles();
             LoadFeaturedCategories();
             SetPageMetaData();
@@ -76,6 +77,13 @@ namespace Revamp_LatestSightings
             uc_FeaturedCategories f_categories = (uc_FeaturedCategories)LoadControl("~/uc_FeaturedCategories.ascx");
             f_categories.categoryId = categoryId;
             cagegories.Controls.Add(f_categories);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
 
 

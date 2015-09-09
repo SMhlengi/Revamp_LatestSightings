@@ -15,6 +15,22 @@ namespace Revamp_LatestSightings
         {
 
             video_stats = Stat.GetTopEarningVideos();
+            CutShortTitle();
+        }
+
+        private void CutShortTitle()
+        {
+            if (video_stats != null && video_stats.Count > 0)
+            {
+                foreach (var video in video_stats)
+                {
+                    if (!String.IsNullOrEmpty(video.VideoTitle))
+                        if (video.VideoTitle.Length > 40)
+                        {
+                            video.VideoTitle = video.VideoTitle.Substring(0, 40) + " ...";
+                        }
+                }
+            }
         }
     }
 }

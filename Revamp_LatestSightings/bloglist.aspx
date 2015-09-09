@@ -68,6 +68,9 @@
                 <!-- Top 10 BEGIN -->
                     <asp:PlaceHolder ID="monthlyTopContributors" runat="server"></asp:PlaceHolder>
                 <!-- Top 10 END -->
+                <div class="clearfix"></div>
+                <div class="spacer small"></div>
+                <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
                             
 				</div>
 			</div>

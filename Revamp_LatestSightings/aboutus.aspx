@@ -142,6 +142,9 @@ Like our Facebook page or download the app to become part of the fastest growing
                             <!-- Top 10 BEGIN -->
                             <asp:PlaceHolder ID="topTenContributors" runat="server"></asp:PlaceHolder>
                             <!-- Top 10 END -->
+                            <div class="clearfix"></div>
+                            <div class="spacer small"></div>
+                            <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>

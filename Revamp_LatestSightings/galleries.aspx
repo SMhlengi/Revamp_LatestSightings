@@ -1115,6 +1115,9 @@
                             
                             <div class="clearfix"></div>
                             <asp:PlaceHolder ID="topTenContributors" runat="server"></asp:PlaceHolder>
+                            <div class="clearfix"></div>
+                            <div class="spacer small"></div>
+                            <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>

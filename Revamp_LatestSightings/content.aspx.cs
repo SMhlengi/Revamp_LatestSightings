@@ -20,6 +20,8 @@ namespace Revamp_LatestSightings
                 contentArticle = GetArticle(param);
                 LoadFeaturedCategories();
                 LoadLatestMonthlyContributors();
+                LoadTopEarningVideos();
+                LoadTopEarningVideos();
                 LoadLatestBlogs();
                 loadOtherRelatedArticles();
             }
@@ -56,6 +58,13 @@ namespace Revamp_LatestSightings
             uc_categoryOtherRelatedStories relatedArticles = (uc_categoryOtherRelatedStories)LoadControl("~/uc_categoryOtherRelatedStories.ascx");
             relatedArticles.categoryId = Convert.ToInt32(ConfigurationManager.AppSettings["contentCategoryId"]);
             otherRelatedArticles.Controls.Add(relatedArticles);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
     }
 }

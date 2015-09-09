@@ -34,6 +34,7 @@ namespace Revamp_LatestSightings
             LoadFeaturedCategories();
             loadLatestGalleries();
             LoadLatestMonthlyContributors();
+            LoadTopEarningVideos();
             LoadAd();
 
         }
@@ -81,6 +82,13 @@ namespace Revamp_LatestSightings
         {
             uc_TopMonthlyContributors contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             monthlyTopContributors.Controls.Add(contributors);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
     }
 }

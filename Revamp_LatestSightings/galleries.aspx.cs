@@ -26,6 +26,7 @@ namespace Revamp_LatestSightings
             stringMonth = utils.FullyQualifiedMonthName(DateTime.Now.Month);
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
+            LoadTopEarningVideos();
             loadAds();
         }
 
@@ -37,6 +38,13 @@ namespace Revamp_LatestSightings
 
             uc_downloadLatestApp downloadApp = (uc_downloadLatestApp)LoadControl("~/uc_downloadLatestApp.ascx");
             downloadapp.Controls.Add(downloadApp);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
     }
 }

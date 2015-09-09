@@ -20,6 +20,7 @@ namespace Revamp_LatestSightings
             LoadFeaturedCategories();
             loadLatestGalleries();
             LoadLatestMonthlyContributors();
+            LoadTopEarningVideos();
             loadAds();
         }
 
@@ -63,6 +64,13 @@ namespace Revamp_LatestSightings
         {
             ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
             ad300by50.Controls.Add(ad300);
+        }
+
+        private void LoadTopEarningVideos()
+        {
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
+
         }
     }
 }

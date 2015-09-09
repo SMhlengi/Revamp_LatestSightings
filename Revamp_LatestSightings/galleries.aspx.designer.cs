@@ -22,6 +22,15 @@ namespace Revamp_LatestSightings {
         protected global::System.Web.UI.WebControls.PlaceHolder topTenContributors;
         
         /// <summary>
+        /// topearningvideos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder topearningvideos;
+        
+        /// <summary>
         /// ad300by50 control.
         /// </summary>
         /// <remarks>

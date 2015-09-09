@@ -21,8 +21,8 @@ namespace Revamp_LatestSightings
             featuredVideos = Galleries.GetFeatured(Galleries.GalleryType.Video);
             CleanUpArticleForBillboard();
             LoadLatestMonthlyContributors();
-            LoadLasteBLogs();
             LoadTopEarningVideos();
+            LoadLasteBLogs();
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             loadAds();
