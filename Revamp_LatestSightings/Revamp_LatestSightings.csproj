@@ -244,6 +244,7 @@
     <Content Include="register.aspx" />
     <Content Include="resetpassword.aspx" />
     <Content Include="ResizeImageTest.aspx" />
+    <Content Include="searchResults.aspx" />
     <Content Include="sightings.aspx" />
     <Content Include="terms.aspx" />
     <Content Include="termsAndConditions.ascx" />
@@ -470,6 +471,13 @@
     </Compile>
     <Compile Include="ResizeImageTest.aspx.designer.cs">
       <DependentUpon>ResizeImageTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchResults.aspx.cs">
+      <DependentUpon>searchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchResults.aspx.designer.cs">
+      <DependentUpon>searchResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="SetInStone.cs" />
     <Compile Include="sightings.aspx.cs">

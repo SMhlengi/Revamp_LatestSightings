@@ -21,8 +21,8 @@
 
 		<!-- Search box will be used in header PopOver -->
 		<div id="popover-content" class="hide">
-			<form class="sidebar-searchbox" method="get" action="search.html">
-				<input type="search" name="q" placeholder="Search and hit Enter!">
+			<form class="sidebar-searchbox" method="get" action="searchResults.aspx">
+				<input id="searchFor" type="search" name="q" placeholder="Search and hit Enter!">
 			</form>
 		</div>
 		

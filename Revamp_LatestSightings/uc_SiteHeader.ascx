@@ -40,9 +40,9 @@
 					</div>
                     
                    		<!-- Search Button -->
-                        <!--<ul class="navbar-right">
+                        -<ul class="navbar-right">
                             <li id="search" data-toggle="popover"><a href="javascript:void(0);" class="top-search" title="Search"><i class="fa fa-search"></i></a></li>
-                        </ul>-->
+                        </ul>
                         <!-- End Search Button -->
 					
 					<!-- Main Menu -->

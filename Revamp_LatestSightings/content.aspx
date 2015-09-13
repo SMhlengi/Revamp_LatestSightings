@@ -105,5 +105,7 @@
 	</div>
 <!-- End Content Area -->
 
+    <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
+
 </asp:Content>
 
