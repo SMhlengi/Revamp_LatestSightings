@@ -464,6 +464,32 @@ namespace Revamp_LatestSightings
 
         public static Dictionary<string, string> CleanUpArticleForBloglist(Dictionary<string, string> CateogryArticle)
         {
+            if (IsMicrosoftWordGeneratedArticle(CateogryArticle["body"]))
+            {
+                int lastAccuranceOfEndIf = CateogryArticle["body"].LastIndexOf("<![endif]--></p>");
+                string articleBody = CateogryArticle["body"].Substring(lastAccuranceOfEndIf + 16);
+                if (articleBody != "")
+                {
+                    string closingParagraphTag = "</p>";
+                    int firstAccuraceOfClosingParagraphTag = articleBody.IndexOf(closingParagraphTag);
+                    string articleFirstParagraph = articleBody.Substring(0, firstAccuraceOfClosingParagraphTag + 4);
+                    CateogryArticle["body"] = articleFirstParagraph;
+                    return CateogryArticle;
+                }
+                else
+                {
+                    CateogryArticle["body"] = ""; // bad article
+                    return CateogryArticle;
+                }
+
+            }else if (DoesArticleContainIframe(CateogryArticle["body"]))
+            {
+                int indexOfFirstClosingParagraphTag = CateogryArticle["body"].IndexOf("</iframe></p>");
+                CateogryArticle["body"] = CateogryArticle["body"].Substring(indexOfFirstClosingParagraphTag + 13, 220);
+                CateogryArticle["body"] += "</p>";
+                return CateogryArticle;
+            }
+
             CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
             int startIndex = CateogryArticle["body"].IndexOf('>');
             //if (startIndex == 0)
@@ -479,6 +505,20 @@ namespace Revamp_LatestSightings
             else
                 CateogryArticle["body"] += " [...]";
             return CateogryArticle;
+        }
+
+        private static bool DoesArticleContainIframe(string article)
+        {
+            if (article.Contains("iframe"))
+                return true;
+            return false;
+        }
+
+        private static bool IsMicrosoftWordGeneratedArticle(string articleBody)
+        {
+            if (articleBody.Contains("<![endif]--></p>"))
+                return true;
+            return false;
         }
 
         internal static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
