@@ -466,27 +466,17 @@ namespace Revamp_LatestSightings
         {
             if (IsMicrosoftWordGeneratedArticle(CateogryArticle["body"]))
             {
-                int lastAccuranceOfEndIf = CateogryArticle["body"].LastIndexOf("<![endif]--></p>");
-                string articleBody = CateogryArticle["body"].Substring(lastAccuranceOfEndIf + 16);
-                if (articleBody != "")
-                {
-                    string closingParagraphTag = "</p>";
-                    int firstAccuraceOfClosingParagraphTag = articleBody.IndexOf(closingParagraphTag);
-                    string articleFirstParagraph = articleBody.Substring(0, firstAccuraceOfClosingParagraphTag + 4);
-                    CateogryArticle["body"] = articleFirstParagraph;
-                    return CateogryArticle;
-                }
-                else
-                {
-                    CateogryArticle["body"] = ""; // bad article
-                    return CateogryArticle;
-                }
-
-            }else if (DoesArticleContainIframe(CateogryArticle["body"]))
+                CateogryArticle = CleanUpWordArticle(CateogryArticle);
+                return CateogryArticle;
+            }
+            else if (DoesArticleContainIframe(CateogryArticle["body"]))
             {
-                int indexOfFirstClosingParagraphTag = CateogryArticle["body"].IndexOf("</iframe></p>");
-                CateogryArticle["body"] = CateogryArticle["body"].Substring(indexOfFirstClosingParagraphTag + 13, 220);
-                CateogryArticle["body"] += "</p>";
+                CateogryArticle = CleanUpArticleWithIframe(CateogryArticle);
+                return CateogryArticle;
+            }
+            else
+            {
+                CateogryArticle = CleanupNormalArticle(CateogryArticle);
                 return CateogryArticle;
             }
 
@@ -505,6 +495,59 @@ namespace Revamp_LatestSightings
             else
                 CateogryArticle["body"] += " [...]";
             return CateogryArticle;
+        }
+
+        private static Dictionary<string, string> CleanupNormalArticle(Dictionary<string, string> CateogryArticle)
+        {
+            string article = CateogryArticle["body"].Substring(0, 320);
+            article = RemoveHtmlTags(article);
+            article = article.Trim();
+            CateogryArticle["body"] = article + "....";
+            return CateogryArticle;
+        }
+
+        private static Dictionary<string, string> CleanUpArticleWithIframe(Dictionary<string, string> CateogryArticle)
+        {
+            int indexOfFirstClosingParagraphTag = CateogryArticle["body"].IndexOf("</iframe></p>");
+            if (indexOfFirstClosingParagraphTag != -1)
+            {
+                CateogryArticle["body"] = CateogryArticle["body"].Substring(indexOfFirstClosingParagraphTag + 13, 220);
+                CateogryArticle["body"] = RemoveHtmlTags(CateogryArticle["body"]);
+                CateogryArticle["body"] += "....";
+                return CateogryArticle;
+            }
+            else
+            {
+                indexOfFirstClosingParagraphTag = CateogryArticle["body"].IndexOf("</iframe>");
+                CateogryArticle["body"] = CateogryArticle["body"].Substring(indexOfFirstClosingParagraphTag + 9, 220);
+                CateogryArticle["body"] = RemoveHtmlTags(CateogryArticle["body"]);
+                CateogryArticle["body"] += "....";
+                return CateogryArticle;
+            }
+        }
+
+        private static Dictionary<string,string> CleanUpWordArticle(Dictionary<string, string> CateogryArticle)
+        {
+            int lastAccuranceOfEndIf = CateogryArticle["body"].LastIndexOf("<![endif]--></p>");
+            string articleBody = CateogryArticle["body"].Substring(lastAccuranceOfEndIf + 16);
+            if (articleBody != "")
+            {
+                string closingParagraphTag = "</p>";
+                int firstAccuraceOfClosingParagraphTag = articleBody.IndexOf(closingParagraphTag);
+                string articleFirstParagraph = articleBody.Substring(0, firstAccuraceOfClosingParagraphTag + 4);
+                CateogryArticle["body"] = articleFirstParagraph + "....";
+                return CateogryArticle;
+            }
+            else
+            {
+                CateogryArticle["body"] = ""; // bad article
+                return CateogryArticle;
+            }
+        }
+
+        private static string RemoveHtmlTags(string article)
+        {
+            return article.Replace("<p>", "").Replace("</p>", "").Replace("&nbsp;","");
         }
 
         private static bool DoesArticleContainIframe(string article)
