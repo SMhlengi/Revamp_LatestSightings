@@ -8,29 +8,19 @@
         .bs-callout-warning {
             padding-bottom: 6px;
         }
-        /*h4{
-            display:inline;
-            float:left;
-            margin-right:63px;
-        }
-
-        p{
-            margin-left: 20px;
-        }
-
         .articleReadMore {
             color: #c7254e;
-        }*/
+        }
 
-        .articleReadMore {
-            color: #c7254e;
+        .videoResults{
+            display:none;
         }
     </style>
 
 
 <ul class="nav nav-tabs nav-justified">
-    <li role="presentation"  class="active"><a href="#">Articles</a></li>
-    <li role="presentation"><a href="#">Videos</a></li>
+    <li role="presentation" class="active articles"><a href="#">Articles</a></li>
+    <li role="presentation" class="vids"><a href="#">Videos</a></li>
     <li role="presentation"><a href="#">Images</a></li>
 </ul>
 
@@ -48,6 +38,24 @@
         <%} %>
      <%} %>
 </div>
+
+<div class="videoResults">
+    <asp:PlaceHolder ID="youTubeVids" runat="server"></asp:PlaceHolder>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $(".vids").click(function () {
+            $(".articles").removeClass("active");
+            $(".articleResultsOptionTwo").hide();
+            $(".vids").addClass("active").show();
+            $(".videoResults").show();
+        });
+    });
+
+</script>
 
 
 

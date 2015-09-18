@@ -1,7 +1,12 @@
 ﻿var HOMEPAGE_tings = [];
+var YOUTUBE_VIDEO_IDS = [];
 
 function setHomePageTings(json){
     HOMEPAGE_tings = json;
+}
+
+function setYouTubeVideos(json) {
+    YOUTUBE_VIDEO_IDS = json;
 }
 
 function buildTingsSlider() {

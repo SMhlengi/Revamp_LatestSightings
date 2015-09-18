@@ -263,6 +263,7 @@
     <Content Include="uc_StyleSheets.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
     <Content Include="uc_top_earning_videos.ascx" />
+    <Content Include="uc_videoSearchResults.ascx" />
     <Content Include="UserFinancials.aspx" />
     <Content Include="UserGraphs.aspx" />
     <Content Include="VideoItemData.aspx" />
@@ -613,6 +614,13 @@
     </Compile>
     <Compile Include="uc_top_earning_videos.ascx.designer.cs">
       <DependentUpon>uc_top_earning_videos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_videoSearchResults.ascx.cs">
+      <DependentUpon>uc_videoSearchResults.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_videoSearchResults.ascx.designer.cs">
+      <DependentUpon>uc_videoSearchResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserFinancials.aspx.cs">
       <DependentUpon>UserFinancials.aspx</DependentUpon>
