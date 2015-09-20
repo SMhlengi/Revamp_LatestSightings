@@ -12,8 +12,9 @@
             color: #c7254e;
         }
 
-        .videoResults{
+        .videoResults, .imagesResults{
             display:none;
+            margin-top:33px;
         }
     </style>
 
@@ -21,7 +22,7 @@
 <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active articles"><a href="#">Articles</a></li>
     <li role="presentation" class="vids"><a href="#">Videos</a></li>
-    <li role="presentation"><a href="#">Images</a></li>
+    <li role="presentation" class="images"><a href="#">Images</a></li>
 </ul>
 
 <div class="articleResultsOptionTwo">
@@ -43,15 +44,39 @@
     <asp:PlaceHolder ID="youTubeVids" runat="server"></asp:PlaceHolder>
 </div>
 
+<div class="imagesResults">
+    <asp:PlaceHolder ID="imageSearchResultsPlc" runat="server"></asp:PlaceHolder>
+</div>
+
 
 <script>
 
     $(document).ready(function () {
         $(".vids").click(function () {
             $(".articles").removeClass("active");
+            $(".images").removeClass("active");
+            $(".vids").addClass("active");
             $(".articleResultsOptionTwo").hide();
-            $(".vids").addClass("active").show();
+            $(".imagesResults").hide();
             $(".videoResults").show();
+        });
+
+        $(".images").click(function () {
+            $(".articles").removeClass("active");
+            $(".vids").removeClass("active");
+            $(".images").addClass("active");
+            $(".articleResultsOptionTwo").hide();
+            $(".videoResults").hide();
+            $(".imagesResults").show();
+        });
+
+        $(".articles").click(function () {
+            $(".images").removeClass("active");
+            $(".vids").removeClass("active");
+            $(".articles").addClass("active");            
+            $(".videoResults").hide();
+            $(".imagesResults").hide();
+            $(".articleResultsOptionTwo").show();
         });
     });
 

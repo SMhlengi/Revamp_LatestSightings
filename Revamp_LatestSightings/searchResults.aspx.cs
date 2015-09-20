@@ -23,7 +23,15 @@ namespace Revamp_LatestSightings
                 GetArticles();
                 GetVideos();
                 BuildVideosUserControl();
+                BuildImagesUserControl();
             }
+        }
+
+        private void BuildImagesUserControl()
+        {
+            uc_imageSearchResults imageSearch = (uc_imageSearchResults)LoadControl("~/uc_imageSearchResults.ascx");
+            imageSearch.searchItem = searchString;
+            imageSearchResultsPlc.Controls.Add(imageSearch);
         }
 
         private void BuildVideosUserControl()
@@ -31,6 +39,8 @@ namespace Revamp_LatestSightings
             uc_videoSearchResults uc_vids = (uc_videoSearchResults)LoadControl("~/uc_videoSearchResults.ascx");
             youTubeVids.Controls.Add(uc_vids);
         }
+
+
 
         private void GetVideos()
         {

@@ -255,6 +255,7 @@
     <Content Include="uc_enquireForm.ascx" />
     <Content Include="uc_FeaturedCategories.ascx" />
     <Content Include="uc_Footer.ascx" />
+    <Content Include="uc_imageSearchResults.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
     <Content Include="uc_LatestBlogs.ascx" />
     <Content Include="uc_latestGalleris.ascx" />
@@ -557,6 +558,13 @@
     </Compile>
     <Compile Include="uc_Footer.ascx.designer.cs">
       <DependentUpon>uc_Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_imageSearchResults.ascx.cs">
+      <DependentUpon>uc_imageSearchResults.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_imageSearchResults.ascx.designer.cs">
+      <DependentUpon>uc_imageSearchResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_JavaScripts.ascx.cs">
       <DependentUpon>uc_JavaScripts.ascx</DependentUpon>
