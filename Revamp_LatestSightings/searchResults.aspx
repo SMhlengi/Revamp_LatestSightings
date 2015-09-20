@@ -16,6 +16,10 @@
             display:none;
             margin-top:33px;
         }
+
+        .modal-content{
+            width:75%;
+        }
     </style>
 
 
