@@ -109,6 +109,7 @@
     <Content Include="css\owl.theme.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\responsive_4_18_2015.css" />
+    <Content Include="css\searchResults.css" />
     <Content Include="css\style-blue.css" />
     <Content Include="css\style-gray.css" />
     <Content Include="css\style-orange.css" />

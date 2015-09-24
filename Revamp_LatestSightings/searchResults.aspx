@@ -1,28 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="searchResults.aspx.cs" Inherits="Revamp_LatestSightings.searchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <style>
-        .bs-example{
-            color:black;
-        }
-        .bs-callout-warning {
-            padding-bottom: 6px;
-        }
-        .articleReadMore {
-            color: #c7254e;
-        }
-
-        .videoResults, .imagesResults{
-            display:none;
-            margin-top:33px;
-        }
-
-        .modal-content{
-            width:75%;
-        }
-    </style>
-
-
 <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active articles"><a href="#">Articles</a></li>
     <li role="presentation" class="vids"><a href="#">Videos</a></li>
