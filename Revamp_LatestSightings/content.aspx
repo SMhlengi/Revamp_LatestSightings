@@ -84,9 +84,7 @@
             <div class="spacer"></div>
                             
             <!-- 300x250 AD -->
-            <div class="ad300">
-                <img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/ads-300x250.gif' width="300" height="250">
-			</div>
+            <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
             <!-- 300x250 AD -->
                             
             <div class="clearfix"></div>

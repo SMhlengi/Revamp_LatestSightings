@@ -33,7 +33,7 @@
                             <!-- About LS BEGIN -->
                             <div class="blog-list-post triggerAnimation animated aboutUs" data-animate="fadeIn">
                                 <div class="blog-list-featured-image">
-                                    <a href="#"><img alt="" src="images/about-650x650.gif"></a>
+                                    <a href="#"><img alt="" src="images/aboutuspic.jpg"></a>
                                     <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
                                 </div>
                                             

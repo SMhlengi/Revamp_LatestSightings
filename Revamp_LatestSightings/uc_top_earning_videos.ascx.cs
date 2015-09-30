@@ -16,6 +16,13 @@ namespace Revamp_LatestSightings
 
             video_stats = Stat.GetTopEarningVideos();
             CutShortTitle();
+            GetOnly5Videos();
+        }
+
+        private void GetOnly5Videos()
+        {
+            if (video_stats.Count >= 5)
+                video_stats = video_stats.GetRange(0, 5);
         }
 
         private void CutShortTitle()

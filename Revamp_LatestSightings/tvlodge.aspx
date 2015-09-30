@@ -64,7 +64,7 @@
                                 <div class="clearfix spacer"></div>
                                                                 
                                 <!-- Prizes BEGIN -->
-                                <h4 class="page-titles">Prizes for Top Tingers</h4>
+                                <h4 class="page-titles">Announcements</h4>
                                 <p style="color:#ff9900;">
                                     <%if (!String.IsNullOrEmpty(prizes)){ %>
                                         <%= HttpUtility.HtmlDecode(prizes) %>
