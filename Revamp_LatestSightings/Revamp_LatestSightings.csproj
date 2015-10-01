@@ -249,6 +249,7 @@
     <Content Include="sightings.aspx" />
     <Content Include="terms.aspx" />
     <Content Include="termsAndConditions.ascx" />
+    <Content Include="tings2.aspx" />
     <Content Include="tvlodge.aspx" />
     <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
@@ -263,6 +264,7 @@
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
+    <Content Include="uc_tings.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
     <Content Include="uc_top_earning_videos.ascx" />
     <Content Include="uc_videoSearchResults.ascx" />
@@ -511,6 +513,13 @@
     <Compile Include="termsAndConditions.ascx.designer.cs">
       <DependentUpon>termsAndConditions.ascx</DependentUpon>
     </Compile>
+    <Compile Include="tings2.aspx.cs">
+      <DependentUpon>tings2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tings2.aspx.designer.cs">
+      <DependentUpon>tings2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tvlodge.aspx.cs">
       <DependentUpon>tvlodge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -608,6 +617,13 @@
     </Compile>
     <Compile Include="uc_StyleSheets.ascx.designer.cs">
       <DependentUpon>uc_StyleSheets.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_tings.ascx.cs">
+      <DependentUpon>uc_tings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_tings.ascx.designer.cs">
+      <DependentUpon>uc_tings.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_TopMonthlyContributors.ascx.cs">
       <DependentUpon>uc_TopMonthlyContributors.ascx</DependentUpon>

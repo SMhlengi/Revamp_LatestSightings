@@ -10,7 +10,7 @@
 <link href="<%= ResolveUrl("~/css/hover-min.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/magnific-popup.css") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/component.css") %>" rel="stylesheet">
-<link href="<%= ResolveUrl("~/css/style.css?v=55") %>" rel="stylesheet">
+<link href="<%= ResolveUrl("~/css/style.css?v=56") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/responsive.css?v=5") %>" rel="stylesheet">    
 <link href="<%= ResolveUrl("~/css/gallerymodal.css?v=6") %>" rel="stylesheet">
 <link href="<%= ResolveUrl("~/css/jquery.dataTables.min.css") %>" rel="stylesheet" />

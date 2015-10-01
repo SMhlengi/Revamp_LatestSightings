@@ -26,6 +26,13 @@ namespace Revamp_LatestSightings
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             loadAds();
+            loadHomePageTings();
+        }
+
+        private void loadHomePageTings()
+        {
+            uc_tings homepageTings = (uc_tings)LoadControl("~/uc_tings.ascx");
+            tings.Controls.Add(homepageTings);
         }
 
         private void loadAds()

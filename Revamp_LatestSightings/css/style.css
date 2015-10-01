@@ -4108,6 +4108,53 @@ max-width:160px;
 }
 
 
+/*-------------------------------------------------------*/
+/* 47. Latest Sightings Owl Slider Widget
+/*-------------------------------------------------------*/
+.ls-member {
+    height: 114px;
+   	position: relative;
+    margin-bottom: 0px;
+    transition: all 0.28s ease 0s;
+    overflow: hidden;
+    border-left; solid 1px #2A1403;
+}
+
+.ls-member .ls-info {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: 40%;
+    height: 114px;
+    background-color: rgba(255, 153, 0, 0.3);
+}
+
+.ls-title {
+	width: 60%;
+    float: left;
+    background-color: rgba(255, 153, 0, 0.3);
+    padding: 10px;
+    transition: all 0.28s ease 0s;
+    border-radius: 0px;
+    height: 114px;
+}
+
+.ls-title h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.ls-title p {
+    font-style: normal;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #EEE;
+}
+
+
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
 .adbox .right { 	width:30%; 	padding-top:20px; } 
