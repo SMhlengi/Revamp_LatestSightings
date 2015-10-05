@@ -3,7 +3,7 @@
 <script src="<%= ResolveUrl("~/js/bootstrap.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/plugins-scroll.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.fitvids.js") %>"></script>
-
+<script src="<%= ResolveUrl("~/js/owl.carousel.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/imagesloaded.pkgd.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.isotope.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/waypoints.min.js") %>"></script>

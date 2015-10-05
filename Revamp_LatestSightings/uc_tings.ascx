@@ -1,8 +1,28 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_tings.ascx.cs" Inherits="Revamp_LatestSightings.uc_tings" %>
 
+<style>
+    .loadingImage img {
+        width: 184px;
+        height: 42px;
+    }
+
+
+    .loadingImage {
+        margin: 0 auto;
+        width: 17%;
+        padding-top: 25px;
+    }
+
+    #owl-slider{
+        visibility:hidden;
+    }
+</style>
+
 <!-- Latest Sightings Widget BEGIN -->
 					<div class="portfolio-related-posts triggerAnimation animated" data-animate="fadeInUp">
 						<h4 class="page-titles">Latest Sightings</h4>
+
+                        <div class="loadingImage"><img src="<%=ResolveUrl("~/images/333.GIF") %>"></div>
                             
                         <div id="owl-slider">
                                
@@ -23,4 +43,13 @@
                             <%} %>
 						</div>
 					</div>
-					<!-- Latest Sightings Widget END -->
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $(".loadingImage").hide();
+            $("#owl-slider").css("visibility", "visible");
+        }, 2500);
+
+    });
+</script>
