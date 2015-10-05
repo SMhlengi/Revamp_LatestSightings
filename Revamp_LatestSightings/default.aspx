@@ -3,8 +3,6 @@
 <asp:Content ID="homepage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
                             <div class="clearfix"></div>
                         	<div class="spacer small"></div>
-
-    <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>
 					
                     <!-- Billboard BEGIN -->
                     <div class="post-slider">
