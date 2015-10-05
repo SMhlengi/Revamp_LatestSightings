@@ -78,6 +78,69 @@
         }
     });
 
+    $(".readmoreblogs").click(function () {
+        location.href = "/bloglist";
+    });
+
+    $(".newsletter").click(function () {
+        $(".panelWithWhiteBackgroundBorder").show();
+    });
+
+    $(".subScribeToNewsletter").click(function () {
+        $(".email").hide();
+        ClearErrorStateOfTextBox(".email");
+        valid = true;
+
+        if (isEmpty("#email")) {
+            $("div .email").prev().addClass("has-error");
+            $("div .email").html("<p class='text-danger'>Email is required</p>");
+            $("div .email").show();
+            valid = false;
+        } else {
+            if (!isValidEmailAddress($("#email").val())) {
+                $("div .email").prev().addClass("has-error");
+                $("div .email").html("<p class='text-danger'>Invalid Email address</p>");
+                $("div .email").show();
+                valid = false;
+            }
+        }
+
+        if (valid) {
+            $(".email").hide();
+            ClearErrorStateOfTextBox(".email");
+            $(".newslettersubscribing").show();
+            SubscribeToNewsLetter($("#email").val(), false);
+        }
+    });
+
+    $(".footerSubscribeToNewsLetter").click(function () {
+        $(".emailfooter").hide();
+        ClearErrorStateOfTextBox(".emailfooter");
+        valid = true;
+
+        if (isEmpty("#emailfooter")) {
+            $("div .emailfooter").prev().addClass("has-error");
+            $("div .emailfooter").html("<p>Email is required</p>");
+            $("div .emailfooter").show();
+            valid = false;
+        } else {
+            if (!isValidEmailAddress($("#emailfooter").val())) {
+                $("div .emailfooter").prev().addClass("has-error");
+                $("div .emailfooter").html("<p>Invalid Email address</p>");
+                $("div .emailfooter").show();
+                valid = false;
+            }
+        }
+
+        if (valid) {
+            $(".emailfooter").hide();
+            ClearErrorStateOfTextBox(".emailfooter");
+            $(".footerSubscribeToNewsLetter").next().html("<strong>Subscribing</strong>&nbsp;&nbsp;Please wait .....")
+
+            SubscribeToNewsLetter($("#emailfooter").val(), true);
+        }
+    });
+
     function isEmpty(control) {
         if ($(control).val() == "") {
             return true;
@@ -152,7 +215,41 @@
             $("div .password").show();
             valid = false;
         }
+
         return valid;
+    }
+
+    function SubscribeToNewsLetter(emailAddress, footer) {
+        var postUrl = "/AjaxOperation.aspx/SubscribeToNewsLetter";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'email' : '" + emailAddress + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    if (footer) {
+                        $(".footerSubscribeToNewsLetter").next().html("<strong>Successfully Subscribed !!!</strong>")
+                    } else {
+                        $(".newslettersubscribing").hide();
+                        $(".successfullySubscribeToNewsletter").show();
+                        setTimeout(function () {
+                            $(".successfullySubscribeToNewsletter").hide();
+                            $(".panelWithWhiteBackgroundBorder").hide();
+                            $(".newsletter").hide();
+
+                        }, 3500);
+                    }
+                } else {
+                    console.log("in else part");
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
     }
 
     function ValidateResetPasswordPage() {
@@ -213,6 +310,7 @@
         ClearErrorStateOfTextBox(".email");
         ClearErrorStateOfTextBox(".password");
         ClearErrorStateOfTextBox(".confirmPassword");
+        ClearErrorStateOfTextBox(".confirmPassword");
     }
 
     function HideMessageErrors() {
@@ -264,7 +362,7 @@
             function (data, textStatus, jqXHR) {
                 console.log(data);
                 if (data.d.credentialsValid == "true") {
-                    $("#userFullname").html(data.d.firstname + " ");
+                    $("#userFullname").html(data.d.firstname + " " + data.d.lastname);
                     $(".successfullyLoggedIn").show();
                     if ($("#rememberMe").prop("checked")) {
                         SetRememberCookie();
@@ -381,6 +479,134 @@
     $(".Login").click(function () {
         location.href = "/login";
     });
+
+    $(".shareOnFacebook").click(function () {
+        var videoId = $(this).parent().parent().find(".youtube").attr("rel");
+        var youtubeVideoUrl = "https://www.youtube.com/watch?v=";
+        youtubeVideoUrl += videoId;
+
+        FB.ui({
+            method: 'share',
+            href: youtubeVideoUrl,
+        }, function (response) { });
+    });
+
+    $(".blogFacebookShare").click(function () {
+        var shareUrl = location.href;
+
+        FB.ui({
+            method: 'share',
+            href: shareUrl,
+        }, function (response) { });
+    });
+
+    $(".aboutUsFacebookShare").click(function () {
+        var shareUrl = location.href;
+
+        FB.ui({
+            method: 'share',
+            href: shareUrl,
+        }, function (response) { });
+    });
+
+
+    $(".shareOnTwitter").click(function () {
+        var videoId = $(this).parent().parent().find(".youtube").attr("rel");
+        var youtubeVideoUrl = "https://www.youtube.com/watch?v=";
+        youtubeVideoUrl += videoId;
+
+        //We get the URL of the link
+        var loc = $(this).attr('href');
+
+        //We get the title of the link
+        var title = encodeURIComponent($(this).parent().parent().find(".blog-grid-content").find("a").html());
+
+        //We trigger a new window with the Twitter dialog, in the middle of the page
+        window.open('http://twitter.com/share?url=' + youtubeVideoUrl + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
+
+    $(".featured-video-shareOnTwitter").click(function () {
+        var videoId = $(this).parent().parent().parent().prev().find(".youtube").attr("rel");
+        var youtubeVideoUrl = "https://www.youtube.com/watch?v=";
+        youtubeVideoUrl += videoId;
+        //We get the title of the link
+        var title = encodeURIComponent($(this).parent().parent().parent().find(".blog-list-title").find("a").html());
+
+        //We trigger a new window with the Twitter dialog, in the middle of the page
+        window.open('http://twitter.com/share?url=' + youtubeVideoUrl + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
+
+    $(".featured-video-shareOnFacebook").click(function () {
+        var videoId = $(this).parent().parent().parent().prev().find(".youtube").attr("rel");
+        var youtubeVideoUrl = "https://www.youtube.com/watch?v=";
+        youtubeVideoUrl += videoId;
+
+        FB.ui({
+            method: 'share',
+            href: youtubeVideoUrl,
+        }, function (response) { });
+    });
+
+    $(".blogTwitterShare").click(function () {
+
+        //We get the URL of the link
+        var loc = location.href;
+
+        //We get the title of the link
+        var title = encodeURIComponent($(".main-title").html() + " via @LatestKruger");
+
+        //We trigger a new window with the Twitter dialog, in the middle of the page
+        window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
+
+    $(".aboutUsTwitterShare").click(function () {
+
+        //We get the URL of the link
+        var loc = location.href;
+
+        //We get the title of the link
+        var title = encodeURIComponent("About Latest Sightings via @LatestKruger");
+
+        //We trigger a new window with the Twitter dialog, in the middle of the page
+        window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 225) + ', left=' + $(window).width() / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
+
+    $(".aboutNadavTab").click(function () {
+        $(".aboutUs").hide();
+        $(".AboutNadavOssendryver").show();
+        $(".aboutUsTab").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".aboutUsTab").click(function () {
+        $(".AboutNadavOssendryver").hide();
+        $(".aboutUs").show();
+        $(".aboutNadavTab").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".singup").click(function () {
+        location.href = "/register";
+    });
+
+    $(".contactus").click(function () {
+        location.href = "contact-us";
+    });
+
+    $(".appReadMore").click(function () {
+        location.href = "/content/latest-sightings-app";
+    });
+
+    //$('#searchFor').bind("enterKey", function (e) {
+    //    alert($("#searchFor").val());
+    //});
+
+    //$('#searchFor').keyup(function (e) {
+    //    if (e.keyCode == 13) {
+    //        $(this).trigger("enterKey");
+    //    }
+    //});
+
 
     LoginIfOnLoginPageAndRememberMeIsSet();
 });

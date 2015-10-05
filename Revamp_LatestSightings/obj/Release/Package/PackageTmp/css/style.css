@@ -52,6 +52,7 @@
  43. Gallery Lightbox
  44. Profile Bar
  45. Holiday
+ 46. Lodges
 
 -------------------------------------------------*/
 
@@ -86,6 +87,10 @@ div,
 p, 
 a {
 	color: #eeeeee;
+}
+
+.cursorPointer:hover {
+    color:white !important;
 }
 
 a:hover {
@@ -180,7 +185,7 @@ body > .container {
 .navbar-brand img {
 	padding-top: 5px;
 	padding-bottom: 5px;
-	width: 130px;
+	width: 160px;
 	margin-top: -5px;
 }
 
@@ -189,7 +194,7 @@ body > .container {
 /*-------------------------------------------------------*/
 
 header .navbar-inverse {
-	margin-top: 0px; /* was 35px*/
+	margin-top: 0;
 	-webkit-transition: all 0.28s ease;
 	-moz-transition: all 0.28s ease;
 	-o-transition: all 0.28s ease;
@@ -201,7 +206,7 @@ header.active .navbar-inverse {
 	margin-top: 0;
 	min-height: 70px;
 	background-color: #000;
-	background-color: rgba(0,0,0,0.5);		
+	background-color: #000;		
 }
 
 header.active .navbar-right li {
@@ -469,7 +474,7 @@ h2.main-title {
 h4.page-titles {
 	clear: both;
 	margin-top: 0;
-	margin-bottom: 50px;
+	/*margin-bottom: 50px;*/
 	text-align: center;
 	color: #ffffff;
 	font-size: 22px;
@@ -957,6 +962,7 @@ ol.comments {
 	width: 100%;	
 	z-index: 10;
 	background-color:#783f04;
+    position:relative;
 }
 
 .footer .footer-logo {
@@ -1375,6 +1381,7 @@ ol.comments {
 
 .blog-list-featured-image {
 	overflow: hidden;
+    position:relative;
 }
 
 .blog-list-featured-image img {
@@ -1418,9 +1425,9 @@ ol.comments {
 	color: #eeeeee;
 }
 
-.blog-list-title a:hover {
+/*.blog-list-title a:hover {
 	color: #ffffff;
-}
+}*/
 
 .blog-list-excerpt {
 	margin-bottom: 30px;
@@ -1435,7 +1442,7 @@ ol.comments {
 .contact-map {
 	margin-left: -30px;
 	margin-right: -30px;
-	margin-bottom: 80px;
+	/*margin-bottom: 80px;*/
 }
 
 .contact-map #map_canvas{
@@ -1553,8 +1560,8 @@ ul.iconned-list li i {
 }
 
 .portfolio-featured-image img {
-	width: 100%;
-	height: auto;
+	/*width: 100%;
+	height: auto; */
 }
 
 
@@ -3537,6 +3544,42 @@ div .othercontant {
     display:none;
 }
 
+div .comments {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .tags {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .area {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .activity {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .animal {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
+div .title {
+    margin-top: -11px;
+    margin-bottom: 10px;
+    display:none;
+}
+
 div .videoTitle {
     margin-top: -11px;
     margin-bottom: 10px;
@@ -3562,7 +3605,7 @@ div .notes {
 }
 
 
-.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError {
+.registerSpinner, .panelWithWhiteBackgroundBorder, .newslettersubscribing, .successfullySubscribeToNewsletter, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
     display: none;
 }
 
@@ -3581,6 +3624,12 @@ div .notes {
 .transparentBackground {
     background-color: transparent !important;
     border-color: transparent !important;
+}
+
+.panelWithWhiteBackgroundBorder {
+    background-color: transparent !important;
+    border-color: white;
+    margin-top:18px;
 }
 
 .successfullyRegistered, .invalidCredentials, .successfullyLoggedIn , .successfullySentMail, .successfullyNotSentMail, .ConfirmPassword, .passwordsDoNotMatch, .confirmPassword, .succesfullyUpdateEmail, .errorWithEmailUpdate {
@@ -3615,7 +3664,7 @@ div .notes {
 }
 
 .havingTroubleUploading {
-    color: #337ab7;
+    color: #FF9900;
     font-size: 14px;
     margin-top:39px;
 }
@@ -3634,7 +3683,7 @@ div .notes {
     margin-left: 10px;
 }
 
-.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError {
+.registerSpinner, .profileUpdated, .profileUpdatedError, .videoDetailsSaved, .videoDetailsSavedError, .imageDetailsSaved, .imageDetailsError {
     display: none;
 }
 
@@ -3663,7 +3712,7 @@ div .notes {
 }
 
 .emailFile {
-    color: #3c763d;
+    color: #FF9900;
     font-size: 14px;
 }
 
@@ -3848,7 +3897,7 @@ input , select {
     width: 100%;
 }
 
-.viewFinancials, .uploadVideo, .myAccount, .Logout{
+.viewFinancials, .uploadVideo, .myAccount, .uploadGalleryImage, .Logout{
     display: none;
 }
 
@@ -3859,6 +3908,274 @@ input , select {
 .nav-tabs > li > a:hover {
     background-color:transparent !important;
 }
+
+.gallerySearchResults, .VideoGallerySearchResults {
+    display: none;
+}
+
+.gallerySearchResults1, .gallerySearchResults2, .gallerySearchResults3, .gallerySearchResults4, .gallerySearchResults5, .gallerySearchResults6, .gallerySearchResults7, .gallerySearchResults8, .gallerySearchResults9, .gallerySearchResults10,
+.gallerySearchResults11, .gallerySearchResults12, .gallerySearchResults13, .gallerySearchResults14, .gallerySearchResults15, .gallerySearchResults16, .gallerySearchResults17, .gallerySearchResults18, .gallerySearchResults19, .gallerySearchResults20,
+.gallerySearchResults21, .gallerySearchResults22, .gallerySearchResults23, .gallerySearchResults24, #over_lay, .popup_ex {
+    display:none;
+}
+
+
+.VideoGallerySearchResults1, .VideoGallerySearchResults2, .VideoGallerySearchResults3, .VideoGallerySearchResults4, .VideoGallerySearchResults5, .VideoGallerySearchResults6, .VideoGallerySearchResults7, .VideoGallerySearchResults8, .VideoGallerySearchResults9, .VideoGallerySearchResults10,
+.VideoGallerySearchResults11, .VideoGallerySearchResults12, .VideoGallerySearchResults13, .VideoGallerySearchResults14, .VideoGallerySearchResults15, .VideoGallerySearchResults16, .VideoGallerySearchResults17, .VideoGallerySearchResults18, .VideoGallerySearchResults19, .VideoGallerySearchResults20,
+.VideoGallerySearchResults21, .VideoGallerySearchResults22, .VideoGallerySearchResults23, .VideoGallerySearchResults24 {
+    display:none;
+}
+
+.imageDialog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom:20px;
+}
+
+
+.modal-header {
+    color: black !important;
+}
+
+.media-selection {
+    background-color: #f90 !important;
+    margin-bottom:14px;
+}
+
+#videoSearch {
+    display: none;
+}
+
+.sixtyBySixty {
+    width: 60px;
+    height: 60px;
+}
+
+.EightFiftyFiveBy474 {
+    width: 855px;
+    height:474px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.spotLightImage {
+    width: 777px;
+    /*height: 437px;*/
+}
+
+.latestGalleriesJustPics, .latestGalleriesJustVideos, .emailfooter {
+    display: none;
+}
+
+.emailfooter {
+    margin-bottom: -10px;
+}
+
+.clearLeft {
+    clear:left;
+}
+
+.newsletterForm {
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+}
+
+.newsletterFormSingup {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backgroundColorWhite {
+    background-color: white !important;
+}
+
+.newslettersubscribing, .successfullySubscribeToNewsletter {
+    margin-top:5px;
+}
+
+.imageTitle {
+    color: #ff9900;
+}
+
+.AboutNadavOssendryver {
+    display: none;
+}
+
+.cursorPointer {
+    cursor:text;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {   
+min-width: 100% !important;   
+width: 100% !important; 
+}
+
+.galleryImage {
+    width: 100%;
+}
+
+.registerSpinner > img {
+    width:28px;
+    height:28px;
+    margin-top:9px;
+}
+
+.orange { color:#ff9900;}
+
+.adbox { 	
+background-color:#895218; 	
+width:100%; 	
+margin-bottom:20px; 
+float:left; 	
+padding:0 10px 10px 10px; 
+}  
+
+.adbox h1 { 	
+font-size:16px; 	
+text-align:center; 	
+font-weight:bold; 	
+line-height:1.5;	 
+}  
+
+.adbox .left { 	
+width:50%; 	
+float:left; 	
+padding-left:10px; 	
+padding-right:10px ;
+}  
+
+.adbox .right { 	
+width:50%; 	
+float:left; 	
+padding-left:10px; 	
+padding-right:10px;
+ }  
+
+.adbox .adimage img { 	
+float:left; 	
+width:100%; 
+}  
+
+.adbox .appimage img { 	
+width:100%; 	
+margin-bottom:10px; 	
+margin-left:auto !important; 	
+margin-right:auto !important; 	
+display:block; 	
+max-width:160px; 
+}  
+
+.playicon { 	
+    font-size:48px; 	
+    cursor:pointer; 	
+    margin-left:auto; 	
+    margin-right:auto; 	
+    width:48px; 	
+    position:absolute; 	
+    left:50%; 	
+    top:43%; 	
+    float:left; 	
+    display:inline; 
+}
+
+/*-------------------------------------------------------*/
+/* 45. Lodges
+/*-------------------------------------------------------*/
+
+.lodge-container {
+    padding-bottom: 20px;
+    position: absolute;
+    overflow: hidden;
+	top:0 !important;
+	width:100%;
+}
+
+#lodgeTitle {
+    cursor:default;
+}
+
+#desc {
+    margin-top: 15px;
+}
+
+.NoBottomMargin {
+    margin-bottom: 0 !important;
+}
+
+
+/*-------------------------------------------------------*/
+/* 47. Latest Sightings Owl Slider Widget
+/*-------------------------------------------------------*/
+.ls-member {
+    height: 114px;
+   	position: relative;
+    margin-bottom: 0px;
+    transition: all 0.28s ease 0s;
+    overflow: hidden;
+    border-left; solid 1px #2A1403;
+}
+
+.ls-member .ls-info {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: 40%;
+    height: 114px;
+    background-color: rgba(255, 153, 0, 0.3);
+}
+
+.ls-title {
+	width: 60%;
+    float: left;
+    background-color: rgba(255, 153, 0, 0.3);
+    padding: 10px;
+    transition: all 0.28s ease 0s;
+    border-radius: 0px;
+    height: 114px;
+}
+
+.ls-title h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.ls-title p {
+    font-style: normal;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #EEE;
+}
+
+
+@media (max-width: 768px) { 
+.adbox .left { 	width:70%; }  
+.adbox .right { 	width:30%; 	padding-top:20px; } 
+.adbox .appimage img { 	margin-bottom:20px; }   }  
+
+@media (max-width: 581px) { 
+ .adbox .left { 	width:60%; }  
+.adbox .right { 	width:40%; 	padding-top:20px; }  
+.adbox .appimage img { 	margin-bottom:20px; }  }  
+
+@media (max-width: 480px) {  
+.adbox .left { 	width:60%; }  
+.adbox .right { 	width:40%; }  }  
+
+@media (max-width: 360px) { 
+.adbox .left { 	width:60%; } 
+.adbox .right { 	width:40%; }  }
+
+
+
+
 
 /*
     

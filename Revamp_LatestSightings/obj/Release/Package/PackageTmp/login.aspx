@@ -8,12 +8,19 @@
         }
 
         .footer {
-            position: absolute !important;
+            display:none
         }
 
         a:hover {
             color: white !important;
         }
+
+	    @media (max-width: 480px) { 
+	
+		    #content-inner {
+			    padding: 0px !important;
+		    }
+	    }
     </style>
     <!-- Main Container Section -->			
     <div class="container  panel-signin">
@@ -23,7 +30,7 @@
             <div id="content-inner">
 
                 <div class="row">
-                    <div class="panel transparentBackground">
+                    <div class="panel transparentBackground  col-md-12 col-sm-12 col-xs-10">
                         <div class="panel-body">
 <%--                            <div class="logo text-center">
                                 <img src="<%=ResolveUrl("~/images/latestsightings.png")%>" alt="Chain Logo" >
@@ -35,14 +42,14 @@
                             <div class="mb30"></div>
                     
                             <form action="signin.html" method="post" id="login">
-                                <div class="input-group form-group mb15">
+                                <div class="input-group form-group mb15 col-md-12 col-sm-12 col-xs-10">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <input type="email" class="form-control" placeholder="Email Address" id="email">
                                 </div>
                                 <div class="input-group form-group email">
                                     <p class="text-danger">Email is required</p>
                                 </div>
-                                <div class="input-group form-group mb15">
+                                <div class="input-group form-group mb15 col-md-12 col-sm-12 col-xs-10">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                     <input type="password" class="form-control" placeholder="Password" id="password">
                                 </div>
@@ -62,7 +69,7 @@
                                             <button type="button" class="btn btn-success submitLogin">Sign In <i class="fa fa-angle-right ml5"></i></button>
                                         </div>
                                         <div class="pull-right marginRightTen registerSpinner">
-                                            <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                            <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                                         </div>
                                     </div>
                                     <div class="row">

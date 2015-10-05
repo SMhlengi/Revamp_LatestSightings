@@ -131,6 +131,9 @@
     <Content Include="holidays.aspx" />
     <Content Include="htings.aspx" />
     <Content Include="imageModal.aspx" />
+    <Content Include="images\299.GIF" />
+    <Content Include="images\332.GIF" />
+    <Content Include="images\333.GIF" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\AllTings.jpg" />
@@ -717,6 +720,9 @@
     <Folder Include="UploadedImages\650x650\" />
     <Folder Include="UploadedImages\80x80\" />
     <Folder Include="Videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

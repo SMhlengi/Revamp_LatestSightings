@@ -597,5 +597,16 @@
         location.href = "/content/latest-sightings-app";
     });
 
+    //$('#searchFor').bind("enterKey", function (e) {
+    //    alert($("#searchFor").val());
+    //});
+
+    //$('#searchFor').keyup(function (e) {
+    //    if (e.keyCode == 13) {
+    //        $(this).trigger("enterKey");
+    //    }
+    //});
+
+
     LoginIfOnLoginPageAndRememberMeIsSet();
 });

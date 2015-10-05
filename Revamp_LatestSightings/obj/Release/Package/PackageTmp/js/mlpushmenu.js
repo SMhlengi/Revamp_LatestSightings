@@ -79,27 +79,27 @@
 			backClass : 'mp-back'
 		},
 		_init : function() {
-			//// if menu is open or not
-			//this.open = false;
-			//// level depth
-			//this.level = 0;
-			//// the moving wrapper
-			//this.wrapper = document.getElementById( 'mp-pusher' );
-			//// the mp-level elements
-			//this.levels = Array.prototype.slice.call( this.el.querySelectorAll( 'div.mp-level' ) );
-			//// save the depth of each of these mp-level elements
-			//var self = this;
-			//this.levels.forEach( function( el, i ) { el.setAttribute( 'data-level', getLevelDepth( el, self.el.id, 'mp-level' ) ); } );
-			//// the menu items
-			//this.menuItems = Array.prototype.slice.call( this.el.querySelectorAll( 'li' ) );
-			//// if type == "cover" these will serve as hooks to move back to the previous level
-			//this.levelBack = Array.prototype.slice.call( this.el.querySelectorAll( '.' + this.options.backClass ) );
-			//// event type (if mobile use touch events)
-			//this.eventtype = mobilecheck() ? 'touchstart' : 'click';
-			//// add the class mp-overlap or mp-cover to the main element depending on options.type
-			//classie.add( this.el, 'mp-' + this.options.type );
-			//// initialize / bind the necessary events
-			//this._initEvents();
+			// if menu is open or not
+			this.open = false;
+			// level depth
+			this.level = 0;
+			// the moving wrapper
+			this.wrapper = document.getElementById( 'mp-pusher' );
+			// the mp-level elements
+			this.levels = Array.prototype.slice.call( this.el.querySelectorAll( 'div.mp-level' ) );
+			// save the depth of each of these mp-level elements
+			var self = this;
+			this.levels.forEach( function( el, i ) { el.setAttribute( 'data-level', getLevelDepth( el, self.el.id, 'mp-level' ) ); } );
+			// the menu items
+			this.menuItems = Array.prototype.slice.call( this.el.querySelectorAll( 'li' ) );
+			// if type == "cover" these will serve as hooks to move back to the previous level
+			this.levelBack = Array.prototype.slice.call( this.el.querySelectorAll( '.' + this.options.backClass ) );
+			// event type (if mobile use touch events)
+			this.eventtype = mobilecheck() ? 'touchstart' : 'click';
+			// add the class mp-overlap or mp-cover to the main element depending on options.type
+			classie.add( this.el, 'mp-' + this.options.type );
+			// initialize / bind the necessary events
+			this._initEvents();
 		},
 		_initEvents : function() {
 			var self = this;
@@ -198,7 +198,8 @@
 				this.open = true;
 			}
 			// add class mp-level-open to the opening level element
-			classie.add( subLevel || this.levels[0], 'mp-level-open' );
+			classie.add(subLevel || this.levels[0], 'mp-level-open');
+			window.scrollTo(0, 0);
 		},
 		// close the menu
 		_resetMenu : function() {

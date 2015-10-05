@@ -1,19 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="addVideo.ascx.cs" Inherits="Revamp_LatestSightings.addVideo" %>
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 
-<div class="ajaxUploaderClass">
+<%--<div class="ajaxUploaderClass">
 <% if (addVideoDetails == false){ %>
     <CuteWebUI:Uploader id="Uploader1" runat="server" InsertText="Add File (Max 2 Gigs)"
             OnFileUploaded="Uploader1_FileUploaded" MultipleFilesUpload="false" ValidateOption-AllowedFileExtensions="mp4, m4v, webm, flv, ogv, ogg, avi, wmv, mpg, mpeg, mpe, svi, mov"
             />
 <%} %>
-</div>
+</div>--%>
 
 <% if (addVideoDetails == false){ %>
 <div class="row">
     <div class="dotNetUploader">
        <div class="col-md-9">
-            <p class="text-primary havingTroubleUploading"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><strong> Having trouble uploading? </strong> <a href="javascript:void(0)" class="launchDotNetUploader">Try the simple uploader</a></p>
+            <p class="text-primary havingTroubleUploading"><%--<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><strong> Having trouble uploading? </strong>--%> <a href="javascript:void(0);" class="btn btn-default launchDotNetUploader" role="button"  style="background-color: #5bc0de;color: black; text-decoration: none;">Add File (Max 2 Gigs )</a></p><br />
             <div class="panel panel-default dontnetuploaderpanel">
                 <div class="panel-body">
                     <div class="row">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="pull-left marginLeftTen registerSpinner">
-                                <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                                <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <!--<button class="btn btn-success updateVideoDetails">Save</button>-->
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
-                    <img src="<%=ResolveUrl("~/images/loader9.gif")%>" />
+                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
                 <div class="alert alert-success pull-left marginLeftTen videoDetailsSaved">
                     <strong>Video details have been Successfully Saved</strong><br />An administrator has been informed and will review your video and be in contact with you shortly
@@ -105,4 +105,4 @@
     </div>
 <%} %>
 
-<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=3") %>"></script>
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=4") %>"></script>

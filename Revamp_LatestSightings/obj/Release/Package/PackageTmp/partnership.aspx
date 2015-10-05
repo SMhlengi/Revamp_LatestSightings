@@ -20,7 +20,7 @@
                                 <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                                     
                                     <div class="blog-list-featured-image">
-                                        <a href="#"><img alt="" src="images/about-650x650.gif"></a>
+                                        <a href="#"><img alt="" src="/images/partnership.png"></a>
                                         <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
                                     </div>
                                     <div class="blog-list-content">
@@ -40,9 +40,9 @@
                                 <div class="spacer small"></div>
                                 
                                 <!-- Big Video BEGIN -->
-                                <div class="blog-list-featured-image">
+<%--                                <div class="blog-list-featured-image">
                                     <a href="#"><img alt="" src="images/video-16x9.gif"></a>
-                                </div>
+                                </div>--%>
                                 <!-- Big Video END -->
                                 
                                 <div class="clearfix"></div>
@@ -83,9 +83,9 @@
                                
                                         <% foreach(var article in topFeaturedArticles){ %>
                                              <div class="media recent-posts">
-									            <a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
+									            <a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
 									            <div class="media-body">
-										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>amp;cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
+										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
 									            </div>
 								            </div>
                                         <%} %>
@@ -97,13 +97,16 @@
                             
                             <div class="clearfix"></div>
                             <asp:PlaceHolder ID="topTenContributors" runat="server"></asp:PlaceHolder>
+                            <div class="clearfix"></div>
+                            <div class="spacer small"></div>
+                            <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
                             
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="images/ads-300x250.gif" width="300" height="250">
+                            	<asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
 							</div>
                             <!-- 300x250 AD -->
                                                         
@@ -119,7 +122,7 @@
                         
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="images/app.gif" width="300" height="250">
+                            	<asp:PlaceHolder ID="downloadapp" runat="server"></asp:PlaceHolder>
 							</div>
                             <!-- 300x250 AD -->
                             
@@ -130,5 +133,5 @@
 						</div>
 					</div>
 				<!-- End Content Area -->
-
+        <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 </asp:Content>
