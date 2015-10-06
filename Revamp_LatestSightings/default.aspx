@@ -5,43 +5,7 @@
                         	<div class="spacer small"></div>
 					
                     <!-- Billboard BEGIN -->
-                    <div class="post-slider">
-                    
-						<div class="col-md-9">
-							<div id="slider" class="slides Xowl-carousel">
-							
-                            <% if (topFeaturedArticles != null && topFeaturedArticles.Count > 0){ %>
-                                <%foreach (var featuredArticle in  topFeaturedArticles){%>
-								    <div class="item">
-									    <div class="overlay">
-										    <a href="/blog.aspx?id=<%=featuredArticle.Id %>&cat=<%=featuredArticle.CateogryId  %>">
-											    <h3><%=featuredArticle.Title %></h3>
-											    <p><%= featuredArticle.ArticleBody %></p>
-										    </a>
-									    </div>
-									    <img alt="" class="img-responsive" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=featuredArticle.Url %>" />
-								    </div>
-                                <%} %>
-                            <%} %>
-							</div>
-						</div>
-                        
-						<div class="col-md-3">
-							<div id="thumbnails" class="thumbs Xowl-carousel">
-                                <% if (topFeaturedArticles != null && topFeaturedArticles.Count > 0)
-                                   {
-                                       var counter = 0; %>
-                                    <%foreach (var featuredArticle in topFeaturedArticles){ %>
-								            <div class="item <% if (counter == 0){ %> active<%} %>"><img alt="" class="img-responsive sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=featuredArticle.Url %>" /><span><%=featuredArticle.Title %></span></div>
-                                            <% counter += 1; %>
-                                    <%} %>
-                                <%} %>
-							</div>
-						</div>
-                        						
-						<div class="clearfix"></div>
-                        
-					</div>
+                    <asp:PlaceHolder ID="BB_placeholder" runat="server"></asp:PlaceHolder>
                     <!-- Billboard END -->
                     
                     <!-- Latest Sightings BEGIN -->

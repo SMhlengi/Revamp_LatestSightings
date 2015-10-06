@@ -17,7 +17,7 @@ namespace Revamp_LatestSightings
             topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
             CleanUpArticleForBillboard();
             var billboardJson = JsonConvert.SerializeObject(topFeaturedArticles);
-            var functionScriptCall = string.Format("constructBillboard({0}", billboardJson);
+            var functionScriptCall = string.Format("constructBillboard({0});", billboardJson);
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "", functionScriptCall, true);
         }
 

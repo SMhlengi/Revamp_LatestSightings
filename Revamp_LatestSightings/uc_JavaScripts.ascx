@@ -14,4 +14,3 @@
 <script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/validationLib.js?v=72") %>"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

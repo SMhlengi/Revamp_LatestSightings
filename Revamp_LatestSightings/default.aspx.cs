@@ -17,16 +17,23 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
+            //topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
             featuredVideos = Galleries.GetFeatured(Galleries.GalleryType.Video);
-            CleanUpArticleForBillboard();
+            //CleanUpArticleForBillboard();
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
-            LoadLasteBLogs();
+            //LoadLasteBLogs();
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
-            loadAds();
+            //loadAds();
+            loadBB();
             //loadHomePageTings();
+        }
+
+        private void loadBB()
+        {
+            uc_billboard bb = (uc_billboard)LoadControl("~/uc_billboard.ascx");
+            BB_placeholder.Controls.Add(bb);
         }
 
         private void loadHomePageTings()

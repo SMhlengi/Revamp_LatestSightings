@@ -13,6 +13,15 @@ namespace Revamp_LatestSightings {
     public partial class _default {
         
         /// <summary>
+        /// BB_placeholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder BB_placeholder;
+        
+        /// <summary>
         /// latestGalleries control.
         /// </summary>
         /// <remarks>
