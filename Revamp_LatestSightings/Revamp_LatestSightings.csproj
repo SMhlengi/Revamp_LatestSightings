@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,9 +50,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Intelligencia.UrlRewriter.dll</HintPath>
     </Reference>
-    <Reference Include="LatestSightingsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\old_desktop\Documents\GitHub\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
+    <Reference Include="LatestSightingsLibrary">
+      <HintPath>..\..\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -134,6 +134,8 @@
     <Content Include="images\299.GIF" />
     <Content Include="images\332.GIF" />
     <Content Include="images\333.GIF" />
+    <Content Include="images\350.GIF" />
+    <Content Include="images\712.GIF" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\AllTings.jpg" />
@@ -207,6 +209,7 @@
     <Content Include="js\gallery.js" />
     <Content Include="js\galleryviewmodal.js" />
     <Content Include="js\homePage.js" />
+    <Content Include="js\homePageBillboard.js" />
     <Content Include="js\homePageTings.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\isotope.pkgd.min.js" />
@@ -255,6 +258,7 @@
     <Content Include="tings2.aspx" />
     <Content Include="tvlodge.aspx" />
     <Content Include="uc_AddImage.ascx" />
+    <Content Include="uc_billboard.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
     <Content Include="uc_downloadLatestApp.ascx" />
     <Content Include="uc_enquireForm.ascx" />
@@ -536,6 +540,13 @@
     </Compile>
     <Compile Include="uc_AddImage.ascx.designer.cs">
       <DependentUpon>uc_AddImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_billboard.ascx.cs">
+      <DependentUpon>uc_billboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_billboard.ascx.designer.cs">
+      <DependentUpon>uc_billboard.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_categoryOtherRelatedStories.ascx.cs">
       <DependentUpon>uc_categoryOtherRelatedStories.ascx</DependentUpon>
