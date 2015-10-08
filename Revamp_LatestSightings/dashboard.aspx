@@ -2,6 +2,9 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="dashboard" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<link href="<%= ResolveUrl("~/css/jquery.dataTables.min.css") %>" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/css/style.datatables.css") %>" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/css/responsivedataTables.responsive.css") %>" rel="stylesheet" />
 
     <style>
         .sitemap {

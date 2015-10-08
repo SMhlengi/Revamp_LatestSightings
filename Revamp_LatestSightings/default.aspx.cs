@@ -23,7 +23,7 @@ namespace Revamp_LatestSightings
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
             //LoadLasteBLogs();
-            loadLatestGalleries();
+            //loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             //loadAds();
             loadBB();

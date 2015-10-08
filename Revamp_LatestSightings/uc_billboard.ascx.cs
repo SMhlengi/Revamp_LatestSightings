@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LatestSightingsLibrary;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Revamp_LatestSightings
 {
@@ -33,6 +34,8 @@ namespace Revamp_LatestSightings
                 int substract = endIndex - startIndex;
                 article.ArticleBody = article.ArticleBody.Substring(startIndex + 1, substract - 1);
                 article.ArticleBody += " [...]";
+                article.Url = ConfigurationManager.AppSettings["articleImagePath"] + article.Url;
+
             }
         }
     }
