@@ -15,6 +15,17 @@ function setBBTitles() {
     }
 }
 
+function setBBImage(control, image) {
+    $(control).attr("src", "");
+    $(control).attr("src", image);
+}
+
+function setBBRightImageClasses(control) {
+    $(control).attr("class", "img-responsive sixtyBySixty");
+    $(control).css("width", "80px");
+}
+
+
 function buildingBB() {
     var bb = '<div class="col-md-9">' + 
 							'<div id="slider" class="slides Xowl-carousel">' +
@@ -75,6 +86,12 @@ function buildingBB() {
 
     $(".post-slider").html(bb);
     setBBTitles();
+    setTimeout(function () {
+        setBBImage("#itemOne img", BILLBOARDS[0].Url);
+        setBBImage($($("#thumbnails img")[0]), BILLBOARDS[0].Url);
+        setBBRightImageClasses($($("#thumbnails img")[0]));
+    }, 2000);
+
 }
 
 $(document).ready(function () {
