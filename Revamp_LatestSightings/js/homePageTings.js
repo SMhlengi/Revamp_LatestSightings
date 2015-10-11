@@ -11,6 +11,7 @@
             console.log(data.d);
             console.log(data.d.length);
             populateHomePageTingsHtml(data.d);
+            populateHomePageTingsImages(data.d);
 
         }
     ).fail(
@@ -28,7 +29,20 @@ function populateHomePageTingsHtml(tings) {
     }
 }
 
+function populateHomePageTingsImages(tings) {
+
+    setTimeout(function ()
+    {
+        for (var i = 0; i < tings.length; i++) {
+
+            setTingImage(".ting" + i, tings[i].id);
+        }
+    }, 5000);
+}
+
 function setTingImage(control, tingId) {
+    $(control + " img").removeClass("tingImage");
+    $(control + " img").attr("src", "");
     $(control + " img").attr("src", "http://tingsservice.socialengine.co.za/tings/image/" + tingId)
 }
 

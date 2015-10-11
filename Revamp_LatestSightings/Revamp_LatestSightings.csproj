@@ -137,6 +137,7 @@
     <Content Include="images\332.GIF" />
     <Content Include="images\333.GIF" />
     <Content Include="images\350.GIF" />
+    <Content Include="images\466.GIF" />
     <Content Include="images\712.GIF" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
@@ -212,6 +213,7 @@
     <Content Include="js\galleryviewmodal.js" />
     <Content Include="js\homePage.js" />
     <Content Include="js\homePageBillboard.js" />
+    <Content Include="js\homePageLatestBlogs.js" />
     <Content Include="js\homePageTings.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\isotope.pkgd.min.js" />
@@ -245,6 +247,7 @@
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
+    <Content Include="js\youtubeSearchResults.js" />
     <Content Include="lodges.aspx" />
     <Content Include="lodges.html" />
     <Content Include="login.aspx" />
@@ -266,6 +269,7 @@
     <Content Include="uc_enquireForm.ascx" />
     <Content Include="uc_FeaturedCategories.ascx" />
     <Content Include="uc_Footer.ascx" />
+    <Content Include="uc_homeLatestBlogs.ascx" />
     <Content Include="uc_homepageTings.ascx" />
     <Content Include="uc_imageSearchResults.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
@@ -585,6 +589,13 @@
     </Compile>
     <Compile Include="uc_Footer.ascx.designer.cs">
       <DependentUpon>uc_Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_homeLatestBlogs.ascx.cs">
+      <DependentUpon>uc_homeLatestBlogs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_homeLatestBlogs.ascx.designer.cs">
+      <DependentUpon>uc_homeLatestBlogs.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_homepageTings.ascx.cs">
       <DependentUpon>uc_homepageTings.ascx</DependentUpon>

@@ -22,7 +22,7 @@ namespace Revamp_LatestSightings
             //CleanUpArticleForBillboard();
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
-            //LoadLasteBLogs();
+            LoadLasteBLogs();
             //loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             //loadAds();
@@ -102,7 +102,7 @@ namespace Revamp_LatestSightings
 
         private void LoadLasteBLogs()
         {
-            uc_LatestBlogs latestBlogs = (uc_LatestBlogs)LoadControl("~/uc_LatestBlogs.ascx");
+            uc_homeLatestBlogs latestBlogs = (uc_homeLatestBlogs)LoadControl("~/uc_homeLatestBlogs.ascx");
             plc_latestBlogs.Controls.Add(latestBlogs);
         }
 

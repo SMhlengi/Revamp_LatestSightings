@@ -16,11 +16,16 @@
     #owl-slider{
         visibility:hidden;
     }
+
+    .owl-controls{
+        display:none;
+    }
+
 </style>
 
 <!-- Latest Sightings Widget BEGIN -->
 					<div class="portfolio-related-posts triggerAnimation animated" data-animate="fadeInUp">
-						<h4 class="page-titles">Latest Sightings</h4>
+<%--						<h4 class="page-titles">Latest Sightings</h4>--%>
 
                         <div class="loadingImage"><img src="<%=ResolveUrl("~/images/333.GIF") %>"></div>
                             
@@ -46,10 +51,10 @@
 
 <script>
     $(document).ready(function () {
-        setTimeout(function () {
-            $(".loadingImage").hide();
-            $("#owl-slider").css("visibility", "visible");
-        }, 2500);
+        //setTimeout(function () {
+        //    $(".loadingImage").hide();
+        //    $("#owl-slider").css("visibility", "visible");
+        //}, 2500);
 
     });
 </script>

@@ -40,7 +40,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2015 19:05:24</publishTime>
     </File>
     <File Include="bin/Revamp_LatestSightings.dll">
-      <publishTime>10/06/2015 00:56:58</publishTime>
+      <publishTime>10/11/2015 19:01:56</publishTime>
     </File>
     <File Include="blog.aspx">
       <publishTime>09/09/2015 23:29:02</publishTime>
@@ -87,6 +87,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="css/component.css">
       <publishTime>08/01/2015 19:05:25</publishTime>
     </File>
+    <File Include="css/docs.min.css">
+      <publishTime>10/08/2015 22:06:10</publishTime>
+    </File>
     <File Include="css/font-awesome.min.css">
       <publishTime>08/01/2015 19:05:25</publishTime>
     </File>
@@ -129,6 +132,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="css/responsive.css">
       <publishTime>08/01/2015 19:05:24</publishTime>
     </File>
+    <File Include="css/responsivedataTables.responsive.css">
+      <publishTime>10/08/2015 22:11:27</publishTime>
+    </File>
     <File Include="css/responsive_4_18_2015.css">
       <publishTime>08/01/2015 19:05:24</publishTime>
     </File>
@@ -163,10 +169,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2015 19:05:24</publishTime>
     </File>
     <File Include="dashboard.aspx">
-      <publishTime>08/01/2015 19:05:24</publishTime>
+      <publishTime>10/08/2015 22:18:33</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>10/05/2015 20:54:05</publishTime>
+      <publishTime>10/10/2015 22:15:27</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.eot">
       <publishTime>08/01/2015 19:05:25</publishTime>
@@ -227,6 +233,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="images/333.GIF">
       <publishTime>10/05/2015 22:50:43</publishTime>
+    </File>
+    <File Include="images/350.GIF">
+      <publishTime>10/07/2015 00:03:22</publishTime>
+    </File>
+    <File Include="images/712.GIF">
+      <publishTime>10/07/2015 00:03:22</publishTime>
     </File>
     <File Include="images/about-650x650.gif">
       <publishTime>08/01/2015 19:05:25</publishTime>
@@ -447,8 +459,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/homePage.js">
       <publishTime>08/01/2015 19:05:25</publishTime>
     </File>
+    <File Include="js/homePageBillboard.js">
+      <publishTime>10/11/2015 18:15:17</publishTime>
+    </File>
     <File Include="js/homePageTings.js">
-      <publishTime>09/18/2015 02:04:45</publishTime>
+      <publishTime>10/11/2015 17:18:09</publishTime>
     </File>
     <File Include="js/imagesloaded.pkgd.min.js">
       <publishTime>08/01/2015 19:05:25</publishTime>
@@ -549,6 +564,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/waypoints.min.js">
       <publishTime>08/01/2015 19:05:26</publishTime>
     </File>
+    <File Include="js/youtubeSearchResults.js">
+      <publishTime>10/11/2015 18:58:00</publishTime>
+    </File>
     <File Include="lodges.aspx">
       <publishTime>08/11/2015 23:42:21</publishTime>
     </File>
@@ -580,7 +598,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2015 19:05:26</publishTime>
     </File>
     <File Include="Site1.Master">
-      <publishTime>10/06/2015 00:55:42</publishTime>
+      <publishTime>10/11/2015 18:59:00</publishTime>
     </File>
     <File Include="terms.aspx">
       <publishTime>09/09/2015 23:42:50</publishTime>
@@ -597,6 +615,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="uc_AddImage.ascx">
       <publishTime>08/01/2015 19:05:26</publishTime>
     </File>
+    <File Include="uc_billboard.ascx">
+      <publishTime>10/10/2015 19:44:08</publishTime>
+    </File>
     <File Include="uc_categoryOtherRelatedStories.ascx">
       <publishTime>08/01/2015 19:05:26</publishTime>
     </File>
@@ -612,6 +633,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="uc_Footer.ascx">
       <publishTime>09/13/2015 15:27:27</publishTime>
     </File>
+    <File Include="uc_homepageTings.ascx">
+      <publishTime>10/11/2015 17:16:21</publishTime>
+    </File>
     <File Include="uc_HomePage_Main_Container_Section.ascx">
       <publishTime>01/25/2015 16:18:13</publishTime>
     </File>
@@ -619,7 +643,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2015 00:22:30</publishTime>
     </File>
     <File Include="uc_JavaScripts.ascx">
-      <publishTime>10/06/2015 00:55:51</publishTime>
+      <publishTime>10/07/2015 00:47:38</publishTime>
     </File>
     <File Include="uc_LatestBlogs.ascx">
       <publishTime>08/01/2015 19:05:26</publishTime>
@@ -634,10 +658,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2015 19:05:26</publishTime>
     </File>
     <File Include="uc_StyleSheets.ascx">
-      <publishTime>10/06/2015 00:55:58</publishTime>
+      <publishTime>10/08/2015 22:18:44</publishTime>
     </File>
     <File Include="uc_tings.ascx">
-      <publishTime>10/06/2015 00:54:50</publishTime>
+      <publishTime>10/10/2015 18:23:20</publishTime>
     </File>
     <File Include="uc_TopMonthlyContributors.ascx">
       <publishTime>08/01/2015 19:05:26</publishTime>
@@ -667,7 +691,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2015 19:05:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/05/2015 20:55:18</publishTime>
+      <publishTime>10/11/2015 17:52:38</publishTime>
     </File>
   </ItemGroup>
 </Project>
