@@ -262,7 +262,7 @@
 
 
                              <div class="spacer"></div>
-							<div class="fb-page" data-href="https://www.facebook.com/latestsightingskruger" data-width="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/latestsightingskruger"><a href="https://www.facebook.com/latestsightingskruger">Latest Sightings - Kruger</a></blockquote></div></div>
+							<%--<div class="fb-page" data-href="https://www.facebook.com/latestsightingskruger" data-width="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/latestsightingskruger"><a href="https://www.facebook.com/latestsightingskruger">Latest Sightings - Kruger</a></blockquote></div></div>--%>
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>

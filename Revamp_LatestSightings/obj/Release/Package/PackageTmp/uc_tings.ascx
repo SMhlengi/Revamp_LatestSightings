@@ -2,14 +2,14 @@
 
 <style>
     .loadingImage img {
-        width: 184px;
-        height: 42px;
+        width: 100px;
+        height: 33px;
     }
 
 
     .loadingImage {
         margin: 0 auto;
-        width: 17%;
+        width: 37%;
         padding-top: 25px;
     }
 
