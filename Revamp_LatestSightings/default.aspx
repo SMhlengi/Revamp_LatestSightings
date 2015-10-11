@@ -1,16 +1,15 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Revamp_LatestSightings._default" %>
 
 <asp:Content ID="homepage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-                                <div class="clearfix"></div>
-                        	<div class="spacer small"></div>
-
-                            <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>
-                            <div class="clearfix"></div>
-                        	<div class="spacer small"></div>
+                    
 					
                     <!-- Billboard BEGIN -->
                     <asp:PlaceHolder ID="BB_placeholder" runat="server"></asp:PlaceHolder>
                     <!-- Billboard END -->
+
+                    <!--HOMEPAGE TINGS-->
+                    <asp:PlaceHolder ID="tings_homepage" runat="server"></asp:PlaceHolder>
+                    <!--END OF HOMEPAGE TINGS -->
                     
                     <!-- Latest Sightings BEGIN -->
 					<div class="portfolio-related-posts triggerAnimation animated displayNone" data-animate="fadeInUp">

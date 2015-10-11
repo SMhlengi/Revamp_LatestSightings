@@ -4,26 +4,16 @@ function constructBillboard(json) {
     BILLBOARDS = json;
 }
 
-function setupMainBB() {
-    var control = "#itemOne";
-    setupBBTitle(control, BILLBOARDS[0].Title);
-    setupBBDesc(control, BILLBOARDS[0].ArticleBody);
-    setupMainBBPicture(control, BILLBOARDS[0].Url)
+
+function setBBTitles() {
+    var rightBBItemsCount = $("#thumbnails span").length;
+    for (var i = 0; i < rightBBItemsCount; i++) {
+        $($("#thumbnails span")[i]).html(BILLBOARDS[i].Title);
+        $($("#slider .item h3")[i]).html(BILLBOARDS[i].Title);
+        $($("#slider .item p")[i]).html(BILLBOARDS[i].ArticleBody);
+        $($("#slider .item a")[i]).attr("href", "/blog.aspx?id=" + BILLBOARDS[i].Id + "&cat=" + BILLBOARDS[i].CateogryId);
+    }
 }
-
-function setupBBTitle(control, title) {
-    $(control + " h3").html(title);
-}
-
-
-function setupBBDesc(control, desc) {
-    $(control + " p").html(desc);
-}
-
-function setupMainBBPicture(control, imageUrl) {
-    $(control + " img").attr("src", imageUrl);
-}
-
 
 function buildingBB() {
     var bb = '<div class="col-md-9">' + 
@@ -84,11 +74,11 @@ function buildingBB() {
 						'<div class="clearfix"></div>';
 
     $(".post-slider").html(bb);
+    setBBTitles();
 }
 
 $(document).ready(function () {
     console.log("---- homePageBillboard ---");
     console.log(BILLBOARDS);
-    //setupMainBB();
     buildingBB();
 });

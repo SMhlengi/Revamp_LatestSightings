@@ -7,6 +7,8 @@
 		
 		</style>
 
+        <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>
+
         <div class="post-slider">
                         
 		</div>

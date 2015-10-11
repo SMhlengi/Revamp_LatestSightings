@@ -1,27 +1,50 @@
-﻿var HOMEPAGE_tings = [];
-var YOUTUBE_VIDEO_IDS = [];
+﻿function GetHomePageTings() {
+    var postUrl = "/AjaxOperation.aspx/GetTings";
+    $.ajax({
+        type: "POST",
+        url: postUrl,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+    }).done(
+        function (data, textStatus, jqXHR) {
+            console.log("----TINGS----");
+            console.log(data.d);
+            console.log(data.d.length);
+            populateHomePageTingsHtml(data.d);
 
-function setHomePageTings(json){
-    HOMEPAGE_tings = json;
+        }
+    ).fail(
+        function (data, textStatus, jqXHR) {
+        }
+    );
 }
 
-function setYouTubeVideos(json) {
-    YOUTUBE_VIDEO_IDS = json;
-}
 
-function buildTingsSlider() {
-    var imageDiv = '';
-    for (var i = 0; i < HOMEPAGE_tings.length; i++) {
-        var imageUrl = "http://tingsservice.socialengine.co.za/tings/image/" + HOMEPAGE_tings[i];
-        imageDiv += '<div class="swiper-slide" style="width: 340px; margin-right: 30px;"><img src="' + imageUrl + '"  id="lodgeImage"></div>'
+function populateHomePageTingsHtml(tings) {
+    for (var i = 0; i < tings.length; i++) {
+        //setTingImage(".ting" + i, tings[i].id);
+        setTingTitle(".ting" + i, tings[i].title);
+        setTingTimeAndPark(".ting" + i, tings[i].time);
     }
-
-    $(".swiper-wrapper").html(imageDiv);
 }
+
+function setTingImage(control, tingId) {
+    $(control + " img").attr("src", "http://tingsservice.socialengine.co.za/tings/image/" + tingId)
+}
+
+function setTingTitle(control, title) {
+    $(control + " h4").html(title);
+}
+
+function setTingTimeAndPark(control, time) {
+    $(control + " p").html("Today @ " + time + " <br>Kruger Park <br> South Africa");
+}
+
 
 $(document).ready(function () {
-    console.log("-----HOMEPAGE TINGS-----")
-    console.log(HOMEPAGE_tings);
-    buildTingsSlider();
-
+    GetHomePageTings();
+    setTimeout(function () {
+        //$(".loadingImage").hide();
+        $("#owl-slider").css("visibility", "visible");
+    }, 1000);
 });

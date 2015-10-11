@@ -13,15 +13,6 @@ namespace Revamp_LatestSightings {
     public partial class _default {
         
         /// <summary>
-        /// tings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder tings;
-        
-        /// <summary>
         /// BB_placeholder control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace Revamp_LatestSightings {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder BB_placeholder;
+        
+        /// <summary>
+        /// tings_homepage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder tings_homepage;
         
         /// <summary>
         /// latestGalleries control.

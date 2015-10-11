@@ -318,5 +318,13 @@ namespace Revamp_LatestSightings
         {
             return library.GetTopFiveLodgeTingers(lodgeId);
         }
+
+        [WebMethod]
+        public static List<Dictionary<string, string>> GetTings()
+        {
+            List<Dictionary<string, string>> tings = new List<Dictionary<string, string>>();
+            tings = library.GetTopTings(Convert.ToInt32(ConfigurationManager.AppSettings["homeTingsNumber"]));
+            return tings;               
+        }
     }
 }

@@ -27,19 +27,20 @@ namespace Revamp_LatestSightings
             buildYouTubeVideosArray(featuredVideos);
             //loadAds();
             loadBB();
-            //loadHomePageTings();
+            loadTings();
+            
+        }
+
+        private void loadTings()
+        {
+            uc_homepageTings tings = (uc_homepageTings)LoadControl("~/uc_homepageTings.ascx");
+            tings_homepage.Controls.Add(tings);
         }
 
         private void loadBB()
         {
             uc_billboard bb = (uc_billboard)LoadControl("~/uc_billboard.ascx");
             BB_placeholder.Controls.Add(bb);
-        }
-
-        private void loadHomePageTings()
-        {
-            //uc_tings homepageTings = (uc_tings)LoadControl("~/uc_tings.ascx");
-            //tings.Controls.Add(homepageTings);
         }
 
         private void loadAds()
