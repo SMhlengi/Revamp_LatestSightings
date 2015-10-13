@@ -326,5 +326,53 @@ namespace Revamp_LatestSightings
             tings = library.GetTopTings(Convert.ToInt32(ConfigurationManager.AppSettings["homeTingsNumber"]));
             return tings;               
         }
+
+        [WebMethod]
+        public static Dictionary<string, List<GalleryItem>> GetHomePageLatestGalleries()
+        {
+            List<GalleryItem> latestPhotos = GetLatestPhotos();
+            List<GalleryItem> latestVideos = GetLatestVideos();
+            List<GalleryItem> videosAndPhotos = BuildCombinationOfVideosAndPhotos(latestPhotos, latestVideos);
+            Dictionary<string, List<GalleryItem>> latestGalleries = new Dictionary<string, List<GalleryItem>>()
+            {
+                {"photos", latestPhotos},
+                {"videos", latestVideos},
+                {"photosAndVideos", videosAndPhotos}
+            };
+
+            return latestGalleries;
+        }
+
+        private static List<GalleryItem> GetLatestPhotos()
+        {
+            var latestPhotos = new List<GalleryItem>();
+            latestPhotos = Galleries.GetGallery(Galleries.GalleryType.Image, 8);
+            return latestPhotos;
+        }
+
+        private static List<GalleryItem> GetLatestVideos()
+        {
+            var latestVideos = new List<GalleryItem>();
+            latestVideos = Galleries.GetGallery(Galleries.GalleryType.Video, 8);
+            return latestVideos;
+        }
+
+        private static List<GalleryItem> BuildCombinationOfVideosAndPhotos(List<GalleryItem> latestPhotos, List<GalleryItem> latestVideos)
+        {
+            var videosAndPhotos = new List<GalleryItem>();
+            if (latestPhotos.Count > 3 && latestVideos.Count > 3)
+            {
+                videosAndPhotos.Add(latestVideos[0]);
+                videosAndPhotos.Add(latestPhotos[0]);
+                videosAndPhotos.Add(latestVideos[1]);
+                videosAndPhotos.Add(latestPhotos[1]);
+                videosAndPhotos.Add(latestVideos[2]);
+                videosAndPhotos.Add(latestPhotos[2]);
+                videosAndPhotos.Add(latestVideos[3]);
+                videosAndPhotos.Add(latestPhotos[3]);
+            }
+
+            return videosAndPhotos;
+        }
     }
 }

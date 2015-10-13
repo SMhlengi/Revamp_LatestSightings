@@ -23,7 +23,7 @@ namespace Revamp_LatestSightings
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
             LoadLasteBLogs();
-            //loadLatestGalleries();
+            loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
             //loadAds();
             loadBB();
@@ -75,7 +75,7 @@ namespace Revamp_LatestSightings
 
         private void loadLatestGalleries()
         {
-            uc_latestGalleris l_galleries = (uc_latestGalleris)LoadControl("~/uc_latestGalleris.ascx");
+            uc_homepageLatestGalleries l_galleries = (uc_homepageLatestGalleries)LoadControl("~/uc_homepageLatestGalleries.ascx");
             latestGalleries.Controls.Add(l_galleries);
         }
 

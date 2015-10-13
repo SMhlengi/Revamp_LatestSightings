@@ -214,6 +214,7 @@
     <Content Include="js\homePage.js" />
     <Content Include="js\homePageBillboard.js" />
     <Content Include="js\homePageLatestBlogs.js" />
+    <Content Include="js\homepageLattestGalleries.js" />
     <Content Include="js\homePageTings.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\isotope.pkgd.min.js" />
@@ -270,6 +271,7 @@
     <Content Include="uc_FeaturedCategories.ascx" />
     <Content Include="uc_Footer.ascx" />
     <Content Include="uc_homeLatestBlogs.ascx" />
+    <Content Include="uc_homepageLatestGalleries.ascx" />
     <Content Include="uc_homepageTings.ascx" />
     <Content Include="uc_imageSearchResults.ascx" />
     <Content Include="uc_JavaScripts.ascx" />
@@ -596,6 +598,13 @@
     </Compile>
     <Compile Include="uc_homeLatestBlogs.ascx.designer.cs">
       <DependentUpon>uc_homeLatestBlogs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_homepageLatestGalleries.ascx.cs">
+      <DependentUpon>uc_homepageLatestGalleries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_homepageLatestGalleries.ascx.designer.cs">
+      <DependentUpon>uc_homepageLatestGalleries.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_homepageTings.ascx.cs">
       <DependentUpon>uc_homepageTings.ascx</DependentUpon>
