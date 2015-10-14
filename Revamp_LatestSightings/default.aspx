@@ -363,4 +363,15 @@
     <script src="<%= ResolveUrl("~/js/homePage.js?v=6") %>"></script>
     <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
     <script src="<%= ResolveUrl("~/js/numeral.min.js") %>"></script>
+    <script>
+        $(document).ready(function () {
+            //loading twitter js after 5 seconds to give billboard time to load
+            setTimeout(function () {
+                var twitterJs = "<script src='js/widgets.js'>";
+                twitterJs += "<";
+                twitterJs += "/script>"
+                $("form").after(twitterJs);
+            }, 5000);
+        });
+    </script>
 </asp:Content>
