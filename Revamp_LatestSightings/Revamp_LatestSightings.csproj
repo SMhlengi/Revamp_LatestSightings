@@ -139,6 +139,7 @@
     <Content Include="images\350.GIF" />
     <Content Include="images\466.GIF" />
     <Content Include="images\712.GIF" />
+    <Content Include="images\76.GIF" />
     <Content Include="images\about-650x650.gif" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\AllTings.jpg" />
@@ -202,6 +203,7 @@
     <Content Include="images\video-16x9.gif" />
     <Content Include="images\WindowsStore_badge_en_English_Black_large_120x462.png" />
     <Content Include="images\WindowsStore_badge_en_English_Black_small_154x40.png" />
+    <Content Include="js\adsbygoogle.js" />
     <Content Include="js\ajax-loader.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />

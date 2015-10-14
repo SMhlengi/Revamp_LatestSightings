@@ -25,7 +25,7 @@ namespace Revamp_LatestSightings
             LoadLasteBLogs();
             loadLatestGalleries();
             buildYouTubeVideosArray(featuredVideos);
-            //loadAds();
+            loadAds();
             loadBB();
             loadTings();
             
