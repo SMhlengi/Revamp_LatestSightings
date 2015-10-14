@@ -37,7 +37,7 @@ function populateHomePageTingsImages(tings) {
 
             setTingImage(".ting" + i, tings[i].id);
         }
-    }, 5000);
+    }, 4000);
 }
 
 function setTingImage(control, tingId) {

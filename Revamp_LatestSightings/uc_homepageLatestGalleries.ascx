@@ -1,15 +1,15 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_homepageLatestGalleries.ascx.cs" Inherits="Revamp_LatestSightings.uc_homepageLatestGalleries" %>
 
 <style>
-    .loadingImage img {
+    .galleryloadingImage img {
         width: 100px;
         height: 33px;
     }
 
 
-    .loadingImage {
+    .galleryloadingImage {
         margin: 0 auto;
-        width: 37%;
+        width: 13%;
         padding-top: 25px;
     }
 
@@ -27,7 +27,7 @@
                                     <li><a id="justvideos" href="javascript:void(0);" data-filter=".videos" ><i class="fa fa-play"></i>Videos</a></li>
                                 </ul>
 
-                                <div class="loadingImage"><img src="<%=ResolveUrl("~/images/333.GIF") %>"></div>    
+                                <div class="galleryloadingImage"><img src="<%=ResolveUrl("~/images/333.GIF") %>"></div>    
                                 
                                 <!-- Gallery SHOW ALL -->
                                 <div class="team-members latestGalleriesPicsAndVideos">

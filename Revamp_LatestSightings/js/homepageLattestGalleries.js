@@ -13,7 +13,7 @@ function populatePicsAndVideosTab() {
             $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find(".team-title").html("<h5><a href='#'>" + LATESTGALLERIES.photosAndVideos[i].Title + "</a></h5>")
         } else { // dealing with images
             $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find("input").attr("value", LATESTGALLERIES.photosAndVideos[i].Id);
-            $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find("img").attr("src", "/UploadedImages/original/" + LATESTGALLERIES.photosAndVideos[i].Url);
+            $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find("img").attr("src", "/UploadedImages/650x650/" + LATESTGALLERIES.photosAndVideos[i].Url);
             $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find(".team-title").attr("title", LATESTGALLERIES.photosAndVideos[i].Title);
             $($(".latestGalleriesPicsAndVideos .row .col-md-3")[i]).find(".team-title").html("<h5><a href='#'>" + LATESTGALLERIES.photosAndVideos[i].Title + "</a></h5>")
         }
@@ -27,20 +27,20 @@ function populatePics() {
                     '<div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">' +
                         '<div class="team-info">' +
                             '<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>' +
-                            '<img alt="" src="/UploadedImages/original/#photoUrl#" class="galleryImage">' +
+                            '<img alt="" src="/UploadedImages/650x650/#photoUrl#" class="galleryImage">' +
 
                         '</div>' +
                         '<div class="team-title" title="#photoTitle#">' +
-                                '<h5><a href="#">#photoTitle#</a></h5>' +
+                                '<h5><a href="#">#photoTitle2#</a></h5>' +
                         '</div>' +
                     '</div>' +
                 '</div>';
 
     for (var i = 0; i < LATESTGALLERIES.photos.length; i++) {
         if (i == 4) {
-            pictureList += pic.replace("#photoId#", LATESTGALLERIES.photos[i].Id).replace("#photoUrl#", LATESTGALLERIES.photos[i].Url).replace("#photoTitle#", LATESTGALLERIES.photos[i].Title).replace("#clearLeft#", "clearLeft");
+            pictureList += pic.replace("#photoId#", LATESTGALLERIES.photos[i].Id).replace("#photoUrl#", LATESTGALLERIES.photos[i].Url).replace("#photoTitle#", LATESTGALLERIES.photos[i].Title).replace("#photoTitle2#", LATESTGALLERIES.photos[i].Title).replace("#clearLeft#", "clearLeft");
         } else {
-            pictureList += pic.replace("#photoId#", LATESTGALLERIES.photos[i].Id).replace("#photoUrl#", LATESTGALLERIES.photos[i].Url).replace("#photoTitle#", LATESTGALLERIES.photos[i].Title).replace("#clearLeft#", "");
+            pictureList += pic.replace("#photoId#", LATESTGALLERIES.photos[i].Id).replace("#photoUrl#", LATESTGALLERIES.photos[i].Url).replace("#photoTitle#", LATESTGALLERIES.photos[i].Title).replace("#photoTitle2#", LATESTGALLERIES.photos[i].Title).replace("#clearLeft#", "");
         }
     }
 
@@ -57,16 +57,16 @@ function populateVids() {
 
                     '</div>' +
                     '<div class="team-title" title="#Title#">' +
-                            '<h5><a href="#">#Title#</a></h5>' +
+                            '<h5><a href="#">#Title2#</a></h5>' +
                     '</div>' +
                 '</div>' +
             '</div>';
 
     for (var i = 0; i < LATESTGALLERIES.videos.length; i++) {
         if (i == 4) {
-            videoList += vid.replace("#YouTubeId#", LATESTGALLERIES.videos[i].YouTubeId).replace("#videoUrl2#", LATESTGALLERIES.videos[i].Url2).replace("#Title#", LATESTGALLERIES.videos[i].Title).replace("#clearLeft#", "clearLeft");
+            videoList += vid.replace("#YouTubeId#", LATESTGALLERIES.videos[i].YouTubeId).replace("#videoUrl2#", LATESTGALLERIES.videos[i].Url2).replace("#Title#", LATESTGALLERIES.videos[i].Title).replace("#Title2#", LATESTGALLERIES.videos[i].Title).replace("#clearLeft#", "clearLeft");
         } else {
-            videoList += vid.replace("#YouTubeId#", LATESTGALLERIES.videos[i].YouTubeId).replace("#videoUrl2#", LATESTGALLERIES.videos[i].Url2).replace("#Title#", LATESTGALLERIES.videos[i].Title).replace("#clearLeft#", "");
+            videoList += vid.replace("#YouTubeId#", LATESTGALLERIES.videos[i].YouTubeId).replace("#videoUrl2#", LATESTGALLERIES.videos[i].Url2).replace("#Title#", LATESTGALLERIES.videos[i].Title).replace("#Title2#", LATESTGALLERIES.videos[i].Title).replace("#clearLeft#", "");
         }
     }
 
@@ -81,4 +81,5 @@ $(document).ready(function () {
     populatePics();
     populateVids();
     $(".latestGalleriesPicsAndVideos").css("visibility", "visible");
+    $(".galleryloadingImage").hide();
 });
