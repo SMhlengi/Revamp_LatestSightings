@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="searchResults.aspx.cs" Inherits="Revamp_LatestSightings.searchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<link href="<%= ResolveUrl("~/css/searchResults.css") %>" rel="stylesheet" />
 
 <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active articles"><a href="#">Articles</a></li>

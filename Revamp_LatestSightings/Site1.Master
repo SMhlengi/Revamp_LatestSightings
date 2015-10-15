@@ -42,7 +42,7 @@
     <script src="<%= ResolveUrl("~/js/homePageBillboard.js?v=2") %>"></script>
     <script src="<%= ResolveUrl("~/js/youtubeSearchResults.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/homePageLatestBlogs.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/homepageLattestGalleries.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/homepageLattestGalleries.js?v=4") %>"></script>
     <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
 
     <script>

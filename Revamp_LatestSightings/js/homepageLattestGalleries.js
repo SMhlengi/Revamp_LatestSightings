@@ -77,9 +77,11 @@ function populateVids() {
 $(document).ready(function () {
     console.log("----LatestGalleries----");
     console.log(LATESTGALLERIES);
-    populatePicsAndVideosTab();
-    populatePics();
-    populateVids();
-    $(".latestGalleriesPicsAndVideos").css("visibility", "visible");
-    $(".galleryloadingImage").hide();
+    if (LATESTGALLERIES != 0) {
+        populatePicsAndVideosTab();
+        populatePics();
+        populateVids();
+        $(".latestGalleriesPicsAndVideos").css("visibility", "visible");
+        $(".galleryloadingImage").hide();
+    }
 });

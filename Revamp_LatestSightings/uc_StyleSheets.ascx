@@ -17,5 +17,4 @@
 <link href="<%= ResolveUrl("~/css/style.datatables.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/responsivedataTables.responsive.css") %>" rel="stylesheet" />--%>
 <link href="<%= ResolveUrl("~/css/swiper.css") %>" rel="stylesheet" />
-<link href="<%= ResolveUrl("~/css/searchResults.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/docs.min.css") %>" rel="stylesheet" />
