@@ -50,7 +50,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Intelligencia.UrlRewriter.dll</HintPath>
     </Reference>
-    <Reference Include="LatestSightingsLibrary">
+    <Reference Include="LatestSightingsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\old_desktop\Documents\GitHub\LatestSightings\LatestSightingsLibrary\bin\Debug\LatestSightingsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
