@@ -247,6 +247,7 @@
     <Content Include="js\randomOrange.js" />
     <Content Include="js\randomRed.js" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\sighting.js" />
     <Content Include="js\swiper.js" />
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />

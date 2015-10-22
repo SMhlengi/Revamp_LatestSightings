@@ -26,6 +26,7 @@ function populateHomePageTingsHtml(tings) {
         //setTingImage(".ting" + i, tings[i].id);
         setTingTitle(".ting" + i, tings[i].title);
         setTingTimeAndPark(".ting" + i, tings[i].time);
+        setTingAnchor(".ting" + i, tings[i].id);
     }
 }
 
@@ -48,6 +49,10 @@ function setTingImage(control, tingId) {
 
 function setTingTitle(control, title) {
     $(control + " h4").html(title);
+}
+
+function setTingAnchor(control, tingid) {
+    $(control + " a").attr("href", "/sighting/" + tingid);
 }
 
 function setTingTimeAndPark(control, time) {

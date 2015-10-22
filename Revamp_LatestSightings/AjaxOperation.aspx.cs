@@ -374,5 +374,13 @@ namespace Revamp_LatestSightings
 
             return videosAndPhotos;
         }
+
+        [WebMethod]
+        public static List<Dictionary<string,string>> GetParks()
+        {
+            List<Dictionary<string, string>> parks = new List<Dictionary<string, string>>();
+            parks = library.GetParks();
+            return parks;
+        }
     }
 }
