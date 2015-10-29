@@ -85,9 +85,32 @@ function initialize() {
 
 }
 
+function populateTingsHtml(tings) {
+    var tingTemplate = '<div class="related-portfolio-item item ting">' +
+               '<a href="#">' +
+				'<div class="ls-member">' +
+					'<div class="ls-info"><img alt="" src="#tingimage#" class=""></div>' +
+					'<div class="ls-title">' +
+						'<h4>#title#</h4>' +
+						'<p>Date @ #time#</p>' +
+					'</div>' +
+				'</div>' +
+            '</a>' +
+		'</div>';
+    var ting = "";
+    for (var i = 0; i < tings.length; i++) {
+        //setTingImage(".ting" + i, tings[i].id);
+        ting += tingTemplate.replace("#title#", tings[i].title).replace("#time#", tings[i].time).replace("#tingimage#", "http://tingsservice.socialengine.co.za/tings/image/" + tings[i].id)
+        //setTingTitle(".ting" + i, tings[i].title);
+        //setTingTimeAndPark(".ting" + i, tings[i].time);
+    }
+    $(".uc_tv_lodge_tings").append(ting);
+}
+
 $(document).ready(function () {
     displayTings();
     initialize();
+    populateTingsHtml(LODGEJson);
     console.log(LODGEJson);
 
     function displayTings() {

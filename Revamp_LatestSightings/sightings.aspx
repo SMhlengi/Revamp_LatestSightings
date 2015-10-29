@@ -1,7 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="sightings.aspx.cs" Inherits="Revamp_LatestSightings.sightings" %>
 
 <asp:Content ID="sightings" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+<style>
+    .footer{
+        display:none;
+    }
+</style>
+<script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
+<script src="<%=ResolveUrl("~/js/SightingTingInfo.js") %>"></script>
                     
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
@@ -16,15 +22,6 @@
                                 <div class="spacer small"></div>
                                 
                                 <div class="left">
-<%--                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                            South Africa
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Countries</a></li>
-                                        </ul>                                    
-                                    </div>--%>
                                 
                                     <div class="dropdown parks">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="Button1" data-toggle="dropdown" aria-expanded="true">
@@ -34,41 +31,8 @@
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                             <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">Parks</a></li>
                                         </ul>
-                                    </div>
-                                
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="Button2" data-toggle="dropdown" aria-expanded="true">
-                                            Area
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Areas</a></li>
-                                        </ul>
-                                    </div>--%>
-                                    
-<%--                                    <a class="filterlinks" href="#" > Area 1 <i class="fa fa-minus-circle"></i> </a>
-                                    <a class="filterlinks" href="#"> Area 2 <i class="fa fa-minus-circle"></i> </a>
-                                    <a class="filterlinks" href="#"> Area 3 <i class="fa fa-minus-circle"></i> </a>--%>
-                                    
-                                </div>
-                                
-<%--                                <div class="left">
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="Button3" data-toggle="dropdown" aria-expanded="true">
-                                            Animal
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Animals</a></li>
-                                        </ul>                                    
-                                    </div>
-                                    
-                                    <a class="filterlinks" href="#" > Lions <i class="fa fa-times-circle-o"></i> </a>
-                                    <a class="filterlinks" href="#"> Giraffes <i class="fa  fa-times-circle-o"></i> </a>
-                                    <a class="filterlinks" href="#"> Leopards <i class="fa fa-minus-circle"></i> </a>
-                                    <a class="filterlinks" href="#"> Hippos <i class="fa fa-minus-circle"></i> </a>
-                                    
-                                </div>--%>
-                                
+                                    </div>                                    
+                                </div>                                
                                 <div class="clearfix"></div>
                                     
                             </div>
@@ -76,54 +40,36 @@
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
-                            
-                            <!-- Slideshow BEGIN -->
-                            <div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
-								<div class="image-slider">
-									<div class="image-gallery-item item">
-										<img alt="" src="/imagesCR/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/imagesCR/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/imagesCR/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/imagesCR/slideshow-1140x390.gif">
-									</div>
-								</div>
-							</div>
+                           
+                            <img src="" id="lodgeImage" width="100%">
                             
                             <div class="left">
                                 <div class="col-md-3 button">Picture</div>
                                 <div class="col-md-3 button">View Map</div>
-                            	<a class="col-md-3 filterlinks" href="javascript:void(0);">View in-app comments <i class="fa fa-comments"></i> </a>
                             </div>
                             
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
                             
-                            <h3 style="text-align:center;"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
+                            <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
                             
                             <div class="left">
-                       	    	<img src="/imagesCR/FBandTwitter.jpg" width="202" height="20"> 
+                            	<div class="left">
+                                    <div class="row">
+                                        <div class="col-md-2"><div class="fb-like" data-href="http://latestsightings.com/sighting/<%= tingId%>" data-layout="button" data-action="recommend" data-show-faces="false" data-share="false"></div></div>
+                                        <div class="col-md-4"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
+                                    </div>
+                            	</div>
                                 <div class="right">
-                                	<a href="javascript:void(0);" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                                    <a href="javascript:void(0);" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
-                                    <a href="javascript:void(0);" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                                	<a href="javascript:void(0);" title="Share to Facebook" class="aboutUsFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                                    <a href="javascript:void(0);" title="Share to Twitter" class="aboutUsTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
                                 </div>
                             </div>
                             
-                            <p>
-                                H4-1 Kruger National Park, Just east of Nkhulu<br>
-                                Date: 06/12/14 @ 12:56:04 pm<br>
-                                Visibility: <i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i> 5/5<br>
-                                Tinged by Fannie<br><br>
-                                <a href="javascript:void(0);" style="color:#ff9900;"> View Location in Google maps</a>
+                            <p class="tingDescription">                                
                             </p>
                             
                           <!-- Slideshow END -->
@@ -133,9 +79,7 @@
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="blog-grid">
-                       	    	<img src="/imagesCR/FBComments.jpg" width="587" height="682"> 
-                            </div>
+                            <div class="fb-comments" data-href="http://latestsightings.com//sighting/<%= tingId%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>
@@ -145,9 +89,6 @@
                         	<div class="spacer"></div>
                         
                             <!-- Space for web ads BEGIN -->
-                            <div class="comment-box">
-                            	<p style="text-align:center">Space for web ads</p>
-							</div>
                             <!-- Space for web ads END --> 
                             
                             <div class="clearfix"></div>

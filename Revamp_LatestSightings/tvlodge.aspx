@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tvlodge.aspx.cs" Inherits="Revamp_LatestSightings.tvlodge" %>
 
 <%@ Register Src="~/uc_StyleSheets.ascx" TagName="sheets" TagPrefix="style" %>
+<%@ Register Src="~/uc_JavaScripts.ascx" TagName="scripts" TagPrefix="java" %>
 
 <!DOCTYPE html>
 
@@ -16,7 +17,13 @@
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=2") %>"></script>
-
+    --
+    <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
+    ..
+    <!-- Javascripts -->
+    <java:scripts runat="server" id="javascriptstag"></java:scripts>
 </head>
 <body>
         <form id="form1" runat="server">
@@ -114,6 +121,13 @@
                     </div>
                     
                     <div class="clearfix"></div>
+                    <!-- tings must come here -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>
+                        </div>
+                    </div>
+                    <!-- end of tings must come here -->
                 </div>
 				<!-- End Content Area -->
                 
@@ -123,11 +137,11 @@
 		<!-- End Container -->
         <!-- FOOTER -->
         <div class="row" style="
-                         position: absolute;
+                         position: fixed;
                          bottom: 0;
                          height: 98px;
                          width: 100%;
-                         margin-left: 0px;">
+                         margin-left: 0px;display:none">
             <div class="col-md-12" style="background-color:#783f04; padding:20px 20px 0px 20px ; float:left; height:auto; width:100%;">
                         
                 <div class="col-md-8" style="margin-bottom:20px !important; float:left;">

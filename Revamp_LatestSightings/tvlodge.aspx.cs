@@ -39,8 +39,15 @@ namespace Revamp_LatestSightings
                     var script = string.Format("setLodgeTingers({0}, '{1}', '{2}', '{3}')", json, tingImageUrlFolder, lodgename, lodge["id"]);
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "", script, true);
+                    loadTingsUserControl();
                 }
             }
+        }
+
+        private void loadTingsUserControl()
+        {
+            uc_tvLodge_Tings tingsusercontrol = (uc_tvLodge_Tings)LoadControl("~/uc_tvLodge_Tings.ascx");
+            tings.Controls.Add(tingsusercontrol);
         }
 
         private string StripAwayUnderscores(string name)

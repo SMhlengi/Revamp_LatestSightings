@@ -248,7 +248,9 @@
     <Content Include="js\randomRed.js" />
     <Content Include="js\scripts.js" />
     <Content Include="js\sighting.js" />
+    <Content Include="js\SightingTingInfo.js" />
     <Content Include="js\swiper.js" />
+    <Content Include="js\tvLodge_Tings.js" />
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
@@ -288,6 +290,7 @@
     <Content Include="uc_tings.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
     <Content Include="uc_top_earning_videos.ascx" />
+    <Content Include="uc_tvLodge_Tings.ascx" />
     <Content Include="uc_videoSearchResults.ascx" />
     <Content Include="UserFinancials.aspx" />
     <Content Include="UserGraphs.aspx" />
@@ -688,6 +691,13 @@
     </Compile>
     <Compile Include="uc_top_earning_videos.ascx.designer.cs">
       <DependentUpon>uc_top_earning_videos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_tvLodge_Tings.ascx.cs">
+      <DependentUpon>uc_tvLodge_Tings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_tvLodge_Tings.ascx.designer.cs">
+      <DependentUpon>uc_tvLodge_Tings.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_videoSearchResults.ascx.cs">
       <DependentUpon>uc_videoSearchResults.ascx</DependentUpon>
