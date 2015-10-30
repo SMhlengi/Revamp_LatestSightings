@@ -71,7 +71,7 @@ namespace Revamp_LatestSightings
             while (lodgeTings.Count == 0)
             {
                 counter -= 1;
-                dt = dt.AddDays(counter);
+                dt = DateTime.Now.AddDays(counter);
                 stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
                 lodgeTings = library.GetLodgeTingsByDate(lodge["id"], stringDate);
             }

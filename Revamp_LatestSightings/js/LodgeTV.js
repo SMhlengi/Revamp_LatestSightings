@@ -9,6 +9,7 @@ var LODGE_lat = "";
 var LODGE_long = "";
 var markers = [];
 var map;
+var showKrugerTings = false;
 
 function setLodgeTingers(json, FolderUrl, name, id) {
     LODGEJson = json;
@@ -127,6 +128,10 @@ $(document).ready(function () {
         }
     }
 
+    function ClearTingsHtml() {
+        $(".uc_tv_lodge_tings").html("");
+    }
+
     function myStopFunction() {
         counter = 0;
         clearInterval(myVar);
@@ -134,8 +139,12 @@ $(document).ready(function () {
         setUpDisplayAllMarkersInOneMap();
 
         t = setTimeout(function () {
-            deleteMarkers();
-            refreshTop5TingersAndRegreshTings()
+            if (showKrugerTings == true) {
+                SetUpKrugerTings();
+            } else {
+                deleteMarkers();
+                refreshTop5TingersAndRegreshTings()
+            }
         }, 15000);
     }
 
@@ -143,6 +152,11 @@ $(document).ready(function () {
         console.log("must be called after 15 secs");
         RefreshTop5Tingers();
         RefreshTings();
+    }
+
+    function SetUpKrugerTings() {
+        deleteMarkers();
+        GetKrugerTings();
     }
 
     function RefreshTop5Tingers() {
@@ -199,6 +213,29 @@ $(document).ready(function () {
         );
     }
 
+
+    function GetKrugerTings() {
+        var postUrl = "/AjaxOperation.aspx/GetKrugerTings";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d.length > 0) {
+                    LODGEJson = data.d;
+                    populateTingsHtml(LODGEJson);
+                    displayTings();
+                    initialize();
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+    }
+
     function displayLodge(lodgeDetails) {
         showTingInformation();
         LODGE_lat = lodgeDetails.latitude;
@@ -244,10 +281,11 @@ $(document).ready(function () {
     }
 
     function setUpDisplayAllMarkersInOneMap() {
+        ClearTingsHtml();
         setNewMapOfSouthAfrica();
         displayAllTingsPicture();
         hideTingInformation();
-        tout = setTimeout(function () { showMarkers() }, 1500);
+        tout = setTimeout(function () { showMarkers(); showKrugerTings = true }, 1500);
     }
 
 

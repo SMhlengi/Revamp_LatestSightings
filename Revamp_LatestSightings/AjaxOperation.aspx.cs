@@ -382,5 +382,49 @@ namespace Revamp_LatestSightings
             parks = library.GetParks();
             return parks;
         }
+
+        [WebMethod]
+        public static List<Dictionary<string, string>> GetKrugerTings()
+        {
+            List<Dictionary<string, string>> parks = new List<Dictionary<string, string>>();
+            parks = library.GetParks();
+            Guid parkid = new Guid(GetKrugerParkId(parks).ToString());
+            parks = GetParkTings(parkid);
+            return parks;
+        }
+
+        private static List<Dictionary<string, string>> GetParkTings(Guid parkid)
+        {
+            //var dt = DateTime.Now;
+            //string stringDate = "";
+            //int counter = 0;
+
+            //stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
+            List<Dictionary<string, string>> parkTings = new List<Dictionary<string, string>>();
+            parkTings = library.GetParkTingsByDate(parkid);
+
+            //while (lodgeTings.Count == 0)
+            //{
+            //    counter -= 1;
+            //    dt = dt.AddDays(counter);
+            //    stringDate = String.Format("{0}", Convert.ToString(dt.Year) + "-" + Convert.ToString(dt.Month) + "-" + Convert.ToString(dt.Day));
+            //    lodgeTings = library.GetParkTingsByDate(parkid);
+            //}
+            return parkTings;
+        }
+
+
+        private static Guid GetKrugerParkId(List<Dictionary<string, string>> parks)
+        {
+            Guid parkid = new Guid();
+            foreach(var park in parks)
+            {
+                if (park["name"].ToString().Equals("kruger national park", StringComparison.OrdinalIgnoreCase))
+                {
+                    parkid = new Guid(park["id"]);
+                }
+            }
+            return parkid;
+        }
     }
 }
