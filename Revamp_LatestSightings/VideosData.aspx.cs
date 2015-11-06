@@ -166,7 +166,8 @@ namespace Revamp_LatestSightings
                     }
                     else if (vidAnalytics.EstimatedEarning > 0)
                     {
-                        returnValue = "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
+                        //returnValue = "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
+                        returnValue = "";
                     }
                 }
             }
