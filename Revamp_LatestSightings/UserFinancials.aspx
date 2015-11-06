@@ -256,7 +256,7 @@
                 language: { "sSearch": "" },
                 order: [1, "asc"],
                 "columns": [
-                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title + "');\")\">View</a>" } },
+                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title.replace("'","") + "');\")\">View</a>" } },
                     { "data": "Title", orderable: true },
                     { "data": "YoutubeId", orderable: false },
                     { "data": "RevenueSplit", orderable: false },
