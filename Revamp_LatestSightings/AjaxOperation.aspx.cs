@@ -279,9 +279,9 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        public static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest, string numberofnightstravelled, string EnquiredLodgeName)
         {
-            bool status = utils.SendEnquireMail(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest);
+            bool status = utils.SendEnquireMail(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest, numberofnightstravelled, EnquiredLodgeName);
             return status;
         }
 

@@ -3,6 +3,15 @@
         $("#datepicker").datepicker();
     });
 
+    var EnquiredLodgeName = "";
+
+    $(".EnquiredAboutLodge").click(function () {
+        $("#myModalLabel").html("Enquire Form");
+        EnquiredLodgeName = $(this).parent().parent().parent().find("h4").html();
+        var formheader = $("#myModalLabel").html() + " | " + EnquiredLodgeName;
+        $("#myModalLabel").html(formheader);
+    });
+
 
     $(".sendEnquireEmail").click(function () {
         ClearErrorWarningOnTextBoxes();
@@ -10,16 +19,16 @@
         if (ValidateEnquireForm()) {
             $(".enquireMailSending").show();
             $(".enquireMailSending").css("display", "inline");
-            SendEnquireEmail($("#firstname").val(), $("#useremail").val(), $("#country").val(), $("#telephonenumber").val(), $("#datepicker").val(), $("#numberofadults").val(), $("#numberofchildren").val(), $("#specialrequests").val());
+            SendEnquireEmail($("#firstname").val(), $("#useremail").val(), $("#country").val(), $("#telephonenumber").val(), $("#datepicker").val(), $("#numberofadults").val(), $("#numberofchildren").val(), $("#specialrequests").val(), $("#Numberofnightstravelled").val());
         }
     });
 
-    function SendEnquireEmail(firstname, email, country, telephonenumber, datepicker, numberofadults, numberofchildren, specialrequests) {
+    function SendEnquireEmail(firstname, email, country, telephonenumber, datepicker, numberofadults, numberofchildren, specialrequests, Numberofnightstravelled) {
         var postUrl = "/AjaxOperation.aspx/SendEnquireMail";
         $.ajax({
             type: "POST",
             url: postUrl,
-            data: "{'name' : '" + firstname + "', 'email' : '" + email + "', 'country' : '" + country + "', 'tel' : '" + telephonenumber + "', 'dateOfTravel' : '" + datepicker + "', 'numberOfAdults' : '" + numberofadults + "', 'numberOfChildren' : '" + numberofchildren + "', 'specialRequest' : '" + specialrequests + "'}",
+            data: "{'name' : '" + firstname + "', 'email' : '" + email + "', 'country' : '" + country + "', 'tel' : '" + telephonenumber + "', 'dateOfTravel' : '" + datepicker + "', 'numberOfAdults' : '" + numberofadults + "', 'numberOfChildren' : '" + numberofchildren + "', 'specialRequest' : '" + specialrequests + "', 'numberofnightstravelled' : '" + Numberofnightstravelled + "', 'EnquiredLodgeName' : '" + EnquiredLodgeName + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).done(

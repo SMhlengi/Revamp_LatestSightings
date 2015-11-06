@@ -564,7 +564,7 @@ namespace Revamp_LatestSightings
             return false;
         }
 
-        internal static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        internal static bool SendEnquireMail(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest, string numberofnightstravelled, string EnquiredLodgeName)
         {
             try
             {
@@ -576,9 +576,9 @@ namespace Revamp_LatestSightings
                 smtpClient.Host = "freeza.aserv.co.za";
                 NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
                 smtpClient.Credentials = (ICredentialsByHost)networkCredential;
-                message.Subject = "Enquire Form";
+                message.Subject = "Enquire Form | " + EnquiredLodgeName;
                 message.IsBodyHtml = true;
-                string emailMessage = ReturnEnquireFormMessage(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest);
+                string emailMessage = ReturnEnquireFormMessage(name, email, country, tel, dateOfTravel, numberOfAdults, numberOfChildren, specialRequest, numberofnightstravelled);
 
                 message.Body = emailMessage;
                 smtpClient.Send(message);
@@ -590,7 +590,7 @@ namespace Revamp_LatestSightings
             }
         }
 
-        private static string ReturnEnquireFormMessage(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest)
+        private static string ReturnEnquireFormMessage(string name, string email, string country, string tel, string dateOfTravel, string numberOfAdults, string numberOfChildren, string specialRequest, string numberofnightstravelled)
         {
             string EmailMessage = "";
 
@@ -626,6 +626,11 @@ namespace Revamp_LatestSightings
                 EmailMessage += "<strong>Number of children: </strong> " + "Not Specified" + " <br />";
             else
                 EmailMessage += "<strong>Number of children: </strong> " + numberOfChildren + " <br />";
+
+            if (String.IsNullOrEmpty(numberofnightstravelled))
+                EmailMessage += "<strong>Number of nights travelled: </strong> " + "Not Specified" + " <br />";
+            else
+                EmailMessage += "<strong>Number of nights travelled: </strong> " + numberofnightstravelled + " <br />";
 
             if (String.IsNullOrEmpty(specialRequest))
                 EmailMessage += "<strong>Special requests: </strong> " + "Not Specified" + " <br />";

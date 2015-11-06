@@ -90,6 +90,10 @@
                         <input type="text" id="numberofchildren" name="facebook" placeholder="" class="form-control" value="">
                     </div>
                     <div class="form-group col-md-10">
+                        <p class="text-primary">Number of nights travelled</p>
+                        <input type="text" id="Numberofnightstravelled" name="Numberofnightstravelled" placeholder="" class="form-control" value="">
+                    </div>
+                    <div class="form-group col-md-10">
                         <p class="text-primary">Special requests</p>
                         <textarea class="form-control" id="specialrequests" rows="5" placeholder=""></textarea>
                     </div>
@@ -114,4 +118,4 @@
 </div>
 
 <script src="<%= ResolveUrl("~/js/jquery-uiv4.min.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/enqureForm.js?v=5") %>"></script>
+<script src="<%= ResolveUrl("~/js/enqureForm.js?v=9") %>"></script>
