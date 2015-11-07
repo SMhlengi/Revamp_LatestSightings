@@ -5,10 +5,13 @@
     .footer{
         display:none;
     }
+    .right{
+        margin-top:-26px !important;
+    }
 </style>
-<script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
-<script src="<%=ResolveUrl("~/js/SightingTingInfo.js") %>"></script>
-                    
+    <script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=2") %>"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">
@@ -43,13 +46,12 @@
                            
                             <img src="" id="lodgeImage" width="100%">
                             
-                            <div class="left">
+<%--                            <div class="left">
                                 <div class="col-md-3 button">Picture</div>
                                 <div class="col-md-3 button">View Map</div>
-                            </div>
-                            
+                            </div>--%>
+
                             <div class="clearfix"></div>
-                            <div class="spacer small"></div>
                             
                             <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
@@ -71,6 +73,15 @@
                             
                             <p class="tingDescription">                                
                             </p>
+
+                            <div class="clearfix"></div>
+                        	<div class="spacer"></div>
+
+                            <!-- testing something out-->
+                            <div class="row">
+                                <div id="map-canvas" style="width: 100%; height: 330px"></div>
+                            </div>
+                            <!-- end of testing something out -->
                             
                           <!-- Slideshow END -->
                             

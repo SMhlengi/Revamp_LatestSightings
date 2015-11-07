@@ -1,4 +1,6 @@
 ﻿var TINGINFO = [];
+var LODGE_lat = "";
+var LODGE_long = ""
 
 function setTingInformation(json) {
     TINGINFO = json;
@@ -6,10 +8,13 @@ function setTingInformation(json) {
 
 function displayTingInfo() {
     $(".sightingTingTitle").html(TINGINFO.title)
+    $(".tingDescription").append("Description: " + TINGINFO.description + "<br>");
     $(".tingDescription").append("Date: " + TINGINFO.time + "<br>");
     $(".tingDescription").append("Visibility: " + ReturnVisibilityStar(parseInt(TINGINFO.visibility)) + " " + parseInt(TINGINFO.visibility) + "/5 <br />");
     $(".tingDescription").append("Tinged by " + TINGINFO.tingUser);
     $("#lodgeImage").attr("src", "http://tingsservice.socialengine.co.za/tings/image/" + TINGINFO.tingid)
+    LODGE_lat = TINGINFO.latitude;
+    LODGE_long = TINGINFO.longitude;
 }
 
 
@@ -22,11 +27,42 @@ function ReturnVisibilityStar(starsCount) {
     return htmlStars;
 }
 
+function initialize() {
+    var mapOptions = {
+        zoom: 9,
+        center: new google.maps.LatLng(parseFloat(LODGE_lat), parseFloat(LODGE_long)),
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+    marker = new google.maps.Marker({
+        position: map.getCenter(),
+        animation: google.maps.Animation.DROP,
+        map: map
+    });
+    //markers.push(marker);
 
 
+    //mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 12000);
+
+    //function displayNewMap() {
+    //    marker.setMap(null);
+    //    map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
+    //    marker = new google.maps.Marker({
+    //        position: map.getCenter(),
+    //        map: map,
+    //        animation: google.maps.Animation.DROP,
+    //    });
+    //    markers.push(marker);
+    //}
+
+}
 
 $(document).ready(function () {
     console.log("----TING INFO");
     console.log(TINGINFO);
     displayTingInfo();
+    initialize();
 });
