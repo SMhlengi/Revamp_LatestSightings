@@ -25,6 +25,24 @@ namespace Revamp_LatestSightings
             }
         }
 
+        private List<LatestSightingsLibrary.Video> _videos;
+        private List<LatestSightingsLibrary.Video> videos
+        {
+            get
+            {
+                if (_videos == null)
+                {
+                    _videos = LatestSightingsLibrary.Video.GetContributorVideos(userId);
+                }
+
+                return _videos;
+            }
+            set
+            {
+                _videos = value;
+            }
+        }
+
         public string currencyScripts = string.Empty;
         public int year = DateTime.Now.Year;
         public int month = DateTime.Now.Month;
@@ -58,7 +76,9 @@ namespace Revamp_LatestSightings
                     foreach (YouTubeVideoAnalytics anal in anals)
                     {
                         if (anal.EstimatedEarning > 0)
-                            totalEarnings += anal.EstimatedEarning;
+                        {
+                            totalEarnings += ApplyRevenueShare("", anal.Id, anal.EstimatedEarning);
+                        }
                         if (anal.Views > 0)
                             totalViews += anal.Views;
                     }
@@ -83,7 +103,7 @@ namespace Revamp_LatestSightings
                             sb.Append("<tr>");
                             sb.Append("<td>" + count.ToString() + "</td>");
                             sb.Append("<td>" + video.Title + "</td>");
-                            sb.Append("<td>$" + stat.EstimatedEarning + "</td>");
+                            sb.Append("<td>$" + ApplyRevenueShare("", stat.Id, stat.EstimatedEarning) + "</td>");
                             sb.Append("</tr>");
                             count++;
                         }
@@ -143,6 +163,36 @@ namespace Revamp_LatestSightings
                 }
                 ltlCurrencies.Text = sb.ToString();
             }
+        }
+
+        private decimal RoundtoTwo(decimal value)
+        {
+            return decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+        }
+
+        private decimal ApplyRevenueShare(string videoId, string youtubeId, decimal value)
+        {
+            decimal newValue = 0;
+            string revenueShare = string.Empty;
+            if (videos != null && videos.Count > 0)
+            {
+                LatestSightingsLibrary.Video vid = null;
+                if (!String.IsNullOrEmpty(youtubeId))
+                {
+                    vid = videos.FirstOrDefault(x => { return x.YoutubeId == youtubeId; });
+                }
+                else
+                {
+                    vid = videos.FirstOrDefault(x => { return x.Id == videoId; });
+                }
+                if (vid != null)
+                {
+                    newValue = LatestSightingsLibrary.Financial.ApplyRevenueShare(value, vid.RevenueShare);
+                    newValue = RoundtoTwo(newValue);
+                }
+            }
+
+            return newValue;
         }
     }
 }

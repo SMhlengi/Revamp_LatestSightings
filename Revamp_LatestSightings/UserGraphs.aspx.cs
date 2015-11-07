@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -29,6 +30,24 @@ namespace Revamp_LatestSightings
         public string m4Keys = string.Empty;
         public string m4Labels = string.Empty;
 
+        private List<LatestSightingsLibrary.Video> _videos;
+        private List<LatestSightingsLibrary.Video> videos
+        {
+            get
+            {
+                if (_videos == null)
+                {
+                    _videos = LatestSightingsLibrary.Video.GetContributorVideos(contributor);
+                }
+
+                return _videos;
+            }
+            set
+            {
+                _videos = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["year"] != null)
@@ -52,8 +71,8 @@ namespace Revamp_LatestSightings
             ykeyALabel = date.ToString("MMMM yyyy");
             ykeyBLabel = date.AddMonths(-1).ToString("MMMM yyyy");
 
-            List<YouTubeVideoAnalytic> days1 = YouTubeVideoAnalytic.GetVideoTotalsByContributor(date.Year, date.Month, contributor);
-            List<YouTubeVideoAnalytic> days2 = YouTubeVideoAnalytic.GetVideoTotalsByContributor(date.AddMonths(-1).Year, date.AddMonths(-1).Month, contributor);
+            List<YouTubeVideoAnalytic> days1 = YouTubeVideoAnalytic.GetVideoTotalsByContributorWithShare(date.Year, date.Month, contributor);
+            List<YouTubeVideoAnalytic> days2 = YouTubeVideoAnalytic.GetVideoTotalsByContributorWithShare(date.AddMonths(-1).Year, date.AddMonths(-1).Month, contributor);
             for (int i = 1; i <= DateTime.DaysInMonth(date.Year, date.Month); i++)
             {
                 string dayId = i.ToString();
@@ -79,7 +98,7 @@ namespace Revamp_LatestSightings
 
                     DateTime curDay = new DateTime(date.Year, date.Month, i);
 
-                    data += "{ y: '" + curDay.ToString("yyyy-MM-dd") + "', a: " + Decimal.Parse(value1).ToString("G29") + ", b: " + Decimal.Parse(value2).ToString("G29") + " }";
+                    data += "{ y: '" + curDay.ToString("yyyy-MM-dd") + "', a: " + Decimal.Parse(value1).ToString(CultureInfo.InvariantCulture) + ", b: " + Decimal.Parse(value2).ToString(CultureInfo.InvariantCulture) + " }";
                     data1 += "{ y: '" + curDay.ToString("yyyy-MM-dd") + "', a: " + value3 + ", b: " + value4 + " }";
                 }
             }
@@ -152,6 +171,36 @@ namespace Revamp_LatestSightings
                 data2 = data2.Replace("wer", "");
                 data3 = data3.Replace("wer", "");
             }
+        }
+
+        private decimal RoundtoTwo(decimal value)
+        {
+            return decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+        }
+
+        private decimal ApplyRevenueShare(string videoId, string youtubeId, decimal value)
+        {
+            decimal newValue = 0;
+            string revenueShare = string.Empty;
+            if (videos != null && videos.Count > 0)
+            {
+                LatestSightingsLibrary.Video vid = null;
+                if (!String.IsNullOrEmpty(youtubeId))
+                {
+                    vid = videos.FirstOrDefault(x => { return x.YoutubeId == youtubeId; });
+                }
+                else
+                {
+                    vid = videos.FirstOrDefault(x => { return x.Id == videoId; });
+                }
+                if (vid != null)
+                {
+                    newValue = LatestSightingsLibrary.Financial.ApplyRevenueShare(value, vid.RevenueShare);
+                    newValue = RoundtoTwo(newValue);
+                }
+            }
+
+            return newValue;
         }
     }
 }

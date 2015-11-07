@@ -21,6 +21,25 @@ namespace Revamp_LatestSightings
         private string searchValue = string.Empty;
         private string videoId = string.Empty;
         private string youtubeId = string.Empty;
+        private string contributor = "";
+
+        private List<LatestSightingsLibrary.Video> _videos;
+        private List<LatestSightingsLibrary.Video> videos
+        {
+            get
+            {
+                if (_videos == null)
+                {
+                    _videos = LatestSightingsLibrary.Video.GetContributorVideos(contributor);
+                }
+
+                return _videos;
+            }
+            set
+            {
+                _videos = value;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -70,7 +89,7 @@ namespace Revamp_LatestSightings
                     item.Year = analytic.Year;
                     item.Month = analytic.Month;
                     item.ItemMonth = analytic.Year.ToString() + " " + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(analytic.Month);
-                    item.YouTubeEarnings = analytic.Earning > 0 ? analytic.Earning : analytic.EstimatedEarning;
+                    item.YouTubeEarnings = analytic.Earning > 0 ? "R" + ApplyRevenueShare(videoId, "", analytic.Earning).ToString() : "$" + ApplyRevenueShare(videoId, "", analytic.EstimatedEarning).ToString();
                     item.Views = analytic.Views;
                     UpdateThirdPartyPayments(ref item, thirdPayments);
 
@@ -111,6 +130,36 @@ namespace Revamp_LatestSightings
             }
         }
 
+        private decimal RoundtoTwo(decimal value)
+        {
+            return decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+        }
+
+        private decimal ApplyRevenueShare(string videoId, string youtubeId, decimal value)
+        {
+            decimal newValue = 0;
+            string revenueShare = string.Empty;
+            if (videos != null && videos.Count > 0)
+            {
+                LatestSightingsLibrary.Video vid = null;
+                if (!String.IsNullOrEmpty(youtubeId))
+                {
+                    vid = videos.FirstOrDefault(x => { return x.YoutubeId == youtubeId; });
+                }
+                else
+                {
+                    vid = videos.FirstOrDefault(x => { return x.Id == videoId; });
+                }
+                if (vid != null)
+                {
+                    newValue = LatestSightingsLibrary.Financial.ApplyRevenueShare(value, vid.RevenueShare);
+                    newValue = RoundtoTwo(newValue);
+                }
+            }
+
+            return newValue;
+        }
+
         private void SetParameters()
         {
             string ad = HttpUtility.UrlDecode(Request.QueryString.ToString());
@@ -130,6 +179,8 @@ namespace Revamp_LatestSightings
                 videoId = Request.QueryString["videoId"].ToString().ToLower();
             if (!String.IsNullOrEmpty(Request.QueryString["youtubeId"]))
                 youtubeId = Request.QueryString["youtubeId"].ToString().ToLower();
+            if (!String.IsNullOrEmpty(Request.QueryString["contributorId"]))
+                contributor = Request.QueryString["contributorId"].ToString().ToLower();
 
             if (orderColumn > -1 && !String.IsNullOrEmpty(Request.QueryString["columns[" + orderColumn + "][data]"]))
             {
@@ -151,7 +202,7 @@ namespace Revamp_LatestSightings
     public class VideoItemDataItem
     {
         public string ItemMonth { get; set; }
-        public decimal YouTubeEarnings { get; set; }
+        public string YouTubeEarnings { get; set; }
         public decimal Currency1 { get; set; }
         public decimal Currency2 { get; set; }
         public decimal Currency3 { get; set; }

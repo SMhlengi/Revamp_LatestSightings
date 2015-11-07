@@ -76,7 +76,7 @@
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Title</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Id</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Revenue Split</th>
-                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Prev Payment</th>
+                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Last Month’s Revenue</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Estimated Month-to-Date Revenue</th>
                         </tr>
                     </thead>
@@ -256,7 +256,7 @@
                 language: { "sSearch": "" },
                 order: [1, "asc"],
                 "columns": [
-                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title.replace("'","") + "');\")\">View</a>" } },
+                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title.replace("'", "") + "', '" + full.ContributorId + "');\")\">View</a>" } },
                     { "data": "Title", orderable: true },
                     { "data": "YoutubeId", orderable: false },
                     { "data": "RevenueSplit", orderable: false },
@@ -285,11 +285,13 @@
             var dTable2;
             var video;
             var youtube;
-            function VideoDetails(videoId, youtubeId, videoTitle)
+            var contributor;
+            function VideoDetails(videoId, youtubeId, videoTitle, contributorId)
             {
                 $("#videoTitle").html(videoTitle);
                 video = videoId;
                 youtube = youtubeId;
+                contributor = contributorId;
                 $('#modal-video').modal('toggle');
                 if (dTable2 == null)
                 {
@@ -305,7 +307,7 @@
                         "ajax": {
                             "url": "/VideoItemData.aspx",
                             "data": function ( d ) {
-                                d.videoId = video, d.youtubeId = youtube;
+                                d.videoId = video, d.youtubeId = youtube, d.contributorId = contributor;
                             }
                         },
                         type: 'GET',

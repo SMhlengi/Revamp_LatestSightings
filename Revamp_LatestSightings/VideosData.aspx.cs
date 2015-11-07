@@ -49,9 +49,9 @@ namespace Revamp_LatestSightings
             {
                 if (_lastMonthsVideos == null)
                 {
-                    Dictionary<int, int> paidDate = LatestSightingsLibrary.Payment.GetLastPaidDate(contributor);
-                    //_lastMonthsVideos = GetAnalytics(DateTime.Now.AddMonths(-1).Year, DateTime.Now.AddMonths(-1).Month);
-                    _lastMonthsVideos = GetAnalytics(paidDate.First().Key, paidDate.First().Value);
+                    //Dictionary<int, int> paidDate = LatestSightingsLibrary.Payment.GetLastPaidDate(contributor);
+                    _lastMonthsVideos = GetAnalytics(DateTime.Now.AddMonths(-1).Year, DateTime.Now.AddMonths(-1).Month);
+                    //_lastMonthsVideos = GetAnalytics(paidDate.First().Key, paidDate.First().Value);
                 }
 
                 return _lastMonthsVideos;
@@ -111,6 +111,7 @@ namespace Revamp_LatestSightings
                     item.Id = vid.Id;
                     item.Alias = vid.Alias;
                     item.Contributor = vid.Person.FirstName + " " + vid.Person.LastName;
+                    item.ContributorId = contributor;
                     item.RevenueSplit = vid.RevenueShare;
                     item.Title = vid.Title;
                     item.YoutubeId = vid.YoutubeId;
@@ -162,12 +163,11 @@ namespace Revamp_LatestSightings
                 {
                     if (vidAnalytics.Earning > 0)
                     {
-                        returnValue = "R" + vidAnalytics.Earning.ToString().TrimEnd('0');
+                        returnValue = "R" + ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.Earning).ToString();
                     }
                     else if (vidAnalytics.EstimatedEarning > 0)
                     {
-                        //returnValue = "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
-                        returnValue = "";
+                        returnValue = "$" + ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.EstimatedEarning).ToString();
                     }
                 }
             }
@@ -186,17 +186,7 @@ namespace Revamp_LatestSightings
                 {
                     if (vidAnalytics.EstimatedEarning > 0)
                     {
-                        string revenueShare = string.Empty;
-                        decimal payOut = 0;
-                        if (videos != null && videos.Count > 0)
-                        {
-                            LatestSightingsLibrary.Video vid = videos.FirstOrDefault(x => { return x.YoutubeId == vidAnalytics.Id;});
-                            {
-                                payOut = LatestSightingsLibrary.Financial.ApplyRevenueShare(vidAnalytics.EstimatedEarning, vid.RevenueShare);
-                            }
-                        }
-
-                        returnValue = payOut > 0 ? "$" + payOut.ToString().TrimEnd('0') : "$" + vidAnalytics.EstimatedEarning.ToString().TrimEnd('0');
+                        returnValue = ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.EstimatedEarning).ToString();
                     }
                 }
             }
@@ -211,6 +201,36 @@ namespace Revamp_LatestSightings
                 var pi = typeof(VideoDataItem).GetProperty(orderColumnName);
                 dataItems = orderDirection == "asc" ? dataItems.OrderBy(x => pi.GetValue(x, null)).ToList() : dataItems.OrderByDescending(x => pi.GetValue(x, null)).ToList(); ;
             }
+        }
+
+        private decimal RoundtoTwo(decimal value)
+        {
+            return decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+        }
+
+        private decimal ApplyRevenueShare(string videoId, string youtubeId, decimal value)
+        {
+            decimal newValue = 0;
+            string revenueShare = string.Empty;
+            if (videos != null && videos.Count > 0)
+            {
+                LatestSightingsLibrary.Video vid = null;
+                if (!String.IsNullOrEmpty(youtubeId))
+                {
+                    vid = videos.FirstOrDefault(x => { return x.YoutubeId == youtubeId; });
+                }
+                else
+                {
+                    vid = videos.FirstOrDefault(x => { return x.Id == videoId; });
+                }
+                if (vid != null)
+                {
+                    newValue = LatestSightingsLibrary.Financial.ApplyRevenueShare(value, vid.RevenueShare);
+                    newValue = RoundtoTwo(newValue);
+                }
+            }
+
+            return newValue;
         }
 
         private void Filter(ref List<VideoDataItem> dataItems)
@@ -303,6 +323,7 @@ namespace Revamp_LatestSightings
         public string Title { get; set; }
         public string Alias { get; set; }
         public string Contributor { get; set; }
+        public string ContributorId { get; set; }
         public string YoutubeId { get; set; }
         public string RevenueSplit { get; set; }
         public string PreviousMonth { get; set; }
