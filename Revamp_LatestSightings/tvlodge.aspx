@@ -13,14 +13,15 @@
     <!-- Loading Styles -->   
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
     <link href="<%= ResolveUrl("~/css/tvLodge.css?v=6") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/css/owl.carousel2.css") %>" rel="stylesheet" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=2") %>"></script>
-    --
+    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=16") %>"></script>
+    <script src="<%= ResolveUrl("~/js/owl.carousel.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/scripts.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/scripts.js?v=12") %>"></script>
     ..
     <!-- Javascripts -->
     <java:scripts runat="server" id="javascriptstag"></java:scripts>

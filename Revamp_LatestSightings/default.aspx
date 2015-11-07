@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Revamp_LatestSightings._default" %>
 
 <asp:Content ID="homepage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script src="<%= ResolveUrl("~/js/owl.carousel.min.js") %>"></script>
                     
 					
                     <!-- Billboard BEGIN -->

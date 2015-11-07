@@ -108,6 +108,7 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.carousel2.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\responsivedataTables.responsive.css" />
@@ -240,6 +241,7 @@
     <Content Include="js\modernizr.js" />
     <Content Include="js\navigate.js" />
     <Content Include="js\numeral.min.js" />
+    <Content Include="js\owl.carousel.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\plugins-scroll.js" />
     <Content Include="js\randomBlue.js" />

@@ -22,7 +22,7 @@ $(document).ready(function($) {
 	init_testimonials();
 	init_clients_carousel();
 	init_portfolio_isotope();
-	init_portfolio_carousel();
+	//init_portfolio_carousel();
 	init_image_slider();
 	init_magnific_popup();
 	if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) { init_animated_effects() }
@@ -253,42 +253,6 @@ function init_googlemap() {
 			]
 		}
 	]);
-}
-
-
-function init_portfolio_carousel() {
-	/*-------------------------------------------------*/
-	/* =  portfolio OWL Carousel
-	/*-------------------------------------------------*/	
-
-	try {
-		$("#owl-slider").owlCarousel({
-			autoplay: true,
-			autoplayTimeout: 5000,
-			autoplayHoverPause: false,
-			dots: false,
-			nav: true,
-			navText: ['', ''],
-			items : 4,
-			loop: true,
-			responsive:{
-				0:{
-					items:1
-				},
-				787:{
-					items:2
-				},
-				979:{
-					items:3
-				},
-				1199:{
-					items:4
-				}
-			}			
-		});
-	} catch(err) {
-
-	}
 }
 
 function init_testimonials() {

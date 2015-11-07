@@ -12,12 +12,47 @@
             console.log(data.d.length);
             populateHomePageTingsHtml(data.d);
             populateHomePageTingsImages(data.d);
+            init_portfolio_carousel();
 
         }
     ).fail(
         function (data, textStatus, jqXHR) {
         }
     );
+}
+
+function init_portfolio_carousel() {
+    /*-------------------------------------------------*/
+    /* =  portfolio OWL Carousel
+	/*-------------------------------------------------*/
+    try {
+        $("#owl-slider").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: false,
+            dots: false,
+            nav: true,
+            navText: ['', ''],
+            items: 4,
+            loop: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                787: {
+                    items: 2
+                },
+                979: {
+                    items: 3
+                },
+                1199: {
+                    items: 4
+                }
+            }
+        });
+    } catch (err) {
+
+    }
 }
 
 

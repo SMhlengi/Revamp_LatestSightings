@@ -7,15 +7,15 @@
         visibility:hidden;
     }
 
-    .owl-controls{
-        display:none;
-    }
-
     .tingImage{
         width:35% !important;
         margin: 0 auto;
         padding-top:34px;
         padding-left:10px;
+    }
+
+    .owl-controls{
+        display:none;
     }
 
  </style>                        
@@ -134,5 +134,5 @@
 		</div>
 	</div>
 
-        <script src="<%= ResolveUrl("~/js/homePageTings.js?v=9") %>"></script>
+        <script src="<%= ResolveUrl("~/js/homePageTings.js?v=10") %>"></script>
 </div>
