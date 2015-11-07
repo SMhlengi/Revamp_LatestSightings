@@ -229,7 +229,7 @@ $(document).ready(function () {
 
 
     function displayAllTingsPicture() {
-        $("#lodgeImage").attr("src", "http://latestsightings.socialengine.co.za/images/alltings.jpg");
+        $("#lodgeImage").attr("src", "http://latestsightings.socialengine.co.za/images/alltings.PNG");
     }
 
     function hideTingInformation() {

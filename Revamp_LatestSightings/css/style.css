@@ -4154,6 +4154,17 @@ max-width:160px;
     color: #EEE;
 }
 
+.tingarrowimage img {
+    width:120px;
+    height:48px;
+}
+
+.arrowrow{
+    padding-top:38px;
+    margin:0 auto;
+    width:84%;
+}
+
 
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  

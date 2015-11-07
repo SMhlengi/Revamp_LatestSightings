@@ -17,7 +17,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=26") %>"></script>
+    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=27") %>"></script>
     <script src="<%= ResolveUrl("~/js/owl.carousel.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
@@ -37,6 +37,40 @@
 				<div id="content-inner">
                 	<div class="row">
                         <div class="col-md-12">
+                            <!-- Column 2 -->
+                          <div class="col-md-4">
+                           	  	<h4 class="page-titles"> 
+                                    <% if (!String.IsNullOrEmpty(lodgeName)){%> 
+                                        <%= lodgeName %>
+                                    <%} %>
+                                         Lodge Tings</h4>
+                                
+                              	<img src="<%= ResolveUrl("~/images/lodges3.jpg") %>"  id="lodgeImage" width="100%">
+
+								<div class="clearfix spacer small"></div>
+                                
+                                <h3><a href="javascript:void(0);" id="lodgeTitle"></a></h3>
+                                <p class="NoBottomMargin" id="desc"></p>
+                                <p class="NoBottomMargin" id="location"></p>
+                                <p class="NoBottomMargin" id="tingedBy"></p>
+                                <p class="NoBottomMargin" id="time"></p>
+                                <p class="NoBottomMargin" id="visibility_traffic"></p><br /><br />
+                                
+                          </div>
+                            <!-- Column 2 -->
+                            
+                            <!-- Column 3 -->
+                            <div class="col-md-4">
+                           	  	<h4 class="page-titles">Hot Spots</h4>
+                            	<div id="map-canvas" style="width: 100%; height: 620px"></div>
+                                
+                                <div class="clearfix spacer small"></div>
+
+<%--                                <p style="color:#ff9900;">
+                                Keys go here
+                                </p>--%>
+                            </div>
+                            <!-- Column 3 -->
                             
                             <!-- Column 1 -->
                             <div class="col-md-4">
@@ -82,47 +116,16 @@
                                 
                             </div>
                             <!-- Column 1 -->
-                            
-                            <!-- Column 2 -->
-                          <div class="col-md-4">
-                           	  	<h4 class="page-titles"> 
-                                    <% if (!String.IsNullOrEmpty(lodgeName)){%> 
-                                        <%= lodgeName %>
-                                    <%} %>
-                                         Lodge Tings</h4>
-                                
-                              	<img src="<%= ResolveUrl("~/images/lodges3.jpg") %>"  id="lodgeImage" width="100%">
-
-								<div class="clearfix spacer small"></div>
-                                
-                                <h3><a href="javascript:void(0);" id="lodgeTitle"></a></h3>
-                                <p class="NoBottomMargin" id="desc"></p>
-                                <p class="NoBottomMargin" id="location"></p>
-                                <p class="NoBottomMargin" id="tingedBy"></p>
-                                <p class="NoBottomMargin" id="time"></p>
-                                <p class="NoBottomMargin" id="visibility_traffic"></p><br /><br />
-                                
-                          </div>
-                            <!-- Column 2 -->
-                            
-                            <!-- Column 3 -->
-                            <div class="col-md-4">
-                           	  	<h4 class="page-titles">Hot Spots</h4>
-                            	<div id="map-canvas" style="width: 100%; height: 620px"></div>
-                                
-                                <div class="clearfix spacer small"></div>
-
-<%--                                <p style="color:#ff9900;">
-                                Keys go here
-                                </p>--%>
-                            </div>
-                            <!-- Column 3 -->
+                          
                                                         
                         </div>
                     </div>
                     
                     <div class="clearfix"></div>
                     <!-- tings must come here -->
+                    <div class="row arrowrow">
+                        <div class="tingarrowimage"><img src="/images/ting_arrow_indicator_down.png"></div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>

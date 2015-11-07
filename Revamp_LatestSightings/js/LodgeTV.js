@@ -10,6 +10,7 @@ var LODGE_long = "";
 var markers = [];
 var map;
 var showKrugerTings = false;
+var friendlyLodgeName = "";
 var tingsCounter = "";
 
 function setLodgeTingers(json, FolderUrl, name, id) {
@@ -95,6 +96,7 @@ function init_carousel() {
         $("#owl-slider").owlCarousel({
             autoPlay: 12000,
             items: 4,
+            pagination:false,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
@@ -133,7 +135,20 @@ function setTingCounter(number) {
     tingsCounter = number;
 }
 
+function rememberLodgeName() {
+    friendlyLodgeName = $($(".page-titles")[0]).html();
+}
+
+function SetKrugerTitleHeaderTingName() {
+    $($(".page-titles")[0]).html("Kruger Park Tings");
+}
+
+function SetLodgeTittleHeaderTingName() {
+    $($(".page-titles")[0]).html(friendlyLodgeName);
+}
+
 $(document).ready(function () {
+    rememberLodgeName();
     displayTings();
     initialize();
     init_carousel();
@@ -162,20 +177,34 @@ $(document).ready(function () {
         }
     }
 
+    function showHideTingsCarousel(status) {
+        if (status == "hidden") {
+            $($(".col-md-12")[1]).css("visibility", status);
+            $(".arrowrow").css("visibility", status);
+        } else {
+            $($(".col-md-12")[1]).css("visibility", status);
+            $(".arrowrow").css("visibility", status);
+        }
+    }
+
     function myStopFunction() {
         counter = 0;
         clearInterval(myVar);
         clearInterval(mapsTimeoutVariable);
         setUpDisplayAllMarkersInOneMap();
         UpdateKrugerFlag();
+        showHideTingsCarousel("hidden");
 
         t = setTimeout(function () {
             if (showKrugerTings == true) {
+                SetKrugerTitleHeaderTingName();
                 SetUpKrugerTings();
+                showHideTingsCarousel("visible");
             } else {
-                console.log("Getting new tings for lodge ");
+                SetLodgeTittleHeaderTingName();
                 deleteMarkers();
                 refreshTop5TingersAndRegreshTings()
+                showHideTingsCarousel("visible");
             }
         }, 15000);
     }
@@ -335,7 +364,7 @@ $(document).ready(function () {
 
 
     function displayAllTingsPicture() {
-        $("#lodgeImage").attr("src", "http://latestsightings.socialengine.co.za/images/alltings.jpg");
+        $("#lodgeImage").attr("src", "http://latestsightings.socialengine.co.za/images/alltings.PNG");
     }
 
     function hideTingInformation() {
