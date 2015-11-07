@@ -77,7 +77,7 @@
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Id</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Revenue Split</th>
                             <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Prev Payment</th>
-                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Estimated MTD Revenue</th>
+                            <th style="background-color:#554337; color: #FFFFFF; border-bottom: 0px;">Estimated Month-to-Date Revenue</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -256,7 +256,7 @@
                 language: { "sSearch": "" },
                 order: [1, "asc"],
                 "columns": [
-                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title + "');\")\">View</a>" } },
+                    { orderable: false, "render": function (data, type, full, meta) { return "<a href=\"javascript:void(0);\" onclick=\"VideoDetails('" + full.Id + "', '" + full.YoutubeId + "', '" + full.Title.replace("'","") + "');\")\">View</a>" } },
                     { "data": "Title", orderable: true },
                     { "data": "YoutubeId", orderable: false },
                     { "data": "RevenueSplit", orderable: false },
