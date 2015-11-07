@@ -10,6 +10,7 @@ var LODGE_long = "";
 var markers = [];
 var map;
 var showKrugerTings = false;
+var tingsCounter = "";
 
 function setLodgeTingers(json, FolderUrl, name, id) {
     LODGEJson = json;
@@ -71,7 +72,7 @@ function initialize() {
     markers.push(marker);
 
 
-    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 3000);
+    mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 12000);
 
     function displayNewMap() {
         marker.setMap(null);
@@ -86,13 +87,13 @@ function initialize() {
 
 }
 
-function init_portfolio_carousel() {
+function init_carousel() {
     /*-------------------------------------------------*/
     /* =  portfolio OWL Carousel
 	/*-------------------------------------------------*/
     try {
         $("#owl-slider").owlCarousel({
-            autoPlay: 3000,
+            autoPlay: 12000,
             items: 4,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
@@ -100,6 +101,11 @@ function init_portfolio_carousel() {
     } catch (err) {
 
     }
+}
+
+function destroy_carousel() {
+
+    $("#owl-slider").data('owlCarousel').destroy();
 }
 
 function populateTingsHtml(tings) {
@@ -118,25 +124,25 @@ function populateTingsHtml(tings) {
 		'</div>';
     var ting = "";
     for (var i = 0; i < tings.length; i++) {
-        //setTingImage(".ting" + i, tings[i].id);
-        ting += tingTemplate.replace("#title#", tings[i].title).replace("#time#", tings[i].time).replace("#tingimage#", "http://tingsservice.socialengine.co.za/tings/image/" + tings[i].id);
+        ting = tingTemplate.replace("#title#", tings[i].title).replace("#time#", tings[i].time).replace("#tingimage#", "http://tingsservice.socialengine.co.za/tings/image/" + tings[i].id);
         $("#owl-slider").data('owlCarousel').addItem(ting);
-        //setTingTitle(".ting" + i, tings[i].title);
-        //setTingTimeAndPark(".ting" + i, tings[i].time);
     }
-    //$(".uc_tv_lodge_tings").html(ting);
+}
+
+function setTingCounter(number) {
+    tingsCounter = number;
 }
 
 $(document).ready(function () {
     displayTings();
     initialize();
-    init_portfolio_carousel();
+    init_carousel();
+    setTingCounter(LODGEJson.length);
     populateTingsHtml(LODGEJson);
-    console.log(LODGEJson);
 
     function displayTings() {
         displayLodge(LODGEJson[counter]);
-        myVar = setInterval(function () { displayNewLodge() }, 3000);
+        myVar = setInterval(function () { displayNewLodge() }, 12000);
     }
 
     function displayNewLodge() {
@@ -146,10 +152,6 @@ $(document).ready(function () {
         } else {
             myStopFunction();
         }
-    }
-
-    function ClearTingsHtml() {
-        //$(".uc_tv_lodge_tings").hide();
     }
 
     function UpdateKrugerFlag() {
@@ -169,8 +171,7 @@ $(document).ready(function () {
 
         t = setTimeout(function () {
             if (showKrugerTings == true) {
-                deleteMarkers();
-                refreshTop5TingersAndRegreshTings()
+                SetUpKrugerTings();
             } else {
                 console.log("Getting new tings for lodge ");
                 deleteMarkers();
@@ -180,13 +181,20 @@ $(document).ready(function () {
     }
 
     function refreshTop5TingersAndRegreshTings() {
-        console.log("must be called after 15 secs");
+        clearTingSlider();
         RefreshTop5Tingers();
         RefreshTings();
     }
 
+    function clearTingSlider() {
+        for (var i = 0; i < tingsCounter; i++) {
+            $("#owl-slider").data('owlCarousel').removeItem();
+        }
+    }
+
     function SetUpKrugerTings() {
         deleteMarkers();
+        clearTingSlider();
         GetKrugerTings();
     }
 
@@ -223,6 +231,7 @@ $(document).ready(function () {
     }
 
     function RefreshTings() {
+        console.log("Getting normal tings");
         var postUrl = "/AjaxOperation.aspx/GetLodgeDetails";
         $.ajax({
             type: "POST",
@@ -234,6 +243,7 @@ $(document).ready(function () {
             function (data, textStatus, jqXHR) {
                 if (data.d.length > 0) {
                     LODGEJson = data.d;
+                    setTingCounter(LODGEJson.length);
                     populateTingsHtml(LODGEJson);
                     displayTings();
                     initialize();
@@ -247,6 +257,7 @@ $(document).ready(function () {
 
 
     function GetKrugerTings() {
+        console.log("Getting Kruger Tings");
         var postUrl = "/AjaxOperation.aspx/GetKrugerTings";
         $.ajax({
             type: "POST",
@@ -257,6 +268,7 @@ $(document).ready(function () {
             function (data, textStatus, jqXHR) {
                 if (data.d.length > 0) {
                     LODGEJson = data.d;
+                    setTingCounter(LODGEJson.length);
                     populateTingsHtml(LODGEJson);
                     displayTings();
                     initialize();
@@ -313,7 +325,6 @@ $(document).ready(function () {
     }
 
     function setUpDisplayAllMarkersInOneMap() {
-        ClearTingsHtml();
         setNewMapOfSouthAfrica();
         displayAllTingsPicture();
         hideTingInformation();

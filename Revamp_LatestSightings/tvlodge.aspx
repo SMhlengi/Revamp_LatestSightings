@@ -17,7 +17,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=16") %>"></script>
+    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=26") %>"></script>
     <script src="<%= ResolveUrl("~/js/owl.carousel.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
