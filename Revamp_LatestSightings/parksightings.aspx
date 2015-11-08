@@ -1,5 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="parksightings.aspx.cs" Inherits="Revamp_LatestSightings.parksightings" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<style>
+    .slider-container .owl-theme .owl-dots{
+        left:20% !important;
+    }
+
+    .image-gallery-item img{
+        height:400px !important;
+    }
+</style>
     <script src="<%= ResolveUrl("~/js/parkSightings.js") %>"></script>
 
 					<div class="row">
@@ -38,18 +47,13 @@
                             <!-- Slideshow BEGIN -->
                             <div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
 								<div class="image-slider">
-									<div class="image-gallery-item item">
-										<img alt="" src="/images/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/images/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/images/slideshow-1140x390.gif">
-									</div>
-									<div class="image-gallery-item item">
-										<img alt="" src="/images/slideshow-1140x390.gif">
-									</div>
+                                    <% if (parkTings != null && parkTings.Count > 0){ %>
+                                            <% foreach (var ting in parkTings){ %>
+                                                <div class="image-gallery-item item">
+                                                     <img alt="" src="http://tingsservice.socialengine.co.za/tings/image/<%=ting["id"] %>">
+                                                </div>
+                                            <%} %>
+                                    <%} %>
 								</div>
 							</div>
                             
@@ -64,27 +68,14 @@
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
                             
-                            <h3 style="text-align:center;"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
+                            <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
                             
-                            <div class="left">
-                       	    	<img src="images/FBandTwitter.jpg" width="202" height="20"> 
-                                <div class="right">
-                                	<a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                                    <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
-                                    <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
-                                </div>
-                            </div>
-                            
-                            <p>
-                                H4-1 Kruger National Park, Just east of Nkhulu<br>
-                                Date: 06/12/14 @ 12:56:04 pm<br>
-                                Visibility: <i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i> 5/5<br>
-                                Tinged by Fannie<br><br>
-                                <a href="#" style="color:#ff9900;"> View Location in Google maps</a>
+                            <p class="tingDescription">                                
                             </p>
+
                             </div>
                             </div>
                             
