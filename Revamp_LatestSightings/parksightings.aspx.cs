@@ -11,12 +11,10 @@ namespace Revamp_LatestSightings
 {
     public partial class parksightings : System.Web.UI.Page
     {
-        public List<Dictionary<string, string>> parkTings = new List<Dictionary<string, string>>();   
+        public List<Dictionary<string, string>> parkTings = new List<Dictionary<string, string>>();
+        public Guid parkid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid parkid;
-                     
-
             if (HasParkId())
             {
                 parkid = new Guid(Request.QueryString["id"].ToString());

@@ -366,15 +366,15 @@ function init_image_slider() {
             }, 100);
 
         }).owlCarousel({
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 5000,
             autoplayHoverPause: true,
             nav: true,
             navText: ['', ''],
             stopOnHover: true,
-            loop: true,
+            loop: false,
             autoHeight: true,
-            dots: true,
+            dots: false,
             animateOut: 'fadeOutDown',
             animateIn: 'fadeInUp',
             items: 1

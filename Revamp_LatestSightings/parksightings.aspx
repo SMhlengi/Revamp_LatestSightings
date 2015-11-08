@@ -9,6 +9,7 @@
         height:400px !important;
     }
 </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <script src="<%= ResolveUrl("~/js/parkSightings.js") %>"></script>
 
 					<div class="row">
@@ -47,23 +48,15 @@
                             <!-- Slideshow BEGIN -->
                             <div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
 								<div class="image-slider">
-                                    <% if (parkTings != null && parkTings.Count > 0){ %>
-                                            <% foreach (var ting in parkTings){ %>
-                                                <div class="image-gallery-item item">
-                                                     <img alt="" src="http://tingsservice.socialengine.co.za/tings/image/<%=ting["id"] %>">
-                                                </div>
-                                            <%} %>
-                                    <%} %>
+                                    <div class="image-gallery-item item">
+                                            <img alt="" src="">
+                                    </div>
+
 								</div>
 							</div>
                             
                             <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                             <div class="blog-list-content">
-                            <div class="left">
-                                <div class="col-md-3 button">Picture</div>
-                                <div class="col-md-3 button">View Map</div>
-                            	<a class="col-md-3 filterlinks" href="#">View in-app comments <i class="fa fa-comments"></i> </a>
-                            </div>
                             
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
@@ -78,6 +71,10 @@
 
                             </div>
                             </div>
+
+                            <div class="row">
+                                <div id="map-canvas" style="width: 100%; height: 330px"></div>
+                            </div>
                             
                           <!-- Slideshow END -->
                             
@@ -86,9 +83,7 @@
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="blog-grid">
-                       	    	<img src="images/FBComments.jpg" width="587" height="682"> 
-                            </div>
+                            <div class="fb-comments" data-href="http://latestsightings.com/park/sightings/<%= parkid.ToString()%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>
