@@ -42,21 +42,6 @@ function initialize() {
         animation: google.maps.Animation.DROP,
         map: map
     });
-    //markers.push(marker);
-
-
-    //mapsTimeoutVariable = setInterval(function () { displayNewMap() }, 12000);
-
-    //function displayNewMap() {
-    //    marker.setMap(null);
-    //    map.setCenter({ lat: parseFloat(LODGE_lat), lng: parseFloat(LODGE_long) });
-    //    marker = new google.maps.Marker({
-    //        position: map.getCenter(),
-    //        map: map,
-    //        animation: google.maps.Animation.DROP,
-    //    });
-    //    markers.push(marker);
-    //}
 
 }
 

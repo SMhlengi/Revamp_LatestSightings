@@ -207,6 +207,7 @@
     <Content Include="images\video-16x9.gif" />
     <Content Include="images\WindowsStore_badge_en_English_Black_large_120x462.png" />
     <Content Include="images\WindowsStore_badge_en_English_Black_small_154x40.png" />
+    <Content Include="js\2owl.carousel.min.js" />
     <Content Include="js\adsbygoogle.js" />
     <Content Include="js\ajax-loader.js" />
     <Content Include="js\bootstrap.js" />
@@ -245,6 +246,7 @@
     <Content Include="js\numeral.min.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\parkSightings.js" />
     <Content Include="js\plugins-scroll.js" />
     <Content Include="js\randomBlue.js" />
     <Content Include="js\randomGray.js" />
@@ -263,6 +265,7 @@
     <Content Include="lodges.aspx" />
     <Content Include="lodges.html" />
     <Content Include="login.aspx" />
+    <Content Include="parksightings.aspx" />
     <Content Include="partnership.aspx" />
     <Content Include="privacypolicy.aspx" />
     <Content Include="register.aspx" />
@@ -467,6 +470,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="parksightings.aspx.cs">
+      <DependentUpon>parksightings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parksightings.aspx.designer.cs">
+      <DependentUpon>parksightings.aspx</DependentUpon>
     </Compile>
     <Compile Include="partnership.aspx.cs">
       <DependentUpon>partnership.aspx</DependentUpon>

@@ -18,7 +18,7 @@
 }
 
 function populateParks(gameparks) {
-    var park = '<li role="presentation"><a role="menuitem" tabindex="#index#" href="#parkid#">#name#</a></li>';
+    var park = '<li role="presentation"><a role="menuitem" tabindex="#index#" href="/park/sightings/#parkid#">#name#</a></li>';
     var parkList = "";
     for (var i = 0; i < gameparks.length; i++) {
         parkList += park.replace("#index#", i).replace("#name#", gameparks[i].name).replace("#parkid#", gameparks[i].id);

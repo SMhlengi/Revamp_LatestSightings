@@ -1,17 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="sightings.aspx.cs" Inherits="Revamp_LatestSightings.sightings" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="parksightings.aspx.cs" Inherits="Revamp_LatestSightings.parksightings" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script src="<%= ResolveUrl("~/js/parkSightings.js") %>"></script>
 
-<asp:Content ID="sightings" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-    .footer{
-        display:none;
-    }
-    .right{
-        margin-top:-26px !important;
-    }
-</style>
-    <script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
-    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=2") %>"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">
@@ -44,45 +34,59 @@
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
-                           
-                            <img src="" id="lodgeImage" width="100%">
                             
-<%--                            <div class="left">
+                            <!-- Slideshow BEGIN -->
+                            <div class="slider-container portfolio-featured-gallery" style="margin:0 !important">
+								<div class="image-slider">
+									<div class="image-gallery-item item">
+										<img alt="" src="/images/slideshow-1140x390.gif">
+									</div>
+									<div class="image-gallery-item item">
+										<img alt="" src="/images/slideshow-1140x390.gif">
+									</div>
+									<div class="image-gallery-item item">
+										<img alt="" src="/images/slideshow-1140x390.gif">
+									</div>
+									<div class="image-gallery-item item">
+										<img alt="" src="/images/slideshow-1140x390.gif">
+									</div>
+								</div>
+							</div>
+                            
+                            <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
+                            <div class="blog-list-content">
+                            <div class="left">
                                 <div class="col-md-3 button">Picture</div>
                                 <div class="col-md-3 button">View Map</div>
-                            </div>--%>
-
-                            <div class="clearfix"></div>
+                            	<a class="col-md-3 filterlinks" href="#">View in-app comments <i class="fa fa-comments"></i> </a>
+                            </div>
                             
-                            <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
+                            <div class="clearfix"></div>
+                            <div class="spacer small"></div>
+                            
+                            <h3 style="text-align:center;"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
                             <div class="clearfix"></div>
                             <div class="spacer small"></div>
                             
                             <div class="left">
-                            	<div class="left">
-                                    <div class="row">
-                                        <div class="col-md-2"><div class="fb-like" data-href="http://latestsightings.com/sighting/<%= tingId%>" data-layout="button" data-action="recommend" data-show-faces="false" data-share="false"></div></div>
-                                        <div class="col-md-4"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
-                                    </div>
-                            	</div>
+                       	    	<img src="images/FBandTwitter.jpg" width="202" height="20"> 
                                 <div class="right">
-                                	<a href="javascript:void(0);" title="Share to Facebook" class="aboutUsFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                                    <a href="javascript:void(0);" title="Share to Twitter" class="aboutUsTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                                	<a href="#" title="Share to Facebook"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                                    <a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>
+                                    <a href="#" title="Share to Twitter"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
                                 </div>
                             </div>
                             
-                            <p class="tingDescription">                                
+                            <p>
+                                H4-1 Kruger National Park, Just east of Nkhulu<br>
+                                Date: 06/12/14 @ 12:56:04 pm<br>
+                                Visibility: <i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i><i style="color:#ff9900;" class="fa fa-star"></i> 5/5<br>
+                                Tinged by Fannie<br><br>
+                                <a href="#" style="color:#ff9900;"> View Location in Google maps</a>
                             </p>
-
-                            <div class="clearfix"></div>
-                        	<div class="spacer"></div>
-
-                            <!-- testing something out-->
-                            <div class="row">
-                                <div id="map-canvas" style="width: 100%; height: 330px"></div>
                             </div>
-                            <!-- end of testing something out -->
+                            </div>
                             
                           <!-- Slideshow END -->
                             
@@ -91,7 +95,9 @@
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="fb-comments" data-href="http://latestsightings.com//sighting/<%= tingId%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
+                            <div class="blog-grid">
+                       	    	<img src="images/FBComments.jpg" width="587" height="682"> 
+                            </div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>
@@ -101,6 +107,9 @@
                         	<div class="spacer"></div>
                         
                             <!-- Space for web ads BEGIN -->
+                            <div class="comment-box">
+                            	<p style="text-align:center">Space for web ads</p>
+							</div>
                             <!-- Space for web ads END --> 
                             
                             <div class="clearfix"></div>
@@ -110,9 +119,9 @@
                             <h4 class="page-titles">Latest Galleries</h4>
                             <div class="blog-grid">
 								<ul class="filter triggerAnimation animated" data-animate="fadeInUp">
-                                    <li><a href="javascript:void(0);" class="active" data-filter="*"><i class="fa fa-th"></i>Show All</a></li>
-                                    <li><a href="javascript:void(0);" data-filter=".pics" ><i class="fa fa-camera"></i>Pics</a></li>
-                                    <li><a href="javascript:void(0);" data-filter=".videos" ><i class="fa fa-play"></i>Videos</a></li>
+                                    <li><a href="#" class="active" data-filter="*"><i class="fa fa-th"></i>Show All</a></li>
+                                    <li><a href="#" data-filter=".pics" ><i class="fa fa-camera"></i>Pics</a></li>
+                                    <li><a href="#" data-filter=".videos" ><i class="fa fa-play"></i>Videos</a></li>
                                 </ul>
                                 
                                 <!-- Gallery -->
@@ -123,11 +132,11 @@
                                             <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
+                                                    <img alt="" src="/images/about-650x650.gif">
                                                     
                                                 </div>
                                                 <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,59 +145,7 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                       <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
-                                                    
-                                                </div>
-                                                <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                <div class="team-info">
-                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
+                                                    <img alt="" src="/images/about-650x650.gif">
                                                     
                                                 </div>
                                                 <div class="team-title">
@@ -201,11 +158,37 @@
                                             <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
+                                                    <img alt="" src="/images/about-650x650.gif">
                                                     
                                                 </div>
                                                 <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                       <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                <div class="team-info">
+                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                    <img alt="" src="/images/about-650x650.gif">
+                                                    
+                                                </div>
+                                                <div class="team-title">
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                <div class="team-info">
+                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                    <img alt="" src="/images/about-650x650.gif">
+                                                    
+                                                </div>
+                                                <div class="team-title">
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -214,11 +197,37 @@
                                             <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
                                                 <div class="team-info">
                                                 	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                    <img alt="" src="/imagesCR/about-650x650.gif">
+                                                    <img alt="" src="/images/about-650x650.gif">
                                                     
                                                 </div>
                                                 <div class="team-title">
-                                                    <h5><a href="javascript:void(0);">Giraffes at the water</a></h5>
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                            <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                <div class="team-info">
+                                                	<div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                    <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                </div>
+                                                <div class="team-title">
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                            <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                <div class="team-info">
+                                                	<div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                    <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                </div>
+                                                <div class="team-title">
+                                                    <h5><a href="#">Giraffes at the water</a></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -242,30 +251,30 @@
                             
 							<div class="widget widget_recentposts">
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">The wild and all it has to offer</a></h4>
+										<h4 class="media-heading"><a href="#">The wild and all it has to offer</a></h4>
 									</div>
 								</div>
                                 
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">When Should I Warm Up Dinner?</a></h4>
+										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
 									</div>
 								</div>
                                 
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">This is a Beautiful Post in Blog</a></h4>
+										<h4 class="media-heading"><a href="#">This is a Beautiful Post in Blog</a></h4>
 									</div>
 								</div>
                                 
                                 <div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">When Should I Warm Up Dinner?</a></h4>
+										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
 									</div>
 								</div>
                                 
@@ -278,8 +287,8 @@
                             <h4 class="page-titles">January Top 10</h4>
                           	
                             <ul class="nav nav-pills">
-                              <li role="presentation" class="active"><a href="javascript:void(0);">Contributors</a></li>
-                              <li role="presentation"><a href="javascript:void(0);">Tingers</a></li>
+                              <li role="presentation" class="active"><a href="#">Contributors</a></li>
+                              <li role="presentation"><a href="#">Tingers</a></li>
                             </ul>
                             
                             <div class="table-responsive">
@@ -336,7 +345,7 @@
 						        
                               </table>
                               
-                              <a href="javascript:void(0);" >
+                              <a href="#" >
                               	<div class="button" style="text-align:center;">Become a Contributor</div>
                               </a>
                               	
@@ -348,7 +357,7 @@
                             
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="/imagesCR/ads-300x250.gif" width="300" height="250">
+                            	<img src="images/ads-300x250.gif" width="300" height="250">
 							</div>
                             <!-- 300x250 AD -->
                                                         
@@ -360,32 +369,32 @@
                             
 							<div class="widget widget_recentposts">
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">The wild and all it has to offer</a></h4>
+										<h4 class="media-heading"><a href="#">The wild and all it has to offer</a></h4>
 									</div>
 								</div>
                                 
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">When Should I Warm Up Dinner?</a></h4>
+										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
 										<!--<aside>Aug 10, 2013</aside>-->
 									</div>
 								</div>
                                 
 								<div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">This is a Beautiful Post in Blog</a></h4>
+										<h4 class="media-heading"><a href="#">This is a Beautiful Post in Blog</a></h4>
 										<!--<aside>Aug 10, 2013</aside>-->
 									</div>
 								</div>
                                 
                                 <div class="media recent-posts">
-									<a href="javascript:void(0);" class="pull-left"><img alt="" class="media-object" src="/imagesCR/recent-60x60.gif"></a>
+									<a href="#" class="pull-left"><img alt="" class="media-object" src="images/recent-60x60.gif"></a>
 									<div class="media-body">
-										<h4 class="media-heading"><a href="javascript:void(0);">When Should I Warm Up Dinner?</a></h4>
+										<h4 class="media-heading"><a href="#">When Should I Warm Up Dinner?</a></h4>
 										<!--<aside>Aug 10, 2013</aside>-->
 									</div>
 								</div>
@@ -403,7 +412,7 @@
                         
                             <!-- 300x250 AD -->
                             <div class="ad300">
-                            	<img src="/imagesCR/app.gif" width="300" height="250">
+                            	<img src="images/app.gif" width="300" height="250">
 							</div>
                             <!-- 300x250 AD -->
                             
