@@ -186,7 +186,7 @@ namespace Revamp_LatestSightings
                 {
                     if (vidAnalytics.EstimatedEarning > 0)
                     {
-                        returnValue = ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.EstimatedEarning).ToString();
+                        returnValue = "$" + ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.EstimatedEarning).ToString();
                     }
                 }
             }
