@@ -22,7 +22,7 @@ $(document).ready(function ($) {
     init_testimonials();
     init_clients_carousel();
     init_portfolio_isotope();
-    init_portfolio_carousel();
+    //init_portfolio_carousel();
     init_image_slider();
     init_magnific_popup();
     if (!/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) { init_animated_effects() }
