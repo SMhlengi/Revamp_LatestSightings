@@ -12,9 +12,10 @@ namespace Revamp_LatestSightings
     public partial class content : System.Web.UI.Page
     {
         public Dictionary<string, string> contentArticle;
+        public string param = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string param = Request.QueryString["p"];
+            param = Request.QueryString["p"];
             if (!String.IsNullOrEmpty(param))
             {
                 contentArticle = GetArticle(param);

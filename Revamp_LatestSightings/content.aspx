@@ -21,10 +21,14 @@
                     <a href="#"><img alt="" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%= contentArticle["picture"] %>"></a>
                 </div>
                 <%} %>
+
+                <%if(!param.Equals("live-drive", StringComparison.OrdinalIgnoreCase)){%>
                                 
                 <div class="blog-details">
+
                             <span class="blog-date"><%= contentArticle["dateCreated"] %></span>
 						</div>
+                <%} %>
                                             
                 <div class="blog-list-content">
                                 

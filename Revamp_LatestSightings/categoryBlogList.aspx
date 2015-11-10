@@ -20,7 +20,7 @@
 								<a class="img-link" href="#"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
 								<div class="blog-grid-controls">
 									<a href="#" title="Sep. 19 2014"><i class="fa fa-clock-o"></i></a>
-									<a href="#" title="5 Comments"><i class="fa fa-comments"></i></a>
+<%--									<a href="#" title="5 Comments"><i class="fa fa-comments"></i></a>--%>
 									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
 								</div>
 								<div class="blog-grid-content">
