@@ -6,7 +6,7 @@
     }
 
     .image-gallery-item img{
-        height:400px !important;
+        height:700px !important;
     }
 </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
@@ -21,15 +21,11 @@
                             <!-- Filter Options BEGIN -->
                             <div class="box">
                                 <div class="row">
-                                    <div class="col-md-2">
-                            	        <h7 style="font-size:16px; font-weight:600;">Filter By</h7>
-                                        <div class="spacer small"></div>
-                                    </div>
                                     <div class="col-md-4">
                                         <div class="left">
                                             <div class="dropdown parks">
                                                 <button class="btn btn-default dropdown-toggle" type="button" id="Button1" data-toggle="dropdown" aria-expanded="true">
-                                                    Park
+                                                    Filter By Park
                                                     <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -92,11 +88,11 @@
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
                         
-                            <!-- Space for web ads BEGIN -->
+                            <!-- Space for web ads BEGIN
                             <div class="comment-box">
                             	<p style="text-align:center">Space for web ads</p>
 							</div>
-                            <!-- Space for web ads END --> 
+                            Space for web ads END --> 
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>

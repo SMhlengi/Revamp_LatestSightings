@@ -120,7 +120,7 @@ function populateTingsHtml(tings) {
 					'<div class="ls-info"><img alt="" src="#tingimage#" class=""></div>' +
 					'<div class="ls-title">' +
 						'<h4>#title#</h4>' +
-						'<p>Date @ #time#</p>' +
+						'<p>#time#</p>' +
 					'</div>' +
 				'</div>' +
             '</a>' +
