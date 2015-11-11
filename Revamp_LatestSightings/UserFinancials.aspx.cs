@@ -1,6 +1,7 @@
 ﻿using LatestSightingsLibrary;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -85,7 +86,7 @@ namespace Revamp_LatestSightings
                 }
 
                 ltlEarnings.Text = "$" + totalEarnings.ToString();
-                ltlViews.Text = totalViews.ToString();
+                ltlViews.Text = string.Format(CultureInfo.InvariantCulture, "{0:N0}", totalViews);
 
                 List<LatestSightingsLibrary.Video> videos = LatestSightingsLibrary.Video.GetContributorVideos(userId);
 
@@ -121,7 +122,7 @@ namespace Revamp_LatestSightings
                             sb.Append("<tr>");
                             sb.Append("<td>" + count.ToString() + "</td>");
                             sb.Append("<td>" + video.Title + "</td>");
-                            sb.Append("<td>" + stat.Views + "</td>");
+                            sb.Append("<td>" + string.Format(CultureInfo.InvariantCulture, "{0:N0}", stat.Views) + "</td>");
                             sb.Append("</tr>");
                             count++;
                         }

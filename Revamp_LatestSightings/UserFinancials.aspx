@@ -47,14 +47,10 @@
     <div class="row">
         <div class="pageheader">
             <div class="media">
-                <div class="pageicon pull-left">
-                    <i class="fa fa-money"></i>
-                </div>
                 <div class="media-body">
-                    <ul class="breadcrumb">
-                        <li><a href=""><i class=""></i></a></li>
-                    </ul>
-                        <h4>Financials</h4> 
+                        <div style="float: left;"><h4>Financials</h4></div>
+                    <div style="float: right;"><div class="pageicon pull-left">
+                </div><a href="" data-toggle="modal" data-target="#myModal"><h4>Learn how to earn and get paid</h4></a></div>
                 </div>
             </div><!-- media -->
         </div><!-- pageheader -->
@@ -94,7 +90,7 @@
                 <div class="col-md-6 mb30">
                     <div class="panel panel-default">
                         <div class="panel-body padding15">
-                            <h5 class="md-title mt0 mb10">Earnings</h5>
+                            <h5 class="md-title mt0 mb10">All videos: Total estimated Month-to-Date Revenue</h5>
                             <div class="col-md-12 mb30">
                                 <div id="line-chart" class="height300"></div>
                             </div>
@@ -116,7 +112,7 @@
                 <div class="col-md-6 mb30">
                     <div class="panel panel-default">
                         <div class="panel-body padding15">
-                            <h5 class="md-title mt0 mb10">Views</h5>
+                            <h5 class="md-title mt0 mb10">All videos: Total Views this Month</h5>
                             <div class="col-md-12 mb30">
                                 <div id="line-chart1" class="height300"></div>
                             </div>
@@ -157,6 +153,7 @@
             </div>
         </div>
         <div class="col-md-4 mb30">
+            <div style="font-size: 20px; margin-bottom: 10px;">Top 10 videos this month</div>
             <ul class="nav nav-tabs nav-justified">
 	            <li class="active"><a data-toggle="tab" href="#popular">Top 10 Earnings</a></li>
 	            <li class=""><a data-toggle="tab" href="#popularViews">Top 10 Views</a></li>
@@ -186,7 +183,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Title</th>
-                                    <th>Earnings</th>
+                                    <th>Views</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -233,6 +230,32 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">How payment works:</h4>
+          </div>
+          <div class="modal-body" style="color: #000000;">
+            a. We pay you, the contributor, once we have received payment from Youtube.<br /><br />
+
+b.     Youtube pays us, Latest Sightings, last months’ revenue on the 25th of this month. That means that as long as Youtube pays us, we will pay you last month’s revenue at the end of this month. We will pay you this month’s revenue once we have received it at the end of next month. <br /><br />
+
+c.     Youtube calculates earnings in dollars and pays us in rands. This means that we will pay you in rands.  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <script>
