@@ -21,3 +21,19 @@ ul {
 h4.page-titles {
     font-size:30px;
 }
+
+.lodge-container {
+    position: relative;
+}
+
+.footer {
+    position:relative;
+}
+
+body{
+    padding-top:0px;
+}
+
+.portfolio-related-posts{
+    margin-bottom:0px !important;
+}

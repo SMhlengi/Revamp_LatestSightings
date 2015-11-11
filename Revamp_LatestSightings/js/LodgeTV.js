@@ -96,7 +96,8 @@ function init_carousel() {
         $("#owl-slider").owlCarousel({
             autoPlay: 12000,
             items: 4,
-            pagination:false,
+            pagination: false,
+            rewindNav: false,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
@@ -147,6 +148,26 @@ function SetLodgeTittleHeaderTingName() {
     $($(".page-titles")[0]).html(friendlyLodgeName);
 }
 
+function moveArrow(percentage) {
+    switch(percentage)
+    {
+        case "30%":
+            $(".arrowrow").css("width", percentage);
+            break;
+        case "36%":
+            $(".arrowrow").css("width", percentage);
+            $(".arrowrow").css("float", "right");
+            break;
+        case "10%":
+            $(".arrowrow").css("width", percentage);
+            $(".arrowrow").css("float", "right");
+            break;
+        default:
+            $(".arrowrow").css({ 'float': '' });
+            $(".arrowrow").css("width", "84%");
+    }
+}
+
 $(document).ready(function () {
     rememberLodgeName();
     displayTings();
@@ -163,9 +184,17 @@ $(document).ready(function () {
     function displayNewLodge() {
         if (counter != (LODGEJson.length - 1)) {
             counter += 1;
+            if (counter == LODGEJson.length - 3) {
+                moveArrow("30%");
+            } else if (counter == LODGEJson.length - 2) {
+                moveArrow("36%");
+            } else if (counter == LODGEJson.length - 1) {
+                moveArrow("10%");
+            }
             displayLodge(LODGEJson[counter]);
         } else {
             myStopFunction();
+            moveArrow("reset");
         }
     }
 

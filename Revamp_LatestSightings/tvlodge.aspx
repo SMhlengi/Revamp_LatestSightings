@@ -2,6 +2,7 @@
 
 <%@ Register Src="~/uc_StyleSheets.ascx" TagName="sheets" TagPrefix="style" %>
 <%@ Register Src="~/uc_JavaScripts.ascx" TagName="scripts" TagPrefix="java" %>
+<%@ Register Src="~/uc_Footer.ascx" TagName="footer" TagPrefix="page" %>
 
 <!DOCTYPE html>
 
@@ -12,12 +13,12 @@
     <meta charset="utf-8">
     <!-- Loading Styles -->   
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
-    <link href="<%= ResolveUrl("~/css/tvLodge.css?v=6") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/css/tvLodge.css?v=9") %>" rel="stylesheet" />
     <link href="<%= ResolveUrl("~/css/owl.carousel2.css") %>" rel="stylesheet" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
-    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=27") %>"></script>
+    <script src="<%= ResolveUrl("~/js/LodgeTV.js?v=28") %>"></script>
     <script src="<%= ResolveUrl("~/js/owl.carousel.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery.migrate.js") %>"></script>
@@ -123,13 +124,13 @@
                     
                     <div class="clearfix"></div>
                     <!-- tings must come here -->
-                    <div class="row arrowrow">
-                        <div class="tingarrowimage"><img src="/images/ting_arrow_indicator_down.png"></div>
-                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <asp:PlaceHolder ID="tings" runat="server"></asp:PlaceHolder>
                         </div>
+                    </div>
+                    <div class="row arrowrow">
+                        <div class="tingarrowimage"><img src="/images/ting_arrow_indicator_up.png"></div>
                     </div>
                     <!-- end of tings must come here -->
                 </div>
@@ -140,12 +141,7 @@
         </div>
 		<!-- End Container -->
         <!-- FOOTER -->
-        <div class="row" style="
-                         position: fixed;
-                         bottom: 0;
-                         height: 98px;
-                         width: 100%;
-                         margin-left: 0px;display:none">
+        <div class="footer">
             <div class="col-md-12" style="background-color:#783f04; padding:20px 20px 0px 20px ; float:left; height:auto; width:100%;">
                         
                 <div class="col-md-8" style="margin-bottom:20px !important; float:left;">
