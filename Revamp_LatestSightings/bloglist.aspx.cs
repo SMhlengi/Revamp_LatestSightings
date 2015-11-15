@@ -34,9 +34,11 @@ namespace Revamp_LatestSightings
                 c_articles = library.GetArticlesBasedOnCategoryId(Convert.ToInt32(item.Id));
                 foreach (var article in c_articles)
                 {
-                    Dictionary<string, string> articleDict = new Dictionary<string, string>();
-                    articleDict = utils.CleanUpArticleForBloglist(article);
-                    featuredCateogryArticles.Add(articleDict);
+                    //Dictionary<string, string> articleDict = new Dictionary<string, string>();
+                    //articleDict = utils.CleanUpArticleForBloglist(article);
+                    if (article["header"].Length > 65)
+                        article["header"] = article["header"].Substring(0, 60) + " ...";
+                    featuredCateogryArticles.Add(article);
                 }
             }
         }

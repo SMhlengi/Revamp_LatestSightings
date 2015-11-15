@@ -78,10 +78,10 @@ namespace Revamp_LatestSightings
             "~/holidays.aspx", true,
             new RouteValueDictionary { });
 
-            routes.MapPageRoute("partnership",
-            "partnership",
-            "~/partnership.aspx", true,
-            new RouteValueDictionary { });
+            //routes.MapPageRoute("partnership",
+            //"partnership",
+            //"~/partnership.aspx", true,
+            //new RouteValueDictionary { });
 
             routes.MapPageRoute("bloglist",
             "bloglist",

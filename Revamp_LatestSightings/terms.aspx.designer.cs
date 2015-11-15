@@ -13,15 +13,6 @@ namespace Revamp_LatestSightings {
     public partial class terms {
         
         /// <summary>
-        /// tnc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder tnc;
-        
-        /// <summary>
         /// cagegories control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Revamp_LatestSightings {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder lastBlogs;
+        
+        /// <summary>
+        /// ad300by50 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder ad300by50;
         
         /// <summary>
         /// monthlyTopContributors control.

@@ -13,33 +13,40 @@ namespace Revamp_LatestSightings
     public partial class terms : System.Web.UI.Page
     {
         protected int contentCategoryId = Convert.ToInt32(ConfigurationManager.AppSettings["contentCategoryId"]);
-        protected Dictionary<string, string> termsAndConditions = null;
+        //protected Dictionary<string, string> termsAndConditions = null;
         List<Dictionary<string, string>> contents = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             contents = new List<Dictionary<string, string>>();
-            termsAndConditions = new Dictionary<string, string>();
-            contents = library.GetArticlesBasedOnCategoryId(contentCategoryId);
-            Dictionary<string, string> terms = GetTermsAndConditions();
+            //termsAndConditions = new Dictionary<string, string>();
+            contents = library.GetArticlesBasedOnCategoryId(contentCategoryId, true);
+            //Dictionary<string, string> terms = GetTermsAndConditions();
             LoadFeaturedCategories();
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
             LoadLatestBlogs();
+            loadAds();
         }
 
-        private Dictionary<string, string> GetTermsAndConditions()
-        {
+        //private Dictionary<string, string> GetTermsAndConditions()
+        //{
 
-            foreach (var content in contents)
-            {
-                if (content["header"].ToLower().Contains("terms"))
-                {
-                    termsAndConditions = content;
-                    return termsAndConditions;
-                }
-            }
-            return null;
+        //    foreach (var content in contents)
+        //    {
+        //        if (content["header"].ToLower().Contains("terms"))
+        //        {
+        //            termsAndConditions = content;
+        //            return termsAndConditions;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        private void loadAds()
+        {
+            ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
+            ad300by50.Controls.Add(ad300);
         }
 
         private void LoadFeaturedCategories()

@@ -11,7 +11,6 @@ namespace Revamp_LatestSightings
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

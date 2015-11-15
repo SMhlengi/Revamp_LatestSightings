@@ -1,6 +1,20 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="bloglist.aspx.cs" Inherits="Revamp_LatestSightings.bloglist" %>
 
 <asp:Content ID="bloglist" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<style>
+    .img-link img{
+        height:218px;
+    }
+
+    h3{
+        border-bottom:none !important;
+        padding-bottom:0px !important;
+        margin-bottom:0px !important;
+    }
+    .blog-grid-content{
+        min-height:100px !important;
+    }
+</style>
 
 	<!-- Page Content Area -->
                 
@@ -29,7 +43,7 @@
 								</div>
 								<div class="blog-grid-content">
 									<h3><a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><%=categoryArticle["header"] %></a></h3>									
-                                    <%= categoryArticle["body"] %>
+<%--                                    <%= categoryArticle["body"] %>--%>
 								</div>
 							</div>
 						</div>

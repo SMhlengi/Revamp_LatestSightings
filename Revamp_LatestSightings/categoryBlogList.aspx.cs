@@ -63,12 +63,12 @@ namespace Revamp_LatestSightings
                 categoryId = Convert.ToInt32(Request.QueryString["id"]);
             }
 
-            c_articles = library.GetArticlesBasedOnCategoryId(Convert.ToInt32(categoryId));
+            c_articles = library.GetArticlesBasedOnCategoryId(Convert.ToInt32(categoryId), true);
             foreach (var article in c_articles)
             {
-                Dictionary<string, string> articleDict = new Dictionary<string, string>();
-                articleDict = utils.CleanUpArticleForBloglist(article);
-                cateogryArticles.Add(articleDict);
+                if (article["header"].Length > 65)
+                    article["header"] = article["header"].Substring(0, 60) + " ...";
+                cateogryArticles.Add(article);
             }
         }
 

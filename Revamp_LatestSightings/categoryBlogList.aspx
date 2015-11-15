@@ -2,6 +2,21 @@
 
 <asp:Content ID="categoryBlogs" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+<style>
+    .img-link img{
+        height:218px;
+    }
+
+    h3{
+        border-bottom:none !important;
+        padding-bottom:0px !important;
+        margin-bottom:0px !important;
+    }
+    .blog-grid-content{
+        min-height:100px !important;
+    }
+</style>
+
         <!-- Blog Category BEGIN -->
         <asp:PlaceHolder ID="cagegories" runat="server"></asp:PlaceHolder>
         <!-- Blog Category END -->
@@ -17,15 +32,15 @@
                        { %>
                     <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 							<div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-								<a class="img-link" href="#"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
+								<a class="img-link" href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
 								<div class="blog-grid-controls">
-									<a href="#" title="Sep. 19 2014"><i class="fa fa-clock-o"></i></a>
+									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Sep. 19 2014"><i class="fa fa-clock-o"></i></a>
 <%--									<a href="#" title="5 Comments"><i class="fa fa-comments"></i></a>--%>
 									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
 								</div>
 								<div class="blog-grid-content">
-									<h3><a href="#"><%=categoryArticle["header"] %></a></h3>									
-                                    <%= categoryArticle["body"] %>
+									<h3><a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><%=categoryArticle["header"] %></a></h3>									
+<%--                                    <%= categoryArticle["body"] %>--%>
 								</div>
 							</div>
 						</div>
