@@ -3,7 +3,7 @@
 <!-- Resposive Ad BEGIN -->                             
 <div class="adbox">                             	
 <div class="col-md-12"><h1>Download the Latest Sightings App</h1></div>                             <div class="left">                                 	
-<div class="adimage"><img src="images/downloadappimg.png"></div>                            </div>                                                                  
+<div class="adimage"><img src="/images/downloadappimg.png"></div>                            </div>                                                                  
 <div class="right">                                     
 <div class="table-responsive">                                      
 <table width="100%" border="0" cellspacing="0" cellpadding="0">                                           <tr><td class="appimage"><a href="https://itunes.apple.com/za/app/latest-kruger-sightings/id504154045?mt=8" target="_blank">

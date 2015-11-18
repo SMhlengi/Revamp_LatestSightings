@@ -8,6 +8,10 @@
     .right{
         margin-top:-26px !important;
     }
+
+    .adbox .right {
+        padding-top:28px !important;
+    }
 </style>
     <script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=2") %>"></script>
@@ -58,8 +62,9 @@
                             <div class="left">
                             	<div class="left">
                                     <div class="row">
-                                        <div class="col-md-2"><div class="fb-like" data-href="http://latestsightings.com/sighting/<%= tingId%>" data-layout="button" data-action="recommend" data-show-faces="false" data-share="false"></div></div>
-                                        <div class="col-md-4"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
+                                        <%--<div class="col-md-2"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
+                                        <div class="col-md-8"><div class="fb-like" data-href="http://latestsightings.com/sighting/<%= tingId%>" data-layout="button" data-action="recommend" data-show-faces="false" data-share="false"></div></div>--%>
+                                        
                                     </div>
                             	</div>
                                 <div class="right">

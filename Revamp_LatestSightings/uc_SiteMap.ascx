@@ -41,8 +41,8 @@
                     </ul>
                 
                     <div class="appstore">
-                        <a target="_blank" href="https://itunes.apple.com/za/app/latest-kruger-sightings/id504154045?mt=8"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/Download_on_the_App_Store_Badge_US-UK_135x40.png'></a>
-                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.latestsightings.app&hl=en"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>images/en_generic_rgb_wo_60.png' ></a>
+                        <a target="_blank" href="https://itunes.apple.com/za/app/latest-kruger-sightings/id504154045?mt=8"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>/images/Download_on_the_App_Store_Badge_US-UK_135x40.png'></a>
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.latestsightings.app&hl=en"><img src='<% = ConfigurationManager.AppSettings["siteUrl"] %>/images/en_generic_rgb_wo_60.png' ></a>
                     </div>
                     
                     <div class="clearfix"></div>

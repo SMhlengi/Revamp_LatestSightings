@@ -12,7 +12,7 @@ function displayPARKTINGS(index) {
     $(".tingDescription").append("Description: " + PARKTINGS[index].description + "<br>");
     $(".tingDescription").append("Date: " + PARKTINGS[index].time + "<br>");
     $(".tingDescription").append("Visibility: " + ReturnVisibilityStar(parseInt(PARKTINGS[index].visibility)) + " " + parseInt(PARKTINGS[index].visibility) + "/5 <br />");
-    $(".tingDescription").append("Tinged by " + PARKTINGS[index].tingUser);
+    $(".tingDescription").append("Tinged by: " + PARKTINGS[index].username);
     $(".image-gallery-item img").attr("src", "http://tingsservice.socialengine.co.za/tings/image/" + PARKTINGS[index].id)
     LODGE_lat = PARKTINGS[index].latitude;
     LODGE_long = PARKTINGS[index].longitude;

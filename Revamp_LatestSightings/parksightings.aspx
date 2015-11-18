@@ -10,7 +10,7 @@
     }
 </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
-    <script src="<%= ResolveUrl("~/js/parkSightings.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/parkSightings.js?v=2") %>"></script>
 
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->

@@ -20,7 +20,7 @@ namespace Revamp_LatestSightings
         {
             contents = new List<Dictionary<string, string>>();
             privacyPolicy = new Dictionary<string, string>();
-            contents = library.GetArticlesBasedOnCategoryId(contentCategoryId);
+            contents = library.GetArticlesBasedOnCategoryId(contentCategoryId, true);
             Dictionary<string, string> terms = GetprivacyPolicy();
             LoadFeaturedCategories();
             LoadLatestMonthlyContributors();
