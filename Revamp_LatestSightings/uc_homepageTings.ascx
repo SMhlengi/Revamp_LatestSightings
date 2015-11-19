@@ -134,5 +134,5 @@
 		</div>
 	</div>
 
-        <script src="<%= ResolveUrl("~/js/homePageTings.js?v=10") %>"></script>
+        <script src="<%= ResolveUrl("~/js/homePageTings.js?v=11") %>"></script>
 </div>

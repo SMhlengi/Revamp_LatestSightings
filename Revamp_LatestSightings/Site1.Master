@@ -16,7 +16,7 @@
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Latest Sightings YouTube Application</title>
+    <title>Live Wild Animal Reports in Kruger & Other National Parks</title>
     <%if (overRideMeta){ %>
         <meta property="og:title" content="Latest Sightings" />
         <meta property="og:description" id="description" name="description" /> 
@@ -26,7 +26,7 @@
         <meta property="og:site_name" content="Latest Sightings" />
     <%}else{ %>
         <meta property="og:title" content="Latest Sightings" />
-        <meta property="og:description" content="About Latest Sightings" /> 
+        <meta property="og:description" content="Android & iPhone/iPad smartphone app for real-time alerts of wildlife sightings in Safari Nature Reserves around the world. Share your outdoor experience now" /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://latestsightings.socialengine.co.za/" />
         <meta property="og:image" content="http://latestsightings.com/images/logo-horizontal-new.png" />

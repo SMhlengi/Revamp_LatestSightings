@@ -58,7 +58,7 @@ namespace Revamp_LatestSightings
         private void SetPageMetaData()
         {
             this.Master.overRideMeta = true;
-            this.Master.desc = "About Latest Sightings";
+            this.Master.desc = "Android & iPhone/iPad smartphone app for real-time alerts of wildlife sightings in Safari Nature Reserves around the world. Share your outdoor experience now";
             this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "about-us";
             this.Master.imgUrl = ConfigurationManager.AppSettings["siteUrl"] + "images/logo-horizontal-new.png";
 
