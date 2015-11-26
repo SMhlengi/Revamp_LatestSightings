@@ -60,7 +60,7 @@ function populateHomePageTingsHtml(tings) {
     for (var i = 0; i < tings.length; i++) {
         //setTingImage(".ting" + i, tings[i].id);
         setTingTitle(".ting" + i, tings[i].title);
-        setTingTimeAndPark(".ting" + i, tings[i].time, tings[i].name);
+        setTingTimeAndPark(".ting" + i, tings[i].time, tings[i].name, tings[i].labelStatus);
         setTingAnchor(".ting" + i, tings[i].id);
     }
 }
@@ -90,8 +90,8 @@ function setTingAnchor(control, tingid) {
     $(control + " a").attr("href", "/sighting/" + tingid);
 }
 
-function setTingTimeAndPark(control, time, parkname) {
-    $(control + " p").html("Today @ " + time + " <br>" + parkname);
+function setTingTimeAndPark(control, time, parkname, labelStatus) {
+    $(control + " p").html(labelStatus + " @ " + time + " <br>" + parkname);
 }
 
 
