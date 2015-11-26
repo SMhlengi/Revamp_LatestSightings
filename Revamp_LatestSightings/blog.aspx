@@ -19,7 +19,7 @@
                             
             <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                 <div class="blog-list-featured-image">
-                    <a href="#"><img alt="" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%= article["picture"] %>"></a>
+                    <a href="javascript:void(0);"><img alt="" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%= article["picture"] %>"></a>
                 </div>
                                 
                 <div class="blog-details">

@@ -55,7 +55,7 @@
 								<li class="menu-item"><a href="/content/live-drive">Live Drive</a></li>
                                 <li class="menu-item"><a href="/holidays">Holidays</a></li>
                                 <li class="menu-item"><a href="/content/partnership">Film & Earn</a></li>
-								<li class="menu-item"><a href="http://latestsightings.eshop.co.za/">Shop</a></li>
+								<li class="menu-item"><a href="http://latestsightings.eshop.co.za/" target="_blank">Shop</a></li>
 								<li class="menu-item"><a href="/about-us">About Us</a></li>
                                 <li class="menu-item"><a href="/contact-us">Contact Us</a></li>
                                 <li class="menu-item orange" ><a href="#">Profile</a>                                
