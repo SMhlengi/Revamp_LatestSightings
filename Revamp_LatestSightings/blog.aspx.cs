@@ -17,14 +17,29 @@ namespace Revamp_LatestSightings
         protected void Page_Load(object sender, EventArgs e)
         {
             GetParameters();
-            GetArticle();
+            if (HasArticleNotBeenSet())
+                GetArticle();
             LoadLatestBlogs();
             LoadLatestMonthlyContributors();
             LoadTopEarningVideos();
             loadOtherRelatedArticles();
             LoadFeaturedCategories();
             SetPageMetaData();
+            LoadAd();
+        }
 
+        private bool HasArticleNotBeenSet()
+        {
+            if (article == null)
+                return true;
+            return false;
+
+        }
+
+        private void LoadAd()
+        {
+            ad_300by50 ad300 = (ad_300by50)LoadControl("~/ad_300by50.ascx");
+            ad300by50.Controls.Add(ad300);
         }
 
         private void SetPageMetaData()
@@ -55,15 +70,30 @@ namespace Revamp_LatestSightings
 
         private void GetParameters()
         {
-            if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+            if (NoFriendlyUrl())
             {
-                articleId = Convert.ToInt32(Request.QueryString["id"]);
-            }
+                if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+                {
+                    articleId = Convert.ToInt32(Request.QueryString["id"]);
+                }
 
-            if (!string.IsNullOrEmpty(Request.QueryString["cat"]))
-            {
-                categoryId = Convert.ToInt32(Request.QueryString["cat"]);
+                if (!string.IsNullOrEmpty(Request.QueryString["cat"]))
+                {
+                    categoryId = Convert.ToInt32(Request.QueryString["cat"]);
+                }
             }
+            else
+            {
+                article =  library.GetArticle("'" + Request.QueryString["p"].ToString().Replace("_", " ") + "'", true);
+                categoryId = Convert.ToInt32(article["categoryId"]);
+            }
+        }
+
+        private bool NoFriendlyUrl()
+        {
+            if (String.IsNullOrEmpty(Request.QueryString["p"]))
+                return true;
+            return false;
         }
 
         private void LoadLatestMonthlyContributors()

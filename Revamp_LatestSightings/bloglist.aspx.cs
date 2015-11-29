@@ -38,6 +38,8 @@ namespace Revamp_LatestSightings
                     //articleDict = utils.CleanUpArticleForBloglist(article);
                     if (article["header"].Length > 65)
                         article["header"] = article["header"].Substring(0, 60) + " ...";
+                    if (!String.IsNullOrEmpty(article["urlName"]))
+                        article["urlName"] = article["urlName"].Replace(" ", "_");
                     featuredCateogryArticles.Add(article);
                 }
             }

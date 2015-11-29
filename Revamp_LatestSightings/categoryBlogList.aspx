@@ -32,15 +32,27 @@
                        { %>
                     <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 							<div class="blog-grid-item triggerAnimation animated" data-animate="fadeInUp">
-								<a class="img-link" href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
+                                    <%if(String.IsNullOrEmpty(categoryArticle["urlName"])){ %>
+                                        <a class="img-link" href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
+                                    <%}else{ %>
+									    <a class="img-link" href="/blog/<%=categoryArticle["urlName"] %>"><img alt="" src="<%=ConfigurationManager.AppSettings["articleImagePath"] %>/<%=categoryArticle["picture"] %>"></a>
+                                    <%} %>	
+								
 								<div class="blog-grid-controls">
-									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Sep. 19 2014"><i class="fa fa-clock-o"></i></a>
-<%--									<a href="#" title="5 Comments"><i class="fa fa-comments"></i></a>--%>
-									<a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
+                                    <%if(String.IsNullOrEmpty(categoryArticle["urlName"])){ %>
+                                        <a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="<%=categoryArticle["dateCreated"] %>"><i class="fa fa-clock-o"></i></a>
+                                        <a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
+                                    <%}else{ %>
+                                        <a href="/blog/<%=categoryArticle["urlName"] %>" title="<%=categoryArticle["dateCreated"] %>"><i class="fa fa-clock-o"></i></a>
+                                        <a href="/blog/<%=categoryArticle["urlName"] %>" title="Continue Reading"><i class="fa fa-arrow-right"></i></a>
+                                    <%} %>
 								</div>
 								<div class="blog-grid-content">
-									<h3><a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><%=categoryArticle["header"] %></a></h3>									
-<%--                                    <%= categoryArticle["body"] %>--%>
+                                    <%if(String.IsNullOrEmpty(categoryArticle["urlName"])){ %>
+									    <h3><a href="/blog.aspx?id=<%=categoryArticle["id"] %>&cat=<%=categoryArticle["categoryId"]  %>"><%=categoryArticle["header"] %></a></h3>	
+                                    <%}else{ %>
+									    <h3><a href="/blog/<%=categoryArticle["urlName"]%>"><%=categoryArticle["header"] %></a></h3>	
+                                    <%} %>								
 								</div>
 							</div>
 						</div>

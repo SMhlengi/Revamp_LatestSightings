@@ -87,7 +87,7 @@
                             
             <!-- 300x250 AD -->
             <div class="ad300">
-                <img src="images/ads-300x250.gif" width="300" height="250">
+                <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
 			</div>
             <!-- 300x250 AD -->
                             

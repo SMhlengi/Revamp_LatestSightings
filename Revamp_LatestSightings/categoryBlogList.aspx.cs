@@ -28,15 +28,27 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            featuredCategory = new List<GalleryItem>();
-            featuredCategory = Galleries.GetFeatured(Galleries.GalleryType.Category);
-            LoadFeaturedCategoryArticles();
-            LoadFeaturedCategories();
-            loadLatestGalleries();
-            LoadLatestMonthlyContributors();
-            LoadTopEarningVideos();
-            LoadAd();
+            if (HasCategoryUrl())
+            {
+                string categoryUrl = Request.QueryString["p"].ToString();
+                categoryId = Convert.ToInt32(library.GetCategoryUrlId(categoryUrl));
+                featuredCategory = new List<GalleryItem>();
+                featuredCategory = Galleries.GetFeatured(Galleries.GalleryType.Category);
+                LoadFeaturedCategoryArticles();
+                LoadFeaturedCategories();
+                loadLatestGalleries();
+                LoadLatestMonthlyContributors();
+                LoadTopEarningVideos();
+                LoadAd();
+            }
 
+        }
+
+        private bool HasCategoryUrl()
+        {
+            if (!String.IsNullOrEmpty(Request.QueryString["p"].ToString()))
+                return true;
+            return false;
         }
 
         private void LoadAd()
@@ -58,16 +70,18 @@ namespace Revamp_LatestSightings
             cateogryArticles = new List<Dictionary<string, string>>();
             List<Dictionary<string, string>> c_articles = new List<Dictionary<string, string>>();
             
-            if (!string.IsNullOrEmpty(Request.QueryString["id"]))
-            {
-                categoryId = Convert.ToInt32(Request.QueryString["id"]);
-            }
+            //if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+            //{
+            //    categoryId = Convert.ToInt32(Request.QueryString["id"]);
+            //}
 
             c_articles = library.GetArticlesBasedOnCategoryId(Convert.ToInt32(categoryId), true);
             foreach (var article in c_articles)
             {
                 if (article["header"].Length > 65)
                     article["header"] = article["header"].Substring(0, 60) + " ...";
+                if (!String.IsNullOrEmpty(article["urlName"]))
+                    article["urlName"] = article["urlName"].Replace(" ", "_");
                 cateogryArticles.Add(article);
             }
         }
