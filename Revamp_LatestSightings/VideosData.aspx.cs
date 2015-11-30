@@ -163,7 +163,8 @@ namespace Revamp_LatestSightings
                 {
                     if (vidAnalytics.Earning > 0)
                     {
-                        returnValue = "R" + ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.Earning).ToString();
+                        //returnValue = "R" + ApplyRevenueShare("", vidAnalytics.Id, vidAnalytics.Earning).ToString();
+                        returnValue = "R" + RoundtoTwo(vidAnalytics.Earning).ToString();
                     }
                     else if (vidAnalytics.EstimatedEarning > 0)
                     {

@@ -89,7 +89,7 @@ namespace Revamp_LatestSightings
                     item.Year = analytic.Year;
                     item.Month = analytic.Month;
                     item.ItemMonth = analytic.Year.ToString() + " " + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(analytic.Month);
-                    item.YouTubeEarnings = analytic.Earning > 0 ? "R" + ApplyRevenueShare(videoId, "", analytic.Earning).ToString() : "$" + ApplyRevenueShare(videoId, "", analytic.EstimatedEarning).ToString();
+                    item.YouTubeEarnings = analytic.Earning > 0 ? "R" + RoundtoTwo(analytic.Earning).ToString() : "$" + ApplyRevenueShare(videoId, "", analytic.EstimatedEarning).ToString();
                     item.Views = analytic.Views;
                     UpdateThirdPartyPayments(ref item, thirdPayments);
 
