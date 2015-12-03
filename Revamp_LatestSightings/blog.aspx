@@ -16,12 +16,21 @@
                         	
             <!-- Blog BEGIN -->
             <h1 class="main-title" style="margin-top:0px !important;"><%= article["header"] %></h1>
-                            
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="fb-like" data-href="http://latestsightings.com/blog/<%=BlogUrlTitle %>" data-layout="button_count" data-action="recommend" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="col-md-3">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://latestsightings.com/blog/<%=BlogUrlTitle %>" data-dnt="false" data-text="<% =blog_friendlyTitle.Trim() %> @LatestKruger">Tweet</a>
+                                <script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+                </div>
+            </div>
+            <br />
             <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
                 <div class="blog-list-featured-image">
                     <a href="javascript:void(0);"><img alt="" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%= article["picture"] %>"></a>
                 </div>
-                                
+                     
                 <div class="blog-details">
 							<span class="blog-date"><%= article["dateCreated"] %></span>
 						</div>
