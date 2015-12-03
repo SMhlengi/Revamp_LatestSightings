@@ -68,7 +68,7 @@
                             
             <!-- Facebook Comments BEGIN -->
             <h4 class="page-titles">Join the Conversation</h4>
-            <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/blog.aspx?id=<%=categoryId %>&cat=<%=categoryId %>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
+            <div class="fb-comments" data-href="http://latestsightings.com/blog/<%=BlogUrlTitle %>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
             <!-- Facebook Comments END -->
                             
         <!-- LEFT Content END -->

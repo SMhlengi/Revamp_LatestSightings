@@ -14,6 +14,8 @@ namespace Revamp_LatestSightings
         protected int categoryId;
         protected int articleId;
         protected Dictionary<string, string> article = null;
+        protected string blog_friendlyTitle = "";
+        protected string BlogUrlTitle = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             GetParameters();
@@ -46,7 +48,8 @@ namespace Revamp_LatestSightings
         {
             this.Master.overRideMeta = true;
             this.Master.desc = article["header"];
-            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "blog.aspx?id=" + articleId + "&cat=" + categoryId;
+            this.Master.title = article["header"];
+            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "/blog/" + BlogUrlTitle;
             this.Master.imgUrl = ConfigurationManager.AppSettings["articleImagePath"] + article["picture"];     
         }
 
@@ -85,6 +88,8 @@ namespace Revamp_LatestSightings
             else
             {
                 article =  library.GetArticle("'" + Request.QueryString["p"].ToString().Replace("_", " ") + "'", true);
+                blog_friendlyTitle = Request.QueryString["p"].ToString().Replace("_", " ");
+                BlogUrlTitle = Request.QueryString["p"].ToString();
                 categoryId = Convert.ToInt32(article["categoryId"]);
             }
         }

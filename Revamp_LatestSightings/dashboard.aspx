@@ -11,11 +11,16 @@
             display: none;
         }
 
+    #content-inner{
+        height: 755px !important;
+    }
+
     </style>
     <script>
         function ShowSpinner() {
             $(".registerSpinner").show();
         }
+
     </script>
 <%--    <form id="mainform" runat="server">--%>
                 <div class="mainpanel">

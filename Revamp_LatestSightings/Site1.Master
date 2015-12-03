@@ -18,7 +18,7 @@
 
     <title>Live Wild Animal Reports in Kruger & Other National Parks</title>
     <%if (overRideMeta){ %>
-        <meta property="og:title" content="Latest Sightings" />
+        <meta property="og:title" id="title_m" name="title_m" />
         <meta property="og:description" id="description" name="description" /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" id="articleUrl" name="articleUrl" />

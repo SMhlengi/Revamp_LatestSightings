@@ -15,6 +15,7 @@ namespace Revamp_LatestSightings
         public string desc { get; set; }
         public string artUrl { get; set; }
         public string imgUrl { get; set; }
+        public string title { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace Revamp_LatestSightings
 
             if (overRideMeta)
             {
+                title_m.Attributes.Add("content", title);
                 description.Attributes.Add("content", desc);
                 articleUrl.Attributes.Add("content", artUrl);
                 image.Attributes.Add("content", imgUrl);
