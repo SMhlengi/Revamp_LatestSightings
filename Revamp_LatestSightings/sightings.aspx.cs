@@ -13,7 +13,6 @@ namespace Revamp_LatestSightings
     {
         protected string tingId { get; set; }
         Dictionary<string, string> ting = new Dictionary<string, string>();
-        protected List<GalleryItem> topFeaturedArticles = null;
         protected List<Dictionary<string, string>> latestBlogs = null;
         protected string stringMonth = "";
 
@@ -22,13 +21,13 @@ namespace Revamp_LatestSightings
 
             if (HasTingParameter())
             {
-                topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
                 latestBlogs = library.GetLatestCompletedArticles(4);
                 GetMonthlyContributors();
                 LoadTopEarningVideos();
                 LoadLasteBLogs();
                 loadLatestGalleries();
                 loadAds();
+                loadTopStories();
 
                 tingId = Request.QueryString["id"].ToString();
                 ting = library.GetTingInfo(tingId);
@@ -39,6 +38,12 @@ namespace Revamp_LatestSightings
 
             }
 
+        }
+
+        private void loadTopStories()
+        {
+            uc_top_stories topstories = (uc_top_stories)LoadControl("~/uc_top_stories.ascx");
+            TopStories.Controls.Add(topstories);
         }
 
         private bool HasTingParameter()

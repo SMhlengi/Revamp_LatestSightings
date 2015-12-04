@@ -125,25 +125,9 @@
 						<div class="rightcol">
 							<div id="sidebar-area">
                                                         
-                            <% if (topFeaturedArticles != null && topFeaturedArticles.Count > 0){ %> 
-                                <!-- Top Stories BEGIN -->
-                                <h4 class="page-titles">Top Stories</h4>
-                            
-							    <div class="widget widget_recentposts">
-                               
-                                        <% foreach(var article in topFeaturedArticles){ %>
-                                             <div class="media recent-posts">
-									            <a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%= ConfigurationManager.AppSettings["articleImagePath"] %>/<%=article.Url %>"></a>
-									            <div class="media-body">
-										            <h4 class="media-heading"><a href="/blog.aspx?id=<%=article.Id %>&cat=<%=article.CateogryId %>"><%=article.Title %></a></h4>
-									            </div>
-								            </div>
-                                        <%} %>
-                                
-                                
-							    </div>
-                                <!-- Top Stories END -->
-                            <%} %>
+                            <!-- Top Stories BEGIN -->
+                             <asp:PlaceHolder ID="TopStories" runat="server"></asp:PlaceHolder>
+                            <!-- Top Stories END -->
                             
                             <div class="clearfix"></div>
                             <asp:PlaceHolder ID="topTenContributors" runat="server"></asp:PlaceHolder>

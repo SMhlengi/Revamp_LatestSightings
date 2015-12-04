@@ -12,17 +12,22 @@ namespace Revamp_LatestSightings
 
     public partial class partnership : System.Web.UI.Page
     {
-        protected List<GalleryItem> topFeaturedArticles = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
             LoadTopEarningVideos();
             LoadLasteBLogs();
             SetUpMetaTags();
             loadAds();
+            loadTopStories();
+        }
+
+        private void loadTopStories()
+        {
+            uc_top_stories topstories = (uc_top_stories)LoadControl("~/uc_top_stories.ascx");
+            TopStories.Controls.Add(topstories);
         }
 
         private void SetUpMetaTags()

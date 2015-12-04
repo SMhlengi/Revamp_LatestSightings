@@ -11,13 +11,12 @@ namespace Revamp_LatestSightings
 {
     public partial class aboutus : System.Web.UI.Page
     {
-        protected List<GalleryItem> topFeaturedArticles = null;
         protected List<Dictionary<string, string>> latestBlogs = null;
         protected string stringMonth = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
+            loadTopStories();
             latestBlogs = library.GetLatestCompletedArticles(4);
             SetPageMetaData();
             GetMonthlyContributors();
@@ -25,6 +24,12 @@ namespace Revamp_LatestSightings
             LoadLasteBLogs();
             loadLatestGalleries();
             loadAds();
+        }
+
+        private void loadTopStories()
+        {
+            uc_top_stories topstories = (uc_top_stories)LoadControl("~/uc_top_stories.ascx");
+            TopStories.Controls.Add(topstories);
         }
 
         private void loadAds()

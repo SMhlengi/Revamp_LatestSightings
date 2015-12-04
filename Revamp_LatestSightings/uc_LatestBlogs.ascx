@@ -6,9 +6,9 @@
 <div class="widget widget_recentposts">
     <%foreach (var lastestArticle in latestBlogs){ %>
 		<div class="media recent-posts">
-			<a href="/blog.aspx?id=<%=lastestArticle["id"] %>&cat=<%=lastestArticle["categoryid"] %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"]%>/<%= lastestArticle["picture"].ToString() %>"></a>
+			<a href="/blog/<%=lastestArticle["urlName"].Replace(" ","_") %>" class="pull-left"><img alt="" class="media-object sixtyBySixty" src="<%=ConfigurationManager.AppSettings["articleImagePath"]%>/<%= lastestArticle["picture"].ToString() %>"></a>
 			<div class="media-body">
-				<h4 class="media-heading"><a href="/blog.aspx?id=<%=lastestArticle["id"] %>&cat=<%=lastestArticle["categoryid"]  %>"><%= lastestArticle["header"].ToString() %></a></h4>
+				<h4 class="media-heading"><a href="/blog/<%=lastestArticle["urlName"].Replace(" ","_") %>"><%= lastestArticle["header"].ToString() %></a></h4>
 			</div>
 		</div>
     <%} %>

@@ -13,7 +13,6 @@ namespace Revamp_LatestSightings
     {
         protected List<GalleryItem> videoGallery = null;
         protected List<GalleryItem> imageGallery = null;
-        protected List<GalleryItem> topFeaturedArticles = null;
         protected List<Dictionary<string, string>> latestBlogs = null;
         protected string stringMonth = "";
         protected int imageCounter = 0; 
@@ -21,13 +20,20 @@ namespace Revamp_LatestSightings
         {
             videoGallery = Galleries.GetGallery(Galleries.GalleryType.Video, 8);
             imageGallery = Galleries.GetGallery(Galleries.GalleryType.Image, 8);
-            topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
             latestBlogs = library.GetLatestCompletedArticles(4);
             stringMonth = utils.FullyQualifiedMonthName(DateTime.Now.Month);
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
             LoadTopEarningVideos();
             loadAds();
+            loadTopStories();
+        }
+
+
+        private void loadTopStories()
+        {
+            uc_top_stories topstories = (uc_top_stories)LoadControl("~/uc_top_stories.ascx");
+            TopStories.Controls.Add(topstories);
         }
 
         private void loadAds()

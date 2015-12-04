@@ -13,7 +13,6 @@ namespace Revamp_LatestSightings
     {
         public List<Dictionary<string, string>> parkTings = new List<Dictionary<string, string>>();
         public Guid parkid;
-        protected List<GalleryItem> topFeaturedArticles = null;
         protected List<Dictionary<string, string>> latestBlogs = null;
         protected string stringMonth = "";
 
@@ -21,13 +20,13 @@ namespace Revamp_LatestSightings
         {
             if (HasParkId())
             {
-                topFeaturedArticles = Galleries.GetFeatured(Galleries.GalleryType.Article);
                 latestBlogs = library.GetLatestCompletedArticles(4);
                 GetMonthlyContributors();
                 LoadTopEarningVideos();
                 LoadLasteBLogs();
                 loadLatestGalleries();
                 loadAds();
+                loadTopStories();
 
                 parkid = new Guid(Request.QueryString["id"].ToString());
                 parkTings = library.GetParkTingsByDate(parkid);
@@ -36,6 +35,12 @@ namespace Revamp_LatestSightings
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "", functionCall, true);
 
             }
+        }
+
+        private void loadTopStories()
+        {
+            uc_top_stories topstories = (uc_top_stories)LoadControl("~/uc_top_stories.ascx");
+            TopStories.Controls.Add(topstories);
         }
 
         private bool HasParkId()
