@@ -297,6 +297,7 @@
     <Content Include="uc_tings.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
     <Content Include="uc_top_earning_videos.ascx" />
+    <Content Include="uc_top_stories.ascx" />
     <Content Include="uc_tvLodge_Tings.ascx" />
     <Content Include="uc_videoSearchResults.ascx" />
     <Content Include="UserFinancials.aspx" />
@@ -705,6 +706,13 @@
     </Compile>
     <Compile Include="uc_top_earning_videos.ascx.designer.cs">
       <DependentUpon>uc_top_earning_videos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_top_stories.ascx.cs">
+      <DependentUpon>uc_top_stories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_top_stories.ascx.designer.cs">
+      <DependentUpon>uc_top_stories.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_tvLodge_Tings.ascx.cs">
       <DependentUpon>uc_tvLodge_Tings.ascx</DependentUpon>
