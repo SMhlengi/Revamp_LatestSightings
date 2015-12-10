@@ -11,7 +11,11 @@ function setBBTitles() {
         $($("#thumbnails span")[i]).html(BILLBOARDS[i].Title);
         $($("#slider .item h3")[i]).html(BILLBOARDS[i].Title);
         $($("#slider .item p")[i]).html(BILLBOARDS[i].ArticleBody);
-        $($("#slider .item a")[i]).attr("href", "/blog.aspx?id=" + BILLBOARDS[i].Id + "&cat=" + BILLBOARDS[i].CateogryId);
+        if (BILLBOARDS[i].Url2 != "" && BILLBOARDS[i].Url2 != null) {
+            $($("#slider .item a")[i]).attr("href", "/blog/" + BILLBOARDS[i].Url2.replace(/ /g, "_"));
+        }else{
+            $($("#slider .item a")[i]).attr("href", "/blog.aspx?id=" + BILLBOARDS[i].Id + "&cat=" + BILLBOARDS[i].CateogryId);
+        }
     }
 }
 

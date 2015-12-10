@@ -22,7 +22,6 @@ namespace Revamp_LatestSightings
                 LoadFeaturedCategories();
                 LoadLatestMonthlyContributors();
                 LoadTopEarningVideos();
-                LoadTopEarningVideos();
                 LoadLatestBlogs();
                 loadOtherRelatedArticles();
                 loadAds();
