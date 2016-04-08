@@ -12,8 +12,8 @@ namespace Revamp_LatestSightings
         private const string SQL_INSERT_PERSON = "INSERT INTO latestsightings.dbo.people (id, firstname, lastname, email, password, active, role, cellNumber, telNumber, otherContact, twitter, facebook, skype, address, banking, paypal) VALUES (@id, @firstname, @lastname, @email, @password, @active, @role, @cellNumber, @telNumber, @otherContact, @twitter, @facebook, @skype, @address, @banking, @paypal);";
         private const string SQL_UPDATE_PERSON = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, password = @password, active = @active, role = @role, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, modified = @modified WHERE (id = @id);";
         private const string SQL_SELECT_PERSON = "SELECT firstname, lastname, id FROM latestsightings.dbo.people WHERE (email = @email and password = @password);";
-        private const string SQL_SELECT_PERSON_BASED_ON_EMAIL = "SELECT firstname, lastname FROM latestsightings.dbo.people WHERE (email = @email);";
-        private const string SQL_UPDATE_PASSWORD = "UPDATE latestsightings.dbo.people SET password = @password where (email = @email);";
+        private const string SQL_SELECT_PERSON_BASED_ON_EMAIL = "SELECT firstname, lastname, id FROM latestsightings.dbo.people WHERE (email = @email);";
+        private const string SQL_UPDATE_PASSWORD = "UPDATE latestsightings.dbo.people SET password = @password where (id = @userid);";
         private const string SQL_SELECT_ALL_PERSON_RECORD = "Select * from latestsightings.dbo.people where (id = @id);";
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
@@ -150,6 +150,7 @@ namespace Revamp_LatestSightings
                         status["firstname"] = data["firstname"].ToString();
                         status["lastname"] = data["lastname"].ToString();
                         status["email"] = emailaddress;
+                        status["id"] = data["id"].ToString();
                     }
                 }
                 conn.Close();
@@ -171,7 +172,7 @@ namespace Revamp_LatestSightings
             {
                 conn.Open();
                 query.CommandText = SQL_UPDATE_PASSWORD;
-                query.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = email;
+                query.Parameters.Add("userid", System.Data.SqlDbType.VarChar).Value = email;
                 query.Parameters.Add("password", System.Data.SqlDbType.VarChar).Value = password;
                 query.ExecuteNonQuery();
                 status = true;
@@ -218,6 +219,7 @@ namespace Revamp_LatestSightings
                         person["branchname"] = data["branchName"].ToString();
                         person["branchcode"] = data["branchCode"].ToString();
                         person["active"] = data["active"].ToString();
+                        person["id"] = data["id"].ToString();
 
                     }
                     data.Close();

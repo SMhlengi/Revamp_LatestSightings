@@ -62,8 +62,18 @@ namespace Revamp_LatestSightings
         [WebMethod]
         public static bool SendForgottonPasswordEmail(string email)
         {
-            bool status = utils.SendForgottonPasswordEmail(email);
-            return status;
+            SqlConnection conn = new SqlConnection();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader data = null;
+            Dictionary<string, string> userRecord = new Dictionary<string, string>();
+            userRecord = DataLayer.DoesEmailExists(email, conn, query, data);
+            if (userRecord["doesEmailExits"] == "false")
+                return false;
+            else
+            {
+                bool status = utils.SendForgottonPasswordEmail(email, userRecord["id"].ToString());
+                return status;
+            }
         }
 
         [WebMethod]

@@ -11,22 +11,26 @@ namespace Revamp_LatestSightings
     public partial class resetpassword : System.Web.UI.Page
     {
         private string emailaddress { get; set; }
+        private string userID { get; set; }
         protected Dictionary<string, string> status = new Dictionary<string, string>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(HttpContext.Current.Request.QueryString["email"]))
+            if (!String.IsNullOrEmpty(HttpContext.Current.Request.QueryString["email"]))
+            {
                 RedirectToHomeUrl();
+            }
+            else if (!String.IsNullOrEmpty(HttpContext.Current.Request.QueryString["id"]))
+            {
+                SqlConnection conn = new SqlConnection();
+                SqlCommand query = new SqlCommand();
+                SqlDataReader data = null;
 
-            SqlConnection conn = new SqlConnection();
-            SqlCommand query = new SqlCommand();
-            SqlDataReader data = null;
+                userID = GetUserID();
 
-            emailaddress = GetEmailAddress();
-
-            status = DataLayer.DoesEmailExists(emailaddress, conn, query, data);
-            if (status["doesEmailExits"] == "false")
-                RedirectToHomeUrl();
-
+                status = DataLayer.GetUserProfile(userID, conn, query, data);
+                if (status["recordExist"] == "false")
+                    RedirectToHomeUrl();
+            }
         }
 
         private void RedirectToHomeUrl()
@@ -37,6 +41,11 @@ namespace Revamp_LatestSightings
         private string GetEmailAddress()
         {
             return HttpContext.Current.Request.QueryString["email"];
+        }
+
+        private string GetUserID()
+        {
+            return HttpContext.Current.Request.QueryString["id"];
         }
     }
 }

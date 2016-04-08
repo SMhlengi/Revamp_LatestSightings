@@ -23,7 +23,7 @@
 	    }
     </style>
 
-            <input type="hidden" value="<%=status["email"] %>" id="email" />
+            <input type="hidden" value="<%=status["id"] %>" id="email" />
 
     <!-- Main Container Section -->			
     <div class="container panel-signup">

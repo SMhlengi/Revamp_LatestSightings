@@ -120,33 +120,64 @@ namespace Revamp_LatestSightings
             return EmailMessage;
         }
 
-        public static bool SendForgottonPasswordEmail(string emailAddress)
+        public static bool SendForgottonPasswordEmail(string emailAddress, string userId = "")
         {
-            bool mailSent = false;
-            string url = ConfigurationManager.AppSettings["forgottenPasswordUrl"].ToString();
-            url += emailAddress;
-            try
+            if (!String.IsNullOrEmpty(userId))
             {
-                MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", emailAddress);
-                SmtpClient smtpClient = new SmtpClient();
-                smtpClient.Port = 25;
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Host = "freeza.aserv.co.za";
-                NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
-                smtpClient.Credentials = (ICredentialsByHost)networkCredential;
-                message.Subject = "Latest Sightings Reset Password";
-                message.IsBodyHtml = true;
-                string emailMessage = ReturnResetPasswordMail(url);
+                bool mailSent = false;
+                string url = ConfigurationManager.AppSettings["forgottenPasswordUrlUsingUserID"].ToString();
+                url += userId;
+                try
+                {
+                    MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", emailAddress);
+                    SmtpClient smtpClient = new SmtpClient();
+                    smtpClient.Port = 25;
+                    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtpClient.UseDefaultCredentials = false;
+                    smtpClient.Host = "freeza.aserv.co.za";
+                    NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                    smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                    message.Subject = "Latest Sightings Reset Password";
+                    message.IsBodyHtml = true;
+                    string emailMessage = ReturnResetPasswordMail(url);
 
-                message.Body = emailMessage;
-                smtpClient.Send(message);
-                mailSent = true;
+                    message.Body = emailMessage;
+                    smtpClient.Send(message);
+                    mailSent = true;
+                }
+                catch (Exception ex)
+                {
+                }
+                return mailSent;
             }
-            catch (Exception ex)
+            else
             {
+                bool mailSent = false;
+                string url = ConfigurationManager.AppSettings["forgottenPasswordUrl"].ToString();
+                url += emailAddress;
+                try
+                {
+                    MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", emailAddress);
+                    SmtpClient smtpClient = new SmtpClient();
+                    smtpClient.Port = 25;
+                    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtpClient.UseDefaultCredentials = false;
+                    smtpClient.Host = "freeza.aserv.co.za";
+                    NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                    smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                    message.Subject = "Latest Sightings Reset Password";
+                    message.IsBodyHtml = true;
+                    string emailMessage = ReturnResetPasswordMail(url);
+
+                    message.Body = emailMessage;
+                    smtpClient.Send(message);
+                    mailSent = true;
+                }
+                catch (Exception ex)
+                {
+                }
+                return mailSent;
             }
-            return mailSent;
         }
 
         private static string ReturnResetPasswordMail(string url)
