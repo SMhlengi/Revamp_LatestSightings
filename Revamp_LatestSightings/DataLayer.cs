@@ -61,6 +61,7 @@ namespace Revamp_LatestSightings
                         userdata.Add("firstname", data["firstname"].ToString());
                         userdata.Add("lastname", data["lastname"].ToString());
                         userdata.Add("id", data["id"].ToString());
+                        userdata.Add("encreptedPassword", Encription.Encrypt(password));
                     }
                 }
                 conn.Close();

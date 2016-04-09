@@ -60,6 +60,27 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
+        public static Dictionary<string,string> DecreptPassword(string password)
+        {
+            Dictionary<string, string> decreptionResult = new Dictionary<string, string>();
+            decreptionResult.Add("decrepted", "false");
+
+            if (!String.IsNullOrEmpty(password))
+            {
+                decreptionResult["decrepted"] = "true";
+                decreptionResult["decreption"] = Encription.Decrypt(password);
+                
+            }
+            return decreptionResult;
+        }
+
+        [WebMethod]
+        public static string EncreptPassword(string password)
+        {
+            return Encription.Encrypt(password);
+        }
+
+        [WebMethod]
         public static bool SendForgottonPasswordEmail(string email)
         {
             SqlConnection conn = new SqlConnection();

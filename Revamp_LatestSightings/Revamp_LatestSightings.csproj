@@ -404,6 +404,7 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Encription.cs" />
     <Compile Include="forgottenPassword.aspx.cs">
       <DependentUpon>forgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

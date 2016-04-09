@@ -365,7 +365,7 @@
                     $("#userFullname").html(data.d.firstname + " " + data.d.lastname);
                     $(".successfullyLoggedIn").show();
                     if ($("#rememberMe").prop("checked")) {
-                        SetRememberCookie();
+                        SetRememberCookie(data.d.encreptedPassword);
                     }
                     setTimeout(function () { location.href = "/dashboard.aspx" }, 3500);
                 } else {
@@ -451,21 +451,79 @@
         }
     });
 
-    function SetRememberCookie() {
+    function SetRememberCookie(encreptedPassword) {
         $.cookie('lsrm', true, { expires: 100, path: '/' });
         $.cookie('lsusername', $("#email").val(), { expires: 100, path: '/' });
-        $.cookie('lspassword', $("#password").val(), { expires: 100, path: '/' });
+        $.cookie('lspassword', encreptedPassword, { expires: 100, path: '/' });
+        $.cookie('pencr', true, { expires: 100, path: '/' });
     }
 
     function LoginIfOnLoginPageAndRememberMeIsSet() {
         if (location.pathname.toLowerCase() == "/login" || location.pathname.toLowerCase() == "/login.aspx") {
-            if ($.cookie('lsrm', { path: '/' }) == "true") {
-                $("#email").val($.cookie('lsusername', { path: '/' }));
-                $("#password").val($.cookie('lspassword', { path: '/' }));
-                $("#rememberMe").attr("checked", true);
-                $(".submitLogin").click();
+            if ($.cookie('lsrm', { path: '/' }) == true) {
+                if (HasPasswordBeenEncreptedBefore() == false) {
+                    EncreptPassword($.cookie('lspassword', { path: '/' }));
+                } else {
+                    $("#email").val($.cookie('lsusername', { path: '/' }));
+                    DecreptPassword($.cookie('lspassword', { path: '/' }));
+                }
             }
         }
+    }
+
+    function HasPasswordBeenEncreptedBefore() {
+        if ($.cookie('pencr', { path: '/' }) == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function EncreptPassword(ps) {
+        var postUrl = "/AjaxOperation.aspx/EncreptPassword";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'password' : '" + ps + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                console.log(data);
+                $.cookie('lspassword', data.d, { expires: 100, path: '/' });
+                $.cookie('pencr', true, { expires: 100, path: '/' });
+                $("#email").val($.cookie('lsusername', { path: '/' }));
+                DecreptPassword($.cookie('lspassword', { path: '/' }));
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+
+    }
+
+    function DecreptPassword(p) {
+        var postUrl = "/AjaxOperation.aspx/DecreptPassword";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'password' : '" + p + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                console.log(data);
+                if (data.d.decrepted == "true") {                    
+                    $("#password").val(data.d.decreption);
+                    $("#rememberMe").attr("checked", true);
+                    $(".submitLogin").click();
+                }
+
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
     }
 
     $("#lscms2logout").click(function () {
