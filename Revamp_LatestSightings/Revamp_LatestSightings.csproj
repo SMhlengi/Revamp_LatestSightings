@@ -114,6 +114,7 @@
     <Content Include="css\responsivedataTables.responsive.css" />
     <Content Include="css\responsive_4_18_2015.css" />
     <Content Include="css\searchResults.css" />
+    <Content Include="css\Site.css" />
     <Content Include="css\style-blue.css" />
     <Content Include="css\style-gray.css" />
     <Content Include="css\style-orange.css" />
@@ -121,6 +122,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\style_backup_4_18_2015.css" />
     <Content Include="css\style.datatables.css" />
+    <Content Include="css\sweetalert.css" />
     <Content Include="css\swiper.css" />
     <Content Include="css\tvLodge.css" />
     <Content Include="dashboard.aspx" />
@@ -237,9 +239,11 @@
     <Content Include="js\jquery.jplayer.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\jquery.migrate.js" />
+    <Content Include="js\knockout-3.3.0.js" />
     <Content Include="js\LodgeTV.js" />
     <Content Include="js\LodgeWeb.js" />
     <Content Include="js\mlpushmenu.js" />
+    <Content Include="js\modernizr-2.6.2.js" />
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\modernizr.js" />
     <Content Include="js\navigate.js" />
@@ -252,11 +256,14 @@
     <Content Include="js\randomGray.js" />
     <Content Include="js\randomOrange.js" />
     <Content Include="js\randomRed.js" />
+    <Content Include="js\resumable.js" />
     <Content Include="js\scripts.js" />
     <Content Include="js\sighting.js" />
     <Content Include="js\SightingTingInfo.js" />
+    <Content Include="js\sweetalert.min.js" />
     <Content Include="js\swiper.js" />
     <Content Include="js\tvLodge_Tings.js" />
+    <Content Include="js\Upload.js" />
     <Content Include="js\validateVideoDetails.js" />
     <Content Include="js\validationLib.js" />
     <Content Include="js\waypoints.min.js" />
@@ -271,6 +278,7 @@
     <Content Include="register.aspx" />
     <Content Include="resetpassword.aspx" />
     <Content Include="ResizeImageTest.aspx" />
+    <Content Include="resumableFileUpload.aspx" />
     <Content Include="searchResults.aspx" />
     <Content Include="sightings.aspx" />
     <Content Include="terms.aspx" />
@@ -291,6 +299,7 @@
     <Content Include="uc_JavaScripts.ascx" />
     <Content Include="uc_LatestBlogs.ascx" />
     <Content Include="uc_latestGalleris.ascx" />
+    <Content Include="uc_resumableFileUpload.ascx" />
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
@@ -517,6 +526,13 @@
     <Compile Include="ResizeImageTest.aspx.designer.cs">
       <DependentUpon>ResizeImageTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="resumableFileUpload.aspx.cs">
+      <DependentUpon>resumableFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resumableFileUpload.aspx.designer.cs">
+      <DependentUpon>resumableFileUpload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="searchResults.aspx.cs">
       <DependentUpon>searchResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -664,6 +680,13 @@
     </Compile>
     <Compile Include="uc_latestGalleris.ascx.designer.cs">
       <DependentUpon>uc_latestGalleris.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_resumableFileUpload.ascx.cs">
+      <DependentUpon>uc_resumableFileUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_resumableFileUpload.ascx.designer.cs">
+      <DependentUpon>uc_resumableFileUpload.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_SiteHeader.ascx.cs">
       <DependentUpon>uc_SiteHeader.ascx</DependentUpon>
