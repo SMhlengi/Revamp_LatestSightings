@@ -12,6 +12,30 @@
         .sitemap, .footer{
             display:none;
         }
+
+        h2 {
+            font-weight: normal;
+            padding-left:20px;
+        }
+
+        .panel, .list-group-item{
+            background-color: transparent;
+        }
+
+        .container {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .row{
+            margin-right:0px;
+            margin-left:0px;
+        }
+
+        .panel-body{
+            padding:30px;
+        }
+
     </style>		
     <div class="container">
         <div id="page-content">
@@ -20,14 +44,20 @@
             <div id="content-inner">
     <div class="panel row">
         <h2>Upload files</h2>
-        <Button id="browseButton" class="btn btn-success fileinput-button" disabled.bind="disableUpload">
-            <i class="glyphicon glyphicon-plus"></i>
-            <span>Add files...</span>
-        </Button>
-        <button id="startButton" data-bind="click: doUpload" type="submit" class="btn btn-primary start">
-            <i class="glyphicon glyphicon-upload"></i>
-            <span>Start upload</span>
-        </button>
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#" id="browseButton" class="btn btn-success fileinput-button" disabled.bind="disableUpload">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Add files...</span>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <button id="startButton" data-bind="click: doUpload" type="button" class="btn btn-primary start">
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Start upload</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <ul class="list-group row">
