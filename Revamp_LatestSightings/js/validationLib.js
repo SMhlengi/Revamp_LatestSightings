@@ -460,7 +460,7 @@
 
     function LoginIfOnLoginPageAndRememberMeIsSet() {
         if (location.pathname.toLowerCase() == "/login" || location.pathname.toLowerCase() == "/login.aspx") {
-            if ($.cookie('lsrm', { path: '/' }) == true) {
+            if ($.cookie('lsrm', { path: '/' }) == "true") {
                 if (HasPasswordBeenEncreptedBefore() == false) {
                     EncreptPassword($.cookie('lspassword', { path: '/' }));
                 } else {
@@ -530,6 +530,7 @@
         $.cookie('lsrm', null, { path: '/' });
         $.cookie('lsusername', null, { path: '/' });
         $.cookie('lspassword', null, { path: '/' });
+        $.cookie('pencr', null, { path: '/' });
         location.href = "/";
     });
 
