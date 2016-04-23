@@ -54,7 +54,13 @@
             <div class="col-md-2">
                 <button id="startButton" data-bind="click: doUpload" type="button" class="btn btn-primary start">
                     <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start upload</span>
+                    <span data-bind="text: startUploadButtonText"></span>
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button id="startButton" data-bind="click: pauseUpload" type="button" class="btn btn-info start">
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Pause upload</span>
                 </button>
             </div>
         </div>
@@ -93,7 +99,7 @@
         </div>
         <div class="panel-body">
             <ul>
-                <li>Only image and video files (<strong>JPG, GIF, PNG, MP4, VID</strong>) are allowed in this demo (by default there is no file type restriction).</li>
+                <li>We need to put some text here saying the following browsers are supported Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
                 <li>Uploads will resume if you internet connection is interupted</li>
             </ul>
         </div>
@@ -107,7 +113,7 @@
 <script src="<%= ResolveUrl("~/js/knockout-3.3.0.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/sweetalert.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/resumable.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/upload.js?v=3") %>"></script>
+<script src="<%= ResolveUrl("~/js/upload.js?v=5") %>"></script>
 
 
 <!--bootstrap.css -->

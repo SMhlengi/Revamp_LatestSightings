@@ -6,7 +6,7 @@ $(document).ready(function () {
     vm = function ViewModel() {
         var self = this;
         self.filesToUpload = ko.observableArray();
-
+        self.startUploadButtonText = ko.observable("Start Upload");
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
@@ -87,7 +87,13 @@ $(document).ready(function () {
         };
         self.doUpload = function () {
             self.r.upload()
+            self.startUploadButtonText("Uploading...");
             self.disableUpload(true);
+        };
+
+        self.pauseUpload = function () {
+            self.r.pause();
+            self.startUploadButtonText("Resume");
         };
     };
 
