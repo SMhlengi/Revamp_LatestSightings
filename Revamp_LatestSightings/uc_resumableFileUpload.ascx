@@ -113,7 +113,6 @@
 <script src="<%= ResolveUrl("~/js/knockout-3.3.0.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/sweetalert.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/resumable.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/upload.js?v=5") %>"></script>
 
 
 <!--bootstrap.css -->
