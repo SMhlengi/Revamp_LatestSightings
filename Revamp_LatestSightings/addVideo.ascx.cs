@@ -16,6 +16,8 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            uc_dashboard_resumable_file_upload uc_rfu = (uc_dashboard_resumable_file_upload)LoadControl("~/uc_dashboard_resumable_file_upload.ascx");
+            fileup_resumable.Controls.Add(uc_rfu);
         }
 
         protected void Uploader1_FileUploaded(object sender, CuteWebUI.UploaderEventArgs args)

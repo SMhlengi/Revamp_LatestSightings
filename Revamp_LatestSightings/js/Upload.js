@@ -10,6 +10,7 @@ $(document).ready(function () {
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
+        self.r = new Resumable({ target: 'https://rfuapi.socialengine.co.za/api/File/Upload' });
         self.r.assignBrowse(document.getElementById('browseButton'));
         self.r.on('progress', function () {
             self.mainProgressBar((self.r.progress() * 100) + '%');

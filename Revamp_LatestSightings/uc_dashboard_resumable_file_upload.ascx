@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_resumableFileUpload.ascx.cs" Inherits="Revamp_LatestSightings.uc_resumableFileUpload" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_dashboard_resumable_file_upload.ascx.cs" Inherits="Revamp_LatestSightings.uc_dashboard_resumable_file_upload" %>
+
 
     <!-- Main Container Section -->	
 <link href="<%= ResolveUrl("~/css/sweetalert.css") %>" rel="stylesheet" type="text/css">
@@ -37,28 +38,23 @@
         }
 
     </style>		
-    <div class="container">
-        <div id="page-content">
-
-            <!-- Page Content Area -->
-            <div id="content-inner">
     <div class="panel row">
-        <h2>Upload files</h2>
+        <!--<h2>Upload files</h2>-->
         <div class="row">
-            <div class="col-md-2">
-                <a href="#" id="browseButton" class="btn btn-success fileinput-button" disabled.bind="disableUpload">
+            <div class="col-md-3">
+                <a href="#" id="browseButton" class="btn btn-success fileinput-button btn-block" disabled.bind="disableUpload">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
                 </a>
             </div>
-            <div class="col-md-2">
-                <button id="startButton" data-bind="click: doUpload" type="button" class="btn btn-primary start">
+            <div class="col-md-3">
+                <button id="startButton" data-bind="click: doUpload" type="button" class="btn btn-primary start btn-block">
                     <i class="glyphicon glyphicon-upload"></i>
                     <span data-bind="text: startUploadButtonText"></span>
                 </button>
             </div>
-            <div class="col-md-2">
-                <button id="startButton" data-bind="click: pauseUpload" type="button" class="btn btn-info start">
+            <div class="col-md-3">
+                <button id="startButton" data-bind="click: pauseUpload" type="button" class="btn btn-info start btn-block">
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Pause upload</span>
                 </button>
@@ -86,12 +82,12 @@
 
         </li>
     </ul>
-    <div class="progress row">
+<%--    <div class="progress row">
         <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="70"
              aria-valuemin="0" aria-valuemax="100" data-bind="style: {width: mainProgressBar()}">
             <span class="sr-only" data-bind="text: mainProgressBar + ' Complete'"></span>
         </div>
-    </div>
+    </div>--%>
 
     <div class="panel panel-default row">
         <div class="panel-heading">
@@ -99,12 +95,9 @@
         </div>
         <div class="panel-body">
             <ul>
-                <li>We need to put some text here saying the following browsers are supported Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
-                <li>Uploads will resume if you internet connection is interupted</li>
+                <li>This video upload is ONLY supported by the following browsers, Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
+                <li>If you not using one of the above browsers, please use our default file upload below</li>
             </ul>
-        </div>
-    </div>
-            </div>
         </div>
     </div>
 

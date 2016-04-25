@@ -11,6 +11,11 @@
 
 <% if (addVideoDetails == false){ %>
 <div class="row">
+    <div class="rfuploader">
+        <asp:PlaceHolder ID="fileup_resumable" runat="server"></asp:PlaceHolder>
+    </div>
+</div>
+<div class="row">
     <div class="dotNetUploader">
        <div class="col-md-9">
             <p class="text-primary havingTroubleUploading"><%--<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><strong> Having trouble uploading? </strong>--%> <a href="javascript:void(0);" class="btn btn-default launchDotNetUploader" role="button"  style="background-color: #5bc0de;color: black; text-decoration: none;">Add File (Max 2 Gigs )</a></p><br />
@@ -34,6 +39,7 @@
         </div>
     </div>
 </div>
+
 <%} %>
 
 <%if (addVideoDetails == true){ %>
