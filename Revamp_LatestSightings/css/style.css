@@ -4173,7 +4173,7 @@ max-width:160px;
     width:84%;
 }
 
-.videoDetailsFormContainer{
+.videoDetailsFormContainer, .updateVideoDetails{
     display:none;
 }
 

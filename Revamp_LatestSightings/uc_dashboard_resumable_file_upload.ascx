@@ -46,9 +46,9 @@
         <h2>Upload files</h2>
         <div class="row">
             <div class="col-md-3">
-                <a href="#" id="browseButton" class="btn btn-success fileinput-button btn-block" disabled.bind="disableUpload">
+                <a href="#" id="browseButton" class="btn btn-success fileinput-button btn-block" data-bind="disable: disableUpload()">
                     <i class="glyphicon glyphicon-plus"></i>
-                    <span>Add files...</span>
+                    <span>Add file </span>
                 </a>
             </div>
             <div class="col-md-3">
@@ -110,7 +110,7 @@
 <script src="<%= ResolveUrl("~/js/knockout-3.3.0.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/sweetalert.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/resumable.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/upload.js?v=9") %>"></script>
+<script src="<%= ResolveUrl("~/js/upload.js?v=14") %>"></script>
 
 
 <!--bootstrap.css -->

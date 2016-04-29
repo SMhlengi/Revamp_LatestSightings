@@ -74,10 +74,10 @@
                 </div>           
             </div><!-- panel-body -->
             <div>
-<%--                <div class="pull-left">
+                <div class="pull-left updateVideoDetails">
                     <a href="javascript:void(0)" class="btn btn-success updateVideoDetails" role="button">Save</a>
                     <!--<button class="btn btn-success updateVideoDetails">Save</button>-->
-                </div>--%>
+                </div>
                 <div class="pull-left marginLeftTen registerSpinner">
                     <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
@@ -192,4 +192,4 @@
     </div>
 <%} %>
 
-<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=4") %>"></script>
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=10") %>"></script>

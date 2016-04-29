@@ -122,10 +122,10 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool SaveVideoDetails(string videoTitle, string alias, string keywords, string notes)
+        public static bool SaveVideoDetails(string videoTitle, string alias, string keywords, string notes, string videofilename)
         {
             Boolean savedStatus = false;
-            if (HttpContext.Current.Session["userid"] != null && HttpContext.Current.Session["videofilename"] != null)
+            if (HttpContext.Current.Session["userid"] != null && !String.IsNullOrEmpty(videofilename))
             {
                 SqlConnection conn = new SqlConnection();
                 SqlCommand query = new SqlCommand();
@@ -135,7 +135,7 @@ namespace Revamp_LatestSightings
                 string recordId = "-1";
 
                 video = SetVideoObject(videoTitle, alias, keywords, notes, HttpContext.Current.Session["userid"].ToString(), video);
-                recordId = DataLayer.SaveVideoDetails(video, conn, query, Convert.ToString(HttpContext.Current.Session["videofilename"]));
+                recordId = DataLayer.SaveVideoDetails(video, conn, query, videofilename);
                 if (recordId != "-1")
                 {
                     userFullName = DataLayer.GetFullName(conn, query, HttpContext.Current.Session["userid"].ToString(), data);

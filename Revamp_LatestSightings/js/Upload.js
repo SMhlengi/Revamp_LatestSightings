@@ -31,6 +31,8 @@ $(document).ready(function () {
 
         });
         self.r.on('fileAdded', function (file, event) {
+            console.log("FILENAME");
+            console.log(file.fileName);
             self.filesToUpload.push({
                 fileName: file.fileName,
                 uniqueIdentifier: file.uniqueIdentifier,
@@ -41,6 +43,7 @@ $(document).ready(function () {
             //console.debug('fileAdded', event);
         });
         self.r.on('filesAdded', function (array) {
+            $("#browseButton").attr("disabled", true);
             //console.debug('filesAdded', array);
         });
         self.r.on('fileRetry', function (file) {
@@ -55,20 +58,10 @@ $(document).ready(function () {
             //console.debug('uploadStart');
         });
         self.r.on('complete', function () {
-            //console.debug('complete');
-            document.getElementById('progressBar').style.width = 100 + '%';
-            swal({
-                title: "Good job!",
-                text: "You uploaded your file successfully",
-                type: "success",
-                showCancelButton: false,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Finish",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },function(){
-                window.location.href = '';
-            });
+            //document.getElementById('progressBar').style.width = 100 + '%';
+
+            $(".updateVideoDetails").click();
+
         });
         self.r.on('error', function (message, file) {
             //console.debug('error', message, file);
@@ -81,6 +74,7 @@ $(document).ready(function () {
         });
 
         self.removeFile = function (file) {
+            $("#browseButton").attr("disabled", false);
             self.r.removeFile(file);
             for (var i = 0, iLen = self.filesToUpload().length; i < iLen; i++) {
                 if (self.filesToUpload()[i].uniqueIdentifier == file.uniqueIdentifier) {

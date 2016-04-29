@@ -151,7 +151,7 @@
         $.ajax({
             type: "POST",
             url: postUrl,
-            data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "'}",
+            data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "', 'videofilename' : '" + self.r.files[0].file.name + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).done(
@@ -162,9 +162,24 @@
                     //$("#alias").removeAttr("disabled");
                     //$("#keywords").removeAttr("disabled");
                     //$("#notes").removeAttr("disabled");
-                    $(".videoDetailsSaved").show();
+                    //$(".videoDetailsSaved").show();
+                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
 
-                    setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+                    swal({
+                        title: "Good job!",
+                        text: "You uploaded your file successfully. An administrator has been informed and will review your video and be in contact with you shortly",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Finish",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    }, function () {
+                        //$(".updateVideoDetails").click();
+                        window.location.href = '/dashboard.aspx';
+                        //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+                    });
+
                 } else {
                     $(".registerSpinner").hide();
                     $("#videoTitle").removeAttr("disabled");
