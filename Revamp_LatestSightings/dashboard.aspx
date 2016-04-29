@@ -12,7 +12,12 @@
         }
 
     #content-inner{
-        height: 755px !important;
+        height: 755px;
+    }
+
+    .videoDetailsForm {
+        padding-left:0px !important;
+        padding-top:10px !important;
     }
 
     </style>
@@ -66,10 +71,11 @@
                                     </div><!-- tab-pane -->
                                   
                                     <div class="tab-pane disabled" id="video">
+                                       <!-- HIDDING TERMS OF CONDITIONS WORK -->
                                         <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
-                                          <div class="uploadvideo">
+<%--                                          <div class="uploadvideo">
                                                 <div class="row tncRow">
-                                                    <div class="col-md-9">
+                                                    <div class="col-md-12">
                                                         <div class="alert alert-danger">
                                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                                             <strong>Please agree to Terms and Conditions before uploading video</strong> 
@@ -94,9 +100,12 @@
                                                         <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>--%>
+                                           <!-- END OF HIDING TERMS AND CONDITIONS WORK -->
                                         <asp:PlaceHolder ID="addVideoContent" runat="server" />
                                     </div><!-- tab-pane -->
+
+
                                     <div class="tab-pane disabled" id="image">
                                         <asp:PlaceHolder ID="plc_addImage" runat="server"></asp:PlaceHolder>
                                     </div>

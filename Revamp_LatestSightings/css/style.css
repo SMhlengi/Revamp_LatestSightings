@@ -3889,6 +3889,11 @@ input , select {
     margin-bottom: 25px;
 }
 
+.col-md-12 .alert-danger {
+    margin-top: 18px;
+    margin-bottom: 25px;
+}
+
 .form-control {
     color: black !important;
 }
@@ -4166,6 +4171,10 @@ max-width:160px;
 .arrowrow{
     margin:0 auto;
     width:84%;
+}
+
+.videoDetailsFormContainer{
+    display:none;
 }
 
 

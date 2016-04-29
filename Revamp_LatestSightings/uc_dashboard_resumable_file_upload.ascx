@@ -37,9 +37,13 @@
             padding:30px;
         }
 
+        .row h2{
+            margin-top:45px;
+        }
+
     </style>		
     <div class="panel row">
-        <!--<h2>Upload files</h2>-->
+        <h2>Upload files</h2>
         <div class="row">
             <div class="col-md-3">
                 <a href="#" id="browseButton" class="btn btn-success fileinput-button btn-block" disabled.bind="disableUpload">
@@ -96,7 +100,7 @@
         <div class="panel-body">
             <ul>
                 <li>This video upload is ONLY supported by the following browsers, Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
-                <li>If you not using one of the above browsers, please use our default file upload below</li>
+                <li>If you not using one of the above browsers, please update your browser</li>
             </ul>
         </div>
     </div>
@@ -106,7 +110,7 @@
 <script src="<%= ResolveUrl("~/js/knockout-3.3.0.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/sweetalert.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/resumable.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/upload.js?v=7") %>"></script>
+<script src="<%= ResolveUrl("~/js/upload.js?v=9") %>"></script>
 
 
 <!--bootstrap.css -->

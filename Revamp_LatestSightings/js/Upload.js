@@ -7,6 +7,7 @@ $(document).ready(function () {
         var self = this;
         self.filesToUpload = ko.observableArray();
         self.startUploadButtonText = ko.observable("Start Upload");
+        self.uploadHasStarted = ko.observable(false);
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
@@ -49,6 +50,8 @@ $(document).ready(function () {
             //console.debug('fileError', file, message);
         });
         self.r.on('uploadStart', function () {
+            self.uploadHasStarted(true);
+            $("#content-inner").css("height", "1000px");
             //console.debug('uploadStart');
         });
         self.r.on('complete', function () {
