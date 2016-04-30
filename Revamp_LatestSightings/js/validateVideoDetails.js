@@ -165,21 +165,6 @@
                     //$(".videoDetailsSaved").show();
                     //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
 
-                    swal({
-                        title: "Good job!",
-                        text: "You uploaded your file successfully. An administrator has been informed and will review your video and be in contact with you shortly",
-                        type: "success",
-                        showCancelButton: false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Finish",
-                        closeOnConfirm: false,
-                        closeOnCancel: false
-                    }, function () {
-                        //$(".updateVideoDetails").click();
-                        window.location.href = '/dashboard.aspx';
-                        //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
-                    });
-
                 } else {
                     $(".registerSpinner").hide();
                     $("#videoTitle").removeAttr("disabled");

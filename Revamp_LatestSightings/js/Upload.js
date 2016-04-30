@@ -60,9 +60,54 @@ $(document).ready(function () {
         self.r.on('complete', function () {
             //document.getElementById('progressBar').style.width = 100 + '%';
 
-            $(".updateVideoDetails").click();
+            //$(".updateVideoDetails").click();
+
+            swal({
+                title: "Good job!",
+                text: "You uploaded your file successfully. An administrator has been informed and will review your video and be in contact with you shortly",
+                type: "success",
+                showCancelButton: false,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Finish",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function () {
+                var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "', 'videofilename' : '" + self.r.files[0].file.name + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(
+                    function (data, textStatus, jqXHR) {
+                        if (data.d == true) {
+                            $(".registerSpinner").hide();
+                            //$("#videoTitle").removeAttr("disabled");
+                            //$("#alias").removeAttr("disabled");
+                            //$("#keywords").removeAttr("disabled");
+                            //$("#notes").removeAttr("disabled");
+                            //$(".videoDetailsSaved").show();
+                            //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+                            window.location.href= "/dashboard.aspx"
+
+                        } else {
+                            $(".registerSpinner").hide();
+                            $("#videoTitle").removeAttr("disabled");
+                            $("#alias").removeAttr("disabled");
+                            $("#keywords").removeAttr("disabled");
+                            $("#notes").removeAttr("disabled");
+                            $(".videoDetailsSavedError").show();
+                        }
+                    }
+                ).fail(
+                    function (data, textStatus, jqXHR) {
+                    }
+                );
+            });
 
         });
+
         self.r.on('error', function (message, file) {
             //console.debug('error', message, file);
         });

@@ -192,4 +192,4 @@
     </div>
 <%} %>
 
-<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=10") %>"></script>
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=13") %>"></script>
