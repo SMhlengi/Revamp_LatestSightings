@@ -3,6 +3,104 @@
 /// <reference path="~/Scripts/resumable.js" />
 $(document).ready(function () {
 
+    function ValidateVidDetails() {
+        var valid = true;
+        if (isEmpty("#videoTitle")) {
+            $("#videoTitle").parent().addClass("has-error");
+            $("div .videoTitle").show();
+            valid = false;
+        }
+
+        if (isEmpty("#alias")) {
+            $("#alias").parent().addClass("has-error");
+            $("div .alias").show();
+            valid = false;
+        }
+
+        if (isEmpty("#keywords")) {
+            $("#keywords").parent().addClass("has-error");
+            $("div .keywords").show();
+            valid = false;
+        }
+
+        if (isEmpty("#notes")) {
+            $("#notes").parent().addClass("has-error");
+            $("div .notes").show();
+            valid = false;
+        }
+        return valid;
+    }
+
+    function videoUploadWithVideoDetailsCompleted(videoTitle, alias, keywords, notes, filename) {
+        swal({
+            title: "Upload Complete !!",
+            text: "You uploaded your file successfully.",
+            type: "success",
+            showCancelButton: false,
+            confirmButtonText: "OK",
+            closeOnConfirm: true
+        });
+
+        setTimeout(function () {
+            $(".videoDetailsFormHeading").html("<strong>Saving video details. Please wait ...</strong>");
+            $(".videoDetailsFormHeading").removeClass("alert-success");
+            $(".videoDetailsFormHeading").addClass("alert-info");
+        }, 3000);
+
+        var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "', 'videofilename' : '" + filename + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    //$(".registerSpinner").hide();
+                    //$("#videoTitle").removeAttr("disabled");
+                    //$("#alias").removeAttr("disabled");
+                    //$("#keywords").removeAttr("disabled");
+                    //$("#notes").removeAttr("disabled");
+                    //$(".videoDetailsSaved").show();
+                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+
+                    swal({
+                        title: "Done !!",
+                        text: "Video Details saved successfully.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: false,
+                        html: false
+                    }, function () {
+                        window.location.href = "/dashboard.aspx"
+                    });
+
+                } else {
+                    $(".registerSpinner").hide();
+                    $("#videoTitle").removeAttr("disabled");
+                    $("#alias").removeAttr("disabled");
+                    $("#keywords").removeAttr("disabled");
+                    $("#notes").removeAttr("disabled");
+                    $(".videoDetailsSavedError").show();
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+    }
+
+    function isEmpty(control) {
+        if ($(control).val() == "") {
+            return true;
+        }
+        return false;
+    }
+
+
+
     vm = function ViewModel() {
         var self = this;
         self.filesToUpload = ko.observableArray();
@@ -59,52 +157,13 @@ $(document).ready(function () {
         });
         self.r.on('complete', function () {
             //document.getElementById('progressBar').style.width = 100 + '%';
+            var status = ValidateVidDetails();
+            if (status) {
+                // ($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val());
+                // videoTitle, alias, keywords, notes, filename
+                videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            }
 
-            //$(".updateVideoDetails").click();
-
-            swal({
-                title: "Good job!",
-                text: "You uploaded your file successfully. An administrator has been informed and will review your video and be in contact with you shortly",
-                type: "success",
-                showCancelButton: false,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Finish",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, function () {
-                var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
-                $.ajax({
-                    type: "POST",
-                    url: postUrl,
-                    data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "', 'videofilename' : '" + self.r.files[0].file.name + "'}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json"
-                }).done(
-                    function (data, textStatus, jqXHR) {
-                        if (data.d == true) {
-                            $(".registerSpinner").hide();
-                            //$("#videoTitle").removeAttr("disabled");
-                            //$("#alias").removeAttr("disabled");
-                            //$("#keywords").removeAttr("disabled");
-                            //$("#notes").removeAttr("disabled");
-                            //$(".videoDetailsSaved").show();
-                            //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
-                            window.location.href= "/dashboard.aspx"
-
-                        } else {
-                            $(".registerSpinner").hide();
-                            $("#videoTitle").removeAttr("disabled");
-                            $("#alias").removeAttr("disabled");
-                            $("#keywords").removeAttr("disabled");
-                            $("#notes").removeAttr("disabled");
-                            $(".videoDetailsSavedError").show();
-                        }
-                    }
-                ).fail(
-                    function (data, textStatus, jqXHR) {
-                    }
-                );
-            });
 
         });
 

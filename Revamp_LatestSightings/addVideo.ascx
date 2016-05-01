@@ -31,8 +31,7 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <h3><span class="label label-primary">Please provide us with the below information of the uploaded video</span></h3>
-                        <!--<p class="text-success seperation">Please provide us with the below information of the uploaded video</p>-->
+                        <div class="alert alert-success videoDetailsFormHeading" role="alert"> <strong>Please provide us with the below information of the uploaded video</strong></div>
                     </div>
                     <div class="col-md-1"></div>
                 </div>
@@ -133,7 +132,8 @@
                     <a href="" class="panel-close tooltips" data-toggle="tooltip" title="" data-original-title="Close Panel"><i class="fa fa-times"></i></a>
                 </div><!-- panel-btns -->
                 <h4 class="panel-title">Hi <strong><%= name %></strong></h4>
-                    <p class="text-success seperation">Please provide us with the below information of the uploaded video</p>
+                    <!--<p class="text-success seperation">Please provide us with the below information of the uploaded video</p>-->
+                    <div class="alert alert-success" role="alert"> Please provide us with the below information of the uploaded video. </div>
             </div><!-- panel-heading -->
             <div class="panel-body">
                 <div class="row">
@@ -192,4 +192,4 @@
     </div>
 <%} %>
 
-<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=13") %>"></script>
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=16") %>"></script>

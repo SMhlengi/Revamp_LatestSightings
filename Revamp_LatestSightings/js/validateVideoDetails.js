@@ -146,6 +146,68 @@
         return false;
     }
 
+    // 
+    // An administrator has been informed and will review your video and will be in contact with you shortly.
+    function videoUploadWithVideoDetailsCompleted(videoTitle, alias, keywords, notes, filename) {
+        swal({
+            title: "Upload Complete !!",
+            text: "You uploaded your file successfully.",
+            type: "success",
+            showCancelButton: false,
+            confirmButtonText: "OK",
+            closeOnConfirm: true
+        });
+
+        setTimeout(function () {
+            $("h3 span").text("Saving video deatils. Please wait ...");
+            $("h3 span").attr("class", "label label-info");
+        }, 3000);
+
+        var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "', 'videofilename' : '" + filename + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    //$(".registerSpinner").hide();
+                    //$("#videoTitle").removeAttr("disabled");
+                    //$("#alias").removeAttr("disabled");
+                    //$("#keywords").removeAttr("disabled");
+                    //$("#notes").removeAttr("disabled");
+                    //$(".videoDetailsSaved").show();
+                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+
+                    swal({
+                        title: "Done !!",
+                        text: "Video Details saved successfully.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: false,
+                        html: false
+                    }, function () {
+                        window.location.href = "/dashboard.aspx"
+                    });
+
+                } else {
+                    $(".registerSpinner").hide();
+                    $("#videoTitle").removeAttr("disabled");
+                    $("#alias").removeAttr("disabled");
+                    $("#keywords").removeAttr("disabled");
+                    $("#notes").removeAttr("disabled");
+                    $(".videoDetailsSavedError").show();
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+    }
+
     function UpdateVideoDetails(videoTitle, alias, keywords, notes) {
         var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
         $.ajax({
