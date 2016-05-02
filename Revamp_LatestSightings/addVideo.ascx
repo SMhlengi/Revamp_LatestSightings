@@ -75,7 +75,6 @@
             <div>
                 <div class="pull-left updateVideoDetails">
                     <a href="javascript:void(0)" class="btn btn-success updateVideoDetails" role="button">Save</a>
-                    <!--<button class="btn btn-success updateVideoDetails">Save</button>-->
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
                     <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
@@ -192,4 +191,4 @@
     </div>
 <%} %>
 
-<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=16") %>"></script>
+<script src="<%= ResolveUrl("~/js/validateVideoDetails.js?v=17") %>"></script>

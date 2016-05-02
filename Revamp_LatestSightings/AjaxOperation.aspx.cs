@@ -138,9 +138,17 @@ namespace Revamp_LatestSightings
                 recordId = DataLayer.SaveVideoDetails(video, conn, query, videofilename);
                 if (recordId != "-1")
                 {
-                    userFullName = DataLayer.GetFullName(conn, query, HttpContext.Current.Session["userid"].ToString(), data);
-                    if (!String.IsNullOrEmpty(userFullName))
-                        savedStatus = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userFullName, videoTitle, recordId);
+                    if (recordId != "-2") // not a duplicate video
+                    {
+                        userFullName = DataLayer.GetFullName(conn, query, HttpContext.Current.Session["userid"].ToString(), data);
+                        if (!String.IsNullOrEmpty(userFullName))
+                            savedStatus = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userFullName, videoTitle, recordId);
+                    }
+                    else
+                    {
+                        savedStatus = true;
+                    }
+
                 }
             }
             return savedStatus;

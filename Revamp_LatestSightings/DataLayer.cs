@@ -17,7 +17,7 @@ namespace Revamp_LatestSightings
         private const string SQL_SELECT_ALL_PERSON_RECORD = "Select * from latestsightings.dbo.people where (id = @id);";
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
-
+        private const string SQL_DOES_VIDEO_EXIST = "SELECT TOP 1 filename from latestsightings.dbo.videos WHERE (filename = @name)";
         private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment, title) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment, @title);";
        
         private const string SQL_SELECT_PERSON_VIDEOS = "Select * from latestsightings.dbo.videos where (contributor = @contributor);";
@@ -282,44 +282,71 @@ namespace Revamp_LatestSightings
         {
             ConfigureConnection(conn, query);
             string recordId = "-1";
-            try
+            if (DoesVideoAlreadyExists(conn, query, filename))
             {
-                conn.Open();
-                query.CommandText = SQL_INSERT_VIDEO;
-                query.Parameters.Add("id", System.Data.SqlDbType.VarChar).Value = video.Id == null ? string.Empty : video.Id;
-                query.Parameters.Add("title", System.Data.SqlDbType.VarChar).Value = video.Title == null ? string.Empty : video.Title;
-                query.Parameters.Add("alias", System.Data.SqlDbType.VarChar).Value = video.Alias == null ? string.Empty : video.Alias;
-                query.Parameters.Add("dateRecieved", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
-                //query.Parameters.Add("ipDate", System.Data.SqlDbType.DateTime).Value = video.IPDate == null ? DateTime.Now : video.IPDate;
-                query.Parameters.Add("ipDate", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
-                query.Parameters.Add("ipDocument", System.Data.SqlDbType.VarChar).Value = video.IPDocument == null ? string.Empty : video.IPDocument;
-                query.Parameters.Add("revenueShare", System.Data.SqlDbType.VarChar).Value = video.RevenueShare == null ? string.Empty : video.RevenueShare;
-                query.Parameters.Add("keywords", System.Data.SqlDbType.VarChar).Value = video.Keywords == null ? string.Empty : video.Keywords;
-                query.Parameters.Add("region", System.Data.SqlDbType.VarChar).Value = video.Region == null ? string.Empty : video.Region;
-                query.Parameters.Add("notes", System.Data.SqlDbType.VarChar).Value = video.Notes == null ? string.Empty : video.Notes;
-                query.Parameters.Add("created", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
-                query.Parameters.Add("modified", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
-                query.Parameters.Add("status", System.Data.SqlDbType.VarChar).Value = video.Status;
-                query.Parameters.Add("contributor", System.Data.SqlDbType.VarChar).Value = video.Contributor;
-                query.Parameters.Add("youtubeId", System.Data.SqlDbType.VarChar).Value = string.Empty;
-                query.Parameters.Add("dateUploaded", System.Data.SqlDbType.DateTime).Value = video.DateUploaded;
-                query.Parameters.Add("dateRemoved", System.Data.SqlDbType.DateTime).Value = video.DateRemoved;
-                query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
-                query.Parameters.Add("videoStatus", System.Data.SqlDbType.VarChar).Value = video.Status;
-                recordId = query.ExecuteScalar().ToString();
+                return "-2";
+            }
+            else
+            {
+
+                try
+                {
+                    conn.Open();
+                    query.CommandText = SQL_INSERT_VIDEO;
+                    query.Parameters.Add("id", System.Data.SqlDbType.VarChar).Value = video.Id == null ? string.Empty : video.Id;
+                    query.Parameters.Add("title", System.Data.SqlDbType.VarChar).Value = video.Title == null ? string.Empty : video.Title;
+                    query.Parameters.Add("alias", System.Data.SqlDbType.VarChar).Value = video.Alias == null ? string.Empty : video.Alias;
+                    query.Parameters.Add("dateRecieved", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                    //query.Parameters.Add("ipDate", System.Data.SqlDbType.DateTime).Value = video.IPDate == null ? DateTime.Now : video.IPDate;
+                    query.Parameters.Add("ipDate", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                    query.Parameters.Add("ipDocument", System.Data.SqlDbType.VarChar).Value = video.IPDocument == null ? string.Empty : video.IPDocument;
+                    query.Parameters.Add("revenueShare", System.Data.SqlDbType.VarChar).Value = video.RevenueShare == null ? string.Empty : video.RevenueShare;
+                    query.Parameters.Add("keywords", System.Data.SqlDbType.VarChar).Value = video.Keywords == null ? string.Empty : video.Keywords;
+                    query.Parameters.Add("region", System.Data.SqlDbType.VarChar).Value = video.Region == null ? string.Empty : video.Region;
+                    query.Parameters.Add("notes", System.Data.SqlDbType.VarChar).Value = video.Notes == null ? string.Empty : video.Notes;
+                    query.Parameters.Add("created", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                    query.Parameters.Add("modified", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
+                    query.Parameters.Add("status", System.Data.SqlDbType.VarChar).Value = video.Status;
+                    query.Parameters.Add("contributor", System.Data.SqlDbType.VarChar).Value = video.Contributor;
+                    query.Parameters.Add("youtubeId", System.Data.SqlDbType.VarChar).Value = string.Empty;
+                    query.Parameters.Add("dateUploaded", System.Data.SqlDbType.DateTime).Value = video.DateUploaded;
+                    query.Parameters.Add("dateRemoved", System.Data.SqlDbType.DateTime).Value = video.DateRemoved;
+                    query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
+                    query.Parameters.Add("videoStatus", System.Data.SqlDbType.VarChar).Value = video.Status;
+                    recordId = query.ExecuteScalar().ToString();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    // ExHandler.RecordError(ex);
+                    // must log errro
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Dispose();
+                }
+                return recordId;
+            }
+        }
+
+        private static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, string filename)
+        {
+            SqlDataReader data;
+            query.CommandText = SQL_DOES_VIDEO_EXIST;
+            query.Parameters.Add("name", System.Data.SqlDbType.VarChar).Value = filename;
+            conn.Open();
+            data = query.ExecuteReader();
+            if (data.HasRows)
+            {
+                data.Close();
                 conn.Close();
+                return true;
             }
-            catch (Exception ex)
-            {
-                // ExHandler.RecordError(ex);
-                // must log errro
-                conn.Close();
-            }
-            finally
-            {
-                conn.Dispose();
-            }
-            return recordId;
+            data.Close();
+            conn.Close();
+            return false;
+
         }
 
         internal static Boolean SaveImageDetails(Image image, SqlConnection conn, SqlCommand query)

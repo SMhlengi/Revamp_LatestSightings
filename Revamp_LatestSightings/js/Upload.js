@@ -3,6 +3,39 @@
 /// <reference path="~/Scripts/resumable.js" />
 $(document).ready(function () {
 
+    function HideErrorMessageOnVideoDetails(control) {
+        $("div " + control).hide();
+    }
+
+    function HideMessageErrorsOnVideoDetails() {
+        HideErrorMessageOnVideoDetails(".videoTitle");
+        HideErrorMessageOnVideoDetails(".alias");
+        HideErrorMessageOnVideoDetails(".keywords");
+        HideErrorMessageOnVideoDetails(".notes");
+    }
+
+
+    function ClearErrorStateOfVideoDetailsTextBoxes(control) {
+        classAttr = $(control).parent().removeClass("has-error");
+    }
+
+    function ClearErrorWarningOnVideoDetailsTextBoxes() {
+        ClearErrorStateOfVideoDetailsTextBoxes("#videoTitle");
+        ClearErrorStateOfVideoDetailsTextBoxes("#alias");
+        ClearErrorStateOfVideoDetailsTextBoxes("#keywords");
+        ClearErrorStateOfVideoDetailsTextBoxes("#notes");
+    }
+
+    $(".updateVideoDetails").click(function () {
+        ClearErrorWarningOnVideoDetailsTextBoxes();
+        HideMessageErrorsOnVideoDetails();
+        var status = ValidateVidDetails();
+        if (status) {
+            $(".registerSpinner").show();
+            videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+        }
+    });
+
     function ValidateVidDetails() {
         var valid = true;
         if (isEmpty("#videoTitle")) {
@@ -57,7 +90,7 @@ $(document).ready(function () {
         }).done(
             function (data, textStatus, jqXHR) {
                 if (data.d == true) {
-                    //$(".registerSpinner").hide();
+                    $(".registerSpinner").hide();
                     //$("#videoTitle").removeAttr("disabled");
                     //$("#alias").removeAttr("disabled");
                     //$("#keywords").removeAttr("disabled");
@@ -159,9 +192,10 @@ $(document).ready(function () {
             //document.getElementById('progressBar').style.width = 100 + '%';
             var status = ValidateVidDetails();
             if (status) {
-                // ($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val());
-                // videoTitle, alias, keywords, notes, filename
                 videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            } else {
+                $("#content-inner").css("height", "1100px");
+                $(".updateVideoDetails").show();
             }
 
 
