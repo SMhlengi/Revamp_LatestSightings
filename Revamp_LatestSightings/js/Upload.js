@@ -67,7 +67,7 @@ $(document).ready(function () {
     function videoUploadWithVideoDetailsCompleted(videoTitle, alias, keywords, notes, filename) {
         swal({
             title: "Upload Complete !!",
-            text: "You uploaded your file successfully.",
+            text: "File successfully uploaded.",
             type: "success",
             showCancelButton: false,
             confirmButtonText: "OK",
@@ -78,6 +78,10 @@ $(document).ready(function () {
             $(".videoDetailsFormHeading").html("<strong>Saving video details. Please wait ...</strong>");
             $(".videoDetailsFormHeading").removeClass("alert-success");
             $(".videoDetailsFormHeading").addClass("alert-info");
+            $("#videoTitle").attr("disabled", "disabled");
+            $("#alias").attr("disabled", "disabled");
+            $("#keywords").attr("disabled", "disabled");
+            $("#notes").attr("disabled", "disabled");
         }, 3000);
 
         var postUrl = "/AjaxOperation.aspx/SaveVideoDetails";
@@ -91,16 +95,16 @@ $(document).ready(function () {
             function (data, textStatus, jqXHR) {
                 if (data.d == true) {
                     $(".registerSpinner").hide();
-                    //$("#videoTitle").removeAttr("disabled");
-                    //$("#alias").removeAttr("disabled");
-                    //$("#keywords").removeAttr("disabled");
-                    //$("#notes").removeAttr("disabled");
+                    $("#videoTitle").removeAttr("disabled");
+                    $("#alias").removeAttr("disabled");
+                    $("#keywords").removeAttr("disabled");
+                    $("#notes").removeAttr("disabled");
                     //$(".videoDetailsSaved").show();
                     //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
 
                     swal({
                         title: "Done !!",
-                        text: "Video Details saved successfully.",
+                        text: "Video Details successfully saved.",
                         type: "success",
                         showCancelButton: false,
                         confirmButtonText: "Ok",

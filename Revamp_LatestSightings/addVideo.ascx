@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <div class="alert alert-success videoDetailsFormHeading" role="alert"> <strong>Please provide us with the below information of the uploaded video</strong></div>
+                        <div class="alert alert-success videoDetailsFormHeading" role="alert">Please provide us with the below information of the uploaded video</div>
                     </div>
                     <div class="col-md-1"></div>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="pull-left updateVideoDetails">
                     <a href="javascript:void(0)" class="btn btn-success updateVideoDetails" role="button">Save</a>
                 </div>
-                <div class="pull-left marginLeftTen registerSpinner">
+                <div class="pull-left marginLeftTen registerSpinner" style="margin-top:-13px">
                     <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
                 <div class="alert alert-success pull-left marginLeftTen videoDetailsSaved">
