@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="videopreview.aspx.cs" Inherits="Revamp_LatestSightings.videopreview" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="videopreview.aspx.cs" Inherits="Revamp_LatestSightings.videopreview" %>
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="videoPreview" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
@@ -21,7 +21,7 @@
                   ready: function () {
                       $(this).jPlayer("setMedia", {
                           title: "<%=title %>",
-                          m4v: "<%=ResolveUrl("~/Videos/")%>" + "<%=filename %>",
+                          m4v: "https://rfuapi.socialengine.co.za/Uploads/" + "<%=filename %>",
                           poster: "http://lscms2.socialengine.co.za/images/Latest-Sightings-Elephant-poster.jpg"
                       });
                   },
