@@ -71,37 +71,63 @@
                                     </div><!-- tab-pane -->
                                   
                                     <div class="tab-pane disabled" id="video">
-                                       <!-- HIDDING TERMS OF CONDITIONS WORK -->
+                                       <!-- TERMS OF CONDITIONS WORK -->
                                         <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
-<%--                                          <div class="uploadvideo">
+                                          <div class="uploadvideo termsAndConditions">
                                                 <div class="row tncRow">
                                                     <div class="col-md-12">
                                                         <div class="alert alert-danger">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                            <%--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>--%>
                                                             <strong>Please agree to Terms and Conditions before uploading video</strong> 
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row tncText">
-                                                    <div class="col-md-3">
-                                                          <div class="checkbox">
-                                                            <label>
-                                                              <input type="checkbox" id="chk_terms">I Accept Terms and Conditions
-                                                            </label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-md-4 viewterms">
-                                                        <asp:Button CssClass="btn btn-info" ID="downloadTandC" runat="server" Text="Download Terms and Conditions" OnClick="downloadTandC_Click" />
-                                                        <!--<p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->
+                                                <div class="row tncRow" style="margin-bottom:1px;">
+                                                    <div class="col-md-9">
+                                                        <ul>
+                                                            <li>
+                                                                You (the contributor) confirm that you have the necessary rights to the media being uploaded, and to use it in  the Latest Sightings’ Film and Earn Programme.
+                                                            </li>
+                                                            <li>
+                                                                You will continue to own the copyright. 
+                                                            </li>
+                                                            <li>
+                                                                You are giving Latest Sightings the exclusive right to monetize and sublicense the media in whole or in part.
+                                                            </li>
+                                                            <li>
+                                                                You will earn 40% of direct revenue ex VAT earned from the media.  We pay you your share within 30 days after we have received payment.
+                                                            </li>
+                                                            <li>
+                                                                We pay out once your total is more than R1000.
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <div class="row tncRow" style="margin-bottom:1px;">
+
+<%--                                                <div class="row tncRow" style="margin-bottom:1px;">
                                                     <div class="col-md-9">
                                                         <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
                                                     </div>
+                                                </div>--%>
+
+                                                <div class="row tncText">
+                                                    <div class="col-md-7">                                                        
+                                                          <div class="checkbox">
+                                                              <p class="text-primary floatLeft">
+                                                                <label>
+                                                                  <input type="checkbox" id="chk_terms"><strong>I Accept Terms and Conditions </strong>
+                                                                </label>
+                                                              </p>     
+                                                              <p> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="tnc" href="/terms" target="_blank"><strong>Download Terms and Conditions</strong></a></p>                                                          
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-4 viewterms">
+                                                        <!--<asp:Button CssClass="btn btn-info" ID="downloadTandC" runat="server" Text="Download Terms and Conditions" OnClick="downloadTandC_Click" />
+                                                        <p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->
+                                                    </div>
                                                 </div>
-                                            </div>--%>
-                                           <!-- END OF HIDING TERMS AND CONDITIONS WORK -->
+                                            </div>
+                                           <!-- END OF TERMS AND CONDITIONS WORK -->
                                         <asp:PlaceHolder ID="addVideoContent" runat="server" />
                                     </div><!-- tab-pane -->
 

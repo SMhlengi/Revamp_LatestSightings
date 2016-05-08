@@ -437,13 +437,12 @@
         );
     }
 
-    //$("#chk_terms").click(function () {
-    //    if ($("#chk_terms").prop('checked')) {
-    //        $("#ContentPlaceHolder1_ctl00_Uploader1__Insert").removeAttr("disabled");
-    //    } else {
-    //        $("#ContentPlaceHolder1_ctl00_Uploader1__Insert").attr("disabled", "disabled");
-    //    }
-    //});
+    $("#chk_terms").click(function () {
+        if ($("#chk_terms").prop('checked')) {
+            $(".termsAndConditions").hide();
+            $(".rfuploader").show("slow");
+        }
+    });
 
     $("#ContentPlaceHolder1_ctl00_Uploader1__Insert").click(function (event) { // <- goes here !
         if ($("#chk_terms").prop('checked') == false) {

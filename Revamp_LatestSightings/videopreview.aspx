@@ -8,7 +8,7 @@
         }
 
         .footer {
-            position: absolute !important;
+            display:none;
         }
 
     </style>

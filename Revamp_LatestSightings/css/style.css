@@ -4177,6 +4177,22 @@ max-width:160px;
     display:none;
 }
 
+.floatLeft{
+    float:left;
+}
+
+.tnc{
+    color:#5bc0de;
+}
+
+a.tnc:hover{
+    color:#5bc0de;
+}
+
+.rfuploader{
+    display:none;
+}
+
 
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
