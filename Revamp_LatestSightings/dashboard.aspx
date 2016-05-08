@@ -118,7 +118,7 @@
                                                                   <input type="checkbox" id="chk_terms"><strong>I Accept Terms and Conditions </strong>
                                                                 </label>
                                                               </p>     
-                                                              <p> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="tnc" href="/terms" target="_blank"><strong>Download Terms and Conditions</strong></a></p>                                                          
+                                                              <p> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="tnc" href="/terms" target="_blank"><strong>View Terms and Conditions</strong></a></p>                                                          
                                                           </div>
                                                     </div>
                                                     <div class="col-md-4 viewterms">
