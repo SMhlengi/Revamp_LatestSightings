@@ -87,11 +87,24 @@ namespace Revamp_LatestSightings
             }
             else
             {
-                article =  library.GetArticle("'" + Request.QueryString["p"].ToString().Replace("_", " ") + "'", true);
-                blog_friendlyTitle = Request.QueryString["p"].ToString().Replace("_", " ");
-                BlogUrlTitle = Request.QueryString["p"].ToString();
+                string articleUrl = Request.QueryString["p"].ToString();
+                if (IsThisFacebookArticleUrl(Request.QueryString["p"].ToString()))
+                {
+                    int indexOfQuestionMark = Request.QueryString["p"].ToString().IndexOf("?");
+                    articleUrl = Request.QueryString["p"].ToString().Substring(0, indexOfQuestionMark);
+                }
+                article = library.GetArticle("'" + articleUrl.Replace("_", " ") + "'", true);
+                blog_friendlyTitle = articleUrl.Replace("_", " ");
+                BlogUrlTitle = articleUrl;
                 categoryId = Convert.ToInt32(article["categoryId"]);
             }
+        }
+
+        private bool IsThisFacebookArticleUrl(String param)
+        {
+            if (param.ToLower().Contains("fb_action_ids"))
+                return true;
+            return false; 
         }
 
         private bool NoFriendlyUrl()
