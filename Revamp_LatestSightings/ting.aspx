@@ -22,11 +22,20 @@
                             </div>--%>
 
                             <div class="clearfix"></div>
-                            
-                            <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
-                            
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-block">Previous</button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-block">Next</button>
+                                </div>
+
+                            </div>
                             <div class="clearfix"></div>
-                            <div class="spacer small"></div>
+
+                            <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
+                           
                             
                             <div class="left">
                             	<div class="left">

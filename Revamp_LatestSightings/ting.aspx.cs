@@ -49,9 +49,9 @@ namespace Revamp_LatestSightings
         private void SetPageMetaData()
         {
             this.Master.overRideMeta = true;
-            this.Master.desc = TingInfo[""];
-            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "tings/" + tingId;
-            this.Master.imgUrl = ConfigurationManager.AppSettings["tingImageServiceCall"] + tingId;
+            this.Master.desc = TingInfo["description"];
+            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "park/" + parkId + "/ting/" + tingId;
+            this.Master.imgUrl = ConfigurationManager.AppSettings["tingImageServiceCall"] + TingInfo["tingid"];
             this.Master.title = TingInfo["title"];
 
         }
