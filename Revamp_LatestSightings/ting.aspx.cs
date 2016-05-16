@@ -83,9 +83,10 @@ namespace Revamp_LatestSightings
                     tingInformation.Add("longitude", parkTings[i]["longitude"].ToString());
                     tingInformation.Add("latitude", parkTings[i]["latitude"].ToString());
                     tingInformation.Add("animalid", parkTings[i]["animalid"].ToString());
-                    tingInformation.Add("tingUser", library.GetTingerUserName(parkTings[i]["userId"].ToString()));
+                    tingInformation.Add("tingUser", library.GetTingerUserName(parkTings[i]["userid"].ToString()));
                     tingInformation.Add("tingid", parkTings[i]["id"].ToString());
                     tingInformation.Add("indexOfTingRecord", i.ToString());
+                    tingInformation.Add("parkid", parkTings[i]["parkid"].ToString());
                     break;
                 }
             }

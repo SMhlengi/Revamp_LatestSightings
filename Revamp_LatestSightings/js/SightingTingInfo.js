@@ -45,9 +45,16 @@ function initialize() {
 
 }
 
+
+function SetNextAndPreviosTingButtons() {
+    $(".owl-next").attr("href", "/park/" + TINGINFO.parkid + "/ting/" + TINGINFO.NextTingId);
+    $(".owl-prev").attr("href", "/park/" + TINGINFO.parkid + "/ting/" + TINGINFO.PreviousTingId);
+}
+
 $(document).ready(function () {
     console.log("----TING INFO");
     console.log(TINGINFO);
     displayTingInfo();
     initialize();
+    SetNextAndPreviosTingButtons();
 });

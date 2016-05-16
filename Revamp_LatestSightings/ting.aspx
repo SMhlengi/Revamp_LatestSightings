@@ -3,7 +3,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=3") %>"></script>
+    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=5") %>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
@@ -25,10 +25,10 @@
 
                             <div class="row">
                                 <div class="col-md-3">
-                                    <button class="btn btn-primary btn-block">Previous</button>
+                                    <a href="" class="btn btn-primary btn-block owl-prev">Previous</a>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-primary btn-block">Next</button>
+                                    <a href="" class="btn btn-primary btn-block owl-next">Next</a>                                    
                                 </div>
 
                             </div>
