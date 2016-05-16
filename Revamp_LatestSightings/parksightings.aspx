@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="parksightings.aspx.cs" Inherits="Revamp_LatestSightings.parksightings" %>
+<%@ MasterType VirtualPath="~/Site1.Master" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <style>
     .slider-container .owl-theme .owl-dots{

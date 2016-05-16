@@ -283,6 +283,7 @@
     <Content Include="sightings.aspx" />
     <Content Include="terms.aspx" />
     <Content Include="termsAndConditions.ascx" />
+    <Content Include="ting.aspx" />
     <Content Include="tings2.aspx" />
     <Content Include="tvlodge.aspx" />
     <Content Include="uc_AddImage.ascx" />
@@ -569,6 +570,13 @@
     </Compile>
     <Compile Include="termsAndConditions.ascx.designer.cs">
       <DependentUpon>termsAndConditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ting.aspx.cs">
+      <DependentUpon>ting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ting.aspx.designer.cs">
+      <DependentUpon>ting.aspx</DependentUpon>
     </Compile>
     <Compile Include="tings2.aspx.cs">
       <DependentUpon>tings2.aspx</DependentUpon>

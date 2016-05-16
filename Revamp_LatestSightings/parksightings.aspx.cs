@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LatestSightingsLibrary;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Revamp_LatestSightings
 {
@@ -27,11 +28,11 @@ namespace Revamp_LatestSightings
                 loadLatestGalleries();
                 loadAds();
                 loadTopStories();
-
                 parkid = new Guid(Request.QueryString["id"].ToString());
-                parkTings = library.GetParkTingsByDate(parkid);
+                parkTings = library.GetParkTings(parkid);
+                SetPageMetaData();
                 var tings = JsonConvert.SerializeObject(parkTings);
-                string functionCall = String.Format("InitializeParkTings({0});", tings);
+                string functionCall = String.Format("InitializeParkTings({0}, '{1}');", tings, parkid);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "", functionCall, true);
 
             }
@@ -82,6 +83,16 @@ namespace Revamp_LatestSightings
         {
             uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
             topearningvideos.Controls.Add(topvids);
+
+        }
+
+        private void SetPageMetaData()
+        {
+            this.Master.overRideMeta = true;
+            this.Master.desc = parkTings[0]["description"];
+            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "park/" + parkid + "/ting/" + parkTings[0]["id"];
+            this.Master.imgUrl = ConfigurationManager.AppSettings["tingImageServiceCall"] + parkTings[0]["id"];
+            this.Master.title = parkTings[0]["title"];
 
         }
 

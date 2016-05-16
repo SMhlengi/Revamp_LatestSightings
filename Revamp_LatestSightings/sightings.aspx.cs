@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LatestSightingsLibrary;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Revamp_LatestSightings
 {
@@ -31,6 +32,7 @@ namespace Revamp_LatestSightings
 
                 tingId = Request.QueryString["id"].ToString();
                 ting = library.GetTingInfo(tingId);
+                SetPageMetaData();
                 var tingserialized = JsonConvert.SerializeObject(ting);
                 string javascriptFunction = string.Format("setTingInformation({0})", tingserialized);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "", javascriptFunction, true);
@@ -85,6 +87,16 @@ namespace Revamp_LatestSightings
         {
             uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
             topearningvideos.Controls.Add(topvids);
+
+        }
+
+        private void SetPageMetaData()
+        {
+            this.Master.overRideMeta = true;
+            this.Master.desc = ting["description"];
+            this.Master.artUrl = ConfigurationManager.AppSettings["siteUrl"] + "sighting/" + tingId;
+            this.Master.imgUrl = ConfigurationManager.AppSettings["tingImageServiceCall"] + tingId;
+            this.Master.title = ting["title"];
 
         }
     }

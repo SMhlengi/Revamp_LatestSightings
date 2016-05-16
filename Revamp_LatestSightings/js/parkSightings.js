@@ -1,9 +1,11 @@
 ﻿var PARKTINGS = [];
 var imageCounter = 0;
 var parkTingsLength = 0;
+var park = "";
 
-function InitializeParkTings(json) {
+function InitializeParkTings(json, parkId) {
     PARKTINGS = json;
+    park = parkId;
 }
 
 function displayPARKTINGS(index) {
@@ -74,17 +76,27 @@ function initialize() {
     });
 }
 
+
+function LoadNextTing(index) {
+    location.href = "/park/" + park + "/ting/" + PARKTINGS[index].id;
+}
+
 $(document).ready(function () {
     console.log("----PARKtINGS----");
     console.log(PARKTINGS);
+    console.log("parkID");
+    console.log(park);
     parkTingsLength = PARKTINGS.length;
     displayPARKTINGS(0);
     initialize();
 
+    if (parkTingsLength == 2) {
+        $(".owl-prev").hide();
+    }
+
     $(".owl-next").click(function () {
-        console.log("clicking on next");
-        imageNext();
-        initialize();
+        var index = ReturnCounter("add");
+        LoadNextTing(index);
     });
 
     $(".owl-prev").click(function () {

@@ -1,20 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="sightings.aspx.cs" Inherits="Revamp_LatestSightings.sightings" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ting.aspx.cs" Inherits="Revamp_LatestSightings.ting" %>
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
-<asp:Content ID="sightings" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-    .footer{
-        display:none;
-    }
-    .right{
-        margin-top:-26px !important;
-    }
 
-    .adbox .right {
-        padding-top:28px !important;
-    }
-</style>
-    <script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=2") %>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
 					<div class="row">
@@ -22,26 +10,6 @@
 						<div class="leftcol">
                         
                         <h1 class="main-title" style="margin-top:0px !important;">Latest Sightings</h1>
-                            
-                            <!-- Filter Options BEGIN -->
-                            <div class="box">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="left">
-                                            <div class="dropdown parks">
-                                                <button class="btn btn-default dropdown-toggle" type="button" id="Button1" data-toggle="dropdown" aria-expanded="true">
-                                                   Filter By Park
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">Parks</a></li>
-                                                </ul>
-                                            </div>                                    
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Filter Options END -->
                             
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
@@ -116,50 +84,8 @@
                         
                         <!-- RIGHT Content BEGIN -->
 						<div class="rightcol">
-							<div id="sidebar-area">
-                                                        
-                            <!-- Top Stories BEGIN -->
-                             <asp:PlaceHolder ID="TopStories" runat="server"></asp:PlaceHolder>
-                            <!-- Top Stories END -->
-                            
-                            <div class="clearfix"></div>
-                            
-                            <!-- Top 10 BEGIN -->
-                            <asp:PlaceHolder ID="topTenContributors" runat="server"></asp:PlaceHolder>
-                            <!-- Top 10 END -->
-                            
-                            <div class="clearfix"></div>
-                            <div class="spacer small"></div>
-                            <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
-                            
-                            <div class="clearfix"></div>
-                        	<div class="spacer"></div>
-                            
-                            <!-- 300x250 AD -->
-                            <asp:PlaceHolder ID="ad300by50" runat="server"></asp:PlaceHolder>
-                            <!-- 300x250 AD -->
-                                                        
-                            <div class="clearfix"></div>
-                        	<div class="spacer"></div>
-
-                            <!-- Latest Blogs BEGIN -->
-                                <asp:PlaceHolder ID="plc_latestBlogs" runat="server" />                            
-                            <!-- Latest Blogs END -->
-                            
-                            <div class="clearfix"></div>
-                        	<div class="spacer small"></div>
-                        
-                            <!-- 300x250 AD -->
-                            <div class="ad300">
-                            	<asp:PlaceHolder ID="downloadapp" runat="server"></asp:PlaceHolder>
-							</div>
-                            <!-- 300x250 AD -->
-                            
-                            <div class="clearfix"></div>
-                        	<div class="spacer small"></div>
-												
+							<div id="sidebar-area">												
 							</div>
 						</div>
 					</div>
-            <script src="<%=ResolveUrl("~/js/sighting.js") %>"></script>
 </asp:Content>
