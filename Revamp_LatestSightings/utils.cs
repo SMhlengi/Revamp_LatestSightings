@@ -675,5 +675,13 @@ namespace Revamp_LatestSightings
 
             return EmailMessage;
         }
+
+        public static string ConvertToDateTimeFormat(string p)
+        {
+            string format = "ddd d MMM HH:mm";
+            DateTime tingDate = DateTime.Parse(p);
+            return tingDate.ToString(format);
+
+        }
     }
 }
