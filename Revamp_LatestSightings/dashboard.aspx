@@ -123,8 +123,11 @@
                                                     </div>
                                                     <div class="col-md-4 viewterms">
                                                         <!--<asp:Button CssClass="btn btn-info" ID="downloadTandC" runat="server" Text="Download Terms and Conditions" OnClick="downloadTandC_Click" />
-                                                        <p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->
+                                                        <p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->                                                        
                                                     </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3"><a href="javascript:void(0);" class="btn btn-success btn-block tncNext">Next</a></div>
                                                 </div>
                                             </div>
                                            <!-- END OF TERMS AND CONDITIONS WORK -->

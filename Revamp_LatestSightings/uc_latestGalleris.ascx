@@ -272,8 +272,8 @@
                                 <div class="spacer small"></div>
                                 
                                 <!-- Facebook Comments BEGIN -->
-                                <h4 class="page-titles">Comments</h4>
-                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=image.Id %>" data-numposts="2" data-colorscheme="dark" data-width="340"></div>
+                                <%--<h4 class="page-titles">Comments</h4>
+                                    <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/gallery/<%=image.Id %>" data-numposts="2" data-colorscheme="dark" data-width="340"></div>--%>
                                 <!-- Facebook Comments END -->
                                 
                           </div>

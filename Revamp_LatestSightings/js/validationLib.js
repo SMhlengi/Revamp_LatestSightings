@@ -437,7 +437,9 @@
         );
     }
 
-    $("#chk_terms").click(function () {
+
+
+    $(".tncNext").click(function () {
         if ($("#chk_terms").prop('checked')) {
             $(".termsAndConditions").hide();
             $(".rfuploader").show("slow");

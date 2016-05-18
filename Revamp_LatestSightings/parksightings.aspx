@@ -10,9 +10,13 @@
     .image-gallery-item img{
         height:700px !important;
     }
+
+    a.owl-next:hover{
+        color:white !important;
+    }
 </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
-    <script src="<%= ResolveUrl("~/js/parkSightings.js?v=2") %>"></script>
+    <script src="<%= ResolveUrl("~/js/parkSightings.js?v=3") %>"></script>
 
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
@@ -57,7 +61,17 @@
                             <div class="blog-list-content">
                             
                             <div class="clearfix"></div>
-                            <div class="spacer small"></div>
+
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <%--<a href="" class="btn btn-primary btn-block owl-prev">Previous</a>--%>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="javascript:void(0);" class="btn btn-primary btn-block owl-next">Next</a>                                    
+                                </div>
+
+                            </div>
+                            <div class="clearfix"></div>
                             
                             <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
@@ -81,7 +95,7 @@
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="fb-comments" data-href="http://latestsightings.com/park/sightings/<%= parkid.ToString()%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
+                            <div class="fb-comments" data-href="https://latestsightings.com/park/sightings/<%= parkid.ToString()%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>

@@ -2,17 +2,30 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=5") %>"></script>
+<style>
+    #lodgeImage{
+        display:none;
+    }
+
+    a.owl-prev, a.owl-next:hover{
+        color:white !important;
+    }
+
+    .leftcol{
+        width:100% !important;
+    }
+
+</style>
+
+    <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=6") %>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">
                         
                         <h1 class="main-title" style="margin-top:0px !important;">Latest Sightings</h1>
-                            
-                            <div class="clearfix"></div>
-                        	<div class="spacer"></div>
                            
                             <img src="" id="lodgeImage" width="100%">
                             
@@ -27,6 +40,7 @@
                                 <div class="col-md-3">
                                     <a href="" class="btn btn-primary btn-block owl-prev">Previous</a>
                                 </div>
+                                <div class="col-md-6"></div>
                                 <div class="col-md-3">
                                     <a href="" class="btn btn-primary btn-block owl-next">Next</a>                                    
                                 </div>
@@ -70,7 +84,7 @@
                             
                             <!-- Facebook Comments BEGIN -->
                             <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="fb-comments" data-href="http://latestsightings.com//sighting/<%= tingId%>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
+                            <div class="fb-comments" data-href="https://latestsightings.com/park/<%= parkId%>/ting/<%=tingId %>" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
                             <!-- Facebook Comments END -->
                             
                             <div class="clearfix"></div>
@@ -89,12 +103,6 @@
                             <asp:PlaceHolder ID="latestGalleries" runat="server"></asp:PlaceHolder>
                             <!-- Latest Galleries END -->  
                         <!-- LEFT Content END -->
-						</div>
-                        
-                        <!-- RIGHT Content BEGIN -->
-						<div class="rightcol">
-							<div id="sidebar-area">												
-							</div>
 						</div>
 					</div>
 </asp:Content>

@@ -13,6 +13,7 @@ function displayTingInfo() {
     $(".tingDescription").append("Visibility: " + ReturnVisibilityStar(parseInt(TINGINFO.visibility)) + " " + parseInt(TINGINFO.visibility) + "/5 <br />");
     $(".tingDescription").append("Tinged by " + TINGINFO.tingUser);
     $("#lodgeImage").attr("src", "http://tingsservice.socialengine.co.za/tings/image/" + TINGINFO.tingid)
+    setTimeout(function () { $("#lodgeImage").show(); }, 500);
     LODGE_lat = TINGINFO.latitude;
     LODGE_long = TINGINFO.longitude;
 }
