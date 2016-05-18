@@ -75,8 +75,19 @@
                             
                             <h3 style="text-align:center;" class="sightingTingTitle"> 2 Giraffes drinking at the waterhole.. Like father like son</h3>
                             
-                            <div class="clearfix"></div>
-                            <div class="spacer small"></div>
+                            <div class="left">
+                            	<div class="left">
+                                    <div class="row">
+                                        <%--<div class="col-md-2"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Lastest Kruger" data-via="LatestKruger">Tweet</a></div>
+                                        <div class="col-md-8"><div class="fb-like" data-href="http://latestsightings.com/sighting/<%= tingId%>" data-layout="button" data-action="recommend" data-show-faces="false" data-share="false"></div></div>--%>
+                                        
+                                    </div>
+                            	</div>
+                                <div class="right">
+                                	<a href="javascript:void(0);" title="Share to Facebook" class="aboutUsFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
+                                    <a href="javascript:void(0);" title="Share to Twitter" class="aboutUsTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>
                             
                             <p class="tingDescription">                                
                             </p>
