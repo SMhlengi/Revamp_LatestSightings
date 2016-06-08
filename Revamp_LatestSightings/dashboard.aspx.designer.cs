@@ -58,6 +58,15 @@ namespace Revamp_LatestSightings {
         protected global::System.Web.UI.WebControls.PlaceHolder videoListcontent;
         
         /// <summary>
+        /// addContentPlacehoder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder addContentPlacehoder;
+        
+        /// <summary>
         /// termsandCs control.
         /// </summary>
         /// <remarks>

@@ -1,9 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_top_earning_videos.ascx.cs" Inherits="Revamp_LatestSightings.uc_top_earning_videos" %>
-<style>
-    .top-earning-user{
-        color:#ff9900;
-    }
-</style>
+<link rel="stylesheet" href="<%= ResolveUrl("~/css/topEarningVideos.css") %>" />
+
     <div class="clearfix"></div>
     <div class="spacer small"></div>
 <h4 class="page-titles">Recent Top Earning Videos</h4>

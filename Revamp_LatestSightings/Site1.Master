@@ -5,6 +5,7 @@
 
 <%@ Register Src="~/uc_SiteMap.ascx" TagName="sitemap" TagPrefix="footer" %>
 <%@ Register Src="~/uc_Footer.ascx" TagName="footer" TagPrefix="page" %>
+<%@ Register Src="~/uc_styleSheetOverRidesBasedOnUrl.ascx" TagName="Overides" TagPrefix="StyleSheets" %>
 
 <!DOCTYPE html>
 
@@ -35,6 +36,7 @@
 
     <!-- Loading Styles -->    
     <style:sheets runat="server" id="allstyleSheets"></style:sheets>
+    <StyleSheets:Overides runat="server" id="cssOverRides"></StyleSheets:Overides>
     <link rel="icon" type="image/png" href="<%= ResolveUrl("~/images/favicon.ico") %>">
     <script src="<%= ResolveUrl("~/js/modernizr.custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/jquery-1.11.1.min.js") %>"></script>
@@ -45,6 +47,7 @@
     <script src="<%= ResolveUrl("~/js/homepageLattestGalleries.js?v=4") %>"></script>
     <script src="<%= ResolveUrl("~/js/2owl.carousel.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/scripts.js?v=7") %>"></script>
+    <script type='text/javascript'>if(typeof wabtn4fg===&quot;undefined&quot;){wabtn4fg=1;h=document.head||document.getElementsByTagName(&quot;head&quot;)[0],s=document.createElement(&quot;script&quot;);s.type=&quot;text/javascript&quot;;s.src=&quot;https://dl.dropboxusercontent.com/u/36590004/WhatsApp%20Sharing%20Button%20Javascript.js&quot;;h.appendChild(s);}</script>
 
     <script>
         var VideoUpload = false;

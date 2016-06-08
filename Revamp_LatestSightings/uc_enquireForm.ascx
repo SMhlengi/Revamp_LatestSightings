@@ -1,52 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_enquireForm.ascx.cs" Inherits="Revamp_LatestSightings.uc_enquireForm" %>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<style>
-    .modal-body {
-        padding-top:20px !important;
-        font-family: "Open Sans", "Roboto Slab", "Noto Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: url('../images/bg-hd.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
-
-    input {
-        color: white;
-    }
-
-    p {
-        color:#eeeeee !important;
-    }
-
-    .btn-primary {
-        background-color: #ff9900;
-    }
-
-    .ui-datepicker-title{
-        color: black;
-    }
-
-    .modal-footer > .enquireMailSending {
-        color: #337ab7 !important;
-        display: none;
-    }
-
-    .modal-footer > .enquireMailSent {
-        color: #3c763d !important;
-        display: none;
-    }
-
-    .firstname, .emailrequired, .countryrequired, .telephonenumberrequired, .numberofadultsrequired,
-    .numberofchildrenrequired {
-        display: none;
-    }
-
-    .errorMessages > .text-danger {
-        color: #f90 !important
-    }
-        
-</style>
+<link rel="stylesheet" href="<%= ResolveUrl("~/css/enquireForm.css") %>">
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

@@ -1,33 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="forgottenPassword.aspx.cs" Inherits="Revamp_LatestSightings.forgottenPassword" %>
 
 <asp:Content ID="forgotPassword" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-
-    <style>
-        .sitemap {
-            display: none !important;
-        }
-
-        .footer {
-            display:none
-        }
-
-        a:hover {
-            color: white !important;
-        }
-
-	    @media (max-width: 480px) { 
-	
-		    #content-inner {
-			    padding: 0px !important;
-		    }
-	    }
-    </style>
         <!-- Main Container Section -->			
     <div class="container panel-signup">
         <div id="page-content">
 
             <!-- Page Content Area -->
-            <div id="content-inner">
+            <div id="formcontainer">
                 <!-- Regsiter -->
                 <div class="row">
                     <div class="panel transparentBackground col-md-12 col-sm-12 col-xs-9">

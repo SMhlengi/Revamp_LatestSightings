@@ -1,24 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_homepageTings.ascx.cs" Inherits="Revamp_LatestSightings.uc_homepageTings" %>
 
+<link rel="stylesheet" href='<%=ResolveUrl("~/css/homepageTings.css") %>' />
+
 <div class="portfolio-related-posts triggerAnimation animated" data-animate="fadeInUp">    
-    
- <style>
-    #owl-slider{
-        visibility:hidden;
-    }
+                    
 
-    .tingImage{
-        width:35% !important;
-        margin: 0 auto;
-        padding-top:34px;
-        padding-left:10px;
-    }
-
-    .owl-controls{
-        display:none;
-    }
-
- </style>                        
     <div id="owl-slider" class="jtings">
 
 		<div class="related-portfolio-item item ting0">

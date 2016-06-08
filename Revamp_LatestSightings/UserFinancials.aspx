@@ -4,46 +4,8 @@
     <link href="/css/style.datatables.css" rel="stylesheet">
     <link href="/css/dataTables.responsive.css" rel="stylesheet">
     <link href="/css/morris.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/userFinancials.css") %>" />
 
-    <style>
-        table.dataTable tr.odd { background-color: white; }
-        table.dataTable tr.even { background-color: white; }
-        table.dataTable tr.odd td a, table.dataTable tr.even td a {
-            color: rgba(255,153,0,0.7); font-weight: bold;
-        }
-        .dataTables_wrapper .dataTables_paginate .paginate_button {
-            padding: 0px;
-        }
-         .md-title {
-            font-size: 14px;
-            font-family: Verdana;
-            color: #000000;
-        }
-        .pull-right {
-            height: 60px!important;
-            float: none!important;
-        }
-        h4 {
-            color: #000000;
-        }
-        .media-body h4 {
-            color: #FFFFFF;
-        }
-        #popular td, #popularViews td {
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid #000000!important;
-        }
-        #popular th, #popularViews th {
-            background-color: #ff9900;
-        }
-        .alert p {
-            color: inherit;
-        }
-        .alert a {
-            color: rgba(255,153,0,0.7);
-        }
-        </style>
     <div class="row">
         <div class="pageheader">
             <div class="media">

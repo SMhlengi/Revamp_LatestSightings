@@ -78,6 +78,9 @@ namespace Revamp_LatestSightings
             uc_AddImage uc_addImage = (uc_AddImage)LoadControl("~/uc_AddImage.ascx");
             plc_addImage.Controls.Add(uc_addImage);
 
+            uc_addcontent uc_AddContent = (uc_addcontent)LoadControl("~/uc_addcontent.ascx");
+            addContentPlacehoder.Controls.Add(uc_AddContent);
+
 
             LoadProfileControl(profile);
             CanUserViewFinancials = SetViewFinancials(profile["active"]);

@@ -1,23 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_homeLatestBlogs.ascx.cs" Inherits="Revamp_LatestSightings.uc_homeLatestBlogs" %>
 
-<style>
-    .loadingImage img {
-        width: 100px;
-        height: 33px;
-    }
-
-
-    .loadingImage {
-        margin: 0 auto;
-        width: 37%;
-        padding-top: 25px;
-    }
-
-    #homepageLatestBlogs{
-        visibility:hidden;
-    }
-</style>
 <!-- Latest Blogs BEGIN -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/css/LatestBlogs.css") %>">
 
 <h4 class="page-titles">Latest Blogs</h4>
 <div class="loadingImage"><img src="<%=ResolveUrl("~/images/333.GIF") %>"></div>                     

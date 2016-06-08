@@ -1,28 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="resetpassword.aspx.cs" Inherits="Revamp_LatestSightings.resetpassword" %>
 
 <asp:Content ID="resetpassword" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <style>
-        .sitemap {
-            display: none !important;
-        }
-
-        .footer {
-            display:none
-        }
-
-        a:hover {
-            color: white !important;
-        }
-
-	    @media (max-width: 480px) { 
-	
-		    #content-inner {
-			    padding: 0px !important;
-		    }
-	    }
-    </style>
-
             <input type="hidden" value="<%=status["id"] %>" id="email" />
 
     <!-- Main Container Section -->			

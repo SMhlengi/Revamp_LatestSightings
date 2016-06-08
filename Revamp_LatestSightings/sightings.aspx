@@ -2,18 +2,6 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="sightings" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-    .footer{
-        display:none;
-    }
-    .right{
-        margin-top:-26px !important;
-    }
-
-    .adbox .right {
-        padding-top:28px !important;
-    }
-</style>
     <script src="<%=ResolveUrl("~/js/widgets.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=2") %>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
@@ -79,6 +67,19 @@
 
                             <div class="clearfix"></div>
                         	<div class="spacer"></div>
+
+                            <!-- Responsive -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2507393417436053"
+                                     data-ad-slot="3242991009"
+                                     data-ad-format="auto"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            <!-- Responsive -->
+                            <div class="clearfix"></div>
+                            <div class="spacer"></div>
 
                             <!-- testing something out-->
                             <div class="row">

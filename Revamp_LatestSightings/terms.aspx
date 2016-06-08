@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="terms.aspx.cs" Inherits="Revamp_LatestSightings.terms" %>
 
 <asp:Content ID="termsandconditions" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-    <style>
-        .blog-list-content{
-            padding:13px 30px;
-        }
-    </style>
 
 <!-- Page Content Area -->
                 

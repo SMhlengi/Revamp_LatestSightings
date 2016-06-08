@@ -2,18 +2,7 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 
-<asp:Content ID="aboutuspage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .blog-list-content {
-            padding-bottom: 58px;
-        }
-
-        .left {
-            padding-top: 20px;
-        }
-    </style>
-
-                    
+<asp:Content ID="aboutuspage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">                    
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
 						<div class="leftcol">

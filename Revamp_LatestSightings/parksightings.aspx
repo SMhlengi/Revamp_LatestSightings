@@ -2,19 +2,6 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-    .slider-container .owl-theme .owl-dots{
-        left:20% !important;
-    }
-
-    .image-gallery-item img{
-        height:700px !important;
-    }
-
-    a.owl-next:hover{
-        color:white !important;
-    }
-</style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
     <script src="<%= ResolveUrl("~/js/parkSightings.js?v=3") %>"></script>
 
@@ -94,6 +81,18 @@
 
                             </div>
                             </div>
+
+                            <!-- Responsive -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2507393417436053"
+                                     data-ad-slot="3242991009"
+                                     data-ad-format="auto"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            <!-- Responsive -->
+                            <div class="spacer"></div>
 
                             <div class="row">
                                 <div id="map-canvas" style="width: 100%; height: 330px"></div>

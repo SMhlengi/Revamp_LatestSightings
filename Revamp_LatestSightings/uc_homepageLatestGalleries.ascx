@@ -1,23 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_homepageLatestGalleries.ascx.cs" Inherits="Revamp_LatestSightings.uc_homepageLatestGalleries" %>
 
-<style>
-    .galleryloadingImage img {
-        width: 100px;
-        height: 33px;
-    }
-
-
-    .galleryloadingImage {
-        margin: 0 auto;
-        width: 13%;
-        padding-top: 25px;
-    }
-
-    .latestGalleriesPicsAndVideos{
-        visibility:hidden;
-    }
-</style>
-
+<link rel="stylesheet" href="<%=ResolveUrl("~/css/latestGalleries.css") %>"
   <!-- Latest Galleries BEGIN -->
                             <h4 class="page-titles">Latest Galleries</h4>
                             <div class="blog-grid">

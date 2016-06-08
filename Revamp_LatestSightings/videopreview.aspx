@@ -2,16 +2,7 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="videoPreview" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-    <style>
-        .sitemap {
-            display: none !important;
-        }
-
-        .footer {
-            display:none;
-        }
-
-    </style>
+<link rel="stylesheet" href="<%=ResolveUrl("~/css/videopreview.css") %>" />
 
     <link href="<%= ResolveUrl("~/css/jplayer.blue.monday.css") %>" rel="stylesheet" />
     <script src="<%= ResolveUrl("~/js/jquery.jplayer.min.js") %>"></script>

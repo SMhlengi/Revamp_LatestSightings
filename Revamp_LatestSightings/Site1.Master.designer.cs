@@ -58,6 +58,15 @@ namespace Revamp_LatestSightings {
         protected global::Revamp_LatestSightings.uc_StyleSheets allstyleSheets;
         
         /// <summary>
+        /// cssOverRides control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Revamp_LatestSightings.uc_styleSheetOverRidesBasedOnUrl cssOverRides;
+        
+        /// <summary>
         /// lsform control.
         /// </summary>
         /// <remarks>

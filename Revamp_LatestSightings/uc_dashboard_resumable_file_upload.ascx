@@ -3,45 +3,8 @@
 
     <!-- Main Container Section -->	
 <link href="<%= ResolveUrl("~/css/sweetalert.css") %>" rel="stylesheet" type="text/css">
-<link href="<%= ResolveUrl("~/css/site.css") %>" rel="stylesheet" type="text/css">
-
-    <style>
-        #content-inner {
-            padding: 0px !important;
-        }
-
-        .sitemap, .footer{
-            display:none;
-        }
-
-        h2 {
-            font-weight: normal;
-            padding-left:20px;
-        }
-
-        .panel, .list-group-item{
-            background-color: transparent;
-        }
-
-        .container {
-            padding-right: 0px;
-            padding-left: 0px;
-        }
-
-        .row{
-            margin-right:0px;
-            margin-left:0px;
-        }
-
-        .panel-body{
-            padding:30px;
-        }
-
-        .row h2{
-            margin-top:45px;
-        }
-
-    </style>		
+<link href="<%= ResolveUrl("~/css/site.css") %>" rel="stylesheet" type="text/css">	
+<link href="<%= ResolveUrl("~/css/rfu.css") %>" rel="stylesheet" type="text/css">	
     <div class="panel row">
         <h2>Upload files</h2>
         <div class="row">

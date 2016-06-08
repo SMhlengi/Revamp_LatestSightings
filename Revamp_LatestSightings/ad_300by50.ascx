@@ -1,17 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ad_300by50.ascx.cs" Inherits="Revamp_LatestSightings.ad_300by50" %>
-<style>
-    .adloadingImage img {
-        width: 100px;
-        height: 33px;
-    }
+<link href='<%=ResolveUrl("~/css/300by50Add.css") %>' />
 
-
-    .adloadingImage {
-        margin: 0 auto;
-        width: 34%;
-        padding-top: 25px;
-    }
-</style>
 <div class="adloadingImage"><img src="<%=ResolveUrl("~/images/76.GIF") %>"></div>   
 
 <!-- New site - 300x250 -->

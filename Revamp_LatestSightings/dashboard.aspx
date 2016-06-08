@@ -5,22 +5,6 @@
 <link href="<%= ResolveUrl("~/css/jquery.dataTables.min.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/style.datatables.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/responsivedataTables.responsive.css") %>" rel="stylesheet" />
-
-    <style>
-        .sitemap {
-            display: none;
-        }
-
-    #content-inner{
-        height: 755px;
-    }
-
-    .videoDetailsForm {
-        padding-left:0px !important;
-        padding-top:10px !important;
-    }
-
-    </style>
     <script>
         function ShowSpinner() {
             $(".registerSpinner").show();
@@ -62,6 +46,7 @@
                                         <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
                                         <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li>
                                         <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
+                                        <li id="addContentConcept" class=""><a href="#addContent" id="addContentConceptTab" data-toggle="tab"><strong>Add Content</strong></a></li>
                                 </ul>
         
                                 <!-- Tab panes -->
@@ -143,6 +128,12 @@
                                         <h4 class="nomargin">Video List</h4>
                                         <!--<p>About content goes here</p> -->
                                         <asp:PlaceHolder ID="videoListcontent" runat="server" />
+                                    </div><!-- tab-pane -->
+
+                                    <div class="tab-pane disabled" id="addContent">
+                                        <h4 class="nomargin">Add Content</h4>
+                                        <!--<p>About content goes here</p> -->
+                                        <asp:PlaceHolder ID="addContentPlacehoder" runat="server" />
                                     </div><!-- tab-pane -->
                                   
                                 </div><!-- tab-content -->

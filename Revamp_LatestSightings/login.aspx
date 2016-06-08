@@ -2,32 +2,12 @@
 
 <asp:Content ID="loginpage" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <style>
-        .sitemap {
-            display: none !important;
-        }
-
-        .footer {
-            display:none
-        }
-
-        a:hover {
-            color: white !important;
-        }
-
-	    @media (max-width: 480px) { 
-	
-		    #content-inner {
-			    padding: 0px !important;
-		    }
-	    }
-    </style>
     <!-- Main Container Section -->			
     <div class="container  panel-signin">
         <div id="page-content">
 
             <!-- Page Content Area -->
-            <div id="content-inner">
+            <div id="formcontainer">
 
                 <div class="row">
                     <div class="panel transparentBackground  col-md-12 col-sm-12 col-xs-10">
@@ -96,7 +76,7 @@
                     
                         </div><!-- panel-body -->
                         <div class="panel-footer">
-                            <a href="/register" class="btn btn-primary btn-block">Not yet a Member? Create Account Now</a>
+                            <a href="/register" class="btn btn-primary btn-block">Not yet a Member?<br><strong>Create Account Now</strong></a>
                         </div><!-- panel-footer -->
                     </div>
                 </div>

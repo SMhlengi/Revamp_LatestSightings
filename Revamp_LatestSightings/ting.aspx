@@ -4,20 +4,6 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<style>
-    #lodgeImage{
-        display:none;
-    }
-
-    a.owl-prev, a.owl-next:hover{
-        color:white !important;
-    }
-
-    .leftcol{
-        width:100% !important;
-    }
-
-</style>
 
     <script src="<%=ResolveUrl("~/js/SightingTingInfo.js?v=6") %>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3O6AqwnZ3uHY0h6ulDrxlAWXXrs99VqI"></script>
@@ -67,9 +53,20 @@
                             
                             <p class="tingDescription">                                
                             </p>
-
-                            <div class="clearfix"></div>
                         	<div class="spacer"></div>
+
+                            <!-- Responsive -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2507393417436053"
+                                     data-ad-slot="3242991009"
+                                     data-ad-format="auto"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            <!-- Responsive -->
+                            <div class="clearfix"></div>
+                            <div class="spacer"></div>
 
                             <!-- testing something out-->
                             <div class="row">

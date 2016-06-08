@@ -2,21 +2,6 @@
 
 <asp:Content ID="categoryBlogs" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<style>
-    .img-link img{
-        height:218px;
-    }
-
-    h3{
-        border-bottom:none !important;
-        padding-bottom:0px !important;
-        margin-bottom:0px !important;
-    }
-    .blog-grid-content{
-        min-height:100px !important;
-    }
-</style>
-
         <!-- Blog Category BEGIN -->
         <asp:PlaceHolder ID="cagegories" runat="server"></asp:PlaceHolder>
         <!-- Blog Category END -->

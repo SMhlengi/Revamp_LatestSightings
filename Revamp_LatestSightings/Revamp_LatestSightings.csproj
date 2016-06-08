@@ -88,43 +88,67 @@
     <Content Include="completeProfile.ascx" />
     <Content Include="contactus.aspx" />
     <Content Include="content.aspx" />
+    <Content Include="css\300by50Add.css" />
+    <Content Include="css\aboutUsOverRide.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
+    <Content Include="css\bloglist.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\categoryBlogList.css" />
     <Content Include="css\component.css" />
+    <Content Include="css\contactusOverRide.css" />
+    <Content Include="css\dashboardOveride.css" />
     <Content Include="css\docs.min.css" />
+    <Content Include="css\enquireForm.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\forgottenPasswordOverRide.css" />
     <Content Include="css\gallerymodal.css" />
     <Content Include="css\GoogleApisFonts.css" />
+    <Content Include="css\homepageTings.css" />
     <Content Include="css\hover-min.css" />
     <Content Include="css\jplayer.blue.monday.css" />
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\jquery-ui.min.css" />
     <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\jquery.multilevelpushmenu.css" />
+    <Content Include="css\LatestBlogs.css" />
+    <Content Include="css\latestGalleries.css" />
+    <Content Include="css\loginOverRide.css" />
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.carousel2.css" />
     <Content Include="css\owl.theme.css" />
+    <Content Include="css\parkSightingsOverRide.css" />
+    <Content Include="css\registerOverRide.css" />
+    <Content Include="css\resetpasswordOverRide.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\responsivedataTables.responsive.css" />
     <Content Include="css\responsive_4_18_2015.css" />
+    <Content Include="css\rfu.css" />
     <Content Include="css\searchResults.css" />
+    <Content Include="css\sightingsOverRide.css" />
     <Content Include="css\Site.css" />
     <Content Include="css\style-blue.css" />
     <Content Include="css\style-gray.css" />
     <Content Include="css\style-orange.css" />
     <Content Include="css\style-red.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\styleThree.css" />
+    <Content Include="css\styleTwo.css" />
     <Content Include="css\style_backup_4_18_2015.css" />
     <Content Include="css\style.datatables.css" />
     <Content Include="css\sweetalert.css" />
     <Content Include="css\swiper.css" />
+    <Content Include="css\termsOverRide.css" />
+    <Content Include="css\ting.css" />
+    <Content Include="css\topEarningVideos.css" />
     <Content Include="css\tvLodge.css" />
+    <Content Include="css\userFinancials.css" />
+    <Content Include="css\videopreview.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -145,6 +169,7 @@
     <Content Include="images\712.GIF" />
     <Content Include="images\76.GIF" />
     <Content Include="images\about-650x650.gif" />
+    <Content Include="images\aboutuspic.jpg" />
     <Content Include="images\ads-300x250.gif" />
     <Content Include="images\AllTings.jpg" />
     <Content Include="images\app.gif" />
@@ -256,6 +281,7 @@
     <Content Include="js\randomGray.js" />
     <Content Include="js\randomOrange.js" />
     <Content Include="js\randomRed.js" />
+    <Content Include="js\responsiveAdsByGoogle.js" />
     <Content Include="js\resumable.js" />
     <Content Include="js\scripts.js" />
     <Content Include="js\sighting.js" />
@@ -286,6 +312,7 @@
     <Content Include="ting.aspx" />
     <Content Include="tings2.aspx" />
     <Content Include="tvlodge.aspx" />
+    <Content Include="uc_addcontent.ascx" />
     <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_billboard.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
@@ -304,6 +331,7 @@
     <Content Include="uc_resumableFileUpload.ascx" />
     <Content Include="uc_SiteHeader.ascx" />
     <Content Include="uc_SiteMap.ascx" />
+    <Content Include="uc_styleSheetOverRidesBasedOnUrl.ascx" />
     <Content Include="uc_StyleSheets.ascx" />
     <Content Include="uc_tings.ascx" />
     <Content Include="uc_TopMonthlyContributors.ascx" />
@@ -592,6 +620,13 @@
     <Compile Include="tvlodge.aspx.designer.cs">
       <DependentUpon>tvlodge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="uc_addcontent.ascx.cs">
+      <DependentUpon>uc_addcontent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_addcontent.ascx.designer.cs">
+      <DependentUpon>uc_addcontent.ascx</DependentUpon>
+    </Compile>
     <Compile Include="uc_AddImage.ascx.cs">
       <DependentUpon>uc_AddImage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -717,6 +752,13 @@
     </Compile>
     <Compile Include="uc_SiteMap.ascx.designer.cs">
       <DependentUpon>uc_SiteMap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_styleSheetOverRidesBasedOnUrl.ascx.cs">
+      <DependentUpon>uc_styleSheetOverRidesBasedOnUrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_styleSheetOverRidesBasedOnUrl.ascx.designer.cs">
+      <DependentUpon>uc_styleSheetOverRidesBasedOnUrl.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_StyleSheets.ascx.cs">
       <DependentUpon>uc_StyleSheets.ascx</DependentUpon>

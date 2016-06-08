@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="contactus.aspx.cs" Inherits="Revamp_LatestSightings.contactus" %>
 
 <asp:Content ID="contactus" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .userfirstname, .useremail, .useraddress {
-            display:none;
-        }
-    </style>
 
 					<div class="row">
 						<div class="col-md-12">
