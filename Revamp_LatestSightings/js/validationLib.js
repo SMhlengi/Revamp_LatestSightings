@@ -443,6 +443,9 @@
         if ($("#chk_terms").prop('checked')) {
             $(".termsAndConditions").hide();
             $(".rfuploader").show("slow");
+            $this = $(".current");
+            $this.removeClass("current");
+            $($this.next()[0]).addClass("current");
         }
     });
 

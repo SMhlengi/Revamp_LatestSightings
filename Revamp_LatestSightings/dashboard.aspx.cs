@@ -78,8 +78,19 @@ namespace Revamp_LatestSightings
             uc_AddImage uc_addImage = (uc_AddImage)LoadControl("~/uc_AddImage.ascx");
             plc_addImage.Controls.Add(uc_addImage);
 
-            uc_addcontent uc_AddContent = (uc_addcontent)LoadControl("~/uc_addcontent.ascx");
-            addContentPlacehoder.Controls.Add(uc_AddContent);
+            ////uc_addcontent uc_AddContent = (uc_addcontent)LoadControl("~/uc_addcontent.ascx");
+            ////addContentPlacehoder.Controls.Add(uc_AddContent);
+
+            uc_addcontent uc_termsNCondition = (uc_addcontent)LoadControl("~/uc_addcontent.ascx");
+            termsNConditionPlaceholder.Controls.Add(uc_termsNCondition);
+
+            uc_addcontent2 uc_addContent2 = (uc_addcontent2)LoadControl("~/uc_addcontent2.ascx");
+            addContentPlacehoder2.Controls.Add(uc_addContent2);
+
+            uc_addcontent3 uc_addContent3 = (uc_addcontent3)LoadControl("~/uc_addcontent3.ascx");
+            addContentPlacehoder3.Controls.Add(uc_addContent3);
+
+
 
 
             LoadProfileControl(profile);

@@ -1,7 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="uc_addcontent.ascx.cs" Inherits="Revamp_LatestSightings.uc_addcontent" %>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link href=<%=ResolveUrl("~/css/multistep-indicator.css?v=2") %> rel='stylesheet' type='text/css'>
 
         <div class="row">
-            <div class="panel showBackground">
+            <div class="panel">
                 <div class="panel-heading"></div>
                 
                 <!-- Step 1 -->
@@ -11,57 +13,61 @@
 
                             <nav>
                                 <ol class="cd-multi-steps text-bottom count">
-                                    <li class="current"><a href="#0">t's &amp; c's</a></li>
+                                    <li class="current"><a href="javascript:void(0);">t's &amp; c's</a></li>
                                     <li><em>Info</em></li>
                                     <li><em>Upload</em></li>
                                 </ol>
                             </nav>
-                        <div class="uploadvideo termsAndConditions">
-                            <div class="row tncRow">
+                                       <!-- TERMS OF CONDITIONS WORK -->
+                                        <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
+                                          <div class="uploadvideo termsAndConditions">
+                                                <div class="row tncRow" style="margin-bottom:1px;">
+                                                    <div class="col-md-9">
+                                                        <ul>
+                                                            <li>
+                                                                You (the contributor) confirm that you have the necessary rights to the media being uploaded, and to use it in  the Latest Sightings’ Film and Earn Programme.
+                                                            </li>
+                                                            <li>
+                                                                You will continue to own the copyright. 
+                                                            </li>
+                                                            <li>
+                                                                You are giving Latest Sightings the exclusive right to monetize and sublicense the media in whole or in part.
+                                                            </li>
+                                                            <li>
+                                                                You will earn 40% of direct revenue ex VAT earned from the media.  We pay you your share within 30 days after we have received payment.
+                                                            </li>
+                                                            <li>
+                                                                We pay out once your total is more than R1000.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
 
-                                <div class="row tncRow" style="margin-bottom:1px;">
-                                    <div class="col-md-9">
-                                        <ul>
-                                            <li>You (the contributor) confirm that you have the necessary rights to the media being uploaded, and to use it in  the Latest Sightings’ Film and Earn Programme.
-                                            </li>
+<%--                                                <div class="row tncRow" style="margin-bottom:1px;">
+                                                    <div class="col-md-9">
+                                                        <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
+                                                    </div>
+                                                </div>--%>
 
-                                            <li>You will continue to own the copyright. </li>
-                                                            
-                                            <li>You are giving Latest Sightings the exclusive right to monetize and sublicense the media in whole or in part.
-                                            </li>
-                                                            
-                                            <li>You will earn 40% of direct revenue ex VAT earned from the media.  We pay you your share within 30 days after we have received payment.
-                                            </li>
-                                                            
-                                            <li>We pay out once your total is more than R1000.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="row tncText">
-                                    <div class="col-md-7">                                                        
-                                        <div class="checkbox">
-                                            <p class="floatLeft">
-                                                <label>
-                                                    <input id="chk_terms" type="checkbox"><strong>I Accept Terms and Conditions </strong>
-                                                </label>
-                                            </p>     
-                                            <p> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="text-primary" href="https://www.latestsightings.com/terms" target="_blank"><strong>View Terms and Conditions</strong></a></p>                                                    
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4 viewterms">
-                                                        <!--<input type="submit" name="ctl00$ContentPlaceHolder1$downloadTandC" value="Download Terms and Conditions" id="ContentPlaceHolder1_downloadTandC" class="btn btn-info" />
-                                                        <p class="text-info" data-toggle="modal" data-target="#myModal">[ <strong>View Terms</strong> ]</p>-->                                                        
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-3"><a href="javascript:void(0);" class="btn btn-success btn-block tncNext">Next</a></div>
-                                </div>
-
-                            </div>
-                        </div>
+                                                <div class="row tncText">
+                                                    <div class="col-md-8">                                                        
+                                                          <div class="checkbox">
+                                                              <p class="text-primary floatLeft">
+                                                                <label>
+                                                                  <input type="checkbox" id="chk_terms"><strong>I Accept Terms and Conditions </strong>
+                                                                </label>
+                                                              </p>     
+                                                              <p> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="tnc" href="/terms" target="_blank"><strong>View Terms and Conditions</strong></a></p>                                                          
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-4 viewterms">                                                      
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3"><a href="javascript:void(0);" class="btn btn-success btn-block tncNext">Next</a></div>
+                                                </div>
+                                            </div>
+                                           <!-- END OF TERMS AND CONDITIONS WORK -->
                     </div>
                 </div>
 

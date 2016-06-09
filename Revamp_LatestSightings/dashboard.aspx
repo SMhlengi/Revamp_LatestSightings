@@ -46,11 +46,13 @@
                                         <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
                                         <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li>
                                         <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
-                                        <li id="addContentConcept" class=""><a href="#addContent" id="addContentConceptTab" data-toggle="tab"><strong>Add Content</strong></a></li>
+                                        <li id="addContentConcept1" class=""><a href="#addContent1" id="addContentConceptTab1" data-toggle="tab"><strong>Add Content 1</strong></a></li>
+                                        <li id="addContentConcept2" class=""><a href="#addContent2" id="addContentConceptTab2" data-toggle="tab"><strong>Add Content 2</strong></a></li>
+                                        <li id="addContentConcept3" class=""><a href="#addContent3" id="addContentConceptTab3" data-toggle="tab"><strong>Add Content 3</strong></a></li>
                                 </ul>
         
                                 <!-- Tab panes -->
-                                <div class="tab-content mb30">
+                                <div class="tab-content mb30 showBackground">
                                     <div class="tab-pane disabled" id="profile">
                                         <asp:PlaceHolder ID="content" runat="server" />  
                                     </div><!-- tab-pane -->
@@ -58,11 +60,10 @@
                                     <div class="tab-pane disabled" id="video">
                                        <!-- TERMS OF CONDITIONS WORK -->
                                         <!--<h4 class="addVideoLabel">To add a video, click the "Add Video" button</h4>-->
-                                          <div class="uploadvideo termsAndConditions">
+                                            <%--                                          <div class="uploadvideo termsAndConditions">
                                                 <div class="row tncRow">
                                                     <div class="col-md-12">
                                                         <div class="alert alert-danger">
-                                                            <%--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>--%>
                                                             <strong>Please agree to Terms and Conditions before uploading video</strong> 
                                                         </div>
                                                     </div>
@@ -89,12 +90,6 @@
                                                     </div>
                                                 </div>
 
-<%--                                                <div class="row tncRow" style="margin-bottom:1px;">
-                                                    <div class="col-md-9">
-                                                        <p class="text-primary emailFile"><strong style="color:white;">Please Note: </strong> If your file is larger than 2Gb, please <a href="javascript:void(0)" class="launchNativeEmailClient">contact us</a> [ videos@latestsightings.com ]</p>
-                                                    </div>
-                                                </div>--%>
-
                                                 <div class="row tncText">
                                                     <div class="col-md-7">                                                        
                                                           <div class="checkbox">
@@ -114,8 +109,9 @@
                                                 <div class="row">
                                                     <div class="col-md-3"><a href="javascript:void(0);" class="btn btn-success btn-block tncNext">Next</a></div>
                                                 </div>
-                                            </div>
+                                            </div>--%>
                                            <!-- END OF TERMS AND CONDITIONS WORK -->
+                                        <asp:PlaceHolder ID="termsNConditionPlaceholder" runat="server"></asp:PlaceHolder>
                                         <asp:PlaceHolder ID="addVideoContent" runat="server" />
                                     </div><!-- tab-pane -->
 
@@ -130,10 +126,22 @@
                                         <asp:PlaceHolder ID="videoListcontent" runat="server" />
                                     </div><!-- tab-pane -->
 
-                                    <div class="tab-pane disabled" id="addContent">
-                                        <h4 class="nomargin">Add Content</h4>
+                                    <div class="tab-pane disabled" id="addContent1">
+                                        <!--<h4 class="nomargin">Add Content</h4>-->
                                         <!--<p>About content goes here</p> -->
                                         <asp:PlaceHolder ID="addContentPlacehoder" runat="server" />
+                                    </div><!-- tab-pane -->
+
+                                    <div class="tab-pane disabled" id="addContent2">
+                                        <h4 class="nomargin">Add Content</h4>
+                                        <!--<p>About content goes here</p> -->
+                                        <asp:PlaceHolder ID="addContentPlacehoder2" runat="server" />
+                                    </div><!-- tab-pane -->
+
+                                    <div class="tab-pane disabled" id="addContent3">
+                                        <h4 class="nomargin">Add Content</h4>
+                                        <!--<p>About content goes here</p> -->
+                                        <asp:PlaceHolder ID="addContentPlacehoder3" runat="server" />
                                     </div><!-- tab-pane -->
                                   
                                 </div><!-- tab-content -->

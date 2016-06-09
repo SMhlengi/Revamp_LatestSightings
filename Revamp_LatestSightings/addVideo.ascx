@@ -10,7 +10,7 @@
 </div>--%>
 
 <% if (addVideoDetails == false){ %>
-<div class="row">
+<div class="row rfuploaderPadding">
     <div class="rfuploader">
         <asp:PlaceHolder ID="fileup_resumable" runat="server"></asp:PlaceHolder>
     </div>
