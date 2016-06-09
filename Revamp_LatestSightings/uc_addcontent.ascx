@@ -13,9 +13,9 @@
 
                             <nav>
                                 <ol class="cd-multi-steps text-bottom count">
-                                    <li class="current"><a href="javascript:void(0);">t's &amp; c's</a></li>
-                                    <li><em>Info</em></li>
+                                    <li class="current"><a href="javascript:void(0);">t's &amp; c's</a></li>                                    
                                     <li><em>Upload</em></li>
+                                    <li><em>Info</em></li>
                                 </ol>
                             </nav>
                                        <!-- TERMS OF CONDITIONS WORK -->

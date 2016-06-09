@@ -146,7 +146,7 @@ $(document).ready(function () {
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
-        self.r = new Resumable({ target: 'https://rfuapi.socialengine.co.za/api/File/Upload' });
+        self.r = new Resumable({ target: 'http://localhost:49238/api/File/Upload' });
         self.r.assignBrowse(document.getElementById('browseButton'));
         self.r.on('progress', function () {
             self.mainProgressBar((self.r.progress() * 100) + '%');
@@ -189,8 +189,11 @@ $(document).ready(function () {
         });
         self.r.on('uploadStart', function () {
             self.uploadHasStarted(true);
-            $("#content-inner").css("height", "1000px");
-            //console.debug('uploadStart');
+            $("#content-inner").css("height", "1100px");
+            $this = $(".current");
+            $this.removeClass("current");
+            $($this.next()[0]).addClass("current");
+
         });
         self.r.on('complete', function () {
             //document.getElementById('progressBar').style.width = 100 + '%';

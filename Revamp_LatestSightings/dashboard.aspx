@@ -54,6 +54,7 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content mb30 showBackground">
                                     <div class="tab-pane disabled" id="profile">
+                                         <div class="panel-heading">My Profile</div><!-- panel-heading -->                                        
                                         <asp:PlaceHolder ID="content" runat="server" />  
                                     </div><!-- tab-pane -->
                                   

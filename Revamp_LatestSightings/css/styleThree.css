@@ -4200,13 +4200,18 @@ a.tnc:hover{
 }
 
 .rfuploader{
-    display:none;
+    display:none;    margin-top:-91px;
 }.rfuploaderPadding{
     padding-left:10px;
     padding-right:10px;
 }
-
-
+.saveProfileButton{
+    margin-top:-31px;
+}
+
+.marginTopEight{
+    margin-top:8px;
+}
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
 .adbox .right { 	width:30%; 	padding-top:20px; } 
@@ -4280,7 +4285,7 @@ a.tnc:hover{
 .alert-success {
     color: #361f10;
 	background-color: rgba(223, 240, 216, 0.5);
-	border-color: #5cb85c;
+	border-color: #96c03d;    font-weight:bold;
 }
 
 .alert-danger {
@@ -4345,6 +4350,8 @@ a.tnc:hover{
 
 .progress {
     background-color: #261409;
+}#videolist{
+    padding:16px;
 }
 
 

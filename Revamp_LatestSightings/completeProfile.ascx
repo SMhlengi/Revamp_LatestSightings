@@ -128,14 +128,14 @@
                     </div>
                 </div>           
             <div class="panel-footer transparentBackground">
-                <div class="pull-left">
+                <div class="pull-right saveProfileButton">
                     <a href="javascript:void(0)" class="btn btn-success updateProfile" role="button">Save</a>
                     <!--<button class="btn btn-success updateProfile">Save</button> -->
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
                     <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
                 </div>
-                <div class="alert alert-success pull-left marginLeftTen profileUpdated">
+                <div class="alert alert-success marginTopEight pull-right marginLeftTen profileUpdated">
                     <strong>Profile update Successfully</strong><br />You can start adding videos by clicking the [ Add Video ] tab
                 </div>
                 <div class="alert alert-danger pull-left marginLeftTen profileUpdatedError">
