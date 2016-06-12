@@ -32,7 +32,8 @@ $(document).ready(function () {
         var status = ValidateVidDetails();
         if (status) {
             $(".registerSpinner").show();
-            videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            //videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            SaveVideoDetailsAndSendMail($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val());
         }
     });
 
@@ -62,6 +63,50 @@ $(document).ready(function () {
             valid = false;
         }
         return valid;
+    }
+
+    function SaveVideoDetailsAndSendMail(videoTitle, alias, keywords, notes) {
+        var postUrl = "/AjaxOperation.aspx/SaveVideoDetailsAndSendMail";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'videoTitle' : '" + videoTitle + "', 'alias' : '" + alias + "', 'keywords' : '" + keywords + "', 'notes' : '" + notes + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    $(".registerSpinner").hide();
+                    $("#videoTitle").removeAttr("disabled");
+                    $("#alias").removeAttr("disabled");
+                    $("#keywords").removeAttr("disabled");
+                    $("#notes").removeAttr("disabled");
+                    //$(".videoDetailsSaved").show();
+                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+
+                    swal({
+                        title: "Done !!",
+                        text: "Video Details successfully saved.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: true,
+                        html: false
+                    });
+
+                } else {
+                    $(".registerSpinner").hide();
+                    $("#videoTitle").removeAttr("disabled");
+                    $("#alias").removeAttr("disabled");
+                    $("#keywords").removeAttr("disabled");
+                    $("#notes").removeAttr("disabled");
+                    $(".videoDetailsSavedError").show();
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
     }
 
     function videoUploadWithVideoDetailsCompleted(videoTitle, alias, keywords, notes, filename) {
@@ -146,7 +191,7 @@ $(document).ready(function () {
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
-        self.r = new Resumable({ target: 'http://localhost:49238/api/File/Upload' });
+        self.r = new Resumable({ target: 'https://rfuapi.socialengine.co.za/api/File/Upload' });
         self.r.assignBrowse(document.getElementById('browseButton'));
         self.r.on('progress', function () {
             self.mainProgressBar((self.r.progress() * 100) + '%');
@@ -189,9 +234,10 @@ $(document).ready(function () {
         });
         self.r.on('uploadStart', function () {
             self.uploadHasStarted(true);
-            $("#content-inner").css("height", "1100px");
+            $("#content-inner").css("height", "1150px");
             $this = $(".current");
             $this.removeClass("current");
+            $this.addClass("visited");
             $($this.next()[0]).addClass("current");
 
         });

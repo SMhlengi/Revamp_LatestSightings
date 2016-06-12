@@ -4204,6 +4204,9 @@ a.tnc:hover{
 }.rfuploaderPadding{
     padding-left:10px;
     padding-right:10px;
+    display:none;
+}.captureVideoDetailsContainer{
+    display:none;
 }
 .saveProfileButton{
     margin-top:-31px;
@@ -4353,7 +4356,9 @@ a.tnc:hover{
 }#videolist{
     padding:16px;
 }
-
+.updateVideoDetails{
+    margin-top:-16px;
+}
 
 
 /*

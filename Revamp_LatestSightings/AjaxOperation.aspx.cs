@@ -121,38 +121,38 @@ namespace Revamp_LatestSightings
             return status;
         }
 
-        [WebMethod]
-        public static bool SaveVideoDetails(string videoTitle, string alias, string keywords, string notes, string videofilename)
-        {
-            Boolean savedStatus = false;
-            if (HttpContext.Current.Session["userid"] != null && !String.IsNullOrEmpty(videofilename))
-            {
-                SqlConnection conn = new SqlConnection();
-                SqlCommand query = new SqlCommand();
-                SqlDataReader data = null;
-                Video video = new Video();
-                string userFullName;
-                string recordId = "-1";
+        //[WebMethod]
+        //public static bool SaveVideoDetails(string videoTitle, string alias, string keywords, string notes, string videofilename)
+        //{
+        //    Boolean savedStatus = false;
+        //    if (HttpContext.Current.Session["userid"] != null && !String.IsNullOrEmpty(videofilename))
+        //    {
+        //        SqlConnection conn = new SqlConnection();
+        //        SqlCommand query = new SqlCommand();
+        //        SqlDataReader data = null;
+        //        Video video = new Video();
+        //        string userFullName;
+        //        string recordId = "-1";
 
-                video = SetVideoObject(videoTitle, alias, keywords, notes, HttpContext.Current.Session["userid"].ToString(), video);
-                recordId = DataLayer.SaveVideoDetails(video, conn, query, videofilename);
-                if (recordId != "-1")
-                {
-                    if (recordId != "-2") // not a duplicate video
-                    {
-                        userFullName = DataLayer.GetFullName(conn, query, HttpContext.Current.Session["userid"].ToString(), data);
-                        if (!String.IsNullOrEmpty(userFullName))
-                            savedStatus = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userFullName, videoTitle, recordId);
-                    }
-                    else
-                    {
-                        savedStatus = true;
-                    }
+        //        video = SetVideoObject(videoTitle, alias, keywords, notes, HttpContext.Current.Session["userid"].ToString(), video);
+        //        recordId = DataLayer.SaveVideoDetails(video, conn, query, videofilename);
+        //        if (recordId != "-1")
+        //        {
+        //            if (recordId != "-2") // not a duplicate video
+        //            {
+        //                userFullName = DataLayer.GetFullName(conn, query, HttpContext.Current.Session["userid"].ToString(), data);
+        //                if (!String.IsNullOrEmpty(userFullName))
+        //                    savedStatus = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userFullName, videoTitle, recordId);
+        //            }
+        //            else
+        //            {
+        //                savedStatus = true;
+        //            }
 
-                }
-            }
-            return savedStatus;
-        }
+        //        }
+        //    }
+        //    return savedStatus;
+        //}
 
         [WebMethod]
         public static bool SaveImageDetails(string animal, string activity, string area, string tags, string comments, string title)
@@ -169,7 +169,7 @@ namespace Revamp_LatestSightings
             return savedStatus;
         }
 
-        private static Video SetVideoObject(string videoTitle, string alias, string keywords, string notes, string userId, Video video)
+        private static Video SetVideoObject(string videoTitle, string alias, string keywords, string notes, string userId, Video video, string status = "Pending")
         {
             video.Id = Guid.NewGuid().ToString();
             video.Contributor = userId;
@@ -177,8 +177,8 @@ namespace Revamp_LatestSightings
             video.Alias = alias;
             video.Keywords = keywords;
             video.Notes = notes;
-            video.Status = "Pending";
-            video.Status = "Pending";
+            //video.Status = "Pending";
+            video.Status = status;
             video.DateRemoved = (DateTime)System.Data.SqlTypes.SqlDateTime.MaxValue;
             //video.DateRemoved = DateTime.Now.AddYears(20);
             video.DateUploaded = (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue;
@@ -464,6 +464,40 @@ namespace Revamp_LatestSightings
                 }
             }
             return parkid;
+        }
+
+        [WebMethod]
+        public static bool SaveVideoDetailsAndSendMail(string videoTitle, string alias, string keywords, string notes)
+        {
+            Boolean savedStatus = false;
+            if (HttpContext.Current.Session["userid"] != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                SqlCommand query = new SqlCommand();
+                SqlDataReader data = null;
+                Video video = new Video();
+                string userFullName;
+                string recordId = "-1";
+
+                video = SetVideoObject(videoTitle, alias, keywords, notes, HttpContext.Current.Session["userid"].ToString(), video, "Details of Video");
+                recordId = DataLayer.SaveVideoDetails(video, conn, query, "");
+                if (recordId != "-1")
+                {
+                    if (recordId != "-2") // not a duplicate video
+                    {
+                        Person userDetails = null;
+                        userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
+                        if (userDetails != null)
+                            savedStatus = utils.SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(userDetails, videoTitle);
+                    }
+                    else
+                    {
+                        savedStatus = true;
+                    }
+
+                }
+            }
+            return savedStatus;
         }
     }
 }

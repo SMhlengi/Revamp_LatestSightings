@@ -683,5 +683,43 @@ namespace Revamp_LatestSightings
             return tingDate.ToString(format);
 
         }
+
+        public static bool SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(Person userDetails, string title)
+        {
+            bool mailSent = false;
+            try
+            {
+                MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", ConfigurationManager.AppSettings["videoAdministratorEmailAddress"].ToString());
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Port = 25;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Host = "freeza.aserv.co.za";
+                NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                message.Subject = "Video details captured";
+
+                string str = "Hey team" + Environment.NewLine + Environment.NewLine;
+                str += "Looks like ";
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username +
+                " has captured the following details for a file upload. " + Environment.NewLine + Environment.NewLine +
+                "Title : " + title + Environment.NewLine + Environment.NewLine +
+                "If you don't receive a video preview email soon, you best get in touch with ";
+
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username + " using the following details;" + Environment.NewLine + Environment.NewLine +
+                userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
+                userDetails.Email + Environment.NewLine +
+                userDetails.CellNumber + Environment.NewLine +
+                userDetails.TelephoneNumber;
+
+                message.Body = str;
+                smtpClient.Send(message);
+                mailSent = true;
+            }
+            catch (Exception ex)
+            {
+            }
+            return mailSent;
+        }
     }
 }

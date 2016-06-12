@@ -23,5 +23,6 @@ namespace Revamp_LatestSightings
         public string Skype { get; set; }
         public string Twitter { get; set; }
         public bool Active { get; set; }
+        public string username { get; set; }
     }
 }

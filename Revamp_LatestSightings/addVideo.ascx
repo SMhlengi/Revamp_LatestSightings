@@ -18,7 +18,7 @@
 <!-- MOVING VIDEO DETAILS TO BE HERE -->
 
 <%--<span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>--%>
-<div class="row" data-bind="visible: uploadHasStarted()">
+<div class="row captureVideoDetailsContainer">
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="panel transparentBackground">
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <div class="alert alert-success videoDetailsFormHeading" role="alert">Please provide us with the below information of the uploaded video</div>
+                        <div class="videoDetailsFormHeading">Please provide us with the below information of the content you would like to upload</div>
                     </div>
                     <div class="col-md-1"></div>
                 </div>
@@ -58,16 +58,16 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <div class="form-group videoTitle">
-                            <p class="text-danger">Video Title is required</p>
+                            <p class="">Video Title is required</p>
                         </div>
                         <div class="form-group alias">
-                            <p class="text-danger">Alias is required</p>
+                            <p class="">Alias is required</p>
                         </div>
                         <div class="form-group keywords">
-                            <p class="text-danger">Keywords is required</p>
+                            <p class="">Keywords is required</p>
                         </div>
                         <div class="form-group notes">
-                            <p class="text-danger">Notes number is required</p>
+                            <p class="">Notes number is required</p>
                         </div>
                     </div>
                 </div>           

@@ -83,7 +83,7 @@ Basic Style
   /* single step */
   display: inline-block;
   font-size: 1.4rem;
-  color: #2c3f4c;
+  color: black !important;
 }
 .cd-breadcrumb li.current > *, .cd-multi-steps li.current > * {
   /* selected step */

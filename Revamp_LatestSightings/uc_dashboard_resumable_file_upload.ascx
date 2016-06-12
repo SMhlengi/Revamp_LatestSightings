@@ -56,16 +56,14 @@
         </div>
     </div>--%>
 
-    <div class="panel panel-default row">
-        <div class="panel-heading">
-            <h3 class="panel-title">Notes</h3>
-        </div>
-        <div class="panel-body">
+    <div class="row" style="margin-left:20px;">
+        <h6>Notes</h6>
+        <p>
             <ul>
-                <li>This video upload is ONLY supported by the following browsers, Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
-                <li>If you not using one of the above browsers, please update your browser</li>
+                <li style="font-size:12px;">This video upload is ONLY supported by the following browsers, Firefox 4+, Chrome 11+, Safari 6+ and Internet Explorer 10+.</li>
+                <li style="font-size:12px;">If you not using one of the above browsers, please update your browser</li>
             </ul>
-        </div>
+        </p>
     </div>
 
 

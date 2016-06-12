@@ -442,9 +442,12 @@
     $(".tncNext").click(function () {
         if ($("#chk_terms").prop('checked')) {
             $(".termsAndConditions").hide();
-            $(".rfuploader").show("slow");
+            $(".captureVideoDetailsContainer").show("slow");
+            $(".updateVideoDetails").show("slow");
+            $("#content-inner").css("height", "850px");
             $this = $(".current");
             $this.removeClass("current");
+            $this.addClass("visited");
             $($this.next()[0]).addClass("current");
         }
     });
@@ -672,4 +675,8 @@
 
 
     LoginIfOnLoginPageAndRememberMeIsSet();
+
+    $("#videoListTab").click(function () {
+        $("#content-inner").css("height", "1150px");
+    });
 });
