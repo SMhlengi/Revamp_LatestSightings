@@ -684,9 +684,9 @@ namespace Revamp_LatestSightings
 
         }
 
-        public static bool SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(Person userDetails, string title)
+        public static string SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(Person userDetails, string title)
         {
-            bool mailSent = false;
+            string mailSent = "false";
             try
             {
                 MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", ConfigurationManager.AppSettings["videoAdministratorEmailAddress"].ToString());
@@ -714,7 +714,7 @@ namespace Revamp_LatestSightings
 
                 message.Body = str;
                 smtpClient.Send(message);
-                mailSent = true;
+                mailSent = "true";
             }
             catch (Exception ex)
             {

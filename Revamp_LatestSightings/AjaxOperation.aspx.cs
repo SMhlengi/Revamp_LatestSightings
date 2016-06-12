@@ -467,37 +467,49 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool SaveVideoDetailsAndSendMail(string videoTitle, string alias, string keywords, string notes)
+        public static Dictionary<string, string> SaveVideoDetailsAndSendMail(string videoTitle, string alias, string keywords, string notes)
         {
-            Boolean savedStatus = false;
+            Dictionary<string, string> details = new Dictionary<string, string>()
+            {
+                {"savedStatus", "false"},
+                {"videoId", "-1"}
+            };
             if (HttpContext.Current.Session["userid"] != null)
             {
                 SqlConnection conn = new SqlConnection();
                 SqlCommand query = new SqlCommand();
                 SqlDataReader data = null;
                 Video video = new Video();
-                string userFullName;
-                string recordId = "-1";
 
                 video = SetVideoObject(videoTitle, alias, keywords, notes, HttpContext.Current.Session["userid"].ToString(), video, "Details of Video");
-                recordId = DataLayer.SaveVideoDetails(video, conn, query, "");
-                if (recordId != "-1")
+                details["videoId"] = DataLayer.SaveVideoDetails(video, conn, query, "");
+                if (details["videoId"] != "-1")
                 {
-                    if (recordId != "-2") // not a duplicate video
+                    if (details["videoId"] != "-2") // not a duplicate video
                     {
                         Person userDetails = null;
                         userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
                         if (userDetails != null)
-                            savedStatus = utils.SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(userDetails, videoTitle);
+                            details["savedStatus"] =  utils.SendEmailToAdministratorTheVideoDetailsHaveBeenCaptured(userDetails, videoTitle);
                     }
                     else
                     {
-                        savedStatus = true;
+                        details["savedStatus"] = "true";
                     }
-
                 }
             }
-            return savedStatus;
+            return details;
+        }
+
+        [WebMethod]
+        public static bool DoesFileAlreadyExist(string filename)
+        {
+            bool fileExists = false;
+            SqlConnection conn = new SqlConnection();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader data = null;
+            fileExists = DataLayer.DoesVideoAlreadyExists(conn, query, data, filename);
+            return fileExists;
         }
     }
 }

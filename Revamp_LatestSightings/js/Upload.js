@@ -27,7 +27,6 @@ $(document).ready(function () {
     }
 
     $(".updateVideoDetails").click(function () {
-        debugger;
         ClearErrorWarningOnVideoDetailsTextBoxes();
         HideMessageErrorsOnVideoDetails();
         var status = ValidateVidDetails();
@@ -76,7 +75,9 @@ $(document).ready(function () {
             dataType: "json"
         }).done(
             function (data, textStatus, jqXHR) {
-                if (data.d == true) {
+                console.log(data);
+                if (data.d.savedStatus === "true") {
+                    $.cookie('vd', data.d.videoId, { expires: 100, path: '/' });
                     $(".registerSpinner").hide();
                     $("#videoTitle").removeAttr("disabled");
                     $("#alias").removeAttr("disabled");
@@ -296,10 +297,43 @@ $(document).ready(function () {
                 }
             }
         };
+
+        self.UploadFileIfFileDoesNotExist = function () {
+            var postUrl = "/AjaxOperation.aspx/DoesFileAlreadyExist";
+            $.ajax({
+                type: "POST",
+                url: postUrl,
+                data: "{'filename' : '" + self.filesToUpload()[0].fileName + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json"
+            }).done(
+                function (data, textStatus, jqXHR) {
+                    console.log(data.d);
+                    if (data.d) {
+                        swal({
+                            title: "Duplicate File Detected!",
+                            text: "Please rename your file as we already have a file with the same name uploaded.",
+                            type: "warning",
+                            showCancelButton: false,
+                            confirmButtonText: "Ok",
+                            closeOnConfirm: true,
+                            html: false
+                        });
+
+                    } else {
+                        self.r.upload()
+                        self.startUploadButtonText("Uploading...");
+                        self.disableUpload(true);
+                    }
+                }
+            ).fail(
+                function (data, textStatus, jqXHR) {
+                }
+            );
+        };
+
         self.doUpload = function () {
-            self.r.upload()
-            self.startUploadButtonText("Uploading...");
-            self.disableUpload(true);
+            self.UploadFileIfFileDoesNotExist();
         };
 
         self.pauseUpload = function () {

@@ -330,9 +330,28 @@ namespace Revamp_LatestSightings
             return recordId;
         }
 
-        private static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, string filename)
+        public static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, string filename)
         {
             SqlDataReader data;
+            query.CommandText = SQL_DOES_VIDEO_EXIST;
+            query.Parameters.Add("name", System.Data.SqlDbType.VarChar).Value = filename;
+            conn.Open();
+            data = query.ExecuteReader();
+            if (data.HasRows)
+            {
+                data.Close();
+                conn.Close();
+                return true;
+            }
+            data.Close();
+            conn.Close();
+            return false;
+
+        }
+
+        public static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, SqlDataReader data, string filename)
+        {
+            ConfigureConnection(conn, query);
             query.CommandText = SQL_DOES_VIDEO_EXIST;
             query.Parameters.Add("name", System.Data.SqlDbType.VarChar).Value = filename;
             conn.Open();
