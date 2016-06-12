@@ -73,7 +73,7 @@
                 </div>           
             </div><!-- panel-body -->
             <div>
-                <div class="pull-left updateVideoDetails">
+                <div class="pull-left">
                     <a href="javascript:void(0)" class="btn btn-success updateVideoDetails" role="button">Save</a>
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner" style="margin-top:-13px">
@@ -165,7 +165,7 @@
                             <p class="text-danger">Keywords is required</p>
                         </div>
                         <div class="form-group notes">
-                            <p class="text-danger">Notes number is required</p>
+                            <p class="text-danger">Notes is required</p>
                         </div>
                     </div>
                 </div>           

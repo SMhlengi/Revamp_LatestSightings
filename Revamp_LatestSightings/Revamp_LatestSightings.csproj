@@ -314,8 +314,6 @@
     <Content Include="tings2.aspx" />
     <Content Include="tvlodge.aspx" />
     <Content Include="uc_addcontent.ascx" />
-    <Content Include="uc_addcontent2.ascx" />
-    <Content Include="uc_addcontent3.ascx" />
     <Content Include="uc_AddImage.ascx" />
     <Content Include="uc_billboard.ascx" />
     <Content Include="uc_categoryOtherRelatedStories.ascx" />
@@ -629,20 +627,6 @@
     </Compile>
     <Compile Include="uc_addcontent.ascx.designer.cs">
       <DependentUpon>uc_addcontent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="uc_addcontent2.ascx.cs">
-      <DependentUpon>uc_addcontent2.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uc_addcontent2.ascx.designer.cs">
-      <DependentUpon>uc_addcontent2.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="uc_addcontent3.ascx.cs">
-      <DependentUpon>uc_addcontent3.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uc_addcontent3.ascx.designer.cs">
-      <DependentUpon>uc_addcontent3.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_AddImage.ascx.cs">
       <DependentUpon>uc_AddImage.ascx</DependentUpon>

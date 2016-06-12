@@ -27,6 +27,7 @@ $(document).ready(function () {
     }
 
     $(".updateVideoDetails").click(function () {
+        debugger;
         ClearErrorWarningOnVideoDetailsTextBoxes();
         HideMessageErrorsOnVideoDetails();
         var status = ValidateVidDetails();
@@ -81,8 +82,11 @@ $(document).ready(function () {
                     $("#alias").removeAttr("disabled");
                     $("#keywords").removeAttr("disabled");
                     $("#notes").removeAttr("disabled");
-                    //$(".videoDetailsSaved").show();
-                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+
+                    $("#videoTitle").val("");
+                    $("#alias").val("");
+                    $("#keywords").val("");
+                    $("#notes").val("");
 
                     swal({
                         title: "Done !!",
@@ -93,6 +97,14 @@ $(document).ready(function () {
                         closeOnConfirm: true,
                         html: false
                     });
+
+                    hideVideoCaptureFormAndShowVideoUpload();
+
+                    //$(".videoDetailsSaved").show();
+                    //setTimeout(function () {
+                    //    location.href = "/dashboard.aspx";
+                    //}, 2000);
+
 
                 } else {
                     $(".registerSpinner").hide();
@@ -144,8 +156,6 @@ $(document).ready(function () {
                     $("#alias").removeAttr("disabled");
                     $("#keywords").removeAttr("disabled");
                     $("#notes").removeAttr("disabled");
-                    //$(".videoDetailsSaved").show();
-                    //setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
 
                     swal({
                         title: "Done !!",
@@ -158,6 +168,7 @@ $(document).ready(function () {
                     }, function () {
                         window.location.href = "/dashboard.aspx"
                     });
+
 
                 } else {
                     $(".registerSpinner").hide();
@@ -179,6 +190,18 @@ $(document).ready(function () {
             return true;
         }
         return false;
+    }
+
+    function hideVideoCaptureFormAndShowVideoUpload() {
+        setTimeout(function () {
+            $(".captureVideoDetailsContainer").hide();
+            $(".rfuploaderPadding").show("slow");
+            $(".rfuploader").show("slow");
+            $this = $(".current");
+            $this.removeClass("current");
+            $this.addClass("visited");
+            $($this.next()[0]).addClass("current");
+        }, 2000);
     }
 
 
