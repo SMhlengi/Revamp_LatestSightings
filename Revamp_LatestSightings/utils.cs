@@ -701,16 +701,17 @@ namespace Revamp_LatestSightings
 
                 string str = "Hey team" + Environment.NewLine + Environment.NewLine;
                 str += "Looks like ";
-                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username +
-                " has captured the following details for a file upload. " + Environment.NewLine + Environment.NewLine +
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                str += " has captured the following details for a file upload. " + Environment.NewLine + Environment.NewLine +
                 "Title : " + title + Environment.NewLine + Environment.NewLine +
                 "If you don't receive a video preview email soon, you best get in touch with ";
 
-                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username + " using the following details;" + Environment.NewLine + Environment.NewLine +
-                userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
-                userDetails.Email + Environment.NewLine +
-                userDetails.CellNumber + Environment.NewLine +
-                userDetails.TelephoneNumber;
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                str += " using the following details;" + Environment.NewLine + Environment.NewLine +
+                 userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
+                 userDetails.Email + Environment.NewLine +
+                 userDetails.CellNumber + Environment.NewLine +
+                 userDetails.TelephoneNumber;
 
                 message.Body = str;
                 smtpClient.Send(message);
