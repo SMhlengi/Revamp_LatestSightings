@@ -14,7 +14,7 @@ namespace Revamp_LatestSightings
         private const string SQL_SELECT_PERSON = "SELECT firstname, lastname, id FROM latestsightings.dbo.people WHERE (email = @email and password = @password);";
         private const string SQL_SELECT_PERSON_BASED_ON_EMAIL = "SELECT firstname, lastname, id FROM latestsightings.dbo.people WHERE (email = @email);";
         private const string SQL_UPDATE_PASSWORD = "UPDATE latestsightings.dbo.people SET password = @password where (id = @userid);";
-        private const string SQL_UPDATE_VIDEO = "UPDATE latestsightings.dbo.videos SET filename = @filename, videoStatus = @videostatus, status = @videostatus where (id = @videoid);";
+        private const string SQL_UPDATE_VIDEO = "UPDATE latestsightings.dbo.videos SET filename = @filename, videoStatus = @videostatus, status = @videostatus where (id = @videoidrecord);";
         private const string SQL_SELECT_ALL_PERSON_RECORD = "Select * from latestsightings.dbo.people where (id = @id);";
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
@@ -784,10 +784,10 @@ namespace Revamp_LatestSightings
         {
             ConfigureConnection(conn, query);
             bool updatedStatus = false;
-            // private const string SQL_UPDATE_VIDEO = "UPDATE latestsightings.dbo.videos SET filename = @filename, videoStatus = @videostatus, status = @videostatus where (id = @videoid);";
+            // private const string SQL_UPDATE_VIDEO = "UPDATE latestsightings.dbo.videos SET filename = @filename, videoStatus = @videostatus, status = @videostatus where (id = @videoidrecord);";
             query.CommandText = SQL_UPDATE_VIDEO;
             query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
-            query.Parameters.Add("videoid", System.Data.SqlDbType.VarChar).Value = vd;
+            query.Parameters.Add("videoidrecord", System.Data.SqlDbType.VarChar).Value = vd;
             query.Parameters.Add("videostatus", System.Data.SqlDbType.VarChar).Value = "Pending";
             try
             {

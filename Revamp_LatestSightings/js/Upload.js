@@ -306,7 +306,7 @@ $(document).ready(function () {
 
         });
         self.r.on('complete', function () {
-            videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            //videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
             UpdateVideoDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('vd'));
         });
 

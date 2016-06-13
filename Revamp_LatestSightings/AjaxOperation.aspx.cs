@@ -513,13 +513,24 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool UpdateVideoDetails(string filename, string vd)
+        public static bool UpdateVideoDetails(string videofilename, string vd)
         {
             bool recordUpdated = false;
             SqlConnection conn = new SqlConnection();
             SqlCommand query = new SqlCommand();
             SqlDataReader data = null;
-            recordUpdated = DataLayer.UpdateVideoDetails(conn, query, data, filename, vd);
+            Video video = new Video();
+            recordUpdated = DataLayer.UpdateVideoDetails(conn, query, data, videofilename, vd);
+            if (recordUpdated)
+            {
+                Person userDetails = null;
+                userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
+                if (userDetails != null)
+                { 
+                    video = DataLayer.GetVideoRecord(conn, query, HttpContext.Current.Session["userid"].ToString(), data, vd);
+                    recordUpdated = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userDetails.FirstName + " " + userDetails.LastName, video.Title, vd);
+                }
+            }
             return recordUpdated;
         }
     }

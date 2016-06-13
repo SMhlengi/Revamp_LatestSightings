@@ -46,9 +46,6 @@
                                         <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
                                         <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li>
                                         <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
-                                        <li id="addContentConcept1" class=""><a href="#addContent1" id="addContentConceptTab1" data-toggle="tab"><strong>Add Content 1</strong></a></li>
-                                        <li id="addContentConcept2" class=""><a href="#addContent2" id="addContentConceptTab2" data-toggle="tab"><strong>Add Content 2</strong></a></li>
-                                        <li id="addContentConcept3" class=""><a href="#addContent3" id="addContentConceptTab3" data-toggle="tab"><strong>Add Content 3</strong></a></li>
                                 </ul>
         
                                 <!-- Tab panes -->
@@ -125,24 +122,6 @@
                                         <h4 class="nomargin">Video List</h4>
                                         <!--<p>About content goes here</p> -->
                                         <asp:PlaceHolder ID="videoListcontent" runat="server" />
-                                    </div><!-- tab-pane -->
-
-                                    <div class="tab-pane disabled" id="addContent1">
-                                        <!--<h4 class="nomargin">Add Content</h4>-->
-                                        <!--<p>About content goes here</p> -->
-                                        <asp:PlaceHolder ID="addContentPlacehoder" runat="server" />
-                                    </div><!-- tab-pane -->
-
-                                    <div class="tab-pane disabled" id="addContent2">
-                                        <h4 class="nomargin">Add Content</h4>
-                                        <!--<p>About content goes here</p> -->
-                                        <asp:PlaceHolder ID="addContentPlacehoder2" runat="server" />
-                                    </div><!-- tab-pane -->
-
-                                    <div class="tab-pane disabled" id="addContent3">
-                                        <h4 class="nomargin">Add Content</h4>
-                                        <!--<p>About content goes here</p> -->
-                                        <asp:PlaceHolder ID="addContentPlacehoder3" runat="server" />
                                     </div><!-- tab-pane -->
                                   
                                 </div><!-- tab-content -->
