@@ -186,6 +186,46 @@ $(document).ready(function () {
         );
     }
 
+    function UpdateVideoDetailsRecordWithFileName(filename, vd) {
+        var postUrl = "/AjaxOperation.aspx/UpdateVideoDetails";
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: "{'videofilename' : '" + filename + "', 'vd' : '" + vd + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(
+            function (data, textStatus, jqXHR) {
+                if (data.d == true) {
+                    swal({
+                        title: "Well Done !!",
+                        text: "Video successfully uploaded.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: false,
+                        html: false
+                    }, function () {
+                        window.location.href = "/dashboard.aspx"
+                    });
+                } else {
+                    swal({
+                        title: "Error with updating video record.",
+                        text: "Something went wrong with updating your video details record with video name. Please try uploading the file again.",
+                        type: "warning",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: true,
+                        html: false
+                    });
+                }
+            }
+        ).fail(
+            function (data, textStatus, jqXHR) {
+            }
+        );
+    }
+
     function isEmpty(control) {
         if ($(control).val() == "") {
             return true;
@@ -266,16 +306,8 @@ $(document).ready(function () {
 
         });
         self.r.on('complete', function () {
-            //document.getElementById('progressBar').style.width = 100 + '%';
-            var status = ValidateVidDetails();
-            if (status) {
-                videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
-            } else {
-                $("#content-inner").css("height", "1100px");
-                $(".updateVideoDetails").show();
-            }
-
-
+            videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
+            UpdateVideoDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('vd'));
         });
 
         self.r.on('error', function (message, file) {

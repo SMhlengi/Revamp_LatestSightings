@@ -511,5 +511,16 @@ namespace Revamp_LatestSightings
             fileExists = DataLayer.DoesVideoAlreadyExists(conn, query, data, filename);
             return fileExists;
         }
+
+        [WebMethod]
+        public static bool UpdateVideoDetails(string filename, string vd)
+        {
+            bool recordUpdated = false;
+            SqlConnection conn = new SqlConnection();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader data = null;
+            recordUpdated = DataLayer.UpdateVideoDetails(conn, query, data, filename, vd);
+            return recordUpdated;
+        }
     }
 }
