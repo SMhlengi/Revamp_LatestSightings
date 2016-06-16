@@ -4215,6 +4215,10 @@ a.tnc:hover{
 .marginTopEight{
     margin-top:8px;
 }
+.tncheading{
+    display:inline;
+}
+
 @media (max-width: 768px) { 
 .adbox .left { 	width:70%; }  
 .adbox .right { 	width:30%; 	padding-top:20px; } 

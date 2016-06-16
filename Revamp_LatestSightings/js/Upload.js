@@ -90,8 +90,8 @@ $(document).ready(function () {
                     $("#notes").val("");
 
                     swal({
-                        title: "Done !!",
-                        text: "Video Details successfully saved.",
+                        title: "Almost there..",
+                        text: "Lets upload the media",
                         type: "success",
                         showCancelButton: false,
                         confirmButtonText: "Ok",
@@ -198,8 +198,8 @@ $(document).ready(function () {
             function (data, textStatus, jqXHR) {
                 if (data.d == true) {
                     swal({
-                        title: "Well Done !!",
-                        text: "Video successfully uploaded.",
+                        title: "Well Done.",
+                        text: "File successfully uploaded",
                         type: "success",
                         showCancelButton: false,
                         confirmButtonText: "Ok",
