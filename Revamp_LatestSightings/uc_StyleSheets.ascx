@@ -20,3 +20,4 @@
 <link href="<%= ResolveUrl("~/css/responsivedataTables.responsive.css") %>" rel="stylesheet" />--%>
 <link href="<%= ResolveUrl("~/css/swiper.css") %>" rel="stylesheet" />
 <link href="<%= ResolveUrl("~/css/docs.min.css") %>" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/css/prettyCheckable.css") %>" rel="stylesheet" />

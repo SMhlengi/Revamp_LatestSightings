@@ -3905,7 +3905,10 @@ input , select {
 
 .form-control {
     color: black !important;
-    border: 1px solid #bf9c76;
+    border: 1px solid #bf9c76;    background-color:white !important;
+
+}.uploadImagePanel{
+    display:none;
 }
 
 .declineSuggestions {
@@ -4217,6 +4220,11 @@ a.tnc:hover{
 }
 .tncheading{
     display:inline;
+}
+
+.imageUploadRadioLabel, .videoUploadRadioLabel{
+    color:#FB7C2D;
+    font-weight:bold;
 }
 
 @media (max-width: 768px) { 

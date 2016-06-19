@@ -14,3 +14,4 @@
 <script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/validationLib.js?v=111") %>"></script>
+<script src="<%= ResolveUrl("~/js/prettyCheckable.min") %>"></script>

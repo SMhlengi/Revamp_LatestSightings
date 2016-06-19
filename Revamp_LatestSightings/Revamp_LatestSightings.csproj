@@ -124,6 +124,7 @@
     <Content Include="css\owl.carousel2.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\parkSightingsOverRide.css" />
+    <Content Include="css\prettyCheckable.css" />
     <Content Include="css\registerOverRide.css" />
     <Content Include="css\resetpasswordOverRide.css" />
     <Content Include="css\responsive.css" />
@@ -216,6 +217,7 @@
     <Content Include="images\services-590x375.gif" />
     <Content Include="images\slideshow-1140x390.gif" />
     <Content Include="images\socialenginelogo.png" />
+    <Content Include="images\sprites-sfa68604977.png" />
     <Content Include="images\ting_arrow_indicator_down.png" />
     <Content Include="images\ting_arrow_indicator_up.png" />
     <Content Include="images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -278,6 +280,7 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\parkSightings.js" />
     <Content Include="js\plugins-scroll.js" />
+    <Content Include="js\prettyCheckable.min.js" />
     <Content Include="js\randomBlue.js" />
     <Content Include="js\randomGray.js" />
     <Content Include="js\randomOrange.js" />

@@ -663,6 +663,21 @@
         location.href = "/content/latest-sightings-app";
     });
 
+    $("#videoUploadRadio").click(function () {
+        $("#imageUploadRadio").removeClass("checked");
+        $("#videoUploadRadio").addClass("checked");
+        $(".uploadImagePanel").hide();
+        $(".uploadVideoPanel").show("slow");
+    });
+
+    $("#imageUploadRadio").click(function () {
+        $("#videoUploadRadio").removeClass("checked");
+        $("#imageUploadRadio").addClass("checked");
+        $(".uploadVideoPanel").hide();
+        $(".uploadImagePanel").show("slow");
+    });
+
+
     //$('#searchFor').bind("enterKey", function (e) {
     //    alert($("#searchFor").val());
     //});
