@@ -722,5 +722,49 @@ namespace Revamp_LatestSightings
             }
             return mailSent;
         }
+
+        public static string SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(Person userDetails, Image imageObj)
+        {
+            string mailSent = "false";
+            try
+            {
+                MailMessage message = new MailMessage("No-Reply@lscms.socialengine.co.za", ConfigurationManager.AppSettings["videoAdministratorEmailAddress"].ToString());
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Port = 25;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Host = "freeza.aserv.co.za";
+                NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
+                smtpClient.Credentials = (ICredentialsByHost)networkCredential;
+                message.Subject = "Image details captured";
+
+                string str = "Hey team" + Environment.NewLine + Environment.NewLine;
+                str += "Looks like ";
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                str += " has captured the following details for a image upload. " + Environment.NewLine + Environment.NewLine +
+                "Title : " + imageObj.title + Environment.NewLine +
+                "Animal : " + imageObj.animal + Environment.NewLine +
+                "Activity : " + imageObj.activity + Environment.NewLine +
+                "Area : " + imageObj.area + Environment.NewLine +
+                "Tags : " + imageObj.tags + Environment.NewLine +
+                "Comment : " + imageObj.generalComment + Environment.NewLine + Environment.NewLine + 
+                "If you don't receive a image preview email soon, you best get in touch with ";
+
+                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                str += " using the following details;" + Environment.NewLine + Environment.NewLine +
+                 userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
+                 userDetails.Email + Environment.NewLine +
+                 userDetails.CellNumber + Environment.NewLine +
+                 userDetails.TelephoneNumber;
+
+                message.Body = str;
+                smtpClient.Send(message);
+                mailSent = "true";
+            }
+            catch (Exception ex)
+            {
+            }
+            return mailSent;
+        }
     }
 }

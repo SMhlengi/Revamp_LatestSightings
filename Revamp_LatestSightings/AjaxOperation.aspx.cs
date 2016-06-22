@@ -154,21 +154,6 @@ namespace Revamp_LatestSightings
         //    return savedStatus;
         //}
 
-        [WebMethod]
-        public static bool SaveImageDetails(string animal, string activity, string area, string tags, string comments, string title)
-        {
-            Boolean savedStatus = false;
-            if (HttpContext.Current.Session["userid"] != null && HttpContext.Current.Session["Imagefilename"] != null)
-            {
-                SqlConnection conn = new SqlConnection();
-                SqlCommand query = new SqlCommand();
-                Image imageObj = new Image();
-                imageObj = SetImageObject(animal, activity, area, tags, comments, HttpContext.Current.Session["userid"].ToString(), imageObj, HttpContext.Current.Session["Imagefilename"].ToString(), title);
-                savedStatus = DataLayer.SaveImageDetails(imageObj, conn, query);
-            }
-            return savedStatus;
-        }
-
         private static Video SetVideoObject(string videoTitle, string alias, string keywords, string notes, string userId, Video video, string status = "Pending")
         {
             video.Id = Guid.NewGuid().ToString();
@@ -203,6 +188,24 @@ namespace Revamp_LatestSightings
             image.dateModified = DateTime.Now;
             image.title = title;
             return image ;
+        }
+
+        private static Image SetImageObject(string animal, string activity, string area, string tags, string comments, string userId, Image image, string title)
+        {
+            //video.Id = Guid.NewGuid().ToString();
+            image.contributor = userId;
+            image.animal = animal;
+            image.activity = activity;
+            image.area = area;
+            image.tags = tags;
+            image.generalComment = comments;
+            //image.original = filename;
+            //image.eightyBYeighty = filename;
+            //image.sixFiftyBYsixFifty = filename;
+            image.dateAdded = DateTime.Now;
+            image.dateModified = DateTime.Now;
+            image.title = title;
+            return image;
         }
 
 
@@ -502,33 +505,63 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool DoesFileAlreadyExist(string filename)
+        public static Dictionary<string,string> SaveImageDetails(string animal, string activity, string area, string tags, string comments, string title)
+        {
+            Dictionary<string, string> details = new Dictionary<string, string>()
+            {
+                {"savedStatus", "false"},
+                {"imageId", "-1"}
+            };
+
+
+            if (HttpContext.Current.Session["userid"] != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                SqlCommand query = new SqlCommand();
+                SqlDataReader data = null;
+                Image imageObj = new Image();
+                //imageObj = SetImageObject(animal, activity, area, tags, comments, HttpContext.Current.Session["userid"].ToString(), imageObj, HttpContext.Current.Session["Imagefilename"].ToString(), title);
+                imageObj = SetImageObject(animal, activity, area, tags, comments, HttpContext.Current.Session["userid"].ToString(), imageObj, title);
+                details["imageId"] = DataLayer.SaveImageDetails(imageObj, conn, query);
+                if (details["imageId"] != "-1")
+                {
+                    Person userDetails = null;
+                    userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
+                    if (userDetails != null)
+                        details["savedStatus"] = utils.SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(userDetails, imageObj);
+                }
+            }
+            return details;
+        }
+
+        [WebMethod]
+        public static bool DoesFileAlreadyExist(string filename, string fileType)
         {
             bool fileExists = false;
             SqlConnection conn = new SqlConnection();
             SqlCommand query = new SqlCommand();
             SqlDataReader data = null;
-            fileExists = DataLayer.DoesVideoAlreadyExists(conn, query, data, filename);
+            fileExists = DataLayer.DoesVideoAlreadyExists(conn, query, data, filename, fileType);
             return fileExists;
         }
 
         [WebMethod]
-        public static bool UpdateVideoDetails(string videofilename, string vd)
+        public static bool UpdateVideoDetails(string videofilename, string recordid, string fileType)
         {
             bool recordUpdated = false;
             SqlConnection conn = new SqlConnection();
             SqlCommand query = new SqlCommand();
             SqlDataReader data = null;
             Video video = new Video();
-            recordUpdated = DataLayer.UpdateVideoDetails(conn, query, data, videofilename, vd);
+            recordUpdated = DataLayer.UpdateFileUploadRecordDetails(conn, query, data, videofilename, recordid, fileType);
             if (recordUpdated)
             {
                 Person userDetails = null;
                 userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
                 if (userDetails != null)
                 { 
-                    video = DataLayer.GetVideoRecord(conn, query, HttpContext.Current.Session["userid"].ToString(), data, vd);
-                    recordUpdated = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userDetails.FirstName + " " + userDetails.LastName, video.Title, vd);
+                    video = DataLayer.GetVideoRecord(conn, query, HttpContext.Current.Session["userid"].ToString(), data, recordid);
+                    recordUpdated = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userDetails.FirstName + " " + userDetails.LastName, video.Title, recordid);
                 }
             }
             return recordUpdated;

@@ -4368,9 +4368,14 @@ a.tnc:hover{
 }#videolist{
     padding:16px;
 }
-.updateVideoDetails{
+.updateVideoDetails, updateImageDetails{
+    margin-top:-16px;
+}.updateImageSaveButtonDiv{
     margin-top:-16px;
 }
+.saveImageDetailsSpinner{
+    margin-top:-20px;
+}
 
 
 /*

@@ -668,6 +668,8 @@
         $("#videoUploadRadio").addClass("checked");
         $(".uploadImagePanel").hide();
         $(".uploadVideoPanel").show("slow");
+        $.cookie('vupload', true, { expires: 100, path: '/' });
+        $.cookie('imgupload', false, { expires: 100, path: '/' });
     });
 
     $("#imageUploadRadio").click(function () {
@@ -675,6 +677,9 @@
         $("#imageUploadRadio").addClass("checked");
         $(".uploadVideoPanel").hide();
         $(".uploadImagePanel").show("slow");
+        $("#content-inner").css("height", "1050px");
+        $.cookie('imgupload', true, { expires: 100, path: '/' });
+        $.cookie('vupload', false, { expires: 100, path: '/' });
     });
 
 

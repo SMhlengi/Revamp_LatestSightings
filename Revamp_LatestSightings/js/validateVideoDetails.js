@@ -176,15 +176,35 @@
             dataType: "json"
         }).done(
             function (data, textStatus, jqXHR) {
-                if (data.d == true) {
+                if (data.d.savedStatus === "true") {
+                    $.cookie('imgid', data.d.imageId, { expires: 100, path: '/' });
                     $(".registerSpinner").hide();
-                    //$("#videoTitle").removeAttr("disabled");
-                    //$("#alias").removeAttr("disabled");
-                    //$("#keywords").removeAttr("disabled");
-                    //$("#notes").removeAttr("disabled");
-                    $(".imageDetailsSaved").show();
+                    $("#title").attr("disabled", "disabled");
+                    $("#animal").attr("disabled", "disabled");
+                    $("#activity").attr("disabled", "disabled");
+                    $("#area").attr("disabled", "disabled");
+                    $("#tags").attr("disabled", "disabled");
+                    $("#comments").attr("disabled", "disabled");
 
-                    setTimeout(function () { location.href = "/dashboard.aspx"; }, 7500);
+                    $("#title").val("");
+                    $("#animal").val("");
+                    $("#activity").val("");
+                    $("#area").val("");
+                    $("#tags").val("");
+                    $("#comments").val("");
+
+                    swal({
+                        title: "Almost there..",
+                        text: "Lets upload the media",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: true,
+                        html: false
+                    });
+
+                    hideImageCaptureFormAndShowVideoUpload();
+
                 } else {
                     $(".registerSpinner").hide();
                     //$("#videoTitle").removeAttr("disabled");
@@ -198,6 +218,18 @@
             function (data, textStatus, jqXHR) {
             }
         );
+    }
+
+    function hideImageCaptureFormAndShowVideoUpload() {
+        setTimeout(function () {
+            $(".captureVideoDetailsContainer").hide();
+            $(".rfuploaderPadding").show("slow");
+            $(".rfuploader").show("slow");
+            $this = $(".current");
+            $this.removeClass("current");
+            $this.addClass("visited");
+            $($this.next()[0]).addClass("current");
+        }, 2000);
     }
 
 });

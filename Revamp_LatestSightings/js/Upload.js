@@ -186,12 +186,12 @@ $(document).ready(function () {
         );
     }
 
-    function UpdateVideoDetailsRecordWithFileName(filename, vd) {
+    function UpdateFileDetailsRecordWithFileName(filename, recordid, fileType) {
         var postUrl = "/AjaxOperation.aspx/UpdateVideoDetails";
         $.ajax({
             type: "POST",
             url: postUrl,
-            data: "{'videofilename' : '" + filename + "', 'vd' : '" + vd + "'}",
+            data: "{'videofilename' : '" + filename + "', 'recordid' : '" + recordid + "', 'fileType' : '" + fileType + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).done(
@@ -307,7 +307,13 @@ $(document).ready(function () {
         });
         self.r.on('complete', function () {
             //videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
-            UpdateVideoDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('vd'));
+            if ($.cookie('vupload', { path: '/' }) == "true") {
+                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('vd'), "vid");
+            }
+            else if ($.cookie('imgupload', { path: '/' }) == "true") {
+                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('imgid'), "img");
+            }
+
         });
 
         self.r.on('error', function (message, file) {
@@ -332,10 +338,18 @@ $(document).ready(function () {
 
         self.UploadFileIfFileDoesNotExist = function () {
             var postUrl = "/AjaxOperation.aspx/DoesFileAlreadyExist";
+            var fileType = "";
+            if ($.cookie('vupload', { path: '/' }) == "true") {
+                fileType = "vid";
+            }
+            else if ($.cookie('imgupload', { path: '/' }) == "true") {
+                fileType = "img";
+            }
+
             $.ajax({
                 type: "POST",
                 url: postUrl,
-                data: "{'filename' : '" + self.filesToUpload()[0].fileName + "'}",
+                data: "{'filename' : '" + self.filesToUpload()[0].fileName + "', 'fileType' : '" + fileType + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json"
             }).done(

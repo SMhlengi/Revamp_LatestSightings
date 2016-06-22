@@ -157,32 +157,32 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <div class="form-group title">
-                            <p class="text-danger">Title is required</p>
+                            <p class="">Title is required</p>
                         </div>
                         <div class="form-group animal">
-                            <p class="text-danger">Animal Type is required</p>
+                            <p class="">Animal Type is required</p>
                         </div>
                         <div class="form-group activity">
-                            <p class="text-danger">Activity is required</p>
+                            <p class="">Activity is required</p>
                         </div>
                         <div class="form-group area">
-                            <p class="text-danger">Area is required</p>
+                            <p class="">Area is required</p>
                         </div>
                         <div class="form-group tags">
-                            <p class="text-danger">Tags number is required</p>
+                            <p class="">Tags number is required</p>
                         </div>
                         <div class="form-group comments">
-                            <p class="text-danger">Comments number is required</p>
+                            <p class="">Comments number is required</p>
                         </div>
                     </div>
                 </div>           
             </div><!-- panel-body -->
             <div>
-                <div class="pull-left">
+                <div class="pull-left updateImageSaveButtonDiv">
                     <a href="javascript:void(0)" class="btn btn-success updateImageDetails" role="button">Save</a>                    
                 </div>
                 <div class="pull-left marginLeftTen registerSpinner">
-                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" />
+                    <img src="<%=ResolveUrl("~/images/loading.gif")%>" class="saveImageDetailsSpinner"/>
                 </div>
                 <div class="alert alert-success pull-left marginLeftTen imageDetailsSaved">
                     <strong>Image details have been Successfully Saved</strong>

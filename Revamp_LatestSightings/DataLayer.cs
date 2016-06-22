@@ -19,8 +19,9 @@ namespace Revamp_LatestSightings
         private const string SQL_UPDATE_PROFILE = "UPDATE latestsightings.dbo.people SET firstname = @firstname, lastname = @lastname, email = @email, cellNumber = @cellNumber, telNumber = @telNumber, otherContact = @otherContact, twitter = @twitter, facebook = @facebook, skype = @skype, address = @address, banking = @banking, paypal = @paypal, accountType = @accounttype, accountNumber = @accountNumber, branchName = @branchName, branchCode = @branchCode WHERE (id = @id);";
         private const string SQL_INSERT_VIDEO = "INSERT INTO latestsightings.dbo.videos (contributor, id, title, alias, dateRecieved, ipDate, ipDocument, revenueShare, keywords, region, notes, created, modified, status, youtubeId, dateUploaded, dateRemoved, filename, videoStatus) VALUES (@contributor, @id, @title, @alias, @dateRecieved, @ipDate, @ipDocument, @revenueShare, @keywords, @region, @notes, @created, @modified, @status, @youtubeId, @dateUploaded, @dateRemoved, @filename, @videoStatus); SELECT TOP 1 id FROM latestsightings.dbo.videos WHERE contributor =  @contributor ORDER BY Created DESC";
         private const string SQL_DOES_VIDEO_EXIST = "SELECT TOP 1 filename from latestsightings.dbo.videos WHERE (filename = @name)";
-        private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment, title) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment, @title);";
-       
+        private const string SQL_DOES_IMG_EXIST = "SELECT TOP 1 original from latestsightings.dbo.images WHERE (original = @name)";
+        private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment, title) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment, @title); SELECT TOP 1 id FROM latestsightings.dbo.images WHERE contributor =  @contributor ORDER BY dateAdded DESC";
+        private const string SQL_UPDATE_IMAGES = "Update latestsightings.dbo.images SET eightyBYeighty = @filename, sixFiftyBYsixFifty = filename, original = filename  where (id = @recordid);";
         private const string SQL_SELECT_PERSON_VIDEOS = "Select * from latestsightings.dbo.videos where (contributor = @contributor);";
         private const string SQL_SELECT_PERSON_BASED_ON_ID = "SELECT firstname, lastname, email, cellNumber, telNumber, screenName FROM latestsightings.dbo.people WHERE (id = @userid);";
         private const string SQL_SELECT_USER_LASTEST_VIDEO = "SELECT TOP (1) * from latestsightings.dbo.videos WHERE (contributor = @contributor) AND (videoStatus = 'Pending') ORDER BY created DESC";
@@ -350,10 +351,12 @@ namespace Revamp_LatestSightings
 
         }
 
-        public static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, SqlDataReader data, string filename)
+        public static bool DoesVideoAlreadyExists(SqlConnection conn, SqlCommand query, SqlDataReader data, string filename, string fileType="vid")
         {
+            // private const string SQL_DOES_IMG_EXIST = "SELECT TOP 1 original from latestsightings.dbo.images WHERE (original = @name)";
             ConfigureConnection(conn, query);
-            query.CommandText = SQL_DOES_VIDEO_EXIST;
+
+            query.CommandText = (fileType.ToLower() == "vid") ? SQL_DOES_VIDEO_EXIST : SQL_DOES_IMG_EXIST;
             query.Parameters.Add("name", System.Data.SqlDbType.VarChar).Value = filename;
             conn.Open();
             data = query.ExecuteReader();
@@ -369,20 +372,20 @@ namespace Revamp_LatestSightings
 
         }
 
-        internal static Boolean SaveImageDetails(Image image, SqlConnection conn, SqlCommand query)
+        internal static string SaveImageDetails(Image image, SqlConnection conn, SqlCommand query)
         {
+            string recordId = "-1";
             ConfigureConnection(conn, query);
-            bool insertStatus = false;
             try
             {
                 conn.Open();
                 query.CommandText = SQL_INSERT_IMAGE;
                 query.Parameters.Add("contributor", System.Data.SqlDbType.VarChar).Value = image.contributor;
-                query.Parameters.Add("original", System.Data.SqlDbType.VarChar).Value = image.original;
-                query.Parameters.Add("eightyBYeighty", System.Data.SqlDbType.VarChar).Value = image.eightyBYeighty;
+                query.Parameters.Add("original", System.Data.SqlDbType.VarChar).Value = "not set";
+                query.Parameters.Add("eightyBYeighty", System.Data.SqlDbType.VarChar).Value = "not set";
                 query.Parameters.Add("dateAdded", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
                 query.Parameters.Add("dateModified", System.Data.SqlDbType.DateTime).Value = DateTime.Now;
-                query.Parameters.Add("sixFiftyBYsixFifty", System.Data.SqlDbType.VarChar).Value = image.sixFiftyBYsixFifty;
+                query.Parameters.Add("sixFiftyBYsixFifty", System.Data.SqlDbType.VarChar).Value = "not set";
                 query.Parameters.Add("animal", System.Data.SqlDbType.VarChar).Value = image.animal;
                 query.Parameters.Add("activity", System.Data.SqlDbType.VarChar).Value = image.activity;
                 query.Parameters.Add("area", System.Data.SqlDbType.VarChar).Value = image.area;
@@ -390,9 +393,9 @@ namespace Revamp_LatestSightings
                 query.Parameters.Add("display", System.Data.SqlDbType.Bit).Value = 0;
                 query.Parameters.Add("generalComment", System.Data.SqlDbType.VarChar).Value = image.generalComment;
                 query.Parameters.Add("title", System.Data.SqlDbType.VarChar).Value = image.title;
+                recordId = query.ExecuteScalar().ToString();
                 query.ExecuteNonQuery();
                 conn.Close();
-                insertStatus = true;
             }
             catch (Exception ex)
             {
@@ -404,7 +407,7 @@ namespace Revamp_LatestSightings
             {
                 conn.Dispose();
             }
-            return insertStatus;
+            return recordId;
         }
 
         internal static List<VideoSetting> GetUserVideos(SqlConnection conn, SqlCommand query, SqlDataReader data, List<VideoSetting> userVideos, string userId)
@@ -780,15 +783,25 @@ namespace Revamp_LatestSightings
             }
         }
 
-        internal static bool UpdateVideoDetails(SqlConnection conn, SqlCommand query, SqlDataReader data, string filename, string vd)
+        internal static bool UpdateFileUploadRecordDetails(SqlConnection conn, SqlCommand query, SqlDataReader data, string filename, string recordId,string fileType="vid")
         {
             ConfigureConnection(conn, query);
             bool updatedStatus = false;
             // private const string SQL_UPDATE_VIDEO = "UPDATE latestsightings.dbo.videos SET filename = @filename, videoStatus = @videostatus, status = @videostatus where (id = @videoidrecord);";
-            query.CommandText = SQL_UPDATE_VIDEO;
-            query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
-            query.Parameters.Add("videoidrecord", System.Data.SqlDbType.VarChar).Value = vd;
-            query.Parameters.Add("videostatus", System.Data.SqlDbType.VarChar).Value = "Pending";
+            // private const string SQL_UPDATE_IMAGES = "Update latestsightings.dbo.images SET eightyBYeighty = @filename, sixFiftyBYsixFifty = @filename, original = @filename  where (id = @recordid);";
+            if (fileType.ToLower() == "vid")
+            {
+                query.CommandText = SQL_UPDATE_VIDEO;
+                query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
+                query.Parameters.Add("videoidrecord", System.Data.SqlDbType.VarChar).Value = recordId;
+                query.Parameters.Add("videostatus", System.Data.SqlDbType.VarChar).Value = "Pending";
+            }
+            else
+            {
+                query.CommandText = SQL_UPDATE_IMAGES;
+                query.Parameters.Add("filename", System.Data.SqlDbType.VarChar).Value = filename;
+                query.Parameters.Add("recordid", System.Data.SqlDbType.VarChar).Value = recordId;
+            }
             try
             {
                 conn.Open();
