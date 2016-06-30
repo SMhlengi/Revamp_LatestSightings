@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Configuration;
+using DotNetHelpers.UltimateImageResizer;
 
 namespace Revamp_LatestSightings
 {
@@ -723,7 +724,7 @@ namespace Revamp_LatestSightings
             return mailSent;
         }
 
-        public static string SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(Person userDetails, Image imageObj)
+        public static string SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(Person userDetails, Image imageObj, string type="imageDetailsCaptured", string recordId = "")
         {
             string mailSent = "false";
             try
@@ -736,26 +737,50 @@ namespace Revamp_LatestSightings
                 smtpClient.Host = "freeza.aserv.co.za";
                 NetworkCredential networkCredential = new NetworkCredential("No-Reply@socialengine.co.za", "N0-R3ply");
                 smtpClient.Credentials = (ICredentialsByHost)networkCredential;
-                message.Subject = "Image details captured";
+                string str = "";
 
-                string str = "Hey team" + Environment.NewLine + Environment.NewLine;
-                str += "Looks like ";
-                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
-                str += " has captured the following details for a image upload. " + Environment.NewLine + Environment.NewLine +
-                "Title : " + imageObj.title + Environment.NewLine +
-                "Animal : " + imageObj.animal + Environment.NewLine +
-                "Activity : " + imageObj.activity + Environment.NewLine +
-                "Area : " + imageObj.area + Environment.NewLine +
-                "Tags : " + imageObj.tags + Environment.NewLine +
-                "Comment : " + imageObj.generalComment + Environment.NewLine + Environment.NewLine + 
-                "If you don't receive a image preview email soon, you best get in touch with ";
+                if (type == "imageDetailsCaptured")
+                {
+                    message.Subject = "Image details captured";
 
-                str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
-                str += " using the following details;" + Environment.NewLine + Environment.NewLine +
-                 userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
-                 userDetails.Email + Environment.NewLine +
-                 userDetails.CellNumber + Environment.NewLine +
-                 userDetails.TelephoneNumber;
+                    str = "Hey team" + Environment.NewLine + Environment.NewLine;
+                    str += "Looks like ";
+                    str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                    str += " has captured the following details for a image upload. " + Environment.NewLine + Environment.NewLine +
+                    "Title : " + imageObj.title + Environment.NewLine +
+                    "Animal : " + imageObj.animal + Environment.NewLine +
+                    "Activity : " + imageObj.activity + Environment.NewLine +
+                    "Area : " + imageObj.area + Environment.NewLine +
+                    "Tags : " + imageObj.tags + Environment.NewLine +
+                    "Comment : " + imageObj.generalComment + Environment.NewLine + Environment.NewLine +
+                    "If you don't receive a image preview email soon, you best get in touch with ";
+
+                    str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                    str += " using the following details;" + Environment.NewLine + Environment.NewLine +
+                     userDetails.FirstName + " " + userDetails.LastName + Environment.NewLine +
+                     userDetails.Email + Environment.NewLine +
+                     userDetails.CellNumber + Environment.NewLine +
+                     userDetails.TelephoneNumber;
+                }
+                else if (type == "imagePreview")
+                {
+                    message.Subject = "Image Preview";
+                    string url = ConfigurationManager.AppSettings["imagePreviewUrl"].ToString();
+                    url += recordId;
+
+                    str = "Hey team" + Environment.NewLine + Environment.NewLine;
+                    str += "Looks like ";
+                    str += (string.IsNullOrEmpty(userDetails.username)) ? userDetails.FirstName : userDetails.username;
+                    str += " has uploaded the following image for a preview. " + Environment.NewLine +
+                    url + Environment.NewLine + Environment.NewLine + "Details are as follows " + Environment.NewLine +
+                    "Title : " + imageObj.title + Environment.NewLine +
+                    "Animal : " + imageObj.animal + Environment.NewLine +
+                    "Activity : " + imageObj.activity + Environment.NewLine +
+                    "Area : " + imageObj.area + Environment.NewLine +
+                    "Tags : " + imageObj.tags + Environment.NewLine +
+                    "Comment : " + imageObj.generalComment + Environment.NewLine + Environment.NewLine;
+
+                }
 
                 message.Body = str;
                 smtpClient.Send(message);

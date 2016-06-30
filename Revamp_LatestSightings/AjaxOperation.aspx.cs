@@ -546,22 +546,32 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
-        public static bool UpdateVideoDetails(string videofilename, string recordid, string fileType)
+        public static bool UpdateRecordDetails(string videofilename, string recordid, string fileType)
         {
             bool recordUpdated = false;
             SqlConnection conn = new SqlConnection();
             SqlCommand query = new SqlCommand();
             SqlDataReader data = null;
             Video video = new Video();
+            Image imageRecord = null;
             recordUpdated = DataLayer.UpdateFileUploadRecordDetails(conn, query, data, videofilename, recordid, fileType);
             if (recordUpdated)
             {
+                //if (fileType.ToLower() == "img")
+                //    utils.ResizeImage(videofilename);
                 Person userDetails = null;
                 userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
-                if (userDetails != null)
+                if (userDetails != null && fileType.ToLower() == "vid")
                 { 
                     video = DataLayer.GetVideoRecord(conn, query, HttpContext.Current.Session["userid"].ToString(), data, recordid);
                     recordUpdated = utils.SendVideoEmailLinkToAdministrator(Convert.ToString(HttpContext.Current.Session["userid"]), userDetails.FirstName + " " + userDetails.LastName, video.Title, recordid);
+                }else if (userDetails != null && fileType.ToLower() == "img")
+                {
+                    imageRecord = new Image();
+                    imageRecord = DataLayer.GetImage(recordid, conn, query, data, imageRecord);
+                    var status = utils.SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(userDetails, imageRecord, "imagePreview", recordid);
+                    if (status == "true")
+                        recordUpdated = true;
                 }
             }
             return recordUpdated;

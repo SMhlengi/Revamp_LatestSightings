@@ -21,6 +21,7 @@ namespace Revamp_LatestSightings
         private const string SQL_DOES_VIDEO_EXIST = "SELECT TOP 1 filename from latestsightings.dbo.videos WHERE (filename = @name)";
         private const string SQL_DOES_IMG_EXIST = "SELECT TOP 1 original from latestsightings.dbo.images WHERE (original = @name)";
         private const string SQL_INSERT_IMAGE = "INSERT INTO latestsightings.dbo.[images] (contributor, original, eightyBYeighty, sixFiftyBYsixFifty, display, dateAdded, dateModified, animal, activity, area, tags, generalComment, title) VALUES (@contributor, @original, @eightyBYeighty, @sixFiftyBYsixFifty, @display, @dateAdded, @dateModified, @animal, @activity, @area, @tags, @generalComment, @title); SELECT TOP 1 id FROM latestsightings.dbo.images WHERE contributor =  @contributor ORDER BY dateAdded DESC";
+        private const string SQL_GET_IMAGE_BASED_ON_ID = "SELECT * FROM latestsightings.dbo.[images] where id = @imageId";
         private const string SQL_UPDATE_IMAGES = "Update latestsightings.dbo.images SET eightyBYeighty = @filename, sixFiftyBYsixFifty = filename, original = filename  where (id = @recordid);";
         private const string SQL_SELECT_PERSON_VIDEOS = "Select * from latestsightings.dbo.videos where (contributor = @contributor);";
         private const string SQL_SELECT_PERSON_BASED_ON_ID = "SELECT firstname, lastname, email, cellNumber, telNumber, screenName FROM latestsightings.dbo.people WHERE (id = @userid);";
@@ -815,6 +816,30 @@ namespace Revamp_LatestSightings
             conn.Close();
             return updatedStatus;
 
+        }
+
+        internal static Image GetImage(string recordid, SqlConnection conn, SqlCommand query, SqlDataReader data, Image imgObj)
+        {
+            // private const string SQL_GET_IMAGE_BASED_ON_ID = "SELECT * FROM latestsightings.dbo.[images] where id = @imageId";
+            ConfigureConnection(conn, query);
+            query.CommandText = SQL_GET_IMAGE_BASED_ON_ID;
+            query.Parameters.Add("imageId", System.Data.SqlDbType.Int).Value = Convert.ToInt32(recordid);
+            conn.Open();
+            data = query.ExecuteReader();
+            if (data.HasRows)
+            {
+                while(data.Read())
+                {
+                    imgObj.activity = data["activity"].ToString();
+                    imgObj.animal = data["animal"].ToString();
+                    imgObj.area = data["area"].ToString();
+                    imgObj.generalComment = data["generalComment"].ToString();
+                    imgObj.title = data["title"].ToString();
+                }
+            }
+            conn.Close();
+            data.Close();
+            return imgObj;
         }
     }
 }

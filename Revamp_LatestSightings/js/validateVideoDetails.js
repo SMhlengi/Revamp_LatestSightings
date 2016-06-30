@@ -177,7 +177,7 @@
         }).done(
             function (data, textStatus, jqXHR) {
                 if (data.d.savedStatus === "true") {
-                    $.cookie('imgid', data.d.imageId, { expires: 100, path: '/' });
+                    $.cookie('recordid', data.d.imageId, { expires: 100, path: '/' });
                     $(".registerSpinner").hide();
                     $("#title").attr("disabled", "disabled");
                     $("#animal").attr("disabled", "disabled");

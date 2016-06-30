@@ -77,7 +77,7 @@ $(document).ready(function () {
             function (data, textStatus, jqXHR) {
                 console.log(data);
                 if (data.d.savedStatus === "true") {
-                    $.cookie('vd', data.d.videoId, { expires: 100, path: '/' });
+                    $.cookie('recordid', data.d.videoId, { expires: 100, path: '/' });
                     $(".registerSpinner").hide();
                     $("#videoTitle").removeAttr("disabled");
                     $("#alias").removeAttr("disabled");
@@ -187,7 +187,7 @@ $(document).ready(function () {
     }
 
     function UpdateFileDetailsRecordWithFileName(filename, recordid, fileType) {
-        var postUrl = "/AjaxOperation.aspx/UpdateVideoDetails";
+        var postUrl = "/AjaxOperation.aspx/UpdateRecordDetails";
         $.ajax({
             type: "POST",
             url: postUrl,
@@ -255,7 +255,7 @@ $(document).ready(function () {
 
         self.mainProgressBar = ko.observable('0%');
         self.disableUpload = ko.observable(false);
-        self.r = new Resumable({ target: 'https://rfuapi.socialengine.co.za/api/File/Upload' });
+        self.r = new Resumable({ target: 'http://localhost:49238/api/File/Upload' });
         self.r.assignBrowse(document.getElementById('browseButton'));
         self.r.on('progress', function () {
             self.mainProgressBar((self.r.progress() * 100) + '%');
@@ -308,10 +308,10 @@ $(document).ready(function () {
         self.r.on('complete', function () {
             //videoUploadWithVideoDetailsCompleted($("#videoTitle").val(), $("#alias").val(), $("#keywords").val(), $("#notes").val(), self.r.files[0].file.name);
             if ($.cookie('vupload', { path: '/' }) == "true") {
-                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('vd'), "vid");
+                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('recordid'), "vid");
             }
             else if ($.cookie('imgupload', { path: '/' }) == "true") {
-                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('imgid'), "img");
+                UpdateFileDetailsRecordWithFileName(self.r.files[0].file.name, $.cookie('recordid'), "img");
             }
 
         });
