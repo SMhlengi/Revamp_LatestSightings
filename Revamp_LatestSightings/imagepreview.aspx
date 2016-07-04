@@ -2,13 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 					<div class="row">
-                    	<!-- LEFT Content BEGIN -->
-						<div class="leftcol">
+						<div class="">
                             <img id="previewUploadedImage" runat="server" style="height:auto;width:100%"/>
-						</div>
-                        
-                        <!-- RIGHT Content BEGIN -->
-						<div class="rightcol">
 						</div>
 					</div>
 
