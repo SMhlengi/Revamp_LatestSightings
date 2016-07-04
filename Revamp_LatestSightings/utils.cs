@@ -724,7 +724,7 @@ namespace Revamp_LatestSightings
             return mailSent;
         }
 
-        public static string SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(Person userDetails, Image imageObj, string type="imageDetailsCaptured", string recordId = "")
+        public static string SendEmailToAdministratorAboutImageRecordCaptured(Person userDetails, Image imageObj, string type = "imageDetailsCaptured", string recordId = "")
         {
             string mailSent = "false";
             try

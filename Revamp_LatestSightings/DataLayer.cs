@@ -841,5 +841,25 @@ namespace Revamp_LatestSightings
             data.Close();
             return imgObj;
         }
+
+        internal static string getImageFileName(SqlConnection conn, SqlCommand query, SqlDataReader data, string id)
+        {
+            string filename = "";
+            ConfigureConnection(conn, query);
+            query.CommandText = SQL_GET_IMAGE_BASED_ON_ID;
+            query.Parameters.Add("imageId", System.Data.SqlDbType.Int).Value = Convert.ToInt32(id);
+            conn.Open();
+            data = query.ExecuteReader();
+            if (data.HasRows)
+            {
+                while(data.Read())
+                {
+                    filename = data["original"].ToString();
+                }
+            }
+            conn.Close();
+            data.Close();
+            return filename;
+        }
     }
 }

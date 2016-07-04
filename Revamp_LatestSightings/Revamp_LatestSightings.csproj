@@ -163,6 +163,7 @@
     <Content Include="holidays.aspx" />
     <Content Include="htings.aspx" />
     <Content Include="imageModal.aspx" />
+    <Content Include="imagepreview.aspx" />
     <Content Include="images\299.GIF" />
     <Content Include="images\332.GIF" />
     <Content Include="images\333.GIF" />
@@ -501,6 +502,13 @@
     </Compile>
     <Compile Include="imageModal.aspx.designer.cs">
       <DependentUpon>imageModal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imagepreview.aspx.cs">
+      <DependentUpon>imagepreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imagepreview.aspx.designer.cs">
+      <DependentUpon>imagepreview.aspx</DependentUpon>
     </Compile>
     <Compile Include="lodges.aspx.cs">
       <DependentUpon>lodges.aspx</DependentUpon>

@@ -528,7 +528,7 @@ namespace Revamp_LatestSightings
                     Person userDetails = null;
                     userDetails = DataLayer.GetUserDetails(conn, query, HttpContext.Current.Session["userid"].ToString(), data, userDetails);
                     if (userDetails != null)
-                        details["savedStatus"] = utils.SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(userDetails, imageObj);
+                        details["savedStatus"] = utils.SendEmailToAdministratorAboutImageRecordCaptured(userDetails, imageObj);
                 }
             }
             return details;
@@ -569,7 +569,7 @@ namespace Revamp_LatestSightings
                 {
                     imageRecord = new Image();
                     imageRecord = DataLayer.GetImage(recordid, conn, query, data, imageRecord);
-                    var status = utils.SendEmailToAdministratorThatImageDetailsHaveBeenCaptured(userDetails, imageRecord, "imagePreview", recordid);
+                    var status = utils.SendEmailToAdministratorAboutImageRecordCaptured(userDetails, imageRecord, "imagePreview", recordid);
                     if (status == "true")
                         recordUpdated = true;
                 }
