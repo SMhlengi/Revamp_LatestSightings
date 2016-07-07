@@ -449,6 +449,8 @@
             $this.removeClass("current");
             $this.addClass("visited");
             $($this.next()[0]).addClass("current");
+            $.cookie('vupload', true, { expires: 100, path: '/' });
+            $.cookie('imgupload', false, { expires: 100, path: '/' });
         }
     });
 
@@ -663,7 +665,7 @@
         location.href = "/content/latest-sightings-app";
     });
 
-    $("#videoUploadRadio").click(function () {
+    $("#+").click(function () {
         $("#imageUploadRadio").removeClass("checked");
         $("#videoUploadRadio").addClass("checked");
         $(".uploadImagePanel").hide();

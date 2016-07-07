@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Revamp_LatestSightings.dashboard" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Revamp_LatestSightings.dashboard" %>
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="dashboard" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -44,7 +44,7 @@
                                 <ul class="nav nav-tabs">
                                         <li id="Profilelist" class=""><a href="#profile" id="profileTab" data-toggle="tab"><strong>Profile</strong></a></li>
                                         <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
-                                        <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li>
+                                        <!--<li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>Add Image</strong></a></li> -->
                                         <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
                                 </ul>
         
@@ -114,9 +114,9 @@
                                     </div><!-- tab-pane -->
 
 
-                                    <div class="tab-pane disabled" id="image">
+<%--                                    <div class="tab-pane disabled" id="image">
                                         <asp:PlaceHolder ID="plc_addImage" runat="server"></asp:PlaceHolder>
-                                    </div>
+                                    </div>--%>
                                   
                                     <div class="tab-pane disabled" id="videolist">
                                         <h4 class="nomargin">Video List</h4>

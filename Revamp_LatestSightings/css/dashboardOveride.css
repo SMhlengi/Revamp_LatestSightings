@@ -3,8 +3,8 @@
     display: none;
 }
 
-#content-inner{
-    height: 755px;
+#content-inner {
+    height: auto;
 }
 
 .videoDetailsForm {
