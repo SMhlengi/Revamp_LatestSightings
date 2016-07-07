@@ -665,7 +665,7 @@
         location.href = "/content/latest-sightings-app";
     });
 
-    $("#+").click(function () {
+    $("#videoUploadRadio").click(function () {
         $("#imageUploadRadio").removeClass("checked");
         $("#videoUploadRadio").addClass("checked");
         $(".uploadImagePanel").hide();
