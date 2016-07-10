@@ -16,9 +16,9 @@
             height: 60px!important;
             float: none!important;
         }
-        h4 {
+        /*h4 {
             color: #000000;
-        }
+        }*/
         .media-body h4 {
             color: #FFFFFF;
         }
@@ -35,4 +35,9 @@
         }
         .alert a {
             color: rgba(255,153,0,0.7);
+        }
+
+        .media-body{
+            padding-left:10px;
+            padding-right:10px;
         }
