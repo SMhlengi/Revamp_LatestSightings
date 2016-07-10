@@ -25,7 +25,7 @@
         <%} %>
         </table>
                               
-        <a href="/partnership" >
+        <a href="/content/partnership" >
         <div class="button becomeAContributor" style="text-align:center;">Submit a video and earn</div>
         </a>
                               	
