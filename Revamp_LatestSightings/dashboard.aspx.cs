@@ -20,8 +20,9 @@ namespace Revamp_LatestSightings
         protected bool profileComplete = false;
         protected bool CanUserViewFinancials = false;
 
+
         private string id;
-        protected string userId
+        public string userId
         {
             get
             {
@@ -74,6 +75,9 @@ namespace Revamp_LatestSightings
             videoList uc_videoList = (videoList)LoadControl("~/videoList.ascx");
             uc_videoList.userId = userId;
             videoListcontent.Controls.Add(uc_videoList);
+
+            uc_viewFinancials yourmoney = (uc_viewFinancials)LoadControl("~/uc_viewFinancials.ascx");
+            plc_addImage.Controls.Add(yourmoney);
 
             //uc_AddImage uc_addImage = (uc_AddImage)LoadControl("~/uc_AddImage.ascx");
             //plc_addImage.Controls.Add(uc_addImage);

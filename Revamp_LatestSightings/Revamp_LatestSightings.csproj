@@ -153,6 +153,7 @@
     <Content Include="css\videopreview.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="financialsTest.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="forgottenPassword.aspx" />
@@ -344,6 +345,7 @@
     <Content Include="uc_top_stories.ascx" />
     <Content Include="uc_tvLodge_Tings.ascx" />
     <Content Include="uc_videoSearchResults.ascx" />
+    <Content Include="uc_viewFinancials.ascx" />
     <Content Include="UserFinancials.aspx" />
     <Content Include="UserGraphs.aspx" />
     <Content Include="VideoItemData.aspx" />
@@ -449,6 +451,13 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Encription.cs" />
+    <Compile Include="financialsTest.aspx.cs">
+      <DependentUpon>financialsTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financialsTest.aspx.designer.cs">
+      <DependentUpon>financialsTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forgottenPassword.aspx.cs">
       <DependentUpon>forgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -821,6 +830,13 @@
     </Compile>
     <Compile Include="uc_videoSearchResults.ascx.designer.cs">
       <DependentUpon>uc_videoSearchResults.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_viewFinancials.ascx.cs">
+      <DependentUpon>uc_viewFinancials.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_viewFinancials.ascx.designer.cs">
+      <DependentUpon>uc_viewFinancials.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserFinancials.aspx.cs">
       <DependentUpon>UserFinancials.aspx</DependentUpon>

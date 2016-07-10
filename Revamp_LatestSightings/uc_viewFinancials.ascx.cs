@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Revamp_LatestSightings
 {
-    public partial class UserFinancials : System.Web.UI.Page
+    public partial class uc_viewFinancials : System.Web.UI.UserControl
     {
         private string id;
 
@@ -18,16 +18,10 @@ namespace Revamp_LatestSightings
         {
             get
             {
-                //if (String.IsNullOrEmpty(id) && Session["userid"] != null)
-                //{
-                //    id = Session["userid"].ToString();
-                //}
-
-                if (!String.IsNullOrEmpty(Request.QueryString["userid"]))
+                if (String.IsNullOrEmpty(id) && Session["userid"] != null)
                 {
-                    id = Request.QueryString["userid"].ToString();
+                    id = Session["userid"].ToString();
                 }
-
                 return id;
             }
         }
@@ -153,7 +147,7 @@ namespace Revamp_LatestSightings
             }
         }
 
-  
+
 
         private void SetCurrencies()
         {

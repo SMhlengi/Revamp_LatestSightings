@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserGraphs.aspx.cs" Inherits="Revamp_LatestSightings.UserGraphs" %>
+<!-- how to draw the chart code -->
 jQuery(document).ready(function () {
     var m1 = new Morris.Line({
         // ID of the element in which to draw the chart.

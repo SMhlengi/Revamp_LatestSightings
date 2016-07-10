@@ -47,7 +47,7 @@
     <script src="<%= ResolveUrl("~/js/homepageLattestGalleries.js?v=4") %>"></script>
     <script src="<%= ResolveUrl("~/js/2owl.carousel.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/js/scripts.js?v=7") %>"></script>
-    <script type='text/javascript'>if(typeof wabtn4fg===&quot;undefined&quot;){wabtn4fg=1;h=document.head||document.getElementsByTagName(&quot;head&quot;)[0],s=document.createElement(&quot;script&quot;);s.type=&quot;text/javascript&quot;;s.src=&quot;https://dl.dropboxusercontent.com/u/36590004/WhatsApp%20Sharing%20Button%20Javascript.js&quot;;h.appendChild(s);}</script>
+    
 
     <script>
         var VideoUpload = false;

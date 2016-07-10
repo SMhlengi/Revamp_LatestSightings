@@ -10,72 +10,69 @@
 namespace Revamp_LatestSightings {
     
     
-    public partial class dashboard {
+    public partial class uc_viewFinancials {
         
         /// <summary>
-        /// content control.
+        /// alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder content;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// termsNConditionPlaceholder control.
+        /// tableRow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder termsNConditionPlaceholder;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tableRow;
         
         /// <summary>
-        /// addVideoContent control.
+        /// ltlEarnings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder addVideoContent;
+        protected global::System.Web.UI.WebControls.Literal ltlEarnings;
         
         /// <summary>
-        /// plc_addImage control.
+        /// ltlViews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plc_addImage;
+        protected global::System.Web.UI.WebControls.Literal ltlViews;
         
         /// <summary>
-        /// videoListcontent control.
+        /// ltlTop10Earnings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder videoListcontent;
+        protected global::System.Web.UI.WebControls.Literal ltlTop10Earnings;
         
         /// <summary>
-        /// termsandCs control.
+        /// ltlTop10Views control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder termsandCs;
+        protected global::System.Web.UI.WebControls.Literal ltlTop10Views;
         
         /// <summary>
-        /// Master property.
+        /// ltlCurrencies control.
         /// </summary>
         /// <remarks>
-        /// Auto-generated property.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public new Revamp_LatestSightings.Site1 Master {
-            get {
-                return ((Revamp_LatestSightings.Site1)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.Literal ltlCurrencies;
     }
 }
