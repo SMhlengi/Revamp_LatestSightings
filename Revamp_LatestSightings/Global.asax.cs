@@ -59,7 +59,7 @@ namespace Revamp_LatestSightings
                 new RouteValueDictionary { });
 
             routes.MapPageRoute("add-new-video",
-            "addvideo",
+            "addmedia",
             "~/dashboard.aspx", true,
             new RouteValueDictionary { });
 
@@ -100,7 +100,7 @@ namespace Revamp_LatestSightings
 
             routes.MapPageRoute("financials",
             "financials",
-            "~/userfinancials.aspx", true,
+            "~/dashboard.aspx", true,
             new RouteValueDictionary { });
 
             routes.Ignore("Language/assets/{*pathInfo}");

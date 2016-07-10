@@ -43,8 +43,8 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
                                         <li id="Profilelist" class=""><a href="#profile" id="profileTab" data-toggle="tab"><strong>Profile</strong></a></li>
-                                        <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Video</strong></a></li>
-                                        <li id="AddImage" class=""><a href="#image" id="addimageTab" data-toggle="tab"><strong>View Financials</strong></a></li>
+                                        <li id="Addvideo" class=""><a href="#video" id="addvideoTab" data-toggle="tab"><strong>Add Media</strong></a></li>
+                                        <li id="financialsView" class=""><a href="#viewFinancials" id="viewFinancialsTab" data-toggle="tab"><strong>View Financials</strong></a></li>
                                         <li id="Videolist" class=""><a href="#videolist" id="videoListTab" data-toggle="tab"><strong>Video List</strong></a></li>
                                 </ul>
         
@@ -114,7 +114,7 @@
                                     </div><!-- tab-pane -->
 
 
-                                   <div class="tab-pane disabled" id="image">
+                                   <div class="tab-pane disabled" id="viewFinancials">
 <%--                                       <iframe src="UserFinancials.aspx?userid=<%=userId %>" height="1200" width="800"></iframe>--%>
                                         <asp:PlaceHolder ID="plc_addImage" runat="server"></asp:PlaceHolder>
                                     </div>
@@ -154,7 +154,7 @@
                 </div>
 <%--    </form>--%>
     <script>
-        if (VideoUpload == true || location.href.toLowerCase().indexOf("addvideo") > 0) {
+        if (VideoUpload == true || location.href.toLowerCase().indexOf("addmedia") > 0) {
             $("#Addvideo").addClass("active");
             $("#video").addClass("active");
             if (CaptureVideoDetails == true) {
@@ -162,13 +162,14 @@
                 resetGlobalVariables();
             }
 
-        } else if (ImageUpload == true || location.href.toLowerCase().indexOf("addimage") > 0) {
-            $("#AddImage").addClass("active");
-            $("#image").addClass("active");
-            if (CaptureImageDetails == true) {
-                $(".uploadImage").hide();
+        } else if (location.href.toLowerCase().indexOf("financials") > 0) {
+            $("#financialsView").addClass("active");
+            $("#viewFinancials").addClass("active");
+            if (CaptureVideoDetails == true) {
+                $(".uploadvideo").hide();
                 resetGlobalVariables();
             }
+
         } else {
             $("#Profilelist").addClass("active");
             $("#profile").addClass("active");
@@ -192,7 +193,7 @@
         $(".Login").hide();
         $(".Logout").show();
         $(".uploadVideo").show(); 
-        $(".uploadVideo").attr("href", "addvideo");
+        $(".uploadVideo").attr("href", "addmedia");
         $(".myAccount").show();        
         $(".myAccount").attr("href", "myaccount");
         $(".uploadGalleryImage").show();

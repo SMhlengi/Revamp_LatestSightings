@@ -391,7 +391,7 @@ c.     Youtube calculates earnings in dollars and pays us in rands. This means t
             });
         }
 
-        $("#AddImage").click(function () {
+        $("#financialsView").click(function () {
             setTimeout(function () {
                 graphOne();
                 graphTwo();
@@ -399,6 +399,15 @@ c.     Youtube calculates earnings in dollars and pays us in rands. This means t
                 graphFour();
             }, 1000);
         });
+
+        if (location.href.toLowerCase().indexOf("financials") > 0) {
+            setTimeout(function () {
+                graphOne();
+                graphTwo();
+                graphThree();
+                graphFour();
+            }, 1000);
+        }
 
     });
 </script>

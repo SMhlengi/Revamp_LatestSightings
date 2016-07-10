@@ -63,8 +63,7 @@
                                         <a class="mp-back" href="#">back</a> 					
                                         <ul> 											
                                             <li class="menu-item"><a href="/financials" class="viewFinancials">View Financials</a></li> 			
-                                            <li class="menu-item"><a href="/addvideo" class="uploadVideo">Upload Video</a></li>                                             
-                                            <li class="menu-item"><a href="/addImage" class="uploadGalleryImage">Upload Image</a></li>                                             
+                                            <li class="menu-item"><a href="/addmedia" class="uploadVideo">Add Media</a></li>                                                                                        
                                             <li class="menu-item"><a href="/myaccount" class="myAccount">My Account</a></li>        
                                             <%--<li class="menu-item"><a href="#" class="Login">Login</a></li>         --%>                                                                          
                                             <li class="menu-item Logout"><asp:LinkButton ID="logout" runat="server" class="" OnClick="logout_Click" OnClientClick="LogoutFromLatestSightings()">Logout</asp:LinkButton></li>
@@ -109,7 +108,7 @@
             $(".Login").hide();
             $(".Logout").show();
             $(".uploadVideo").show();
-            $(".uploadVideo").attr("href", "addvideo");
+            $(".uploadVideo").attr("href", "addmedia");
             $(".uploadGalleryImage").show();
             $(".uploadGalleryImage").attr("href", "addImage");
             $(".myAccount").show();
