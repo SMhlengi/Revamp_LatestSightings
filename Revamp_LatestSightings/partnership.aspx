@@ -162,19 +162,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                       
                                         
                                             <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                 <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
@@ -188,20 +176,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
+
                                             <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                 <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
                                                     <div class="team-info">
@@ -214,20 +189,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
+
                                             <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
                                                 <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
                                                     <div class="team-info">
@@ -240,19 +202,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                       
+                                       
                                         
                                         </div>
                                     </div>
