@@ -18,6 +18,6 @@
     <div class="clearfix"></div>
     <div class="spacer small"></div>
 
-        <a href="/content/partnership" >
+        <a href="/partnership" >
         <div class="button becomeAContributor" style="text-align:center;">Submit a video and earn</div>
         </a>

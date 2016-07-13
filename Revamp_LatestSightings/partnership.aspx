@@ -142,7 +142,7 @@
                                     <div class="blog-grid" style="width: 96%; margin:0 auto;">
                                         <div class="right col-sm-12 col-md-6">
                                             <h4 style="line-height: 2; text-align: right;" class="col-sm-8">Have any similar?</h4>
-                                            <a href="#"><div class="col-sm-3 right button">Submit Now</div></a>
+                                            <a href="/addmedia"><div class="col-sm-3 right button">Submit Now</div></a>
                                         </div>
 
                                         <div class="clearfix"></div>

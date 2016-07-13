@@ -12,7 +12,7 @@
 					<li><a href="#">Live Webcam</a></li>
                     <li><a href="/holidays">Book a Holiday</a></li>
 					<li><a href="/holidays">Latest Deals</a></li>
-                    <li><a href="/content/partnership">Submit a video and earn</a></li>
+                    <li><a href="/partnership">Submit a video and earn</a></li>
 				</ul>
               </div>
               
