@@ -6,6 +6,9 @@
     .left{
         width:auto;
     }
+    .becomeAContributor{
+        display:none;
+    }
 </style>
                     
 					<div class="row">
@@ -42,7 +45,7 @@
                                             <div class="col-sm-12 col-md-6 right">
                                                 <img alt="" src='<%=ResolveUrl("~/images/partnership1.png")%>'>
                                                 <h4 style="text-align: center;line-height: 1.5;">We accept any wildlife from anywhere in the world</h4>
-                                                <a href="#"><div class="col-sm-3 right button">Join Now</div></a>
+                                                <a href="/login"><div class="col-sm-3 right button">Join Now</div></a>
                                             </div>  
  
 					                    <div class="clearfix"></div>
@@ -63,7 +66,7 @@
                             
                                             </div>
 
-                                            <a href="#"><div class="col-sm-3 right button">Join Now</div></a>
+                                            <a href="/login"><div class="col-sm-3 right button">Join Now</div></a>
 
                                         </div>
 
@@ -149,62 +152,23 @@
                                     <!-- Gallery -->
                                     <div class="team-members">
                                         <div class="row">
-                                    
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
+                                            <%if (featuredVideos != null && featuredVideos.Count() > 0){ %>
+                                                <%foreach(var video in featuredVideos){ %>
+                                                    <div class="img-link col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                        <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                            <div class="team-info">
+                                                                <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                                <img class="youtube" src="<%=video.Url2 %>" rel="<%=video.YouTubeId %>">
                                                     
+                                                            </div>
+                                                            <div class="team-title">
+                                                                <h5><a href="javascript:void(0);"><%=video.Title %></a></h5>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                       
-                                        
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
-                                                    <div class="team-info">
-                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
-                                                        <img alt="" src="images/about-650x650.gif">
-                                                    
-                                                    </div>
-                                                    <div class="team-title">
-                                                        <h5><a href="#">Giraffes at the water</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                       
-                                       
-                                        
+                                                <%} %>
+                                            <%} %>
                                         </div>
                                     </div>
                                      <!-- Gallery -->
@@ -260,5 +224,18 @@
 						</div>--%>
 					</div>
 				<!-- End Content Area -->
-        <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
+
+    <script>
+        $(document).ready(function () {
+            // code for play video image when clicked
+            $(function () {
+                $(".youtube").YouTubeModal({ autoplay: 0, width: 640, height: 480 });
+            });
+
+            $(".img-link").click(function () {
+                $(this).find("img").click();
+            });
+        });
+    </script>
+    <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
 </asp:Content>

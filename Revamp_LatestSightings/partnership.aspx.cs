@@ -19,34 +19,13 @@ namespace Revamp_LatestSightings
         {
             uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
             topTenContributors.Controls.Add(Contributors);
-            featuredVideos = Galleries.GetFeatured(Galleries.GalleryType.Video);
-            buildYouTubeVideosArray(featuredVideos);
+            List<GalleryItem> fVideos = new List<GalleryItem>();
+            fVideos = Galleries.GetFeatured(Galleries.GalleryType.Video);
+            featuredVideos = (fVideos.Count() >= 4) ? fVideos.GetRange(0, 4) : fVideos;
             //LoadTopEarningVideos();
             //LoadLasteBLogs();
             //loadAds();
             //loadTopStories();
-        }
-
-
-        private void buildYouTubeVideosArray(List<GalleryItem> featuredVideos)
-        {
-            if (featuredVideos != null && featuredVideos.Count > 0)
-            {
-                List<string> youtubeArray = new List<string>();
-                StringBuilder sb = new StringBuilder();
-                sb.Append("<script>");
-                sb.Append("var youtubeArray = new Array;");
-                int counter = 0;
-                foreach (GalleryItem item in featuredVideos)
-                {
-                    counter += 1;
-                    if (counter <= 5)
-                        sb.Append("youtubeArray.push('" + item.YouTubeId + "');");
-                }
-                sb.Append("</script>");
-
-                ClientScript.RegisterStartupScript(this.GetType(), "buildingYouTubeArray", sb.ToString());
-            }
         }
 
         private void loadTopStories()
