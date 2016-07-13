@@ -4385,4 +4385,15 @@ a.tnc:hover{
     }
 }    
     
-    */
+    */
+
+.divline {		
+    border-bottom: 1px solid #613013;		
+    float: left;		
+    height:10px;		
+    margin:0px auto;		
+    width: 100%;		
+}		
+ul li, ol li {		
+    line-height: 2;		
+}

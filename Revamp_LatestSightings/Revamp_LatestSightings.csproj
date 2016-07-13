@@ -101,6 +101,7 @@
     <Content Include="css\component.css" />
     <Content Include="css\contactusOverRide.css" />
     <Content Include="css\dashboardOveride.css" />
+    <Content Include="css\dataTables.responsive.css" />
     <Content Include="css\docs.min.css" />
     <Content Include="css\enquireForm.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -118,6 +119,7 @@
     <Content Include="css\latestGalleries.css" />
     <Content Include="css\loginOverRide.css" />
     <Content Include="css\magnific-popup.css" />
+    <Content Include="css\morris.css" />
     <Content Include="css\multistep-indicator.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\owl.carousel.css" />
@@ -210,6 +212,9 @@
     <Content Include="images\masonry-600x300.gif" />
     <Content Include="images\masonry-600x600 - Copy.gif" />
     <Content Include="images\NgwenyaLodge.jpg" />
+    <Content Include="images\partnership1.png" />
+    <Content Include="images\partnership2.png" />
+    <Content Include="images\partnership3.png" />
     <Content Include="images\placestostay.jpg" />
     <Content Include="images\postslider-879x487.gif" />
     <Content Include="images\postslidert-80x80.gif" />

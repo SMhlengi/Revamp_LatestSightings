@@ -2,77 +2,269 @@
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="partnership" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+<style>
+    .left{
+        width:auto;
+    }
+</style>
                     
 					<div class="row">
                     	<!-- LEFT Content BEGIN -->
-						<div class="leftcol">
+						<div class="">
                         
-                            <h1 class="main-title" style="margin-top:0px !important;">Partnership</h1>
-                            <h4 style="text-align:center; font-weight:normal;">Sign up as a contributor and start earning money with our Partnership Program.</h4>
-                            
-                            <div class="clearfix"></div>
-                            <div class="spacer small"></div>
-                            
-                            
+                            <h1 class="main-title" style="margin-top:0px !important;">Film and Earn with Latest Sightings</h1>                            
                             <!-- Partnerships BEGIN -->
                             
                             	<!-- Big Image BEGIN -->
-                                <div class="blog-list-post triggerAnimation animated" data-animate="fadeIn">
+                                <div class="blog-list-post triggerAnimation animated fadeIn" data-animate="fadeIn">
                                     
-                                    <div class="blog-list-featured-image">
-                                        <a href="#"><img alt="" src="/images/partnership.png"></a>
-                                        <!--<div class="playicon"><i class="fa fa-play"></i></div>-->
-                                    </div>
-                                    <div class="blog-list-content">
-                                        
-                                        <div class="left" >
-                                            <div class="col-md-4 button singup">Sign Up</div>
-                                            <div class="col-md-4 button contactus">Contact Us</div>
+                                        <div class="blog-details">
+
+                                            <span class="blog-date">Nov 10 2015</span>
                                         </div>
+
+                                        <div class="blog-list-content">
                                         
-                                        <div class="clearfix"></div>
-                                                                            
-                                    </div>
-                                </div>
-                                <!-- Big Image END -->
-                                
-                                <div class="clearfix"></div>
-                                <div class="spacer small"></div>
-                                
-                                <!-- Big Video BEGIN -->
-<%--                                <div class="blog-list-featured-image">
-                                    <a href="#"><img alt="" src="images/video-16x9.gif"></a>
-                                </div>--%>
-                                <!-- Big Video END -->
-                                
-                                <div class="clearfix"></div>
-                                <div class="spacer small"></div>
-                                
-                                <!-- Social BEGIN -->
-                                <div class="left">                                    
-                                    <div class="right">
-                                    <a href="javascript:void(0);" title="Share to Facebook" class="aboutUsFacebookShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-facebook-square"></i></a>
-                                    <!--<a href="#" title="Share to Google"><i style="font-size:36px; padding-right:10px;" class="fa fa-google"></i></a>-->
-                                    <a href="javascript:void(0);" title="Share to Twitter" class="aboutUsTwitterShare"><i style="font-size:36px; padding-right:10px;" class="fa fa-twitter"></i></a>
-                                    </div>
-                            	</div>
-                                <!-- Social END -->
-                                
-                            <!-- Partnerships END -->
+                                        <div class="col-sm-12 col-md-6">
+                                            <h2 style="text-transform:uppercase; margin-top:0px; margin-bottom:10px;">Earn monthly cash by uploading your wildlife photos & videos</h2>
+
+                                            <div class="" style="padding-left:20px;">
+                                            <ul>
+                                                <li>Our Youtube channel gets over 15 million views per month</li>
+                                                <li>We are experts at making animal videos and photos go viral</li>
+                                                <li>We share 40% of the revenue earned with you every month</li>
+                                                <li>Some members have already earned over $15 000 (R200 000)</li>
+                                            </ul>
                             
+                                            </div>
+                                        </div>
+
+                                            <div class="col-sm-12 col-md-6 right">
+                                                <img alt="" src='<%=ResolveUrl("~/images/partnership1.png")%>'>
+                                                <h4 style="text-align: center;line-height: 1.5;">We accept any wildlife from anywhere in the world</h4>
+                                                <a href="#"><div class="col-sm-3 right button">Join Now</div></a>
+                                            </div>  
+ 
+					                    <div class="clearfix"></div>
+                                        <div class="divline"></div>
+                                        <div class="spacer sml"></div>
+
+                                        <div class="row">           
+                                        <div class="col-sm-12 col-md-6 right">
+                                            <h2 style="text-transform:uppercase; margin-top:0px; margin-bottom:10px;">HOW DO YOU EARN?</h2>
+
+                                            <div class="" style="padding-left:20px;">
+                                            <ol>
+                                                <li>Upload your video</li>
+                                                <li>Your video needs to be approved</li>
+                                                <li>Once approved, we promote it on Youtube and many other media channels</li>
+                                                <li>You start earning an extra monthly income</li>
+                                            </ol>
+                            
+                                            </div>
+
+                                            <a href="#"><div class="col-sm-3 right button">Join Now</div></a>
+
+                                        </div>
+
+
+
+                                        <div class="col-sm-12 col-md-6 left">
+                                            <img alt="" src="<%=ResolveUrl("~/images/partnership2.png") %>">
+                                        </div>
+
+
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="spacer sml"></div>
+                                                <p>We select the very best wildlife content from the many incredible wildlife spots around the world.
+                                                <br> We promote your viral worthy content into our established network of media partners. 
+                                                <br>All income received gets shared with you. Some our top contributors have earned up to $15 000. <br>On average a viral video earns $XXXS over a lifetime. We of course don't know upfront what a video will earn.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                        <div class="spacer sml"></div>
+
+
+                                        <div class="row">           
+                        <div class="col-sm-12 col-md-8 left">
+                            <h2 style="margin-top:0px; margin-bottom:10px;">What goes viral and makes money?</h2>
+
+                            <div class="" style="padding-left:20px;">
+                            <ol>
+                                <li>Videos and photos that tell a story</li>
+                                <li>Cute, funny, heart warming videos and pics</li>
+                                <li>Straight out rare sightings and experiences</li>
+                                <li>Action packed hunts and fights</li>
+                            </ol>
+                            
+                            </div>
+
+                            <h4 style="line-height: 1.5;">
+                                Does quality matter? No! It's all about being authentic.
+                                <br>Some of our best content is filmed with cell phones.
+                            </h4>
+
                             <div class="clearfix"></div>
                             <div class="spacer sml"></div>
+                            <img alt="" src="<%=ResolveUrl("~/images/partnership3.png") %>" style="max-width:65%;">
+                            <div class="spacer sml"></div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 right">
+<%--                        <h2 style="margin-top:0px; margin-bottom:10px;">Leaderboard</h2>--%>
+                            <!-- Top 10 BEGIN -->
+                            <asp:PlaceHolder ID ="topTenContributors" runat="server"></asp:PlaceHolder>
+                            <!-- Top 10 END -->
+                        </div>
+
+
+
+                    </div>
+
+                                        <div class="clearfix"></div>
+                                        <div class="divline"></div>
+                                        <div class="spacer sml"></div>
+                                                                                                                  
+                                        </div>
+
+                                            <!-- Latest Blogs BEGIN -->
+            
+                                    <h4 class="page-titles">Check out these viral videos</h4>
+                                    <div class="blog-grid" style="width: 96%; margin:0 auto;">
+                                        <div class="right col-sm-12 col-md-6">
+                                            <h4 style="line-height: 2; text-align: right;" class="col-sm-8">Have any similar?</h4>
+                                            <a href="#"><div class="col-sm-3 right button">Submit Now</div></a>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                        <div class="spacer sml"></div>
+                                
+                                
+                                    <!-- Gallery -->
+                                    <div class="team-members">
+                                        <div class="row">
+                                    
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated videos" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-play"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                                <div class="team-member triggerAnimation animated pics" data-animate="fadeInUp">
+                                                    <div class="team-info">
+                                                        <div class="related-gallery-icon"><i class="fa fa-camera"></i></div>
+                                                        <img alt="" src="images/about-650x650.gif">
+                                                    
+                                                    </div>
+                                                    <div class="team-title">
+                                                        <h5><a href="#">Giraffes at the water</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                     <!-- Gallery -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="spacer sml"></div>
                             
-                            <!-- Recommended palces to stay widget BEGIN -->
-                            <h4 class="page-titles">Join the Conversation</h4>
-                            <div class="fb-comments" data-href="http://latestsightings.socialengine.co.za/partnership" data-numposts="5" data-colorscheme="dark" data-width="750"></div>
-                            <!-- Recommended palces to stay widget END -->
-                                                        
-                        <!-- LEFT Content END -->
+                                </div>
 						</div>
-                        
-                        <!-- RIGHT Content BEGIN -->
-						<div class="rightcol">
+             
+<%--						<div class="rightcol">
 							<div id="sidebar-area">
                                                         
                             <!-- Top Stories BEGIN -->
@@ -114,7 +306,7 @@
                         	<div class="spacer small"></div>
 												
 							</div>
-						</div>
+						</div>--%>
 					</div>
 				<!-- End Content Area -->
         <script src="<%= ResolveUrl("~/js/bootstrap.youtubepopup.min.js?v=10") %>"></script>
