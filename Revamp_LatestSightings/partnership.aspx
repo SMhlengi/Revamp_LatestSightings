@@ -23,7 +23,8 @@
                                     
                                         <div class="blog-details">
 
-                                            <span class="blog-date">Nov 10 2015</span>
+                                            <%--<span class="blog-date">July 10 2016</span>--%>
+                                            <br /><br />
                                         </div>
 
                                         <div class="blog-list-content">
@@ -43,7 +44,7 @@
                                         </div>
 
                                             <div class="col-sm-12 col-md-6 right">
-                                                <img alt="" src='<%=ResolveUrl("~/images/partnership1.png")%>'>
+                                                <img alt="" src='<%=ResolveUrl("~/images/partnership1.png")%>' style="max-width:65%;">
                                                 <h4 style="text-align: center;line-height: 1.5;">We accept any wildlife from anywhere in the world</h4>
                                                 <a href="/login"><div class="col-sm-3 right button">Join Now</div></a>
                                             </div>  
@@ -73,7 +74,7 @@
 
 
                                         <div class="col-sm-12 col-md-6 left">
-                                            <img alt="" src="<%=ResolveUrl("~/images/partnership2.png") %>">
+                                            <img alt="" src="<%=ResolveUrl("~/images/partnership2.png") %>" style="max-width:65%;">
                                         </div>
 
 
@@ -122,7 +123,7 @@
                         <div class="col-sm-12 col-md-4 right">
 <%--                        <h2 style="margin-top:0px; margin-bottom:10px;">Leaderboard</h2>--%>
                             <!-- Top 10 BEGIN -->
-                            <asp:PlaceHolder ID ="topTenContributors" runat="server"></asp:PlaceHolder>
+                            <asp:PlaceHolder ID="topearningvideos" runat="server"></asp:PlaceHolder>
                             <!-- Top 10 END -->
                         </div>
 

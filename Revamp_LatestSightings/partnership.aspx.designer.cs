@@ -13,13 +13,13 @@ namespace Revamp_LatestSightings {
     public partial class partnership {
         
         /// <summary>
-        /// topTenContributors control.
+        /// topearningvideos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder topTenContributors;
+        protected global::System.Web.UI.WebControls.PlaceHolder topearningvideos;
         
         /// <summary>
         /// Master property.

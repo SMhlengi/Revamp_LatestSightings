@@ -17,8 +17,7 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            uc_TopMonthlyContributors Contributors = (uc_TopMonthlyContributors)LoadControl("~/uc_TopMonthlyContributors.ascx");
-            topTenContributors.Controls.Add(Contributors);
+            LoadTopEarningVideos();
             List<GalleryItem> fVideos = new List<GalleryItem>();
             fVideos = Galleries.GetFeatured(Galleries.GalleryType.Video);
             featuredVideos = (fVideos.Count() >= 4) ? fVideos.GetRange(0, 4) : fVideos;
@@ -51,8 +50,8 @@ namespace Revamp_LatestSightings
 
         private void LoadTopEarningVideos()
         {
-            //uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
-            //topearningvideos.Controls.Add(topvids);
+            uc_top_earning_videos topvids = (uc_top_earning_videos)LoadControl("~/uc_top_earning_videos.ascx");
+            topearningvideos.Controls.Add(topvids);
 
         }
     }
