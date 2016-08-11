@@ -53,7 +53,7 @@
                                 <li class="menu-item"><a href="/gallery">Galleries</a></li>
                                 <li class="menu-item"><a href="/bloglist">Blogs</a></li>
 								<li class="menu-item"><a href="/content/live-drive">Live Drive</a></li>
-                                <li class="menu-item"><a href="/holidays">Holidays</a></li>
+                                <li class="menu-item"><a href="http://latestbookings.com/vacations" target="_blank">Vacations</a></li>
                                 <li class="menu-item"><a href="/partnership">Film & Earn</a></li>
 								<li class="menu-item"><a href="http://latestsightings.eshop.co.za/" target="_blank">Shop</a></li>
 								<li class="menu-item"><a href="/about-us">About Us</a></li>
