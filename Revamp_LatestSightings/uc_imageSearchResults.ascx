@@ -6,7 +6,7 @@
     <%foreach(var item in imageResults){ %>
       <div class="col-sm-6 col-md-4" data-toggle="modal" data-target="#myModal<%=item["id"].ToString() %>">
         <div class="thumbnail">
-          <img src="http://latestsightings.com/UploadedImages/650x650/<%=item["filename"] %>" alt="...">
+          <img src="https://latestsightings.com/UploadedImages/650x650/<%=item["filename"] %>" alt="...">
           <div class="caption">
             <h5><%=item["title"] %></h5>
            <%-- <p>...</p>--%>
@@ -29,7 +29,7 @@
                 <h4 class="modal-title" id="myModalLabel"><%=item["title"].ToString() %></h4>
               </div>
               <div class="modal-body">
-                <img src="http://latestsightings.com/UploadedImages/650x650/<%=item["filename"] %>" />
+                <img src="https://latestsightings.com/UploadedImages/650x650/<%=item["filename"] %>" />
               </div>
 <%--              <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -61,6 +61,7 @@ namespace Revamp_LatestSightings
                 {
                     var temp_article = new Dictionary<string, string>();
                     temp_article = utils.CleanUpArticleForBloglist(article);
+                    temp_article["body"] = temp_article["header"] + "....";
                     c_articles.Add(temp_article);
                 }
             }

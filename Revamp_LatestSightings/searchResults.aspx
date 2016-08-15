@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="searchResults.aspx.cs" Inherits="Revamp_LatestSightings.searchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<link href="<%= ResolveUrl("~/css/searchResults.css") %>" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/css/searchResults.css?v=2") %>" rel="stylesheet" />
 
 <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active articles"><a href="#">Articles</a></li>
@@ -15,7 +15,8 @@
 
                 <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
                     <h4> <%=item["header"] %></h4>
-                    <p> <%=item["body"] %></p>
+                    <%--<p> <%=item["body"] %></p>--%>
+                    <br />
                     <p> <code><a class="articleReadMore" href="/blog.aspx?id=<%=item["id"] %>&cat=<%=item["catid"] %>"> Read more ...</a></code></p>
                   </div>
             <%} %>
