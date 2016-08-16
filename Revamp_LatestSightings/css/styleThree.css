@@ -3920,7 +3920,7 @@ input , select {
 }
 
 .nav-tabs.nav-justified>li>a:hover {
-    background-color:transparent;
+   /* background-color:transparent;*/
 }
 
 .nav-tabs > li > a:hover {
