@@ -19,6 +19,9 @@ namespace Revamp_LatestSightings
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.Request.Url.AbsolutePath.ToLower().Contains("holidays"))
+                Response.Redirect("http://latestbookings.com/vacations");
+
             uc_SiteHeader siteHeader = (uc_SiteHeader)LoadControl("~/uc_SiteHeader.ascx");
             if (Session["username"] != null)
                 siteHeader.username = Session["username"].ToString();

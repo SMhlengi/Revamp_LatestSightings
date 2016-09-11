@@ -1,11 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserGraphs.aspx.cs" Inherits="Revamp_LatestSightings.UserGraphs" %>
-<!-- how to draw the chart code -->
+
 jQuery(document).ready(function () {
     var m1 = new Morris.Line({
-        // ID of the element in which to draw the chart.
         element: 'line-chart',
-        // Chart data records -- each entry in this array corresponds to a point on
-        // the chart.
         data: [
             <%=data%>
         ],
@@ -16,16 +13,12 @@ jQuery(document).ready(function () {
         lineWidth: '2px',
         hideHover: 'auto',
         resize: true,
-        //parseTime: false,
         preUnits: '$',
         xLabels: 'day'
     });
 
     var m2 = new Morris.Line({
-        // ID of the element in which to draw the chart.
         element: 'line-chart1',
-        // Chart data records -- each entry in this array corresponds to a point on
-        // the chart.
         data: [
             <%=data1%>
         ],
@@ -36,15 +29,11 @@ jQuery(document).ready(function () {
         lineWidth: '2px',
         hideHover: 'auto',
         resize: true,
-        //parseTime: false,
         xLabels: 'day'
     });
 
     var m3 = new Morris.Line({
-        // ID of the element in which to draw the chart.
         element: 'line-chart2',
-        // Chart data records -- each entry in this array corresponds to a point on
-        // the chart.
         data: [
             <%=data2%>
         ],
@@ -55,16 +44,12 @@ jQuery(document).ready(function () {
         lineWidth: '2px',
         hideHover: 'auto',
         resize: true,
-        //parseTime: false,
         preUnits: '$',
         xLabels: 'day'
     });
 
     var m4 = new Morris.Line({
-        // ID of the element in which to draw the chart.
         element: 'line-chart3',
-        // Chart data records -- each entry in this array corresponds to a point on
-        // the chart.
         data: [
             <%=data3%>
         ],
@@ -75,7 +60,6 @@ jQuery(document).ready(function () {
         lineWidth: '2px',
         hideHover: 'auto',
         resize: true,
-        //parseTime: false,
         xLabels: 'day'
     });
 });

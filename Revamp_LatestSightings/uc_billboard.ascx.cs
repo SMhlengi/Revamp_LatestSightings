@@ -32,9 +32,18 @@ namespace Revamp_LatestSightings
                 if (endIndex > 101)
                     endIndex = 101;
                 int substract = endIndex - startIndex;
-                article.ArticleBody = article.ArticleBody.Substring(startIndex + 1, substract - 1);
-                article.ArticleBody += " [...]";
-                article.Url = ConfigurationManager.AppSettings["articleImagePath"] + article.Url;
+                if (substract > 0)
+                {
+                    article.ArticleBody = article.ArticleBody.Substring(startIndex + 1, substract - 1);
+                    article.ArticleBody += " [...]";
+                    article.Url = ConfigurationManager.AppSettings["articleImagePath"] + article.Url;
+                }
+                else
+                {
+                    article.ArticleBody = " ";
+                    article.Url = ConfigurationManager.AppSettings["articleImagePath"] + article.Url;
+                }
+
 
             }
         }
