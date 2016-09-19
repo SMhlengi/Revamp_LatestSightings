@@ -71,6 +71,8 @@
                                                 <div class="row">
                                                     <div class="col-md-3"><a href="javascript:void(0);" class="btn btn-success btn-block tncNext">Next</a></div>
                                                 </div>
+                                                <br />
+                                              <asp:PlaceHolder ID="videopackages" runat="server"></asp:PlaceHolder>
                                             </div>
                                            <!-- END OF TERMS AND CONDITIONS WORK -->
                     </div>

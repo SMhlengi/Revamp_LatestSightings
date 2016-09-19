@@ -350,6 +350,7 @@
     <Content Include="uc_top_stories.ascx" />
     <Content Include="uc_tvLodge_Tings.ascx" />
     <Content Include="uc_videoSearchResults.ascx" />
+    <Content Include="uc_video_packages.ascx" />
     <Content Include="uc_viewFinancials.ascx" />
     <Content Include="UserFinancials.aspx" />
     <Content Include="UserGraphs.aspx" />
@@ -835,6 +836,13 @@
     </Compile>
     <Compile Include="uc_videoSearchResults.ascx.designer.cs">
       <DependentUpon>uc_videoSearchResults.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="uc_video_packages.ascx.cs">
+      <DependentUpon>uc_video_packages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uc_video_packages.ascx.designer.cs">
+      <DependentUpon>uc_video_packages.ascx</DependentUpon>
     </Compile>
     <Compile Include="uc_viewFinancials.ascx.cs">
       <DependentUpon>uc_viewFinancials.ascx</DependentUpon>

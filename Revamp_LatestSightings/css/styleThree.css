@@ -4222,6 +4222,38 @@ a.tnc:hover{
     display:inline;
 }
 
+.tncpackages{
+    color:black;
+}
+
+.package-color{
+    color:#ff9900;
+}
+
+.not-monetised{
+    color:#5bc0de;
+    font-weight:bold;
+}
+
+.not-monetised-and-no-bold{
+    /*color:#5bc0de;*/
+    color:white;
+}
+
+.monetised{
+    color:#39b54a;
+    font-weight:bold;
+}
+
+.monetised-and-no-bold{
+    /*color:#39b54a;*/
+    color:white;
+}
+
+.no-list-style{
+    list-style:none;
+}
+
 .imageUploadRadioLabel, .videoUploadRadioLabel{
     color:#FB7C2D;
     font-weight:bold;
