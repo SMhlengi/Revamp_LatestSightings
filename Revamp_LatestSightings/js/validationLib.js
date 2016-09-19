@@ -699,6 +699,6 @@
     LoginIfOnLoginPageAndRememberMeIsSet();
 
     $("#videoListTab").click(function () {
-        $("#content-inner").css("height", "1150px");
+        $("#content-inner").css("height", "1458px");
     });
 });

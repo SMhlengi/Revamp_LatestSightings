@@ -27,6 +27,9 @@
     </tbody>
         </table>
     </div>
+    <br />
+    <asp:PlaceHolder ID="vpreview" runat="server"></asp:PlaceHolder>
+
 </div>
 
 <%}else{ %>
