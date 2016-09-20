@@ -248,6 +248,17 @@ namespace Revamp_LatestSightings
         }
 
         [WebMethod]
+        public static Dictionary<string, string> DoesScreenName(string email)
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader data = null;
+            Dictionary<string, string> status = new Dictionary<string, string>();
+            status = DataLayer.DoesEmailExists(email, conn, query, data);
+            return status;
+        }
+
+        [WebMethod]
         public static  Dictionary<string, List<string>> GetGalleryFilters()
         {
             SqlConnection conn = new SqlConnection();

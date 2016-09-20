@@ -19,12 +19,16 @@
                         $("div .email").html("<p class='text-danger'>Email Address already exists</p>");
                         $("div .email").show();
                     } else {
-                        $(".registerSpinner").show();
-                        $("#firstname").attr("disabled", "disabled");
-                        $("#lastname").attr("disabled", "disabled");
-                        $("#email").attr("disabled", "disabled");
-                        $("#password").attr("disabled", "disabled");
-                        SaveRegistration($("#firstname").val(), $("#lastname").val(), $("#email").val(), $("#password").val());
+                        if (DoesScreenNameExists($("#screenName").val())){
+
+                        }else{
+                            $(".registerSpinner").show();
+                            $("#firstname").attr("disabled", "disabled");
+                            $("#lastname").attr("disabled", "disabled");
+                            $("#email").attr("disabled", "disabled");
+                            $("#password").attr("disabled", "disabled");
+                            SaveRegistration($("#firstname").val(), $("#lastname").val(), $("#email").val(), $("#password").val());
+                        }
                     }
                 }
             ).fail(
@@ -699,6 +703,6 @@
     LoginIfOnLoginPageAndRememberMeIsSet();
 
     $("#videoListTab").click(function () {
-        $("#content-inner").css("height", "1458px");
+        $("#content-inner").css("height", "1650px");
     });
 });

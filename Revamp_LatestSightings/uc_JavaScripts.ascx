@@ -13,5 +13,5 @@
 <script src="<%= ResolveUrl("~/js/responsiveAdsByGoogle.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.dataTables.min.js") %>"></script>
 <script src="<%= ResolveUrl("~/js/jquery.cookies.js") %>"></script>
-<script src="<%= ResolveUrl("~/js/validationLib.js?v=114") %>"></script>
+<script src="<%= ResolveUrl("~/js/validationLib.js?v=115") %>"></script>
 <script src="<%= ResolveUrl("~/js/prettyCheckable.min.js") %>"></script>
