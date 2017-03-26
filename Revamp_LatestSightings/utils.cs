@@ -511,22 +511,6 @@ namespace Revamp_LatestSightings
                 CateogryArticle = CleanupNormalArticle(CateogryArticle);
                 return CateogryArticle;
             }
-
-            CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
-            int startIndex = CateogryArticle["body"].IndexOf('>');
-            //if (startIndex == 0)
-            //{
-            //    CateogryArticle["body"] = CateogryArticle["body"].Remove(0, 2);
-            //    startIndex = CateogryArticle["body"].IndexOf('>');
-            //}
-            int endIndex = CateogryArticle["body"].IndexOf('<');
-            int substract = endIndex - startIndex;
-            CateogryArticle["body"] = CateogryArticle["body"].Substring(startIndex + 1, substract - 1);
-            if (CateogryArticle["body"].Length > 84)
-                CateogryArticle["body"] = CateogryArticle["body"].Substring(0, 80) + " [...]";
-            else
-                CateogryArticle["body"] += " [...]";
-            return CateogryArticle;
         }
 
         private static Dictionary<string, string> CleanupNormalArticle(Dictionary<string, string> CateogryArticle)
