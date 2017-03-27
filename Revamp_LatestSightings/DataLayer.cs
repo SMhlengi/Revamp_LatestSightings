@@ -430,6 +430,7 @@ namespace Revamp_LatestSightings
                         video.Name = data["title"].ToString();
                         video.Alias = data["alias"].ToString();
                         video.RevSplit = data["revenueShare"].ToString();
+                        video.Package = data["package"].ToString();
                         video.Uploaded = "Y";
                         if (data["videoStatus"].ToString() == "Accepted")
                             video.Accepted = "Yes";
